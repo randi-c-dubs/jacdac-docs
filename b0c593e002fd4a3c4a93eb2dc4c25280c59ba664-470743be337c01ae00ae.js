@@ -10135,7 +10135,8 @@ var chartDsl = {
         type: "input_dummy"
       }, {
         type: _fields_DataTableField__WEBPACK_IMPORTED_MODULE_7__/* .default.KEY */ .Z.KEY,
-        name: "table"
+        name: "table",
+        selectColumns: true
       }],
       previousStatement: _toolbox__WEBPACK_IMPORTED_MODULE_2__/* .DATA_SCIENCE_STATEMENT_TYPE */ .zN,
       nextStatement: _toolbox__WEBPACK_IMPORTED_MODULE_2__/* .DATA_SCIENCE_STATEMENT_TYPE */ .zN,
@@ -11831,7 +11832,7 @@ var FileOpenField = /*#__PURE__*/function (_FieldDropdown) {
 
               if (wsServices) {
                 workingDirectory = wsServices.workingDirectory;
-                this._unmount = workingDirectory.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_2__/* .CHANGE */ .Ver, function () {
+                this._unmount = workingDirectory === null || workingDirectory === void 0 ? void 0 : workingDirectory.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_2__/* .CHANGE */ .Ver, function () {
                   return _this2.updateData();
                 });
               }
