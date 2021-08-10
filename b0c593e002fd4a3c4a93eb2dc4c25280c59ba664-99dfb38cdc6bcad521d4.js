@@ -11142,7 +11142,7 @@ DataColumnChooserField.KEY = "jacdac_field_data_column_chooser";
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41788);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _ReactField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77576);
-/* harmony import */ var _DataTableWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(23785);
+/* harmony import */ var _DataTableWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11472);
 /* harmony import */ var _toolbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16582);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(80838);
 
@@ -11257,7 +11257,7 @@ function addDataPreviewField(block) {
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41788);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _ReactInlineField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12702);
-/* harmony import */ var _DataTableWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(23785);
+/* harmony import */ var _DataTableWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11472);
 /* harmony import */ var _toolbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16582);
 
 
@@ -11314,153 +11314,30 @@ DataTableField.KEY = "jacdac_field_data_table";
 
 /***/ }),
 
-/***/ 23785:
+/***/ 11472:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Z": function() { return /* binding */ DataTableWidget; }
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(92137);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
-var toConsumableArray = __webpack_require__(85061);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
-var regenerator = __webpack_require__(87757);
-var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./src/components/blockly/WorkspaceContext.tsx
-var WorkspaceContext = __webpack_require__(89801);
-// EXTERNAL MODULE: ./src/components/blockly/useBlockData.ts + 3 modules
-var useBlockData = __webpack_require__(53851);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/makeStyles.js
-var makeStyles = __webpack_require__(10920);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Grid/Grid.js
-var Grid = __webpack_require__(80838);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Typography/Typography.js
-var Typography = __webpack_require__(80453);
-// EXTERNAL MODULE: ./src/components/blockly/toolbox.ts
-var toolbox = __webpack_require__(16582);
-// EXTERNAL MODULE: ./src/components/blockly/fields/PointerBoundary.tsx
-var PointerBoundary = __webpack_require__(77298);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(19756);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/FileCopy.js
-var FileCopy = __webpack_require__(97332);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/Done.js
-var Done = __webpack_require__(73097);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/ReportProblem.js
-var ReportProblem = __webpack_require__(78359);
-// EXTERNAL MODULE: ./src/components/ui/IconButtonWithTooltip.tsx + 1 modules
-var IconButtonWithTooltip = __webpack_require__(79885);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Button/Button.js
-var Button = __webpack_require__(83332);
-// EXTERNAL MODULE: ./src/components/hooks/useMounted.ts
-var useMounted = __webpack_require__(72179);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
-var utils = __webpack_require__(81794);
-;// CONCATENATED MODULE: ./src/components/ui/CopyButton.tsx
-
-
-var _excluded = ["label", "title", "onCopy"];
-
-
-
-
-
-
-
-
-
-function CopyButton(props) {
-  var label = props.label,
-      _props$title = props.title,
-      title = _props$title === void 0 ? "copy data to clipboard" : _props$title,
-      onCopy = props.onCopy,
-      rest = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
-
-  var _useState = (0,react.useState)(undefined),
-      copied = _useState[0],
-      setCopied = _useState[1];
-
-  var mounted = (0,useMounted/* default */.Z)();
-
-  var handleClick = /*#__PURE__*/function () {
-    var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee(ev) {
-      var _text;
-
-      return regenerator_default().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              ev.stopPropagation();
-              ev.preventDefault();
-              _context.prev = 2;
-              setCopied(null);
-              _context.next = 6;
-              return onCopy();
-
-            case 6:
-              _text = _context.sent;
-              _context.next = 9;
-              return navigator.clipboard.writeText(_text);
-
-            case 9:
-              if (mounted()) setCopied(true);
-              _context.next = 16;
-              break;
-
-            case 12:
-              _context.prev = 12;
-              _context.t0 = _context["catch"](2);
-              console.debug(_context.t0);
-              if (mounted()) setCopied(false);
-
-            case 16:
-              _context.prev = 16;
-              _context.next = 19;
-              return (0,utils/* delay */.gw)(1000);
-
-            case 19:
-              if (mounted()) setCopied(undefined);
-              return _context.finish(16);
-
-            case 21:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, null, [[2, 12, 16, 21]]);
-    }));
-
-    return function handleClick(_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-
-  var disabled = copied !== undefined;
-  var text = copied === true ? "Copied!" : copied === false ? "Copy failed" : label || "copy to clipboard";
-  return label ? /*#__PURE__*/react.createElement(Button/* default */.Z, Object.assign({
-    title: title
-  }, rest, {
-    onClick: disabled ? undefined : handleClick
-  }), text) : /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, Object.assign({
-    title: text
-  }, rest, {
-    onClick: disabled ? undefined : handleClick
-  }), copied === true ? /*#__PURE__*/react.createElement(Done/* default */.Z, null) : copied === false ? /*#__PURE__*/react.createElement(ReportProblem/* default */.Z, null) : /*#__PURE__*/react.createElement(FileCopy/* default */.Z, null));
-}
-// EXTERNAL MODULE: ./src/components/blockly/dsl/workers/csv.proxy.ts
-var csv_proxy = __webpack_require__(53480);
-// EXTERNAL MODULE: ./src/components/blockly/fields/tidy.ts
-var tidy = __webpack_require__(47554);
-// EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
-var jdspec = __webpack_require__(13996);
-;// CONCATENATED MODULE: ./src/components/blockly/fields/DataTableWidget.tsx
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ DataTableWidget; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(92137);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(85061);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87757);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
+/* harmony import */ var _WorkspaceContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(89801);
+/* harmony import */ var _useBlockData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53851);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(10920);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(80838);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80453);
+/* harmony import */ var _toolbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16582);
+/* harmony import */ var _PointerBoundary__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(77298);
+/* harmony import */ var _ui_CopyButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(18568);
+/* harmony import */ var _dsl_workers_csv_proxy__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(53480);
+/* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(81794);
+/* harmony import */ var _tidy__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(47554);
+/* harmony import */ var _jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13996);
 
 
 
@@ -11475,7 +11352,7 @@ var jdspec = __webpack_require__(13996);
 
 
 
-var useStyles = (0,makeStyles/* default */.Z)(function () {
+var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z)(function () {
   return {
     empty: {
       paddingLeft: "0.5rem",
@@ -11495,7 +11372,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function () {
         background: "#fff",
         color: "#000",
         borderRadius: "0.25rem",
-        width: "calc(" + toolbox/* TABLE_WIDTH */.KH + "px - 0.25rem)",
+        width: "calc(" + _toolbox__WEBPACK_IMPORTED_MODULE_4__/* .TABLE_WIDTH */ .KH + "px - 0.25rem)",
         height: "calc(" + props.tableHeight + "px - 0.25rem)",
         overflow: "auto"
       };
@@ -11524,15 +11401,15 @@ function DataTableWidget(props) {
   var label = props.label,
       transformed = props.transformed,
       _props$tableHeight = props.tableHeight,
-      tableHeight = _props$tableHeight === void 0 ? toolbox/* TABLE_HEIGHT */.U2 : _props$tableHeight,
+      tableHeight = _props$tableHeight === void 0 ? _toolbox__WEBPACK_IMPORTED_MODULE_4__/* .TABLE_HEIGHT */ .U2 : _props$tableHeight,
       empty = props.empty,
       maxItems = props.maxItems,
       selectColumns = props.selectColumns;
 
-  var _useContext = (0,react.useContext)(WorkspaceContext/* default */.ZP),
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_WorkspaceContext__WEBPACK_IMPORTED_MODULE_2__/* .default */ .ZP),
       sourceBlock = _useContext.sourceBlock;
 
-  var _useBlockData = (0,useBlockData/* default */.Z)(sourceBlock),
+  var _useBlockData = (0,_useBlockData__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(sourceBlock),
       data = _useBlockData.data,
       transformedData = _useBlockData.transformedData;
 
@@ -11540,18 +11417,18 @@ function DataTableWidget(props) {
   var classes = useStyles({
     tableHeight: tableHeight
   });
-  if (!(raw !== null && raw !== void 0 && raw.length)) return empty ? /*#__PURE__*/react.createElement("span", {
+  if (!(raw !== null && raw !== void 0 && raw.length)) return empty ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", {
     className: classes.empty
   }, empty) : null;
   var selectedColumns = selectColumns ? [0, 1, 2, 3].map(function (i) {
     return "column" + i;
   }).map(function (n) {
-    return (0,tidy/* tidyResolveHeader */.gc)(raw, sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getFieldValue(n));
+    return (0,_tidy__WEBPACK_IMPORTED_MODULE_9__/* .tidyResolveHeader */ .gc)(raw, sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getFieldValue(n));
   }).filter(function (c) {
     return !!c;
   }) : [];
-  var columns = selectedColumns.length ? selectedColumns : (0,tidy/* tidyHeaders */.P2)(raw).headers;
-  var table = raw.length > maxItems ? [].concat((0,toConsumableArray/* default */.Z)(raw.slice(0, maxItems)), [(0,utils/* toMap */.qL)(columns, function (c) {
+  var columns = selectedColumns.length ? selectedColumns : (0,_tidy__WEBPACK_IMPORTED_MODULE_9__/* .tidyHeaders */ .P2)(raw).headers;
+  var table = raw.length > maxItems ? [].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z)(raw.slice(0, maxItems)), [(0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_8__/* .toMap */ .qL)(columns, function (c) {
     return c;
   }, function () {
     return "...";
@@ -11567,17 +11444,17 @@ function DataTableWidget(props) {
   }); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   var renderCell = function renderCell(v) {
-    return typeof v === "boolean" ? v ? "true" : "false" : typeof v === "number" ? (0,utils/* roundWithPrecision */.JI)(v, 3) : v + "";
+    return typeof v === "boolean" ? v ? "true" : "false" : typeof v === "number" ? (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_8__/* .roundWithPrecision */ .JI)(v, 3) : v + "";
   };
 
   var handleCopy = /*#__PURE__*/function () {
-    var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       var text;
-      return regenerator_default().wrap(function _callee$(_context) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              text = (0,csv_proxy/* unparseCSV */.sh)(raw);
+              text = (0,_dsl_workers_csv_proxy__WEBPACK_IMPORTED_MODULE_7__/* .unparseCSV */ .sh)(raw);
               return _context.abrupt("return", text);
 
             case 2:
@@ -11593,49 +11470,49 @@ function DataTableWidget(props) {
     };
   }();
 
-  return /*#__PURE__*/react.createElement(PointerBoundary/* PointerBoundary */.A, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_PointerBoundary__WEBPACK_IMPORTED_MODULE_5__/* .PointerBoundary */ .A, {
     className: classes.root
-  }, /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     container: true,
     direction: "column",
     spacing: 1
-  }, /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     item: true,
     xs: 12
-  }, /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     container: true,
     direction: "row",
     justifyContent: "flex-start",
     alignItems: "center",
     spacing: 1
-  }, label && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     item: true
-  }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
     variant: "h6"
-  }, label)), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, label)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     item: true
-  }, /*#__PURE__*/react.createElement(CopyButton, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_CopyButton__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     size: "small",
     className: classes.button,
     onCopy: handleCopy
-  })), raw.length > 1 && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  })), raw.length > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     item: true
-  }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
     variant: "caption"
-  }, raw.length, " rows x ", columns.length, " columns")))), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, raw.length, " rows x ", columns.length, " columns")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     item: true,
     xs: 12
-  }, /*#__PURE__*/react.createElement("table", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("table", {
     className: classes.table
-  }, /*#__PURE__*/react.createElement("thead", null, /*#__PURE__*/react.createElement("tr", null, columns.map(function (c) {
-    return /*#__PURE__*/react.createElement("th", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("tr", null, columns.map(function (c) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("th", {
       key: c
-    }, (0,jdspec/* humanify */.lW)(c));
-  }))), /*#__PURE__*/react.createElement("tbody", null, table.map(function (r, i) {
-    return /*#__PURE__*/react.createElement("tr", {
+    }, (0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_10__/* .humanify */ .lW)(c));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("tbody", null, table.map(function (r, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("tr", {
       key: r.id || i
     }, columns.map(function (c) {
-      return /*#__PURE__*/react.createElement("td", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("td", {
         key: c
       }, renderCell(r[c]));
     }));
@@ -16445,7 +16322,7 @@ VegaChartField.KEY = "jacdac_field_vega_chart";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": function() { return /* binding */ VegaLiteWidget; }
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(92137);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(92137);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87757);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
@@ -16453,12 +16330,16 @@ VegaChartField.KEY = "jacdac_field_vega_chart";
 /* harmony import */ var _useBlockData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53851);
 /* harmony import */ var _PointerBoundary__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(77298);
 /* harmony import */ var _ui_Suspense__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69672);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(42862);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(10920);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(42862);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80838);
 /* harmony import */ var _toolbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(16582);
 /* harmony import */ var _useEffectAsync__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7751);
 /* harmony import */ var _tidy__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47554);
 /* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(81794);
 /* harmony import */ var _jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13996);
+/* harmony import */ var _ui_CopyButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(18568);
+
 
 
 
@@ -16493,15 +16374,13 @@ function jsonMergeFrom(trg, src) {
   });
 }
 
-var ACTIONS = {
-  export: {
-    png: true,
-    svg: true
-  },
-  source: false,
-  compiled: false,
-  editor: false
-};
+var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z)(function () {
+  return {
+    button: {
+      color: "grey"
+    }
+  };
+});
 function VegaLiteWidget(props) {
   var _vegaData$values;
 
@@ -16512,8 +16391,9 @@ function VegaLiteWidget(props) {
       sourceBlock = _useContext.sourceBlock;
 
   var _useBlockData = (0,_useBlockData__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(sourceBlock),
-      data = _useBlockData.data; // eslint-disable-next-line @typescript-eslint/ban-types
+      data = _useBlockData.data;
 
+  var classes = useStyles(); // eslint-disable-next-line @typescript-eslint/ban-types
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(undefined),
       vegaData = _useState[0],
@@ -16565,7 +16445,7 @@ function VegaLiteWidget(props) {
     return s;
   }, [spec, group, settings]);
   (0,_useEffectAsync__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)( /*#__PURE__*/function () {
-    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(mounted) {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(mounted) {
       var sliced;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
@@ -16606,13 +16486,64 @@ function VegaLiteWidget(props) {
   }(), [data]);
   if (!(vegaData !== null && vegaData !== void 0 && (_vegaData$values = vegaData.values) !== null && _vegaData$values !== void 0 && _vegaData$values.length) || !spec) return null;
   var renderer = vegaData.values.length < _toolbox__WEBPACK_IMPORTED_MODULE_6__/* .CHART_SVG_MAX_ITEMS */ .TP ? "svg" : "canvas";
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+
+  var handleCopy = /*#__PURE__*/function () {
+    var _ref2 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var view, canvas;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              view = viewRef.current;
+              _context2.next = 3;
+              return view.toCanvas(2);
+
+            case 3:
+              canvas = _context2.sent;
+              return _context2.abrupt("return", canvas);
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function handleCopy() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_PointerBoundary__WEBPACK_IMPORTED_MODULE_4__/* .PointerBoundary */ .A, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     style: {
       background: "#fff",
       borderRadius: "0.25rem"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_PointerBoundary__WEBPACK_IMPORTED_MODULE_4__/* .PointerBoundary */ .A, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_Suspense__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(VegaLite, {
-    actions: ACTIONS,
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    container: true,
+    direction: "column",
+    spacing: 1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    container: true,
+    direction: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    spacing: 1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    item: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_CopyButton__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
+    size: "small",
+    className: classes.button,
+    onCopy: handleCopy
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_Suspense__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(VegaLite, {
+    actions: false,
     width: _toolbox__WEBPACK_IMPORTED_MODULE_6__/* .CHART_WIDTH */ .xx,
     height: _toolbox__WEBPACK_IMPORTED_MODULE_6__/* .CHART_HEIGHT */ .Fh,
     spec: fullSpec,
@@ -16620,7 +16551,7 @@ function VegaLiteWidget(props) {
     renderer: renderer,
     tooltip: true,
     onNewView: handleNewView
-  })))));
+  })))))));
 }
 /**
  * https://github.com/vega/vega-embed/issues/733
@@ -20230,6 +20161,145 @@ function AppTheme(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, Object.assign({
     theme: theme
   }, props));
+}
+
+/***/ }),
+
+/***/ 18568:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ CopyButton; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92137);
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19756);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87757);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
+/* harmony import */ var _material_ui_icons_FileCopy__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(97332);
+/* harmony import */ var _material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73097);
+/* harmony import */ var _material_ui_icons_ReportProblem__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(78359);
+/* harmony import */ var _IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(79885);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(83332);
+/* harmony import */ var _hooks_useMounted__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(72179);
+/* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81794);
+
+
+var _excluded = ["label", "title", "onCopy"];
+
+
+
+
+
+
+
+
+
+function CopyButton(props) {
+  var label = props.label,
+      _props$title = props.title,
+      title = _props$title === void 0 ? "copy data to clipboard" : _props$title,
+      onCopy = props.onCopy,
+      rest = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(props, _excluded);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(undefined),
+      copied = _useState[0],
+      setCopied = _useState[1];
+
+  var mounted = (0,_hooks_useMounted__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)();
+
+  var handleClick = /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(ev) {
+      var _copied, _text, canvas, blob, item;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              ev.stopPropagation();
+              ev.preventDefault();
+              _context.prev = 2;
+              setCopied(null);
+              _context.next = 6;
+              return onCopy();
+
+            case 6:
+              _copied = _context.sent;
+
+              if (!(typeof _copied === "string")) {
+                _context.next = 13;
+                break;
+              }
+
+              _text = _copied;
+              _context.next = 11;
+              return navigator.clipboard.writeText(_text);
+
+            case 11:
+              _context.next = 19;
+              break;
+
+            case 13:
+              canvas = _copied;
+              _context.next = 16;
+              return new Promise(function (resolve) {
+                return canvas.toBlob(function (blob) {
+                  return resolve(blob);
+                });
+              });
+
+            case 16:
+              blob = _context.sent;
+              item = new ClipboardItem({
+                "image/png": blob
+              });
+              navigator.clipboard.write([item]);
+
+            case 19:
+              if (mounted()) setCopied(true);
+              _context.next = 26;
+              break;
+
+            case 22:
+              _context.prev = 22;
+              _context.t0 = _context["catch"](2);
+              console.debug(_context.t0);
+              if (mounted()) setCopied(false);
+
+            case 26:
+              _context.prev = 26;
+              _context.next = 29;
+              return (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__/* .delay */ .gw)(1000);
+
+            case 29:
+              if (mounted()) setCopied(undefined);
+              return _context.finish(26);
+
+            case 31:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[2, 22, 26, 31]]);
+    }));
+
+    return function handleClick(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var disabled = copied !== undefined;
+  var text = copied === true ? "Copied!" : copied === false ? "Copy failed" : label || "copy to clipboard";
+  return label ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z, Object.assign({
+    title: title
+  }, rest, {
+    onClick: disabled ? undefined : handleClick
+  }), text) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, Object.assign({
+    title: text
+  }, rest, {
+    onClick: disabled ? undefined : handleClick
+  }), copied === true ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z, null) : copied === false ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_ReportProblem__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_FileCopy__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, null));
 }
 
 /***/ }),
