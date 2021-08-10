@@ -7132,7 +7132,10 @@ function collectWarnings(workspace) {
 }
 // EXTERNAL MODULE: ./src/components/blockly/toolbox.ts
 var toolbox = __webpack_require__(16582);
+// EXTERNAL MODULE: ./src/components/blockly/WorkspaceContext.tsx
+var WorkspaceContext = __webpack_require__(89801);
 ;// CONCATENATED MODULE: ./src/components/blockly/dsl/datasolver.ts
+
 
 
 
@@ -7147,9 +7150,9 @@ function registerDataSolver(block) {
 
   var applyTransform = /*#__PURE__*/function () {
     var _ref2 = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
-      var _block$nextConnection, _block$childBlocks_;
+      var _block$nextConnection;
 
-      var next, nextServices, newData, def;
+      var nextServices, newData, def;
       return regenerator_default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -7162,48 +7165,47 @@ function registerDataSolver(block) {
               return _context.abrupt("return");
 
             case 2:
-              // transfer data
-              next = ((_block$nextConnection = block.nextConnection) === null || _block$nextConnection === void 0 ? void 0 : _block$nextConnection.targetBlock()) || ((_block$childBlocks_ = block.childBlocks_) === null || _block$childBlocks_ === void 0 ? void 0 : _block$childBlocks_[0]);
-              nextServices = next === null || next === void 0 ? void 0 : next.jacdacServices;
-              _context.prev = 4;
+              // transfer data to the next block
+              nextServices = (0,WorkspaceContext/* resolveBlockServices */.Ys)((_block$nextConnection = block.nextConnection) === null || _block$nextConnection === void 0 ? void 0 : _block$nextConnection.targetBlock());
+              _context.prev = 3;
 
               if (!(transformData === toolbox/* identityTransformData */.FW)) {
-                _context.next = 9;
+                _context.next = 8;
                 break;
               }
 
               newData = services.data;
-              _context.next = 12;
+              _context.next = 11;
               break;
 
-            case 9:
-              _context.next = 11;
+            case 8:
+              _context.next = 10;
               return transformData(block, services.data, nextServices === null || nextServices === void 0 ? void 0 : nextServices.data);
 
-            case 11:
+            case 10:
               newData = _context.sent;
 
-            case 12:
+            case 11:
               // propagate
               services.transformedData = newData; // check if pass through
 
               def = (0,toolbox/* resolveBlockDefinition */.Pq)(block.type);
               if (def !== null && def !== void 0 && def.passthroughData) newData = services.data;
               if (nextServices) nextServices.data = newData;
-              _context.next = 21;
+              _context.next = 20;
               break;
 
-            case 18:
-              _context.prev = 18;
-              _context.t0 = _context["catch"](4);
+            case 17:
+              _context.prev = 17;
+              _context.t0 = _context["catch"](3);
               console.debug(_context.t0);
 
-            case 21:
+            case 20:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[4, 18]]);
+      }, _callee, null, [[3, 17]]);
     }));
 
     return function applyTransform() {
@@ -8567,8 +8569,6 @@ function useToolboxButtons(workspace, toolboxConfiguration) {
     };
   }, [workspace, toolboxConfiguration]);
 }
-// EXTERNAL MODULE: ./src/components/blockly/WorkspaceContext.tsx
-var WorkspaceContext = __webpack_require__(89801);
 // EXTERNAL MODULE: ./src/components/AppContext.tsx
 var AppContext = __webpack_require__(84377);
 // EXTERNAL MODULE: ./src/components/useEffectAsync.ts
@@ -10410,7 +10410,8 @@ var chartDsl = {
         name: "channel"
       }, {
         type: _fields_DataColumnChooserField__WEBPACK_IMPORTED_MODULE_3__/* .default.KEY */ .Z.KEY,
-        name: "field"
+        name: "field",
+        parentData: true
       }, {
         type: "field_dropdown",
         options: ["quantitative", "ordinal", "nominal", "temporal"].map(function (s) {
@@ -11087,12 +11088,14 @@ BuiltinDataSetField.KEY = "jacdac_field_data_builtin_dataset";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": function() { return /* binding */ DataColumnChooserField; }
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(85061);
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41788);
-/* harmony import */ var _tidy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47554);
-/* harmony import */ var blockly__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74640);
-/* harmony import */ var blockly__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(blockly__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13996);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85061);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41788);
+/* harmony import */ var _WorkspaceContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(89801);
+/* harmony import */ var _tidy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(47554);
+/* harmony import */ var blockly__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74640);
+/* harmony import */ var blockly__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(blockly__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13996);
+
 
 
 
@@ -11100,7 +11103,7 @@ BuiltinDataSetField.KEY = "jacdac_field_data_builtin_dataset";
 
 
 var DataColumnChooserField = /*#__PURE__*/function (_FieldDropdown) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(DataColumnChooserField, _FieldDropdown);
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(DataColumnChooserField, _FieldDropdown);
 
   DataColumnChooserField.fromJson = function fromJson(options) {
     return new DataColumnChooserField(options);
@@ -11116,6 +11119,7 @@ var DataColumnChooserField = /*#__PURE__*/function (_FieldDropdown) {
     }, undefined, options) || this;
     _this.SERIALIZABLE = true;
     _this.dataType = options === null || options === void 0 ? void 0 : options.dataType;
+    _this.parentData = options === null || options === void 0 ? void 0 : options.parentData;
     return _this;
   }
 
@@ -11129,20 +11133,25 @@ var DataColumnChooserField = /*#__PURE__*/function (_FieldDropdown) {
     var _this2 = this;
 
     var sourceBlock = this.getSourceBlock();
-    var services = sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.jacdacServices;
+    var services = (0,_WorkspaceContext__WEBPACK_IMPORTED_MODULE_0__/* .resolveBlockServices */ .Ys)(this.parentData ? sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getSurroundParent() : sourceBlock);
     var data = services === null || services === void 0 ? void 0 : services.data;
+    console.log("source block", {
+      sourceBlock: sourceBlock,
+      services: services,
+      data: data
+    });
 
-    var _tidyHeaders = (0,_tidy__WEBPACK_IMPORTED_MODULE_0__/* .tidyHeaders */ .P2)(data),
+    var _tidyHeaders = (0,_tidy__WEBPACK_IMPORTED_MODULE_1__/* .tidyHeaders */ .P2)(data),
         headers = _tidyHeaders.headers,
         types = _tidyHeaders.types;
 
     var options = headers.filter(function (h, i) {
       return !_this2.dataType || types[i] === _this2.dataType;
     }).map(function (h) {
-      return [(0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_2__/* .humanify */ .lW)(h), h];
+      return [(0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_3__/* .humanify */ .lW)(h), h];
     }) || [];
     var value = this.getValue();
-    var r = options.length < 1 ? [[(0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_2__/* .humanify */ .lW)(value || ""), value || ""]] : [].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(options), [["", ""]]);
+    var r = options.length < 1 ? [[(0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_3__/* .humanify */ .lW)(value || ""), value || ""]] : [].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(options), [["", ""]]);
     return r;
   };
 
@@ -11152,7 +11161,7 @@ var DataColumnChooserField = /*#__PURE__*/function (_FieldDropdown) {
   };
 
   return DataColumnChooserField;
-}(blockly__WEBPACK_IMPORTED_MODULE_1__.FieldDropdown);
+}(blockly__WEBPACK_IMPORTED_MODULE_2__.FieldDropdown);
 
 DataColumnChooserField.KEY = "jacdac_field_data_column_chooser";
 
