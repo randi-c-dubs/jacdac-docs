@@ -766,7 +766,7 @@ var dataDsl = {
         var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", "number");
         var rhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "rhs", "number");
         var logic = b.getFieldValue("logic");
-        if (newcolumn || !lhs || !rhs) return Promise.resolve(data);
+        if (!newcolumn || !lhs || !rhs) return Promise.resolve(data);
         return (0,_workers_data_proxy__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)({
           type: "mutate_columns",
           newcolumn: newcolumn,
@@ -807,7 +807,7 @@ var dataDsl = {
         var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", "number");
         var rhs = b.getFieldValue("rhs");
         var logic = b.getFieldValue("logic");
-        if (newcolumn || !lhs) return Promise.resolve(data);
+        if (!newcolumn || !lhs) return Promise.resolve(data);
         return (0,_workers_data_proxy__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)({
           type: "mutate_number",
           newcolumn: newcolumn,
