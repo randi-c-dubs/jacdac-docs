@@ -24,8 +24,8 @@ var flags = __webpack_require__(21258);
 var BlockContext = __webpack_require__(82393);
 // EXTERNAL MODULE: ./src/components/blockly/BlockDiagnostics.tsx
 var BlockDiagnostics = __webpack_require__(9370);
-// EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 4 modules
-var BlockEditor = __webpack_require__(81753);
+// EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 5 modules
+var BlockEditor = __webpack_require__(39067);
 // EXTERNAL MODULE: ./src/components/fs/FileTabs.tsx + 3 modules
 var FileTabs = __webpack_require__(45430);
 // EXTERNAL MODULE: ./src/components/blockly/dsl/datadsl.ts

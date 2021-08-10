@@ -63681,7 +63681,7 @@ function FileSystemProvider(props) {
 
   var children = props.children;
   var fileSystem = (0,react.useMemo)(function () {
-    return (0,fs/* fileSystemHandleSupported */.ou)() && new FileSystem();
+    return (0,fs/* fileSystemHandleSupported */.ou)() ? new FileSystem() : undefined;
   }, []);
   var supported = !!fileSystem;
   var showDirectoryPicker = supported ? /*#__PURE__*/function () {
@@ -70851,7 +70851,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "fc1a0cb9779121cbe99db760f002920ed5c1e08e";
+  var sha = "85ca39178583fe735bc7de0fe4ee4de60cb4605f";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -81904,13 +81904,15 @@ var bus = cachedBus() || createBus();
 /* harmony export */   "Z": function() { return /* binding */ useChange; },
 /* harmony export */   "R": function() { return /* binding */ useChangeAsync; }
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(92137);
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(85061);
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92137);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85061);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87757);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
 /* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71815);
-/* harmony import */ var _components_useEffectAsync__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7751);
+/* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81794);
+/* harmony import */ var _components_useEffectAsync__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7751);
+
 
 
 
@@ -81918,6 +81920,9 @@ var bus = cachedBus() || createBus();
 
 
 function useChange(node, query, deps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_3__/* .assert */ .hu)(node !== false);
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)((node === null || node === void 0 ? void 0 : node.changeId) || 0),
       version = _useState[0],
       setVersion = _useState[1];
@@ -81931,7 +81936,7 @@ function useChange(node, query, deps) {
       //console.log(`change ${node} ${version}->${node.changeId}`)
       setVersion(node.changeId);
     });
-  }, [node].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(deps || [])));
+  }, [node].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(deps || [])));
   return value;
 }
 function useChangeAsync(node, query, deps) {
@@ -81949,8 +81954,8 @@ function useChangeAsync(node, query, deps) {
       setVersion(node.changeId);
     });
   }, [node]);
-  (0,_components_useEffectAsync__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)( /*#__PURE__*/function () {
-    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(mounted) {
+  (0,_components_useEffectAsync__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)( /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(mounted) {
       var valuePromise, d;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
@@ -81986,7 +81991,7 @@ function useChangeAsync(node, query, deps) {
     return function (_x) {
       return _ref.apply(this, arguments);
     };
-  }(), [node, version].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(deps || [])));
+  }(), [node, version].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(deps || [])));
   return value;
 }
 

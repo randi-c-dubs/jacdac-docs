@@ -4521,8 +4521,8 @@ function VMToolbar(props) {
 var BlockDiagnostics = __webpack_require__(9370);
 // EXTERNAL MODULE: ./src/components/vm/VMgenerator.ts
 var VMgenerator = __webpack_require__(15056);
-// EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 4 modules
-var BlockEditor = __webpack_require__(81753);
+// EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 5 modules
+var BlockEditor = __webpack_require__(39067);
 // EXTERNAL MODULE: ./src/components/blockly/fields/KeyboardKeyField.tsx
 var KeyboardKeyField = __webpack_require__(90422);
 // EXTERNAL MODULE: ./src/components/blockly/fields/LEDColorField.tsx
