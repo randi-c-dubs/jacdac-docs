@@ -10135,8 +10135,7 @@ var chartDsl = {
         type: "input_dummy"
       }, {
         type: _fields_DataTableField__WEBPACK_IMPORTED_MODULE_7__/* .default.KEY */ .Z.KEY,
-        name: "table",
-        selectColumns: true
+        name: "table"
       }],
       previousStatement: _toolbox__WEBPACK_IMPORTED_MODULE_2__/* .DATA_SCIENCE_STATEMENT_TYPE */ .zN,
       nextStatement: _toolbox__WEBPACK_IMPORTED_MODULE_2__/* .DATA_SCIENCE_STATEMENT_TYPE */ .zN,
