@@ -685,7 +685,7 @@ var PacketView = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 8445).then(__webpack_require__.bind(__webpack_require__, 38445));
 });
 var JDomTreeView = /*#__PURE__*/(0,react.lazy)(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(4084)]).then(__webpack_require__.bind(__webpack_require__, 10188));
+  return Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(188)]).then(__webpack_require__.bind(__webpack_require__, 10188));
 });
 var DrawerSearchResults = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 6130).then(__webpack_require__.bind(__webpack_require__, 86130));

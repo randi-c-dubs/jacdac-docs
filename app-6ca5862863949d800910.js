@@ -69922,7 +69922,7 @@ function SplitGrid(props) {
 
 
 var JDomTreeView = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(4084)]).then(__webpack_require__.bind(__webpack_require__, 10188));
+  return Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(188)]).then(__webpack_require__.bind(__webpack_require__, 10188));
 });
 var PacketView = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () {
   return __webpack_require__.e(/* import() */ 8445).then(__webpack_require__.bind(__webpack_require__, 38445));
@@ -70851,7 +70851,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "85ca39178583fe735bc7de0fe4ee4de60cb4605f";
+  var sha = "852523e85cae5bb31e0480c8d5e9cd9e7d9718bd";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer

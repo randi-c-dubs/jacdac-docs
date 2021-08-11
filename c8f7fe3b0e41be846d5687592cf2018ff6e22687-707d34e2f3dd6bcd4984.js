@@ -11919,6 +11919,40 @@ function useMicrophoneAnalyzer(options) {
 
 /***/ }),
 
+/***/ 39687:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ useBestRegister; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _jacdac_ts_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(73512);
+/* harmony import */ var _jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13173);
+
+
+
+function useBestRegister(service) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    var specification = service === null || service === void 0 ? void 0 : service.specification;
+    var hasReading = specification === null || specification === void 0 ? void 0 : specification.packets.some(function (reg) {
+      return (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__/* .isReading */ .vz)(reg);
+    });
+    if (hasReading) return service.register(_jacdac_ts_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SystemReg.Reading */ .ZJq.Reading);
+    var hasValue = specification === null || specification === void 0 ? void 0 : specification.packets.some(function (reg) {
+      return (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__/* .isValue */ .wh)(reg);
+    });
+    if (hasValue) return service.register(_jacdac_ts_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SystemReg.Value */ .ZJq.Value);
+    var hasIntensity = specification === null || specification === void 0 ? void 0 : specification.packets.some(function (reg) {
+      return (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__/* .isValueOrIntensity */ .sX)(reg);
+    });
+    if (hasIntensity) return service.register(_jacdac_ts_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SystemReg.Intensity */ .ZJq.Intensity);
+    return undefined;
+  }, [service]);
+}
+
+/***/ }),
+
 /***/ 68786:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
