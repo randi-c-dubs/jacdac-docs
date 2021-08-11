@@ -1129,6 +1129,31 @@ var ControlReg;
      */
     ControlReg[ControlReg["FirmwareUrl"] = 392] = "FirmwareUrl";
 })(ControlReg || (ControlReg = {}));
+var DimmerVariant;
+(function (DimmerVariant) {
+    DimmerVariant[DimmerVariant["Light"] = 1] = "Light";
+    DimmerVariant[DimmerVariant["Fan"] = 2] = "Fan";
+    DimmerVariant[DimmerVariant["Pump"] = 3] = "Pump";
+})(DimmerVariant || (DimmerVariant = {}));
+var DimmerReg;
+(function (DimmerReg) {
+    /**
+     * Read-write ratio u0.16 (uint16_t). The intensity of the current. Set to ``0`` to turn off completely the current.
+     *
+     * ```
+     * const [intensity] = jdunpack<[number]>(buf, "u0.16")
+     * ```
+     */
+    DimmerReg[DimmerReg["Intensity"] = 1] = "Intensity";
+    /**
+     * Constant Variant (uint8_t). The type of physical device
+     *
+     * ```
+     * const [variant] = jdunpack<[DimmerVariant]>(buf, "u8")
+     * ```
+     */
+    DimmerReg[DimmerReg["Variant"] = 263] = "Variant";
+})(DimmerReg || (DimmerReg = {}));
 var DistanceVariant;
 (function (DistanceVariant) {
     DistanceVariant[DistanceVariant["Ultrasonic"] = 1] = "Ultrasonic";

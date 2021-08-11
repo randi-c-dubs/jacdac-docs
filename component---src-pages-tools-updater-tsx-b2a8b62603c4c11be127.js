@@ -1715,15 +1715,15 @@ function FlashDeviceButton(props) {
 
   return missing ? null : flashing ? /*#__PURE__*/react.createElement(CircularProgressWithLabel/* default */.Z, {
     value: progress
-  }) : update ? /*#__PURE__*/react.createElement(Button/* default */.Z, {
+  }) : firmwareInfo || update ? /*#__PURE__*/react.createElement(react.Fragment, null, firmwareInfo && /*#__PURE__*/react.createElement(Alert_Alert/* default */.Z, {
+    severity: "success"
+  }, "Up to date!"), /*#__PURE__*/react.createElement(Button/* default */.Z, {
     "aria-label": "flash firmware to device",
     disabled: disabled,
     variant: "contained",
     color: "primary",
     onClick: handleFlashing
-  }, "Flash") : firmwareInfo ? /*#__PURE__*/react.createElement(Alert_Alert/* default */.Z, {
-    severity: "success"
-  }, "Up to date!") : /*#__PURE__*/react.createElement(Alert_Alert/* default */.Z, {
+  }, "Flash")) : /*#__PURE__*/react.createElement(Alert_Alert/* default */.Z, {
     severity: "info"
   }, "No firmware available");
 }
@@ -1778,6 +1778,10 @@ function UpdateDeviceList() {
     firmwareIdentifier: true
   }, [safeBoot]).filter(function (dev) {
     return safeBoot || !dev.hasService(constants/* SRV_BOOTLOADER */.PWm);
+  }).sort(function (l, r) {
+    var _l$firmwareInfo, _r$firmwareInfo;
+
+    return (((_l$firmwareInfo = l.firmwareInfo) === null || _l$firmwareInfo === void 0 ? void 0 : _l$firmwareInfo.firmwareIdentifier) || 0) - (((_r$firmwareInfo = r.firmwareInfo) === null || _r$firmwareInfo === void 0 ? void 0 : _r$firmwareInfo.firmwareIdentifier) || 0);
   });
   var isFlashing = (0,useChange/* default */.Z)(bus, function () {
     return devices.some(function (dev) {

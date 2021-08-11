@@ -1,0 +1,47 @@
+{
+  "@type": "Interface",
+  "@id": "dtmi:jacdac:services:x1fb02645;1",
+  "displayName": "Dimmer",
+  "description": {
+    "en": "A light or fan controller that dims the current on a line."
+  },
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "intensity",
+      "@id": "dtmi:jacdac:x1fb02645:rw:intensity;1",
+      "description": {
+        "en": "The intensity of the current. Set to ``0`` to turn off completely the current."
+      },
+      "schema": "float",
+      "writable": true
+    }
+  ],
+  "schemas": [
+    {
+      "@type": "Enum",
+      "@id": "dtmi:jacdac:x1fb02645:variant;1",
+      "valueSchema": "integer",
+      "enumValues": [
+        {
+          "name": "light",
+          "displayName": "Light",
+          "enumValue": 1
+        },
+        {
+          "name": "fan",
+          "displayName": "Fan",
+          "enumValue": 2
+        },
+        {
+          "name": "pump",
+          "displayName": "Pump",
+          "enumValue": 3
+        }
+      ]
+    }
+  ],
+  "@context": [
+    "dtmi:dtdl:context;2"
+  ]
+}
