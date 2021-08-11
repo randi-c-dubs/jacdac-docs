@@ -8552,44 +8552,45 @@ function registerDataSolver(block) {
               // transfer data to the next block
               nextServices = (0,WorkspaceContext/* resolveBlockServices */.Ys)((_block$nextConnection = block.nextConnection) === null || _block$nextConnection === void 0 ? void 0 : _block$nextConnection.targetBlock());
               _context.prev = 3;
+              services.setDataWarning(undefined); // eslint-disable-next-line @typescript-eslint/ban-types
 
               if (!(transformData === toolbox/* identityTransformData */.FW)) {
-                _context.next = 8;
+                _context.next = 9;
                 break;
               }
 
               newData = services.data;
-              _context.next = 11;
+              _context.next = 12;
               break;
 
-            case 8:
-              _context.next = 10;
+            case 9:
+              _context.next = 11;
               return transformData(block, services.data, nextServices === null || nextServices === void 0 ? void 0 : nextServices.data);
 
-            case 10:
+            case 11:
               newData = _context.sent;
 
-            case 11:
+            case 12:
               // propagate
               services.transformedData = newData; // check if pass through
 
               def = (0,toolbox/* resolveBlockDefinition */.Pq)(block.type);
               if (def !== null && def !== void 0 && def.passthroughData) newData = services.data;
               if (nextServices) nextServices.data = newData;
-              _context.next = 20;
+              _context.next = 21;
               break;
 
-            case 17:
-              _context.prev = 17;
+            case 18:
+              _context.prev = 18;
               _context.t0 = _context["catch"](3);
               console.debug(_context.t0);
 
-            case 20:
+            case 21:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[3, 17]]);
+      }, _callee, null, [[3, 18]]);
     }));
 
     return function applyTransform() {
@@ -9984,6 +9985,7 @@ var FileSystemContext = __webpack_require__(74195);
 
 
 
+
 var BlockContext = /*#__PURE__*/(0,react.createContext)({
   editorId: "",
   setEditorId: function setEditorId() {},
@@ -10283,7 +10285,7 @@ function BlockProvider(props) {
       return e.message;
     });
     workspace.getAllBlocks(false).forEach(function (b) {
-      return b.setWarningText(allErrors[b.id] || null);
+      return b.setWarningText(allErrors[b.id] || (0,WorkspaceContext/* resolveBlockWarnings */.$$)(b));
     });
   }, [workspace, warnings]); // register block creation
 
@@ -11146,9 +11148,11 @@ function BlockEditor(props) {
 /* harmony export */   "O7": function() { return /* binding */ resolveWorkspaceServices; },
 /* harmony export */   "LL": function() { return /* binding */ BlockServices; },
 /* harmony export */   "Ys": function() { return /* binding */ resolveBlockServices; },
+/* harmony export */   "Vm": function() { return /* binding */ setBlockDataWarning; },
+/* harmony export */   "$$": function() { return /* binding */ resolveBlockWarnings; },
 /* harmony export */   "W5": function() { return /* binding */ WorkspaceProvider; }
 /* harmony export */ });
-/* unused harmony export WorkspaceContext */
+/* unused harmony exports DATA_WARNING_KEY, setBlockWarning, WorkspaceContext */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5991);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(41788);
 /* harmony import */ var blockly__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74640);
@@ -11228,6 +11232,7 @@ function resolveWorkspaceServices(workspace) {
   var services = workspaceWithServices === null || workspaceWithServices === void 0 ? void 0 : workspaceWithServices.jacdacServices;
   return services;
 }
+var DATA_WARNING_KEY = "data";
 var BlockServices = /*#__PURE__*/function (_JDEventSource2) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(BlockServices, _JDEventSource2);
 
@@ -11246,9 +11251,26 @@ var BlockServices = /*#__PURE__*/function (_JDEventSource2) {
 
   var _proto = BlockServices.prototype;
 
+  _proto.setDataWarning = function setDataWarning(value) {
+    this.setWarning(DATA_WARNING_KEY, value);
+  };
+
+  _proto.setWarning = function setWarning(key, value) {
+    if (!value) {
+      if (this._warnings) {
+        delete this._warnings[key];
+        if (!Object.keys(this._warnings).length) this._warnings = undefined;
+      }
+    } else {
+      if (!this._warnings) this._warnings = {};
+      this._warnings[key] = value;
+    }
+  };
+
   _proto.clearData = function clearData() {
     this._data = undefined;
     this._transformedData = undefined;
+    this.setWarning(DATA_WARNING_KEY, undefined);
     this.emit(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_2__/* .CHANGE */ .Ver);
   };
 
@@ -11276,15 +11298,9 @@ var BlockServices = /*#__PURE__*/function (_JDEventSource2) {
       }
     }
   }, {
-    key: "chartProps",
+    key: "warnings",
     get: function get() {
-      return this._chartProps;
-    },
-    set: function set(value) {
-      if (this._chartProps !== value) {
-        this._chartProps = value;
-        this.emit(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_2__/* .CHANGE */ .Ver);
-      }
+      return this._warnings;
     }
   }]);
 
@@ -11294,6 +11310,23 @@ function resolveBlockServices(block) {
   var blockWithServices = block;
   var services = blockWithServices === null || blockWithServices === void 0 ? void 0 : blockWithServices.jacdacServices;
   return services;
+}
+function setBlockWarning(block, key, value) {
+  var services = resolveBlockServices(block);
+  services === null || services === void 0 ? void 0 : services.setWarning(key, value);
+}
+function setBlockDataWarning(block, value) {
+  setBlockWarning(block, DATA_WARNING_KEY, value);
+}
+function resolveBlockWarnings(block) {
+  var services = resolveBlockServices(block);
+
+  if (services) {
+    var warnings = services.warnings;
+    if (warnings) return Object.values(warnings).join("\n");
+  }
+
+  return null;
 }
 var WorkspaceContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)({
   workspace: undefined,
@@ -12554,11 +12587,6 @@ var DataColumnChooserField = /*#__PURE__*/function (_FieldDropdown) {
     var sourceBlock = this.getSourceBlock();
     var services = (0,_WorkspaceContext__WEBPACK_IMPORTED_MODULE_0__/* .resolveBlockServices */ .Ys)(this.parentData ? sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getSurroundParent() : sourceBlock);
     var data = services === null || services === void 0 ? void 0 : services.data;
-    console.log("source block", {
-      sourceBlock: sourceBlock,
-      services: services,
-      data: data
-    });
 
     var _tidyHeaders = (0,_tidy__WEBPACK_IMPORTED_MODULE_1__/* .tidyHeaders */ .P2)(data),
         headers = _tidyHeaders.headers,
@@ -20574,11 +20602,13 @@ SmoothingBlockField.KEY = "smoothing_block_field_key";
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96156);
 /* harmony import */ var _dsl_workers_data_proxy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21190);
+/* harmony import */ var _WorkspaceContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(89801);
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 /* eslint-disable @typescript-eslint/ban-types */
@@ -20609,9 +20639,20 @@ function tidyResolveHeader(data, name, type) {
 
   return headers.indexOf(name) > -1 ? name : undefined;
 }
-function tidyResolveFieldColumn(data, b, fieldName, type) {
+function tidyResolveFieldColumn(data, b, fieldName, options) {
   var name = b.getFieldValue(fieldName);
-  return tidyResolveHeader(data, name, type);
+
+  var _ref = options || {},
+      type = _ref.type,
+      required = _ref.required;
+
+  var column = tidyResolveHeader(data, name, type);
+
+  if (!column) {
+    if (required && !name) (0,_WorkspaceContext__WEBPACK_IMPORTED_MODULE_2__/* .setBlockDataWarning */ .Vm)(b, "missing columns");else if (name) (0,_WorkspaceContext__WEBPACK_IMPORTED_MODULE_2__/* .setBlockDataWarning */ .Vm)(b, name + " not found in dataset");
+  }
+
+  return column;
 }
 function tidyResolveFieldColumns(data, b, fieldName, type) {
   var _tidyHeaders2;

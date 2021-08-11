@@ -763,8 +763,12 @@ var dataDsl = {
       dataPreviewField: true,
       transformData: function transformData(b, data) {
         var newcolumn = b.getFieldValue("newcolumn");
-        var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", "number");
-        var rhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "rhs", "number");
+        var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", {
+          type: "number"
+        });
+        var rhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "rhs", {
+          type: "number"
+        });
         var logic = b.getFieldValue("logic");
         if (!newcolumn || !lhs || !rhs) return Promise.resolve(data);
         return (0,_workers_data_proxy__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)({
@@ -804,7 +808,9 @@ var dataDsl = {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       transformData: function transformData(b, data) {
         var newcolumn = b.getFieldValue("newcolumn");
-        var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", "number");
+        var lhs = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "lhs", {
+          type: "number"
+        });
         var rhs = b.getFieldValue("rhs");
         var logic = b.getFieldValue("logic");
         if (!newcolumn || !lhs) return Promise.resolve(data);
@@ -837,7 +843,9 @@ var dataDsl = {
       dataPreviewField: true,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       transformData: function transformData(b, data) {
-        var columns = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumns */ .QZ)(data, b, "column", "number");
+        var columns = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumns */ .QZ)(data, b, "column", {
+          type: "number"
+        });
         var calc = b.getFieldValue("calc");
         return (0,_workers_data_proxy__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)({
           type: "summarize",
@@ -1028,7 +1036,9 @@ var dataDsl = {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  column = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "column", "number");
+                  column = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "column", {
+                    type: "number"
+                  });
 
                   if (column) {
                     _context.next = 3;
@@ -1096,8 +1106,12 @@ var dataDsl = {
             while (1) {
               switch (_context2.prev = _context2.next) {
                 case 0:
-                  column1 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "x", "number");
-                  column2 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "y", "number");
+                  column1 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "x", {
+                    type: "number"
+                  });
+                  column2 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "y", {
+                    type: "number"
+                  });
 
                   if (!(!column1 || !column2)) {
                     _context2.next = 4;
@@ -1165,8 +1179,12 @@ var dataDsl = {
             while (1) {
               switch (_context3.prev = _context3.next) {
                 case 0:
-                  column1 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "x", "number");
-                  column2 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "y", "number");
+                  column1 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "x", {
+                    type: "number"
+                  });
+                  column2 = (0,_fields_tidy__WEBPACK_IMPORTED_MODULE_10__/* .tidyResolveFieldColumn */ .Fy)(data, b, "y", {
+                    type: "number"
+                  });
 
                   if (!(!column1 || !column2)) {
                     _context3.next = 4;
