@@ -44386,6 +44386,9 @@ function useScrollRestoration(identifier) {
 /* harmony export */   "P99": function() { return /* binding */ ControlAnnounceFlags; },
 /* harmony export */   "VSW": function() { return /* binding */ ControlCmd; },
 /* harmony export */   "toU": function() { return /* binding */ ControlReg; },
+/* harmony export */   "YzE": function() { return /* binding */ SRV_DIMMER; },
+/* harmony export */   "V1A": function() { return /* binding */ DimmerVariant; },
+/* harmony export */   "pwy": function() { return /* binding */ DimmerReg; },
 /* harmony export */   "Sfn": function() { return /* binding */ SRV_DISTANCE; },
 /* harmony export */   "NA1": function() { return /* binding */ DistanceVariant; },
 /* harmony export */   "$GJ": function() { return /* binding */ SRV_DMX; },
@@ -44512,7 +44515,7 @@ function useScrollRestoration(identifier) {
 /* harmony export */   "qvJ": function() { return /* binding */ SRV_WIND_SPEED; },
 /* harmony export */   "EPs": function() { return /* binding */ WindSpeedReg; }
 /* harmony export */ });
-/* unused harmony exports ANNOUNCE_INTERVAL, AccelerometerEvent, SRV_ARCADE_GAMEPAD, ArcadeGamepadButton, ArcadeGamepadReg, ArcadeGamepadEvent, SRV_ARCADE_SOUND, ArcadeSoundCmd, ArcadeSoundReg, SRV_BARCODE_READER, BarcodeReaderFormat, BarcodeReaderReg, BarcodeReaderEvent, BarometerReg, CapacitiveButtonCmd, CompassCmd, SRV_DIMMER, DimmerVariant, DimmerReg, DistanceReg, DmxReg, ECO2Reg, HeartRateReg, SRV_H_IDADAPTER, HIDAdapterReg, HIDAdapterCmd, HIDAdapterEvent, HumidityReg, IlluminanceReg, SRV_INDEXED_SCREEN, IndexedScreenCmd, IndexedScreenReg, JoystickEvent, LightLevelReg, SRV_MAGNETOMETER, MagnetometerReg, MagnetometerCmd, MatrixKeypadVariant, MatrixKeypadEvent, SRV_MICROPHONE, MicrophoneCmd, MicrophoneReg, SRV_MIDI_OUTPUT, MidiOutputReg, MidiOutputCmd, ModelRunnerModelFormat, MotionVariant, MotionEvent, SRV_MULTITOUCH, MultitouchReg, MultitouchEvent, PotentiometerReg, PowerCmd, PowerEvent, SRV_PRESSURE_BUTTON, PressureButtonReg, PulseOximeterReg, ReflectedLightEvent, RelayEvent, RoleManagerEvent, SRV_ROVER, RoverReg, SevenSegmentDisplayCmd, SoilMoistureVariant, SolenoidVariant, SoundLevelEvent, SRV_TCP, TcpTcpError, TcpCmd, TcpPipeCmd, ThermocoupleReg, ThermometerReg, TvocReg, UvIndexVariant, UvIndexReg, SRV_VERIFIED_TELEMETRY, VerifiedTelemetryStatus, VerifiedTelemetryFingerprintType, VerifiedTelemetryReg, VerifiedTelemetryCmd, VerifiedTelemetryEvent, VibrationMotorReg, VibrationMotorCmd, WaterLevelVariant, WeightScaleReg, WeightScaleCmd, SRV_WIFI, WifiAPFlags, WifiCmd, WifiReg, WifiEvent */
+/* unused harmony exports ANNOUNCE_INTERVAL, AccelerometerEvent, SRV_ARCADE_GAMEPAD, ArcadeGamepadButton, ArcadeGamepadReg, ArcadeGamepadEvent, SRV_ARCADE_SOUND, ArcadeSoundCmd, ArcadeSoundReg, SRV_BARCODE_READER, BarcodeReaderFormat, BarcodeReaderReg, BarcodeReaderEvent, BarometerReg, CapacitiveButtonCmd, CompassCmd, DistanceReg, DmxReg, ECO2Reg, HeartRateReg, SRV_H_IDADAPTER, HIDAdapterReg, HIDAdapterCmd, HIDAdapterEvent, HumidityReg, IlluminanceReg, SRV_INDEXED_SCREEN, IndexedScreenCmd, IndexedScreenReg, JoystickEvent, LightLevelReg, SRV_MAGNETOMETER, MagnetometerReg, MagnetometerCmd, MatrixKeypadVariant, MatrixKeypadEvent, SRV_MICROPHONE, MicrophoneCmd, MicrophoneReg, SRV_MIDI_OUTPUT, MidiOutputReg, MidiOutputCmd, ModelRunnerModelFormat, MotionVariant, MotionEvent, SRV_MULTITOUCH, MultitouchReg, MultitouchEvent, PotentiometerReg, PowerCmd, PowerEvent, SRV_PRESSURE_BUTTON, PressureButtonReg, PulseOximeterReg, ReflectedLightEvent, RelayEvent, RoleManagerEvent, SRV_ROVER, RoverReg, SevenSegmentDisplayCmd, SoilMoistureVariant, SolenoidVariant, SoundLevelEvent, SRV_TCP, TcpTcpError, TcpCmd, TcpPipeCmd, ThermocoupleReg, ThermometerReg, TvocReg, UvIndexVariant, UvIndexReg, SRV_VERIFIED_TELEMETRY, VerifiedTelemetryStatus, VerifiedTelemetryFingerprintType, VerifiedTelemetryReg, VerifiedTelemetryCmd, VerifiedTelemetryEvent, VibrationMotorReg, VibrationMotorCmd, WaterLevelVariant, WeightScaleReg, WeightScaleCmd, SRV_WIFI, WifiAPFlags, WifiCmd, WifiReg, WifiEvent */
 // Service: Common registers and commands
 var ANNOUNCE_INTERVAL = 0x1f4;
 var SystemReadingThreshold;
@@ -49247,6 +49250,8 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
 /* harmony export */   "P99": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.P99; },
 /* harmony export */   "VSW": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.VSW; },
 /* harmony export */   "toU": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.toU; },
+/* harmony export */   "pwy": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.pwy; },
+/* harmony export */   "V1A": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.V1A; },
 /* harmony export */   "NA1": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.NA1; },
 /* harmony export */   "tXW": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.tXW; },
 /* harmony export */   "Jlc": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.Jlc; },
@@ -49308,6 +49313,7 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
 /* harmony export */   "Coy": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.Coy; },
 /* harmony export */   "JTB": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.JTB; },
 /* harmony export */   "gm9": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.gm9; },
+/* harmony export */   "YzE": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.YzE; },
 /* harmony export */   "Sfn": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.Sfn; },
 /* harmony export */   "$GJ": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.$GJ; },
 /* harmony export */   "bpX": function() { return /* reexport safe */ _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__.bpX; },
@@ -57750,7 +57756,7 @@ var SensorServer = /*#__PURE__*/function (_JDServiceServer) {
 
 /***/ }),
 
-/***/ 48363:
+/***/ 20079:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59839,12 +59845,43 @@ var AzureIoTHubServer = /*#__PURE__*/function (_JDServiceServer) {
 }(serviceserver/* default */.Z);
 
 
+;// CONCATENATED MODULE: ./jacdac-ts/src/servers/dimmerserver.ts
+
+
+
+
+var DimmerServer = /*#__PURE__*/function (_JDServiceServer) {
+  (0,inheritsLoose/* default */.Z)(DimmerServer, _JDServiceServer);
+
+  function DimmerServer(instanceName, options) {
+    var _this;
+
+    if (options === void 0) {
+      options = {};
+    }
+
+    _this = _JDServiceServer.call(this, constants/* SRV_DIMMER */.YzE, {
+      instanceName: instanceName
+    }) || this;
+    var _options = options,
+        _options$variant = _options.variant,
+        variant = _options$variant === void 0 ? constants/* DimmerVariant.Light */.V1A.Light : _options$variant;
+    _this.intensity = _this.addRegister(constants/* DimmerReg.Intensity */.pwy.Intensity, [0]);
+    _this.variant = _this.addRegister(constants/* DimmerReg.Variant */.pwy.Variant, [variant]);
+    return _this;
+  }
+
+  return DimmerServer;
+}(serviceserver/* default */.Z);
+
+
 ;// CONCATENATED MODULE: ./jacdac-ts/src/servers/servers.ts
 
 
 function servers_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function servers_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { servers_ownKeys(Object(source), true).forEach(function (key) { (0,defineProperty/* default */.Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { servers_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -60141,6 +60178,22 @@ var _providerDefinitions = [{
   serviceClasses: [constants/* SRV_COMPASS */.JTB],
   services: function services() {
     return [new CompassServer()];
+  }
+}, {
+  name: "dimmer (fan)",
+  serviceClasses: [constants/* SRV_DIMMER */.YzE],
+  services: function services() {
+    return [new DimmerServer("fan", {
+      variant: constants/* DimmerVariant.Fan */.V1A.Fan
+    })];
+  }
+}, {
+  name: "dimmer (light)",
+  serviceClasses: [constants/* SRV_DIMMER */.YzE],
+  services: function services() {
+    return [new DimmerServer("light", {
+      variant: constants/* DimmerVariant.Light */.V1A.Light
+    })];
   }
 }, {
   name: "distance (sonar)",
@@ -66584,8 +66637,8 @@ function AnalogButton(props) {
 }
 // EXTERNAL MODULE: ./src/components/hooks/useThrottledValue.ts
 var useThrottledValue = __webpack_require__(72901);
-// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 24 modules
-var servers = __webpack_require__(48363);
+// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 25 modules
+var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Grid/Grid.js
 var Grid = __webpack_require__(80838);
 // EXTERNAL MODULE: ./src/components/widgets/ServoWidget.tsx
@@ -67086,14 +67139,16 @@ var serviceViews = (_serviceViews = {}, _serviceViews[constants/* SRV_ROLE_MANAG
 var collapsedRegisters = [constants/* SystemReg.Reading */.ZJq.Reading, constants/* SystemReg.Value */.ZJq.Value, constants/* SystemReg.Intensity */.ZJq.Intensity];
 
 function ValueWidget(props) {
+  var _intensityRegister$sp, _intensityRegister$sp2;
+
   var valueRegister = props.valueRegister,
       intensityRegister = props.intensityRegister,
       others = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded);
 
   var visible = others.visible;
-  var intensity = (0,useRegisterValue/* useRegisterBoolValue */.I8)(intensityRegister, others);
-  var hasIntensity = intensity !== undefined;
-  var off = hasIntensity ? !intensity : undefined;
+  var hasIntensityBool = (intensityRegister === null || intensityRegister === void 0 ? void 0 : (_intensityRegister$sp = intensityRegister.specification) === null || _intensityRegister$sp === void 0 ? void 0 : (_intensityRegister$sp2 = _intensityRegister$sp.fields[0]) === null || _intensityRegister$sp2 === void 0 ? void 0 : _intensityRegister$sp2.type) === "bool";
+  var intensity = (0,useRegisterValue/* useRegisterBoolValue */.I8)(hasIntensityBool && intensityRegister, others);
+  var off = hasIntensityBool ? !intensity : undefined;
 
   var toggleOff = /*#__PURE__*/function () {
     var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
@@ -67124,21 +67179,24 @@ function ValueWidget(props) {
     showRegisterName: false,
     hideMissingValues: true,
     off: off,
-    toggleOff: hasIntensity ? toggleOff : undefined,
+    toggleOff: hasIntensityBool ? toggleOff : undefined,
     visible: visible
   });
 }
 
 function IntensityWidget(props) {
+  var _intensityRegister$sp3, _intensityRegister$sp4;
+
   var intensityRegister = props.intensityRegister,
       others = (0,objectWithoutPropertiesLoose/* default */.Z)(props, _excluded2);
 
   var visible = others.visible;
+  var hasIntensityBool = (intensityRegister === null || intensityRegister === void 0 ? void 0 : (_intensityRegister$sp3 = intensityRegister.specification) === null || _intensityRegister$sp3 === void 0 ? void 0 : (_intensityRegister$sp4 = _intensityRegister$sp3.fields[0]) === null || _intensityRegister$sp4 === void 0 ? void 0 : _intensityRegister$sp4.type) === "bool";
 
   var _useRegisterUnpackedV = (0,useRegisterValue/* useRegisterUnpackedValue */.Pf)(intensityRegister, others),
       intensity = _useRegisterUnpackedV[0];
 
-  var off = intensity !== undefined && !intensity;
+  var off = hasIntensityBool ? !intensity : undefined;
   return /*#__PURE__*/react.createElement(RegisterInput/* default */.Z, {
     register: intensityRegister,
     variant: "widget",
@@ -70372,7 +70430,7 @@ function useServiceProvider(device) {
 /* harmony export */   "Z": function() { return /* binding */ useServiceProviderFromServiceClass; }
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _jacdac_ts_src_servers_servers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48363);
+/* harmony import */ var _jacdac_ts_src_servers_servers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20079);
 /* harmony import */ var _jacdac_Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20392);
 
 
@@ -70867,7 +70925,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "4433c875488c84357c4e11fbbd2c7de1b15db44c";
+  var sha = "fdd8e69abaeab5c9017d78e074c75094b52e87e3";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -73271,7 +73329,7 @@ function createToneContext() {
   if (_globalCtx) return _globalCtx;
 
   try {
-    console.log("create tone context");
+    console.debug("create tone context");
     var ctx = new (window.AudioContext || // eslint-disable-next-line @typescript-eslint/no-explicit-any
     window.webkitAudioContext)(); // play silence sound within onlick to unlock it
 
@@ -73354,7 +73412,7 @@ function createToneContext() {
       };
     }();
 
-    console.log("tone context created");
+    console.debug("tone context created");
     return _globalCtx = {
       setVolume: setVolume,
       playTone: playTone
@@ -76246,8 +76304,8 @@ var BusStatsMonitor = /*#__PURE__*/function (_JDEventSource) {
 
   return BusStatsMonitor;
 }(eventsource/* JDEventSource */.aE);
-// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 24 modules
-var servers = __webpack_require__(48363);
+// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 25 modules
+var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceclient.ts
 var serviceclient = __webpack_require__(56763);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/rolemanagerclient.ts
@@ -81838,7 +81896,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.1"};
+var package_namespaceObject = {"i8":"1.14.2"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 

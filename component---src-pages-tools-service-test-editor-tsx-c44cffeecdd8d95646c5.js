@@ -1422,8 +1422,8 @@ var Info = __webpack_require__(12531);
 var Alert = __webpack_require__(95453);
 // EXTERNAL MODULE: ./src/components/ui/IconButtonWithTooltip.tsx + 1 modules
 var IconButtonWithTooltip = __webpack_require__(79885);
-// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 24 modules
-var servers = __webpack_require__(48363);
+// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 25 modules
+var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/flags.ts
 var flags = __webpack_require__(21258);
 // EXTERNAL MODULE: ./jacdac-ts/src/test/testspec.ts + 1 modules

@@ -4079,8 +4079,8 @@ var BlockContext = __webpack_require__(82393);
 var Context = __webpack_require__(20392);
 // EXTERNAL MODULE: ./src/components/devices/DeviceAvatar.tsx + 3 modules
 var DeviceAvatar = __webpack_require__(4726);
-// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 24 modules
-var servers = __webpack_require__(48363);
+// EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 25 modules
+var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./src/components/hooks/useServiceServer.ts
 var useServiceServer = __webpack_require__(49013);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Cancel.js
