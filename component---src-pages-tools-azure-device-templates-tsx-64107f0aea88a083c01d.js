@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[2632,274],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[1229],{
 
 /***/ 99809:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
@@ -391,7 +391,7 @@ var AccordionSummary = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRe
 
 /***/ }),
 
-/***/ 52377:
+/***/ 41212:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 var __webpack_unused_export__;
@@ -411,35 +411,8 @@ var React = _interopRequireWildcard(__webpack_require__(67294));
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(58786));
 
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
-  d: "M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
-}), 'GetApp');
-
-exports.Z = _default;
-
-/***/ }),
-
-/***/ 58504:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-var __webpack_unused_export__;
-
-
-var _interopRequireDefault = __webpack_require__(95318);
-
-var _interopRequireWildcard = __webpack_require__(20862);
-
-__webpack_unused_export__ = ({
-  value: true
-});
-exports.Z = void 0;
-
-var React = _interopRequireWildcard(__webpack_require__(67294));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(58786));
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
-  d: "M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-}), 'Launch');
+  d: "M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+}), 'CheckCircleOutline');
 
 exports.Z = _default;
 
@@ -496,11 +469,13 @@ function DTDLUnits() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "lI": function() { return /* binding */ toDTMI; },
 /* harmony export */   "eT": function() { return /* binding */ serviceSpecificationToDTDL; },
-/* harmony export */   "xA": function() { return /* binding */ serviceSpecificationToComponent; },
+/* harmony export */   "Jb": function() { return /* binding */ serviceSpecificationsWithDTDL; },
+/* harmony export */   "tH": function() { return /* binding */ serviceSpecificationDTMI; },
 /* harmony export */   "__": function() { return /* binding */ deviceSpecificationToDTDL; }
 /* harmony export */ });
-/* unused harmony exports serviceSpecificationDTMI, deviceSpecificationDTMI, DTMIToRoute */
+/* unused harmony exports serviceSpecificationToComponent, deviceSpecificationDTMI, DTMIToRoute */
 /* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85061);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _jdom_spec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13173);
@@ -812,6 +787,15 @@ function serviceSpecificationToDTDL(srv) {
   dtdl["@context"] = _dtdl__WEBPACK_IMPORTED_MODULE_4__/* .DTDL_CONTEXT */ .LM;
   return dtdl;
 }
+function serviceSpecificationsWithDTDL() {
+  var ignoredServices = [_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_CONTROL */ .gm9, _jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_LOGGER */ .w9j, _jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_ROLE_MANAGER */ .igi, _jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_PROTO_TEST */ .$Bn, _jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_BOOTLOADER */ .PWm];
+  var specs = (0,_jdom_spec__WEBPACK_IMPORTED_MODULE_1__/* .serviceSpecifications */ .Le)().filter(function (spec) {
+    return ignoredServices.indexOf(spec.classIdentifier) < 0;
+  }).filter(function (spec) {
+    return !/^_/.test(spec.shortId);
+  });
+  return specs;
+}
 function serviceSpecificationToComponent(srv, name) {
   var dtdl = {
     "@type": "Component",
@@ -872,593 +856,761 @@ function deviceSpecificationToDTDL(dev, options) {
 
 /***/ }),
 
-/***/ 50274:
+/***/ 42495:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ CodeBlock; }
+  "Z": function() { return /* binding */ ApiKeyAccordion; }
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-var defineProperty = __webpack_require__(96156);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(92137);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
+var regenerator = __webpack_require__(87757);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./node_modules/prism-react-renderer/dist/index.js + 2 modules
-var dist = __webpack_require__(18328);
-// EXTERNAL MODULE: ./node_modules/prism-react-renderer/themes/github/index.js
-var github = __webpack_require__(13019);
-// EXTERNAL MODULE: ./node_modules/prism-react-renderer/themes/vsDark/index.js
-var vsDark = __webpack_require__(41194);
-// EXTERNAL MODULE: ./src/components/ui/DarkModeContext.tsx
-var DarkModeContext = __webpack_require__(91350);
+// EXTERNAL MODULE: ./src/components/useEffectAsync.ts
+var useEffectAsync = __webpack_require__(7751);
+// EXTERNAL MODULE: ./src/components/ui/Alert.tsx
+var Alert = __webpack_require__(95453);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(22122);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(81253);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.m.js
+var clsx_m = __webpack_require__(85505);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/withStyles.js
+var withStyles = __webpack_require__(34621);
+;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/AccordionActions/AccordionActions.js
+
+
+
+
+
+var styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: 8,
+    justifyContent: 'flex-end'
+  },
+
+  /* Styles applied to the root element if `disableSpacing={false}`. */
+  spacing: {
+    '& > :not(:first-child)': {
+      marginLeft: 8
+    }
+  }
+};
+var AccordionActions = /*#__PURE__*/react.forwardRef(function AccordionActions(props, ref) {
+  var classes = props.classes,
+      className = props.className,
+      _props$disableSpacing = props.disableSpacing,
+      disableSpacing = _props$disableSpacing === void 0 ? false : _props$disableSpacing,
+      other = (0,objectWithoutProperties/* default */.Z)(props, ["classes", "className", "disableSpacing"]);
+
+  return /*#__PURE__*/react.createElement("div", (0,esm_extends/* default */.Z)({
+    className: (0,clsx_m/* default */.Z)(classes.root, className, !disableSpacing && classes.spacing),
+    ref: ref
+  }, other));
+});
+ false ? 0 : void 0;
+/* harmony default export */ var AccordionActions_AccordionActions = ((0,withStyles/* default */.Z)(styles, {
+  name: 'MuiAccordionActions'
+})(AccordionActions));
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Accordion/Accordion.js
+var Accordion = __webpack_require__(31296);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/AccordionSummary/AccordionSummary.js
+var AccordionSummary = __webpack_require__(95371);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Typography/Typography.js
+var Typography = __webpack_require__(80453);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Box/Box.js + 13 modules
+var Box = __webpack_require__(33287);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/AccordionDetails/AccordionDetails.js
+var AccordionDetails = __webpack_require__(37171);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/TextField/TextField.js
+var TextField = __webpack_require__(1059);
 // EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
 var gatsby_theme_material_ui = __webpack_require__(36176);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/GetApp.js
-var GetApp = __webpack_require__(52377);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/Launch.js
-var Launch = __webpack_require__(58504);
-// EXTERNAL MODULE: ./src/components/ui/Tooltip.tsx
-var Tooltip = __webpack_require__(60102);
-// EXTERNAL MODULE: ./src/components/ui/PaperBox.tsx
-var PaperBox = __webpack_require__(79739);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Tabs/Tabs.js + 7 modules
-var Tabs = __webpack_require__(44942);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Tab/Tab.js
-var Tab = __webpack_require__(342);
-// EXTERNAL MODULE: ./src/components/ui/TabPanel.tsx
-var TabPanel = __webpack_require__(3263);
-// EXTERNAL MODULE: ./src/components/makecode/MakeCodeSnippetContext.tsx
-var makecode_MakeCodeSnippetContext = __webpack_require__(54888);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
-var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var makecode = __webpack_require__(93127);
-;// CONCATENATED MODULE: ./src/components/hooks/useWindowEvent.ts
-
-function useWindowEvent_useWindowEvent(type, listener, passive, deps) {
-  if (passive === void 0) {
-    passive = false;
-  }
-
-  useEffect(function () {
-    if (typeof window === "undefined") return undefined; // SSR
-    // initiate the event handler
-
-    window.addEventListener(type, listener, passive); // this will clean up the event every time the component is re-rendered
-
-    return function () {
-      window.removeEventListener(type, listener);
-    };
-  }, [type, listener, passive].concat(deps || []));
-}
-;// CONCATENATED MODULE: ./src/components/makecode/useMakeCodeRenderer.ts
+// EXTERNAL MODULE: ./node_modules/@material-ui/icons/ExpandMore.js
+var ExpandMore = __webpack_require__(47739);
+// EXTERNAL MODULE: ./node_modules/@material-ui/icons/CheckCircleOutline.js
+var CheckCircleOutline = __webpack_require__(41212);
+// EXTERNAL MODULE: ./node_modules/react-use-id-hook/dist/react-use-id-hook.esm.js
+var react_use_id_hook_esm = __webpack_require__(19640);
+// EXTERNAL MODULE: ./src/components/hooks/useSecret.ts + 1 modules
+var useSecret = __webpack_require__(21984);
+// EXTERNAL MODULE: ./src/components/AppContext.tsx
+var AppContext = __webpack_require__(84377);
+;// CONCATENATED MODULE: ./src/components/ApiKeyAccordion.tsx
 
 
 
 
 
-function parseMakeCodeSnippet(source) {
-  var ghost;
-  var code;
-  var meta = {
-    dependencies: []
-  };
 
-  if (/^---\n/.test(source)) {
-    var _front;
+ // tslint:disable-next-line: match-default-export-name no-submodule-imports
 
-    var front;
-    var parts = source.replace(/^---\n/, '').split(/---\n/gm);
-
-    switch (parts.length) {
-      case 1:
-        front = ghost = undefined;
-        code = source;
-        break;
-
-      case 2:
-        front = parts[0];
-        code = parts[1];
-        break;
-
-      default:
-        front = parts[0];
-        ghost = parts[1];
-        code = parts[2];
-        break;
-    } // parse front matter
+ // tslint:disable-next-line: match-default-export-name no-submodule-imports
 
 
-    (_front = front) === null || _front === void 0 ? void 0 : _front.replace(/(.+):\s*(.+)\s*\n/g, function (m, name, value) {
-      switch (name) {
-        case "dep":
-          meta.dependencies.push(value);
-          break;
-
-        case "snippet":
-          meta.snippet = !!value;
-          break;
-
-        default:
-          meta[name] = value;
-      }
-
-      return "";
-    });
-  } else {
-    code = source;
-  } // sniff services
 
 
-  var mkcds = (0,makecode/* makeCodeServices */.qs)();
-  mkcds.filter(function (info) {
-    var src = (ghost || "") + "\n" + (code || "");
-    return src.indexOf(info.client.qName) > -1 || info.client.default && src.indexOf(info.client.default) > -1;
-  }).map(function (info) {
-    return info.client.name.replace(/^pxt-/, '') + "=github:" + info.client.repo;
-  }).forEach(function (dep) {
-    return meta.dependencies.push(dep);
-  }); // add jacdac by default
 
-  if (!meta.dependencies.length) meta.dependencies.push("jacdac=github:microsoft/pxt-jacdac"); // ensure unique deps
+function ApiKeyAccordion(props) {
+  var apiName = props.apiName,
+      validateKey = props.validateKey,
+      title = props.title,
+      children = props.children,
+      defaultExpanded = props.defaultExpanded;
 
-  meta.dependencies = (0,utils/* unique */.Tw)(meta.dependencies);
-  return {
-    code: code,
-    ghost: ghost,
-    meta: meta
-  };
-}
-function useMakeCodeRenderer() {
-  var _useContext = useContext(MakeCodeSnippetContext),
-      target = _useContext.target,
-      rendererUrl = _useContext.rendererUrl;
+  var _useSecret = (0,useSecret/* useSecret */.$)(apiName),
+      apiKey = _useSecret.value,
+      setApiKey = _useSecret.setValue;
 
-  var lang = "";
-  var iframeId = "makecoderenderer" + target;
-  var pendingRequests = useMemo(function () {
-    return {};
-  }, [target, lang]);
+  var apiKeyId = (0,react_use_id_hook_esm/* useId */.Me)();
 
-  var sendRequest = function sendRequest(req) {
-    var iframe = typeof document !== "undefined" && document.getElementById(iframeId);
-    if (iframe !== null && iframe !== void 0 && iframe.dataset.ready) iframe === null || iframe === void 0 ? void 0 : iframe.contentWindow.postMessage(req, rendererUrl);
-  };
+  var _useState = (0,react.useState)(""),
+      key = _useState[0],
+      setKey = _useState[1];
 
-  var render = function render(source) {
-    var code = source.code,
-        ghost = source.ghost,
-        meta = source.meta;
-    var dependencies = meta.dependencies,
-        snippet = meta.snippet; // spin up iframe on demans
+  var _useState2 = (0,react.useState)(!apiKey || defaultExpanded),
+      expanded = _useState2[0],
+      setExpanded = _useState2[1];
 
-    if (typeof document !== "undefined" && !document.getElementById(iframeId)) {
-      console.log("mkcd: loading iframe");
-      var f = document.createElement("iframe");
-      f.id = iframeId;
-      f.style.position = "absolute";
-      f.style.left = "0";
-      f.style.bottom = "0";
-      f.style.width = "1px";
-      f.style.height = "1px";
-      f.src = rendererUrl + "?render=1" + (lang ? "&lang=" + lang : '');
-      document.body.appendChild(f);
-    }
+  var _useState3 = (0,react.useState)(false),
+      validated = _useState3[0],
+      setValidated = _useState3[1];
 
-    var req = {
-      type: "renderblocks",
-      id: "r" + Math.random(),
-      code: code,
-      ghost: ghost,
-      options: {
-        dependencies: dependencies,
-        snippetMode: snippet
-      }
-    };
-    return new Promise(function (resolve, reject) {
-      pendingRequests[req.id] = {
-        req: req,
-        resolve: resolve,
-        reject: reject
-      };
-      sendRequest(req);
-    });
-  }; // listen for messages
+  var _useContext = (0,react.useContext)(AppContext/* default */.ZP),
+      enqueueSnackbar = _useContext.enqueueSnackbar;
 
+  (0,useEffectAsync/* default */.Z)( /*#__PURE__*/function () {
+    var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee(mounted) {
+      var _ref2, status;
 
-  var handleMessage = function handleMessage(ev) {
-    var msg = ev.data;
-    if (msg.source != "makecode") return;
+      return regenerator_default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (apiKey) {
+                _context.next = 4;
+                break;
+              }
 
-    switch (msg.type) {
-      case "renderready":
-        {
-          console.log("mkcd: renderer ready, " + Object.keys(pendingRequests).length + " pending");
-          var iframe = typeof document !== "undefined" && document.getElementById(iframeId);
+              setValidated(false);
+              _context.next = 16;
+              break;
 
-          if (iframe) {
-            console.log("flushing messages");
-            iframe.dataset.ready = "1";
-            Object.keys(pendingRequests).forEach(function (k) {
-              return sendRequest(pendingRequests[k].req);
-            });
+            case 4:
+              if (!validateKey) {
+                _context.next = 10;
+                break;
+              }
+
+              _context.next = 7;
+              return validateKey(apiKey);
+
+            case 7:
+              _context.t0 = _context.sent;
+              _context.next = 11;
+              break;
+
+            case 10:
+              _context.t0 = {
+                status: 200
+              };
+
+            case 11:
+              _ref2 = _context.t0;
+              status = _ref2.status;
+
+              if (mounted()) {
+                _context.next = 15;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 15:
+              if (status === 200) {
+                setValidated(true);
+                setExpanded(false);
+              } else {
+                setValidated(false);
+                if (status === 403) setApiKey(undefined);
+              }
+
+            case 16:
+            case "end":
+              return _context.stop();
           }
-
-          break;
         }
-
-      case "renderblocks":
-        {
-          var id = msg.id; // this is the id you sent
-
-          var r = pendingRequests[id];
-          if (!r) return;
-          delete pendingRequests[id];
-          r.resolve(msg);
-          break;
-        }
-    }
-  };
-
-  useWindowEvent("message", handleMessage, false, []);
-  return {
-    render: render
-  };
-}
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/makeStyles.js
-var makeStyles = __webpack_require__(10920);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/createStyles.js
-var createStyles = __webpack_require__(70274);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
-var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./src/jacdac/Context.tsx
-var Context = __webpack_require__(20392);
-;// CONCATENATED MODULE: ./src/components/makecode/MakeCodeSimulator.tsx
-
-
-
-
-
-
-var useStyles = (0,makeStyles/* default */.Z)(function () {
-  return (0,createStyles/* default */.Z)({
-    root: {
-      width: "100%"
-    },
-    root2: {
-      position: "relative",
-      paddingTop: "86.75%"
-    },
-    iframe: {
-      position: "absolute",
-      left: 0,
-      top: 0,
-      border: "none",
-      width: "100%",
-      height: "100%"
-    }
-  });
-});
-function MakeCodeSimulator(props) {
-  var _this = this;
-
-  var _useContext = (0,react.useContext)(makecode_MakeCodeSnippetContext/* default */.Z),
-      simUrl = _useContext.simUrl;
-
-  var snippet = props.snippet;
-  var code = snippet.code,
-      ghost = snippet.ghost,
-      meta = snippet.meta;
-  var dependencies = meta.dependencies;
-
-  var _useContext2 = (0,react.useContext)(Context/* default */.Z),
-      bus = _useContext2.bus;
-
-  var frameRef = (0,react.useRef)();
-  var classes = useStyles();
-  var src = (ghost || "") + "\n" + (code || "");
-  var url = simUrl + "#single=1&fullscren=1&nofooter=1&deps=" + encodeURIComponent(dependencies.join(",")) + "&code=" + encodeURIComponent(src);
-  var origin = new URL(url).origin;
-  (0,react.useEffect)(function () {
-    return bus.subscribe([constants/* PACKET_SEND */.RaS, constants/* PACKET_PROCESS */.wY8], function (pkt) {
-      var _frameRef$current, _frameRef$current$con;
-
-      _this.packetSent++;
-      var msg = {
-        type: "messagepacket",
-        channel: "jacdac",
-        broadcast: true,
-        data: pkt.toBuffer(),
-        sender: pkt.sender
-      };
-      (_frameRef$current = frameRef.current) === null || _frameRef$current === void 0 ? void 0 : (_frameRef$current$con = _frameRef$current.contentWindow) === null || _frameRef$current$con === void 0 ? void 0 : _frameRef$current$con.postMessage(msg, origin);
-    });
-  });
-  return /*#__PURE__*/react.createElement(PaperBox/* default */.Z, null, /*#__PURE__*/react.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react.createElement("div", {
-    className: classes.root2
-  }, /*#__PURE__*/react.createElement("iframe", {
-    ref: frameRef,
-    className: classes.iframe,
-    src: url,
-    "aria-label": "MakeCode rendering iframe to generate blocks images."
-  }))));
-}
-// EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
-var gatsby_browser_entry = __webpack_require__(35313);
-;// CONCATENATED MODULE: ./src/components/makecode/MakeCodeSnippet.tsx
-
-
-
-
-
-
-
-
-
-function MakeCodeSnippet(props) {
-  var renderedSource = props.renderedSource;
-
-  var _ref = JSON.parse(renderedSource),
-      source = _ref.source,
-      rendered = _ref.rendered;
-
-  var _ref2 = rendered || {},
-      height = _ref2.height,
-      width = _ref2.width,
-      url = _ref2.url;
-
-  var tabs = ["blocks", "typescript", "sim"];
-
-  var _useContext = (0,react.useContext)(makecode_MakeCodeSnippetContext/* default */.Z),
-      editor = _useContext.editor,
-      setEditor = _useContext.setEditor;
-
-  var _useState = (0,react.useState)(tabs.indexOf(editor) || 0),
-      tab = _useState[0],
-      setTab = _useState[1];
-
-  var handleTabChange = function handleTabChange(event, newValue) {
-    if (newValue < tabs.length - 1) setEditor(tabs[newValue]);
-    setTab(newValue);
-  };
-
-  var snippet = (0,react.useMemo)(function () {
-    return parseMakeCodeSnippet(source);
-  }, [source]);
-  var code = snippet.code;
-  return /*#__PURE__*/react.createElement(PaperBox/* default */.Z, null, /*#__PURE__*/react.createElement(Tabs/* default */.Z, {
-    value: tab,
-    onChange: handleTabChange,
-    "aria-label": "Select MakeCode editor"
-  }, /*#__PURE__*/react.createElement(Tab/* default */.Z, {
-    label: "Blocks"
-  }), /*#__PURE__*/react.createElement(Tab/* default */.Z, {
-    label: "JavaScript"
-  }), /*#__PURE__*/react.createElement(Tab/* default */.Z, {
-    label: "Simulator"
-  })), /*#__PURE__*/react.createElement(TabPanel/* default */.Z, {
-    value: tab,
-    index: 0
-  }, /*#__PURE__*/react.createElement("img", {
-    src: (0,gatsby_browser_entry.withPrefix)(url),
-    alt: source,
-    loading: "lazy"
-  })), /*#__PURE__*/react.createElement(TabPanel/* default */.Z, {
-    value: tab,
-    index: 1
-  }, /*#__PURE__*/react.createElement(CodeBlock, {
-    className: "typescript"
-  }, code)), /*#__PURE__*/react.createElement(TabPanel/* default */.Z, {
-    value: tab,
-    index: 2
-  }, /*#__PURE__*/react.createElement(MakeCodeSimulator, {
-    snippet: snippet
-  })));
-}
-// EXTERNAL MODULE: ./src/components/ui/Suspense.tsx
-var Suspense = __webpack_require__(69672);
-;// CONCATENATED MODULE: ./src/components/CodeBlock.tsx
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,defineProperty/* default */.Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-
- // tslint:disable-next-line: no-submodule-imports match-default-export-name
-
- // tslint:disable-next-line: no-submodule-imports match-default-export-name
-
-
-
- // tslint:disable-next-line: no-submodule-imports match-default-export-name
-
- // tslint:disable-next-line: no-submodule-imports match-default-export-name
-
-
-
-
-
-var TraceSnippet = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 5599).then(__webpack_require__.bind(__webpack_require__, 15599));
-});
-var CodeSandboxButton = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 8574).then(__webpack_require__.bind(__webpack_require__, 18574));
-});
-
-function HighlightedCode(props) {
-  var children = props.children,
-      codeSandbox = props.codeSandbox,
-      className = props.className,
-      downloadName = props.downloadName,
-      downloadText = props.downloadText,
-      actions = props.actions,
-      url = props.url;
-
-  var _useContext = (0,react.useContext)(DarkModeContext/* default */.Z),
-      darkMode = _useContext.darkMode;
-
-  var language = (className === null || className === void 0 ? void 0 : className.replace(/language-/, "")) || "";
-  var theme = darkMode === "dark" ? vsDark/* default */.Z : github/* default */.Z;
-  var valueUri = !!downloadText && "data:application/json;charset=UTF-8," + encodeURIComponent(downloadText);
-  return /*#__PURE__*/react.createElement(dist/* default */.ZP, Object.assign({}, dist/* defaultProps */.lG, {
-    code: (children === null || children === void 0 ? void 0 : children.replace(/[\s\r\n]*$/g, "")) || "",
-    language: language,
-    theme: theme
-  }), function (_ref) {
-    var className = _ref.className,
-        style = _ref.style,
-        tokens = _ref.tokens,
-        getLineProps = _ref.getLineProps,
-        getTokenProps = _ref.getTokenProps;
-    return /*#__PURE__*/react.createElement("pre", {
-      className: className,
-      style: _objectSpread({}, style)
-    }, !!url && /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
-      style: {
-        float: "right"
-      },
-      href: url
-    }, /*#__PURE__*/react.createElement(Tooltip/* default */.Z, {
-      title: "Open " + url
-    }, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.IconButton, null, /*#__PURE__*/react.createElement(Launch/* default */.Z, null)))), !!downloadText && /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
-      style: {
-        float: "right"
-      },
-      href: valueUri,
-      download: downloadName || "download"
-    }, /*#__PURE__*/react.createElement(Tooltip/* default */.Z, {
-      title: "Download"
-    }, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.IconButton, null, /*#__PURE__*/react.createElement(GetApp/* default */.Z, null)))), codeSandbox && /*#__PURE__*/react.createElement("div", {
-      style: {
-        float: "right"
-      }
-    }, /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(CodeSandboxButton, {
-      source: children
-    }))), actions && /*#__PURE__*/react.createElement("div", {
-      style: {
-        float: "right"
-      }
-    }, actions), tokens === null || tokens === void 0 ? void 0 : tokens.map(function (line, index) {
-      var lineProps = getLineProps({
-        line: line,
-        key: index
-      });
-      return /*#__PURE__*/react.createElement("div", Object.assign({
-        key: index
-      }, lineProps), line.map(function (token, key) {
-        return /*#__PURE__*/react.createElement("span", Object.assign({
-          key: key
-        }, getTokenProps({
-          token: token,
-          key: key
-        })));
-      }));
+      }, _callee);
     }));
-  });
-}
 
-function CodeBlock(props) {
-  var children = props.children,
-      className = props.className;
-  var language = (className === null || className === void 0 ? void 0 : className.replace(/language-/, "")) || "";
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }(), [apiKey]);
 
-  switch (language) {
-    case "trace":
-      return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(TraceSnippet, {
-        source: children
-      }));
+  var handleApiChange = function handleApiChange(event) {
+    setKey(event.target.value);
+  };
 
-    case "blocks":
-      return /*#__PURE__*/react.createElement(MakeCodeSnippet, {
-        renderedSource: children
-      });
+  var handleSave = function handleSave() {
+    setApiKey(key);
+    setKey("");
+    enqueueSnackbar("key saved...");
+  };
 
-    case "vanilla":
-      return /*#__PURE__*/react.createElement(HighlightedCode, Object.assign({}, props, {
-        className: "javascript",
-        codeSandbox: true
-      }));
+  var handleReset = function handleReset() {
+    setApiKey("");
+    enqueueSnackbar("key cleared...");
+  };
 
-    default:
-      return /*#__PURE__*/react.createElement(HighlightedCode, props);
-  }
-}
+  var handleExpanded = function handleExpanded() {
+    setExpanded(!expanded);
+  };
 
-/***/ }),
-
-/***/ 79739:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ PaperBox; }
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19756);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59355);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33287);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(58063);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-
-var _excluded = ["children", "padding", "elevation", "bgcolor"];
-
-
-function PaperBox(props) {
-  var children = props.children,
-      padding = props.padding,
-      elevation = props.elevation,
-      bgcolor = props.bgcolor,
-      others = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(props, _excluded);
-
-  var theme = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, Object.assign({}, others, {
-    bgcolor: bgcolor,
-    mb: theme.spacing(0.25)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {
-    square: true,
-    elevation: elevation
-  }, padding !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    p: theme.spacing(padding || 0.25)
-  }, children), padding === 0 && children));
-}
-
-/***/ }),
-
-/***/ 34276:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ Snippet; }
-/* harmony export */ });
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80453);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _CodeBlock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50274);
-
-
-
-function Snippet(props) {
-  var value = props.value,
-      mode = props.mode,
-      download = props.download,
-      url = props.url,
-      caption = props.caption,
-      actions = props.actions;
-  var v = typeof value === "function" ? value() : value;
-  var className = mode && "language-" + (mode === "sts" ? "ts" : mode);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CodeBlock__WEBPACK_IMPORTED_MODULE_1__.default, {
-    className: className,
-    downloadName: download,
-    downloadText: download && v,
-    actions: actions,
-    url: url
-  }, v), caption && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
+  return /*#__PURE__*/react.createElement(Accordion/* default */.Z, {
+    expanded: expanded,
+    onChange: handleExpanded
+  }, /*#__PURE__*/react.createElement(AccordionSummary/* default */.Z, {
+    expandIcon: /*#__PURE__*/react.createElement(ExpandMore/* default */.Z, null)
+  }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+    variant: "body1"
+  }, (title || "API key") + " Configuration"), validated && /*#__PURE__*/react.createElement(Box/* default */.Z, {
+    ml: 1,
+    color: "success.main"
+  }, /*#__PURE__*/react.createElement(CheckCircleOutline/* default */.Z, null))), /*#__PURE__*/react.createElement(AccordionDetails/* default */.Z, {
+    style: {
+      display: "block"
+    }
+  }, validated && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
+    severity: "success"
+  }, "API key ready!"), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+    component: "span",
     variant: "caption"
-  }, caption));
+  }, children), /*#__PURE__*/react.createElement(TextField/* default */.Z, {
+    id: apiKeyId,
+    label: "API key",
+    fullWidth: true,
+    value: key,
+    type: "password",
+    onChange: handleApiChange
+  })), /*#__PURE__*/react.createElement(AccordionActions_AccordionActions, null, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
+    "aria-label": "save api key",
+    disabled: !key,
+    variant: "contained",
+    color: "primary",
+    onClick: handleSave
+  }, "Save"), /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
+    "aria-label": "clear api key",
+    disabled: !apiKey,
+    variant: "contained",
+    onClick: handleReset
+  }, "Clear")));
+}
+
+/***/ }),
+
+/***/ 21984:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "$": function() { return /* binding */ useSecret; }
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(92137);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
+var regenerator = __webpack_require__(87757);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(67294);
+// EXTERNAL MODULE: ./src/jacdac/useChange.ts
+var useChange = __webpack_require__(54774);
+// EXTERNAL MODULE: ./src/components/DbContext.tsx
+var DbContext = __webpack_require__(94904);
+// EXTERNAL MODULE: ./src/components/useEffectAsync.ts
+var useEffectAsync = __webpack_require__(7751);
+;// CONCATENATED MODULE: ./src/components/useDbValue.ts
+
+
+
+
+
+
+function useDbValue(id, initialValue) {
+  var _useContext = (0,react.useContext)(DbContext/* default */.ZP),
+      db = _useContext.db;
+
+  var _useState = (0,react.useState)(undefined),
+      _value = _useState[0],
+      _setValue = _useState[1];
+
+  var values = (0,useChange/* default */.Z)(db, function (d) {
+    return d === null || d === void 0 ? void 0 : d.values;
+  });
+  var _mounted = true;
+
+  var setValue = /*#__PURE__*/function () {
+    var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee(value) {
+      return regenerator_default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return values === null || values === void 0 ? void 0 : values.set(id, value);
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function setValue(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }(); // listen to change
+
+
+  (0,react.useEffect)(function () {
+    return values === null || values === void 0 ? void 0 : values.subscribe(DbContext/* DB_VALUE_CHANGE */.TB, /*#__PURE__*/function () {
+      var _ref2 = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee2(changed) {
+        var v;
+        return regenerator_default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!(changed === id)) {
+                  _context2.next = 5;
+                  break;
+                }
+
+                _context2.next = 3;
+                return values.get(id);
+
+              case 3:
+                v = _context2.sent;
+
+                if (_mounted) {
+                  _setValue(v);
+                }
+
+              case 5:
+                return _context2.abrupt("return", function () {
+                  _mounted = false;
+                });
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+  }, [db, values]); // load intial value
+
+  (0,useEffectAsync/* default */.Z)( /*#__PURE__*/function () {
+    var _ref3 = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee3(mounted) {
+      var v;
+      return regenerator_default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return values === null || values === void 0 ? void 0 : values.get(id);
+
+            case 2:
+              v = _context3.sent;
+
+              if (mounted()) {
+                //      console.log(`load dbvalue ${id}`, values, v)
+                _setValue(v || initialValue);
+              }
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }(), [db, values]);
+  return {
+    value: _value,
+    setValue: setValue
+  };
+}
+;// CONCATENATED MODULE: ./src/components/hooks/useSecret.ts
+
+function useSecret(id) {
+  var _useDbValue = useDbValue("secret:" + id, ""),
+      value = _useDbValue.value,
+      setValue = _useDbValue.setValue;
+
+  return {
+    value: value,
+    setValue: setValue
+  };
+}
+
+/***/ }),
+
+/***/ 73723:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ AzureDeviceTemplateDesigner; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(92137);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(87757);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(94850);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(80838);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(1059);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
+/* harmony import */ var _components_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34093);
+/* harmony import */ var react_use_id_hook__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19640);
+/* harmony import */ var gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(36176);
+/* harmony import */ var _components_ApiKeyAccordion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(42495);
+/* harmony import */ var _components_hooks_useSecret__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(21984);
+/* harmony import */ var _components_ui_Alert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(95453);
+/* harmony import */ var _jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5443);
+/* harmony import */ var _components_hooks_useMounted__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(72179);
+/* harmony import */ var _jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13173);
+
+
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+ // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
+
+
+
+
+
+
+
+
+var AZURE_IOT_CENTRAL_DOMAIN = "azureiotcentraldomain";
+var AZURE_IOT_CENTRAL_API_KEY = "azureiotcentraliotkey";
+var AZURE_IOT_API_VERSION = "?api-version=1.0";
+
+function ApiKeyManager() {
+  var _useLocalStorage = (0,_components_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(AZURE_IOT_CENTRAL_DOMAIN),
+      domain = _useLocalStorage[0];
+
+  var validateKey = /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(key) {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return fetch(domain + "/api/deviceTemplates?api-version=1.0", {
+                headers: {
+                  authorization: key
+                }
+              });
+
+            case 2:
+              res = _context.sent;
+              return _context.abrupt("return", res);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function validateKey(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_ApiKeyAccordion__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+    apiName: AZURE_IOT_CENTRAL_API_KEY,
+    title: "API token",
+    validateKey: validateKey,
+    defaultExpanded: true
+  }, "Open ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("strong", null, "Administration"), ",", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("strong", null, domain ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
+    target: "_blank",
+    href: domain + "admin/tokens"
+  }, "API tokens") : "API tokens"), ", create a new Token and copy the value here.");
+}
+
+function AzureDeviceTemplateDesigner() {
+  var domainId = (0,react_use_id_hook__WEBPACK_IMPORTED_MODULE_3__/* .useId */ .Me)();
+
+  var _useLocalStorage2 = (0,_components_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(AZURE_IOT_CENTRAL_DOMAIN, ""),
+      domain = _useLocalStorage2[0],
+      setDomain = _useLocalStorage2[1];
+
+  var _useSecret = (0,_components_hooks_useSecret__WEBPACK_IMPORTED_MODULE_6__/* .useSecret */ .$)(AZURE_IOT_CENTRAL_API_KEY),
+      apiToken = _useSecret.value;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      working = _useState[0],
+      setWorking = _useState[1];
+
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      error = _useState2[0],
+      setError = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      output = _useState3[0],
+      setOutput = _useState3[1];
+
+  var mounted = (0,_components_hooks_useMounted__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z)();
+
+  var handleDomainChange = function handleDomainChange(ev) {
+    return setDomain(ev.target.value);
+  };
+
+  var apiPutTemplate = /*#__PURE__*/function () {
+    var _ref2 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(dtmi, type, dtdl) {
+      var path, url, body, options, res, status, success, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              path = "deviceTemplates/" + dtmi;
+              url = domain + "api/" + path + AZURE_IOT_API_VERSION;
+              body = {
+                "@type": ["ModelDefinition", type],
+                displayName: dtdl.displayName,
+                capabilityModel: dtdl,
+                contents: [dtdl]
+              };
+              options = {
+                method: "PUT",
+                headers: {
+                  authorization: apiToken,
+                  Accept: "application/json"
+                },
+                body: JSON.stringify(body)
+              };
+              if (options.method === "POST" || options.method === "PUT" || options.method === "PATCH") options.headers["Content-Type"] = "application/json";
+              _context2.next = 7;
+              return fetch(url, options);
+
+            case 7:
+              res = _context2.sent;
+              status = res.status;
+              success = status === 200;
+              _context2.next = 12;
+              return res.json();
+
+            case 12:
+              response = _context2.sent;
+              console.debug(dtdl.displayName + " (" + dtmi + ") upload " + (success ? "success" : "error") + " (" + status + ") ", {
+                status: status,
+                body: JSON.stringify(body),
+                response: response
+              });
+              return _context2.abrupt("return", {
+                status: status,
+                success: success,
+                response: response
+              });
+
+            case 15:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function apiPutTemplate(_x2, _x3, _x4) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var handleUpload = /*#__PURE__*/function () {
+    var _ref3 = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var specifications, _yield$apiPutTemplate, success, _iterator, _step, spec, dtmi, dtdl, _yield$apiPutTemplate2, _success;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              specifications = (0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .serviceSpecificationsWithDTDL */ .Jb)().filter(function (spec) {
+                return (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_10__/* .isSensor */ .rq)(spec);
+              });
+              _context3.prev = 1;
+              setWorking(true);
+              setError("");
+              setOutput("");
+              _context3.next = 7;
+              return apiPutTemplate((0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .toDTMI */ .lI)(["template", "device"]), "GatewayModel", {
+                "@id": (0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .toDTMI */ .lI)(["device"]),
+                "@type": "Interface",
+                contents: [{
+                  "@id": (0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .toDTMI */ .lI)(["sensor"]),
+                  "@type": ["Relationship", "GatewayDevice"],
+                  displayName: "sensor",
+                  name: "sensor",
+                  target: []
+                }],
+                displayName: "device",
+                "@context": ["dtmi:iotcentral:context;2", "dtmi:dtdl:context;2"]
+              });
+
+            case 7:
+              _yield$apiPutTemplate = _context3.sent;
+              success = _yield$apiPutTemplate.success;
+
+              if (success) {
+                _context3.next = 11;
+                break;
+              }
+
+              return _context3.abrupt("return");
+
+            case 11:
+              _iterator = _createForOfIteratorHelperLoose(specifications);
+
+            case 12:
+              if ((_step = _iterator()).done) {
+                _context3.next = 24;
+                break;
+              }
+
+              spec = _step.value;
+              dtmi = (0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .serviceSpecificationDTMI */ .tH)(spec, "template");
+              dtdl = (0,_jacdac_ts_src_azure_iot_dtdlspec__WEBPACK_IMPORTED_MODULE_8__/* .serviceSpecificationToDTDL */ .eT)(spec);
+              _context3.next = 18;
+              return apiPutTemplate(dtmi, "DeviceModel", dtdl);
+
+            case 18:
+              _yield$apiPutTemplate2 = _context3.sent;
+              _success = _yield$apiPutTemplate2.success;
+
+              if (_success) {
+                _context3.next = 22;
+                break;
+              }
+
+              return _context3.abrupt("return");
+
+            case 22:
+              _context3.next = 12;
+              break;
+
+            case 24:
+              setOutput("All services added successfully!");
+              _context3.next = 30;
+              break;
+
+            case 27:
+              _context3.prev = 27;
+              _context3.t0 = _context3["catch"](1);
+
+              if (mounted()) {
+                setError(_context3.t0.message);
+                console.debug(_context3.t0);
+              }
+
+            case 30:
+              _context3.prev = 30;
+              if (mounted()) setWorking(false);
+              return _context3.finish(30);
+
+            case 33:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 27, 30, 33]]);
+    }));
+
+    return function handleUpload() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "Azure Device Templates"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "This page import device templates into your Azure IoT Central application."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    container: true,
+    direction: "row",
+    spacing: 2
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
+    id: domainId,
+    value: domain,
+    fullWidth: true,
+    variant: "outlined",
+    onChange: handleDomainChange,
+    helperText: "Azure IoT Central domain",
+    placeholder: "https://.....azureiotcentral.com/"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(ApiKeyManager, null)), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_ui_Alert__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z, {
+    severity: "error"
+  }, error)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    container: true,
+    spacing: 1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: "contained",
+    color: "primary",
+    size: "small",
+    disabled: working || !domain || !apiToken,
+    onClick: handleUpload,
+    title: "Import the device template into your Azure IoT Central application (requires domain and API token)."
+  }, "Upload device templates")), domain && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
+    variant: "caption",
+    href: domain + "device-templates",
+    target: "_blank"
+  }, "Open device templates")))), output && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_ui_Alert__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z, {
+    severity: "success"
+  }, output))));
 }
 
 /***/ })

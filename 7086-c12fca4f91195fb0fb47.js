@@ -426,8 +426,8 @@ function ToolsDrawer() {
     icon: /*#__PURE__*/react.createElement(SystemUpdateAlt/* default */.Z, null)
   }, {// separator
   }, {
-    text: "Azure Device Template",
-    url: "/tools/azure-device-template-designer",
+    text: "Azure Device Templates",
+    url: "/tools/azure-devices",
     icon: /*#__PURE__*/react.createElement(Cloud/* default */.Z, null)
   },
   /*

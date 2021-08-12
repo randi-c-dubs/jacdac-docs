@@ -583,7 +583,8 @@ function ApiKeyAccordion(props) {
   var apiName = props.apiName,
       validateKey = props.validateKey,
       title = props.title,
-      children = props.children;
+      children = props.children,
+      defaultExpanded = props.defaultExpanded;
 
   var _useSecret = (0,useSecret/* useSecret */.$)(apiName),
       apiKey = _useSecret.value,
@@ -595,7 +596,7 @@ function ApiKeyAccordion(props) {
       key = _useState[0],
       setKey = _useState[1];
 
-  var _useState2 = (0,react.useState)(!apiKey),
+  var _useState2 = (0,react.useState)(!apiKey || defaultExpanded),
       expanded = _useState2[0],
       setExpanded = _useState2[1];
 
