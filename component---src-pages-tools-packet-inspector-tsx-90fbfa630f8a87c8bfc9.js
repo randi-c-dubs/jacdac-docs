@@ -1529,7 +1529,7 @@ function PacketHeaderLayout(props) {
     offset: 13,
     size: 1,
     format: buffer/* NumberFormat.UInt8LE */.y4.UInt8LE,
-    name: "service_number",
+    name: "service_index",
     know: (_know = {}, _know[constants/* JD_SERVICE_INDEX_PIPE.toString */.e5Z.toString(16)] = "pipe", _know[constants/* JD_SERVICE_INDEX_CRC_ACK.toString */.$rs.toString(16)] = "crc ack", _know),
     description: "A number that specifies an operation and code combination."
   }, {

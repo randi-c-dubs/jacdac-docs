@@ -51698,7 +51698,7 @@ var Packet = /*#__PURE__*/function () {
       return this._header[13] & _constants__WEBPACK_IMPORTED_MODULE_1__/* .JD_SERVICE_INDEX_MASK */ .UzQ;
     },
     set: function set(value) {
-      if (value == null) throw new Error("service_number not set");
+      if (value == null) throw new Error("service_index not set");
       this._header[13] = this._header[13] & _constants__WEBPACK_IMPORTED_MODULE_1__/* .JD_SERVICE_INDEX_INV_MASK */ .P7v | value;
       this._decoded = undefined;
     }
@@ -70925,7 +70925,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "fdd8e69abaeab5c9017d78e074c75094b52e87e3";
+  var sha = "4649fc885486ec3221e779a4cc242c5f1371b167";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
