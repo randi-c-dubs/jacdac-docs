@@ -1737,9 +1737,9 @@ function PacketInspector() {
   var get = packet.meta[constants/* META_GET */.cWR];
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, /*#__PURE__*/react.createElement(PacketBadge/* default */.Z, {
     packet: packet
-  }), packet.friendlyCommandName + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, packet.timestamp, "ms, ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
+  }), packet.friendlyCommandName + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
     kind: info === null || info === void 0 ? void 0 : info.kind
-  }), ", size", " ", packet.size), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+  }), ", size ", packet.size), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "body2"
   }, (0,pretty/* printPacket */.$_)(packet)), packet.sender && /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "body2"
