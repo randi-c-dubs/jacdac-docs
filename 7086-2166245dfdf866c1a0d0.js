@@ -452,7 +452,7 @@ function ToolsDrawer() {
   }, {// separator
   }, {
     text: "Azure Device Templates",
-    url: "/tools/azure-devices",
+    url: "/tools/azure-device-templates",
     icon: /*#__PURE__*/react.createElement(Cloud/* default */.Z, null)
   },
   /*
