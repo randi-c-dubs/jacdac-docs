@@ -67858,22 +67858,37 @@ var useWidgetSize = __webpack_require__(8584);
 var Typography = __webpack_require__(80453);
 // EXTERNAL MODULE: ./src/components/widgets/useWidgetTheme.ts
 var useWidgetTheme = __webpack_require__(60650);
+// EXTERNAL MODULE: ./src/components/ui/useUnitConverter.ts
+var useUnitConverter = __webpack_require__(44111);
 ;// CONCATENATED MODULE: ./src/components/widgets/ValueWithUnitWidget.tsx
 
 
 
 
+ /// <reference path="../../../jacdac-ts/jacdac-spec/spectool/jdspec.d.ts" />
+
 function ValueWithUnitWidget(props) {
-  var value = props.value,
-      min = props.min,
-      max = props.max,
-      step = props.step,
+  var step = props.step,
       secondaryLabel = props.secondaryLabel,
       icon = props.icon,
-      label = props.label,
+      unit = props.unit,
       tabIndex = props.tabIndex,
       color = props.color,
       onChange = props.onChange;
+
+  var _useUnitConverter = (0,useUnitConverter/* default */.Z)(unit),
+      unitName = _useUnitConverter.name,
+      unitConverter = _useUnitConverter.converter; // map all values with unit converters
+
+
+  var _value$min$max = {
+    value: unitConverter(props.value),
+    min: unitConverter(props.min),
+    max: unitConverter(props.max)
+  },
+      value = _value$min$max.value,
+      min = _value$min$max.min,
+      max = _value$min$max.max;
   var labelVariant = "subtitle1";
   var precision = step === undefined ? 1 : step < 1 ? Math.ceil(-Math.log10(step)) : 0;
   var hasValue = !isNaN(value);
@@ -67903,7 +67918,7 @@ function ValueWithUnitWidget(props) {
     container: true,
     direction: "column",
     tabIndex: tabIndex,
-    "aria-label": valueText + " " + (label || "")
+    "aria-label": valueText + " " + (unitName || "")
   }, /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true,
     xs: 12
@@ -67924,12 +67939,12 @@ function ValueWithUnitWidget(props) {
     container: true,
     direction: "column",
     alignContent: "space-between"
-  }, label && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, unitName && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true
   }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     style: unitStyle,
     variant: labelVariant
-  }, label)), secondaryLabel && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, unitName)), secondaryLabel && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true
   }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     style: captionStyle,
@@ -67945,7 +67960,7 @@ function ValueWithUnitWidget(props) {
     step: step,
     value: value,
     onChange: onChange,
-    "aria-label": label || secondaryLabel
+    "aria-label": unitName || secondaryLabel
   })));
 }
 // EXTERNAL MODULE: ./src/components/icons/HumidityIcon.tsx
@@ -68185,7 +68200,7 @@ function MemberInput(props) {
     }] : undefined;
     if (isWidget) return /*#__PURE__*/react.createElement(ValueWithUnitWidget, {
       tabIndex: 0,
-      label: specification.unit,
+      unit: specification.unit,
       value: value,
       min: minValue,
       max: maxValue,
@@ -68227,7 +68242,7 @@ function MemberInput(props) {
       return /*#__PURE__*/react.createElement(ValueWithUnitWidget, {
         tabIndex: 0,
         value: (0,utils/* roundWithPrecision */.JI)(value, 1),
-        label: specification.unit,
+        unit: specification.unit,
         color: color,
         size: widgetSize
       });
@@ -70925,7 +70940,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "41fd9fcd04adbe26682c8c1fef93892121828dc8";
+  var sha = "1e219ae56bf7c5517c8b136838daa05b0b39c35d";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -73456,6 +73471,89 @@ function WebAudioProvider(props) {
       activated: activated
     }
   }, children);
+}
+
+/***/ }),
+
+/***/ 44111:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "O": function() { return /* binding */ useUnitConverters; },
+/* harmony export */   "Z": function() { return /* binding */ useUnitConverter; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96156);
+/* harmony import */ var _hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34093);
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="../../../jacdac-ts/jacdac-spec/spectool/jdspec.d.ts" />
+
+var adapters = {
+  "°C": {
+    "°C": function C(v) {
+      return v;
+    },
+    "°F": function F(v) {
+      return 9 / 5 * v + 32;
+    }
+  }
+};
+function useUnitConverters() {
+  var _useLocalStorage = (0,_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)("jacdac:unitconverters", {}),
+      settings = _useLocalStorage[0],
+      setSettings = _useLocalStorage[1];
+
+  return {
+    converters: Object.keys(adapters).map(function (unit) {
+      return {
+        unit: unit,
+        name: settings[unit] || unit,
+        names: Object.keys(adapters[unit])
+      };
+    }),
+    setConverter: function setConverter(unit, name) {
+      var newSettings = _objectSpread({}, settings);
+
+      newSettings[unit] = name;
+      setSettings(newSettings);
+    }
+  };
+}
+
+var identity = function identity(v) {
+  return v;
+};
+
+function useUnitConverter(unit) {
+  if (!unit) return {
+    converter: function converter(v) {
+      return v;
+    }
+  };
+
+  var _useLocalStorage2 = (0,_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)("jacdac:unitconverters", {}),
+      settings = _useLocalStorage2[0];
+
+  var adapter = adapters[unit];
+  if (!adapter) return {
+    converter: function converter(v) {
+      return v;
+    }
+  };
+  var name = settings[unit];
+  var converter = adapter[name] || identity;
+  var names = Object.keys(adapter);
+  return {
+    name: name,
+    converter: converter,
+    names: names
+  };
 }
 
 /***/ }),

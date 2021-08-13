@@ -230,6 +230,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ ToolsDrawer; }
 });
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
+var toConsumableArray = __webpack_require__(85061);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 var defineProperty = __webpack_require__(96156);
 // EXTERNAL MODULE: ./node_modules/react/index.js
@@ -264,6 +266,8 @@ var createSvgIcon = __webpack_require__(6018);
 /* harmony default export */ var OpenInNew = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/react.createElement("path", {
   d: "M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
 }), 'OpenInNew'));
+// EXTERNAL MODULE: ./src/components/ui/useUnitConverter.ts
+var useUnitConverter = __webpack_require__(44111);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/ChevronRight.js
 var ChevronRight = __webpack_require__(65735);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/SettingsBrightness.js
@@ -286,7 +290,10 @@ var KindIcon = __webpack_require__(50048);
 var constants = __webpack_require__(71815);
 // EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
 var providerbus = __webpack_require__(97555);
+// EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
+var jdspec = __webpack_require__(13996);
 ;// CONCATENATED MODULE: ./src/components/shell/ToolsDrawer.tsx
+
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
@@ -298,7 +305,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
- // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
@@ -311,6 +317,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
+ // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
 
 
 
@@ -382,9 +391,25 @@ function ToolsDrawer() {
       setToolsMenu = _useContext.setToolsMenu,
       toggleShowDeviceHostsDialog = _useContext.toggleShowDeviceHostsDialog;
 
-  var _useContext2 = (0,react.useContext)(DarkModeContext/* default */.Z),
-      toggleDarkMode = _useContext2.toggleDarkMode,
-      darkMode = _useContext2.darkMode;
+  var _useContext2 = (0,react.useContext)(AppContext/* default */.ZP),
+      enqueueSnackbar = _useContext2.enqueueSnackbar;
+
+  var _useContext3 = (0,react.useContext)(DarkModeContext/* default */.Z),
+      toggleDarkMode = _useContext3.toggleDarkMode,
+      darkMode = _useContext3.darkMode;
+
+  var _useUnitConverters = (0,useUnitConverter/* useUnitConverters */.O)(),
+      converters = _useUnitConverters.converters,
+      setConverter = _useUnitConverters.setConverter;
+
+  var handleUnitClick = function handleUnitClick(unit, name, names) {
+    return function () {
+      var index = (names.indexOf(name) + 1) % names.length;
+      var newName = names[index];
+      setConverter(unit, newName);
+      enqueueSnackbar("Using " + newName + " for " + (0,jdspec/* resolveUnit */.bM)(unit).name, "success");
+    };
+  };
 
   var handleClick = function handleClick(link) {
     return function () {
@@ -460,7 +485,18 @@ function ToolsDrawer() {
     icon: /*#__PURE__*/react.createElement(KindIcon/* default */.ZP, {
       kind: constants/* DEVICE_NODE_NAME */.tY6
     })
-  }].filter(function (l) {
+  }, {// separator
+  }].concat((0,toConsumableArray/* default */.Z)(converters.map(function (_ref) {
+    var unit = _ref.unit,
+        name = _ref.name,
+        names = _ref.names;
+    return {
+      text: name + " (change to " + names.filter(function (n) {
+        return n !== name;
+      }).join(", ") + ")",
+      action: handleUnitClick(unit, name, names)
+    };
+  }))).filter(function (l) {
     return !!l;
   });
   if (!toolsMenu) return null;
