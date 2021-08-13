@@ -1247,6 +1247,8 @@ var useDeviceImage = __webpack_require__(81546);
 
 
 function DeviceSpecification(props) {
+  var _device$productIdenti;
+
   var device = props.device,
       showSource = props.showSource;
   var gridBreakpoints = (0,useGridBreakpoints/* default */.Z)();
@@ -1267,12 +1269,12 @@ function DeviceSpecification(props) {
     source: device.description
   }), device.repo && /*#__PURE__*/react.createElement(FirmwareCard/* default */.Z, {
     slug: device.repo
-  }), !!device.firmwares.length && /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h3", null, "Firmware identifiers"), /*#__PURE__*/react.createElement("ul", null, device.firmwares.map(function (firmware) {
+  }), !!((_device$productIdenti = device.productIdentifiers) !== null && _device$productIdenti !== void 0 && _device$productIdenti.length) && /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h3", null, "Product identifiers"), /*#__PURE__*/react.createElement("ul", null, device.productIdentifiers.map(function (identifier) {
     return /*#__PURE__*/react.createElement("li", {
-      key: firmware
+      key: identifier
     }, /*#__PURE__*/react.createElement(IDChip/* default */.Z, {
-      id: firmware,
-      filter: "fw:0x" + firmware.toString(16)
+      id: identifier,
+      filter: "pid:0x" + identifier.toString(16)
     }));
   }))), /*#__PURE__*/react.createElement("h3", null, "Services"), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     container: true,

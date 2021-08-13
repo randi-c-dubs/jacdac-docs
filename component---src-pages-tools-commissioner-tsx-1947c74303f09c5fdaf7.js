@@ -2105,7 +2105,7 @@ function DataSetTable(props) {
       align: "center"
     }, descriptor.deviceIdentifier), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_24__/* .default */ .Z, {
       align: "center"
-    }, descriptor.firmwareIdentifier && descriptor.firmwareIdentifier.toString(16), ((_descriptor$services$ = descriptor.services.filter(function (service) {
+    }, descriptor.productIdentifier && descriptor.productIdentifier.toString(16), ((_descriptor$services$ = descriptor.services.filter(function (service) {
       return service.serviceClass == _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__/* .SRV_ROLE_MANAGER */ .igi;
     })) === null || _descriptor$services$ === void 0 ? void 0 : _descriptor$services$.length) && "BRAIN"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_24__/* .default */ .Z, {
       align: "center"
@@ -2351,7 +2351,7 @@ function Commissioner() {
       dataSet = _useState3[0],
       setDataSet = _useState3[1];
 
-  var tableHeaders = ["Device identifier", "Firmware identifier", "Services advertised", "Services seen", "Packets seen", "Functional test pass", "Comment"];
+  var tableHeaders = ["Device identifier", "Product identifier", "Services advertised", "Services seen", "Packets seen", "Functional test pass", "Comment"];
 
   var _useContext4 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_components_ServiceManagerContext__WEBPACK_IMPORTED_MODULE_7__/* .default */ .ZP),
       fileStorage = _useContext4.fileStorage;
@@ -2486,7 +2486,7 @@ function Commissioner() {
                       _context3.t1 = isBrain(d);
                       _context3.t2 = d.deviceId;
                       _context3.next = 10;
-                      return d.resolveFirmwareIdentifier(3);
+                      return d.resolveProductIdentifier(3);
 
                     case 10:
                       _context3.t3 = _context3.sent;
@@ -2495,7 +2495,7 @@ function Commissioner() {
                       _context3.t6 = {
                         brain: _context3.t1,
                         deviceIdentifier: _context3.t2,
-                        firmwareIdentifier: _context3.t3,
+                        productIdentifier: _context3.t3,
                         services: _context3.t4,
                         servicesSeen: _context3.t5,
                         pass: true,
@@ -2582,10 +2582,10 @@ function Commissioner() {
   var renderCSV = function renderCSV() {
     var sep = ",";
     var lineEnding = "\r\n";
-    var str = "device identifier" + sep + "firmware identifier" + sep + "services" + sep + "Packets seen" + sep + "Functional test pass" + sep + "Comment" + lineEnding;
+    var str = "device identifier" + sep + "product identifier" + sep + "services" + sep + "Packets seen" + sep + "Functional test pass" + sep + "Comment" + lineEnding;
     dataSet.forEach(function (descriptor) {
       str += "0x" + descriptor.deviceIdentifier + sep;
-      if (descriptor.firmwareIdentifier) str += "0x" + descriptor.firmwareIdentifier.toString(16) + sep;else if (descriptor.services.find(function (service) {
+      if (descriptor.productIdentifier) str += "0x" + descriptor.productIdentifier.toString(16) + sep;else if (descriptor.services.find(function (service) {
         return service.serviceClass == _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__/* .SRV_ROLE_MANAGER */ .igi;
       })) str += "BRAIN" + sep;else str += "UNKNOWN" + sep;
       str += "" + descriptor.services.map(function (service) {

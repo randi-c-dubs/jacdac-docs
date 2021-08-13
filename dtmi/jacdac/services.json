@@ -970,8 +970,8 @@
       },
       {
         "@type": "Property",
-        "name": "firmware_identifier",
-        "@id": "dtmi:jacdac:x0:const:firmwareidentifier;1",
+        "name": "product_identifier",
+        "@id": "dtmi:jacdac:x0:const:productidentifier;1",
         "description": {
           "en": "A numeric code for the string above; used to identify firmware images and devices."
         },
@@ -979,10 +979,10 @@
       },
       {
         "@type": "Property",
-        "name": "bootloader_firmware_identifier",
-        "@id": "dtmi:jacdac:x0:const:bootloaderfirmwareidentifier;1",
+        "name": "bootloader_product_identifier",
+        "@id": "dtmi:jacdac:x0:const:bootloaderproductidentifier;1",
         "description": {
-          "en": "Typically the same as `firmware_identifier` unless device was flashed by hand; the bootloader will respond to that code."
+          "en": "Typically the same as `product_identifier` unless device was flashed by hand; the bootloader will respond to that code."
         },
         "schema": "integer"
       },

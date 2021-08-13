@@ -1203,7 +1203,7 @@ var EdgeImpulseClient = /*#__PURE__*/function (_JDClient) {
 
   _proto.handleOpen = /*#__PURE__*/function () {
     var _handleOpen = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_28__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
-      var service, device, firmwareIdentifier, deviceSpec;
+      var service, device, productIdentifier, deviceSpec;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -1213,16 +1213,16 @@ var EdgeImpulseClient = /*#__PURE__*/function (_JDClient) {
               device = service.device; // fetch device spec
 
               _context.next = 5;
-              return service.device.resolveFirmwareIdentifier();
+              return service.device.resolveProductIdentifier();
 
             case 5:
-              firmwareIdentifier = _context.sent;
-              deviceSpec = (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_13__/* .deviceSpecificationFromFirmwareIdentifier */ .IL)(firmwareIdentifier);
+              productIdentifier = _context.sent;
+              deviceSpec = (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_13__/* .deviceSpecificationFromProductIdentifier */ .Ht)(productIdentifier);
               this._hello = {
                 version: 2,
                 apiKey: this.apiKey,
                 deviceId: device.deviceId,
-                deviceType: (deviceSpec === null || deviceSpec === void 0 ? void 0 : deviceSpec.name) || (firmwareIdentifier === null || firmwareIdentifier === void 0 ? void 0 : firmwareIdentifier.toString(16)) || "Jacdac device",
+                deviceType: (deviceSpec === null || deviceSpec === void 0 ? void 0 : deviceSpec.name) || (productIdentifier === null || productIdentifier === void 0 ? void 0 : productIdentifier.toString(16)) || "Jacdac device",
                 connection: "ip",
                 // direct connection
                 sensors: [{

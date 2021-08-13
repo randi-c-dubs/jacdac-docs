@@ -399,13 +399,13 @@ function useFirmwareRepos(showAllRepos) {
   .map(function (device) {
     var _device$service;
 
-    return (_device$service = device.service(0)) === null || _device$service === void 0 ? void 0 : _device$service.register(constants/* ControlReg.FirmwareIdentifier */.toU.FirmwareIdentifier);
+    return (_device$service = device.service(0)) === null || _device$service === void 0 ? void 0 : _device$service.register(constants/* ControlReg.ProductIdentifier */.toU.ProductIdentifier);
   }).filter(function (reg) {
     return !!reg;
   });
   (0,useEffectAsync/* default */.Z)( /*#__PURE__*/function () {
     var _ref = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee(mounted) {
-      var repos, firmwares, _iterator, _step, register, firmwareIdentifier, _iterator2, _step2, bootloader, boot, bl_announce, resp, _resp$jdunpack, _firmwareIdentifier, urepos;
+      var repos, productIdentifiers, _iterator, _step, register, productIdentifier, _iterator2, _step2, bootloader, boot, bl_announce, resp, _resp$jdunpack, _productIdentifier, urepos;
 
       return regenerator_default().wrap(function _callee$(_context) {
         while (1) {
@@ -425,7 +425,7 @@ function useFirmwareRepos(showAllRepos) {
               break;
 
             case 5:
-              firmwares = []; // ask firmware registers
+              productIdentifiers = []; // ask firmware registers
 
               _iterator = _createForOfIteratorHelperLoose(registers);
 
@@ -440,8 +440,8 @@ function useFirmwareRepos(showAllRepos) {
               return register.refresh(true);
 
             case 11:
-              firmwareIdentifier = register.intValue;
-              if (firmwareIdentifier !== undefined && firmwares.indexOf(firmwareIdentifier) < 0) firmwares.push(firmwareIdentifier);
+              productIdentifier = register.intValue;
+              if (productIdentifier !== undefined && productIdentifiers.indexOf(productIdentifier) < 0) productIdentifiers.push(productIdentifier);
 
             case 13:
               _context.next = 7;
@@ -467,25 +467,25 @@ function useFirmwareRepos(showAllRepos) {
 
             case 23:
               resp = _context.sent;
-              _resp$jdunpack = resp.jdunpack("u32 u32 u32 u32"), _firmwareIdentifier = _resp$jdunpack[3];
-              if (_firmwareIdentifier !== undefined && firmwares.indexOf(_firmwareIdentifier) < 0) firmwares.push(_firmwareIdentifier);
+              _resp$jdunpack = resp.jdunpack("u32 u32 u32 u32"), _productIdentifier = _resp$jdunpack[3];
+              if (_productIdentifier !== undefined && productIdentifiers.indexOf(_productIdentifier) < 0) productIdentifiers.push(_productIdentifier);
               _context.next = 31;
               break;
 
             case 28:
               _context.prev = 28;
               _context.t0 = _context["catch"](20);
-              console.warn("bootloader firmware identifier failed", _context.t0);
+              console.warn("bootloader product identifier failed", _context.t0);
 
             case 31:
               _context.next = 16;
               break;
 
             case 33:
-              repos = firmwares.map(function (fw) {
+              repos = productIdentifiers.map(function (fw) {
                 var _deviceSpecificationF;
 
-                return (_deviceSpecificationF = (0,spec/* deviceSpecificationFromFirmwareIdentifier */.IL)(fw)) === null || _deviceSpecificationF === void 0 ? void 0 : _deviceSpecificationF.repo;
+                return (_deviceSpecificationF = (0,spec/* deviceSpecificationFromProductIdentifier */.Ht)(fw)) === null || _deviceSpecificationF === void 0 ? void 0 : _deviceSpecificationF.repo;
               }).filter(function (repo) {
                 return !!repo;
               });
@@ -642,10 +642,10 @@ function LocalFileFirmwareCard() {
     dense: true
   }, firmwareBlobs.map(function (blob) {
     return /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
-      key: blob.firmwareIdentifier
+      key: blob.productIdentifier
     }, /*#__PURE__*/react.createElement(ListItemText/* default */.Z, {
       primary: blob.name,
-      secondary: "0x" + blob.firmwareIdentifier.toString(16)
+      secondary: "0x" + blob.productIdentifier.toString(16)
     }));
   }))), /*#__PURE__*/react.createElement(CardActions/* default */.Z, null, !downloading && /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(ImportButton, {
     text: "Import UF2 file",
@@ -836,7 +836,7 @@ function UpdateDeviceCard(props) {
     return d.firmwareInfo;
   });
   var blob = firmwareInfo && (blobs === null || blobs === void 0 ? void 0 : blobs.find(function (b) {
-    return firmwareInfo.firmwareIdentifier == b.firmwareIdentifier;
+    return firmwareInfo.productIdentifier == b.productIdentifier;
   }));
   return /*#__PURE__*/react.createElement(DeviceCard/* default */.Z, {
     device: device,
@@ -862,13 +862,13 @@ function UpdateDeviceList() {
     announced: true,
     ignoreSelf: true,
     ignoreSimulators: true,
-    firmwareIdentifier: true
+    productIdentifier: true
   }, [safeBoot]).filter(function (dev) {
     return safeBoot || !dev.hasService(constants/* SRV_BOOTLOADER */.PWm);
   }).sort(function (l, r) {
     var _l$firmwareInfo, _r$firmwareInfo;
 
-    return (((_l$firmwareInfo = l.firmwareInfo) === null || _l$firmwareInfo === void 0 ? void 0 : _l$firmwareInfo.firmwareIdentifier) || 0) - (((_r$firmwareInfo = r.firmwareInfo) === null || _r$firmwareInfo === void 0 ? void 0 : _r$firmwareInfo.firmwareIdentifier) || 0);
+    return (((_l$firmwareInfo = l.firmwareInfo) === null || _l$firmwareInfo === void 0 ? void 0 : _l$firmwareInfo.productIdentifier) || 0) - (((_r$firmwareInfo = r.firmwareInfo) === null || _r$firmwareInfo === void 0 ? void 0 : _r$firmwareInfo.productIdentifier) || 0);
   });
   var isFlashing = (0,useChange/* default */.Z)(bus, function () {
     return devices.some(function (dev) {
@@ -1130,7 +1130,7 @@ function SelectDevice(props) {
 
 
 var fwid = function fwid(fw) {
-  return fw ? fw.store + "," + fw.firmwareIdentifier + "," + fw.version : "";
+  return fw ? fw.store + "," + fw.productIdentifier + "," + fw.version : "";
 };
 
 function ManualFirmware() {
@@ -1221,7 +1221,7 @@ function ManualFirmware() {
       value: fwid(fw)
     }, fw.name, " \xA0", /*#__PURE__*/react.createElement(Typography/* default */.Z, {
       variant: "caption"
-    }, fw.version, ", \xA0", "0x" + fw.firmwareIdentifier.toString(16)));
+    }, fw.version, ", \xA0", "0x" + fw.productIdentifier.toString(16)));
   }))))), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true,
     xs: 12

@@ -222,7 +222,7 @@ function uniqueDeviceId() {
 function uniqueFirmwareId() {
   var id = genFirmwareId();
 
-  while (id !== undefined && (!looksRandom(id) || (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__/* .deviceSpecificationFromFirmwareIdentifier */ .IL)(id))) {
+  while (id !== undefined && (!looksRandom(id) || (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__/* .deviceSpecificationFromProductIdentifier */ .Ht)(id))) {
     id = genFirmwareId();
   }
 
@@ -291,7 +291,7 @@ function RandomGenerator(props) {
     };
   }();
 
-  var title = device ? "Random Device Identifier" : firmware ? "Random Firmware Identifier" : "Random Service Identifier";
+  var title = device ? "Random Device Identifier" : firmware ? "Random Product Identifier" : "Random Service Identifier";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
     className: classes.root
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
@@ -863,13 +863,13 @@ function CompanySelect(props) {
 }
 
 function DeviceRegistration() {
-  var _device$name, _device$services, _device$id, _device$firmwares, _device$services2, _ref2;
+  var _device$name, _device$services, _device$id, _device$productIdenti, _device$services2, _ref2;
 
   var _useLocalStorage = (0,useLocalStorage/* default */.Z)("jacdac:devicedesigner;2", {
     id: "my-device",
     name: "My device",
     services: [],
-    firmwares: [],
+    productIdentifiers: [],
     repo: ""
   }),
       device = _useLocalStorage[0],
@@ -880,7 +880,7 @@ function DeviceRegistration() {
     announced: true,
     physical: true,
     ignoreSelf: true,
-    firmwareIdentifier: true
+    productIdentifier: true
   });
 
   var updateDevice = function updateDevice() {
@@ -976,7 +976,7 @@ function DeviceRegistration() {
 
   var handleDeleteFirmware = function handleDeleteFirmware(i) {
     return function () {
-      device.firmwares.splice(i, 1);
+      device.productIdentifiers.splice(i, 1);
       updateDevice();
     };
   };
@@ -987,18 +987,18 @@ function DeviceRegistration() {
     updateDevice();
   };
 
-  var handleFirmwareAddRandomClick = function handleFirmwareAddRandomClick() {
-    device.firmwares.push(parseInt((0,RandomGenerator.uniqueFirmwareId)(), 16));
+  var handleProductIdentifierAddRandomClick = function handleProductIdentifierAddRandomClick() {
+    device.productIdentifiers.push(parseInt((0,RandomGenerator.uniqueFirmwareId)(), 16));
     updateDevice();
   };
 
   var handleFirmwareAddClose = function handleFirmwareAddClose(blob) {
     return function () {
       setFirmwaresAnchorEl(null);
-      var id = blob === null || blob === void 0 ? void 0 : blob.firmwareIdentifier;
+      var id = blob === null || blob === void 0 ? void 0 : blob.productIdentifier;
 
       if (id !== undefined) {
-        device.firmwares.push(id);
+        device.productIdentifiers.push(id);
         device.name = blob.name;
         updateDeviceId();
         updateDevice();
@@ -1046,11 +1046,11 @@ function DeviceRegistration() {
 
             case 7:
               _context.next = 9;
-              return dev.resolveFirmwareIdentifier();
+              return dev.resolveProductIdentifier();
 
             case 9:
               fw = _context.sent;
-              if (fw) device.firmwares = [fw];
+              if (fw) device.productIdentifiers = [fw];
               device.services = dev.serviceClasses.slice(1);
               device.description = descrReg.stringValue;
               device.link = urlReg.stringValue;
@@ -1119,9 +1119,9 @@ function DeviceRegistration() {
     xs: 12
   }, /*#__PURE__*/react.createElement(PaperBox/* default */.Z, {
     elevation: 1
-  }, /*#__PURE__*/react.createElement(Typography/* default */.Z, null, "Firmwares"), (_device$firmwares = device.firmwares) === null || _device$firmwares === void 0 ? void 0 : _device$firmwares.map(function (id, i) {
+  }, /*#__PURE__*/react.createElement(Typography/* default */.Z, null, "Product Identifiers"), (_device$productIdenti = device.productIdentifiers) === null || _device$productIdenti === void 0 ? void 0 : _device$productIdenti.map(function (id, i) {
     var blob = firmwareBlobs === null || firmwareBlobs === void 0 ? void 0 : firmwareBlobs.find(function (b) {
-      return b.firmwareIdentifier == id;
+      return b.productIdentifier == id;
     });
     return /*#__PURE__*/react.createElement(Box/* default */.Z, {
       component: "span",
@@ -1133,10 +1133,10 @@ function DeviceRegistration() {
       onDelete: handleDeleteFirmware(i)
     }));
   }), /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
-    title: "Add random firmware identifier",
-    onClick: handleFirmwareAddRandomClick
+    title: "Add random product identifier",
+    onClick: handleProductIdentifierAddRandomClick
   }, /*#__PURE__*/react.createElement(Create/* default */.Z, null)), firmwareBlobs && /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
-    title: "Add firmware identifier from repository",
+    title: "Add product identifier from repository",
     "aria-controls": firmwareMenuId,
     "aria-haspopup": "true",
     onClick: handleFirmwareAddClick
@@ -1148,8 +1148,8 @@ function DeviceRegistration() {
     onClose: handleFirmwareAddClose(undefined)
   }, firmwareBlobs === null || firmwareBlobs === void 0 ? void 0 : firmwareBlobs.map(function (blob) {
     return /*#__PURE__*/react.createElement(MenuItem/* default */.Z, {
-      key: blob.firmwareIdentifier,
-      value: blob.firmwareIdentifier.toString(16),
+      key: blob.productIdentifier,
+      value: blob.productIdentifier.toString(16),
       onClick: handleFirmwareAddClose(blob)
     }, blob.name, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
       variant: "caption",
@@ -1158,7 +1158,7 @@ function DeviceRegistration() {
   })), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "caption",
     component: "div"
-  }, "Firmware identifiers uniquely identify your module on the Jacdac bus. Each revision of your firmware may have a different identifier."))), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  }, "Product identifiers uniquely identify your hardware on the Jacdac bus. Each revision of your hardware may have a different identifier."))), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true,
     xs: 12
   }, /*#__PURE__*/react.createElement(PaperBox/* default */.Z, {

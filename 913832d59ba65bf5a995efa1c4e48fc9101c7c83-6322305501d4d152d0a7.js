@@ -762,12 +762,12 @@ function FirmwareCard(props) {
     dense: true
   }, firmwareBlobs.map(function (blob) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_19__/* .default */ .Z, {
-      key: blob.firmwareIdentifier
+      key: blob.productIdentifier
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_20__/* .default */ .Z, {
       primary: blob.name,
       secondary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_6__.Link, {
-        to: "/firmwares/0x" + blob.firmwareIdentifier.toString(16)
-      }, "0x" + blob.firmwareIdentifier.toString(16))
+        to: "/firmwares/0x" + blob.productIdentifier.toString(16)
+      }, "0x" + blob.productIdentifier.toString(16))
     }));
   }))))), (releases === null || releases === void 0 ? void 0 : releases.length) === 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_Alert__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
     severity: "warning"

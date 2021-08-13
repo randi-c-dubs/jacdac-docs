@@ -704,14 +704,14 @@ var BootloaderError;
 var BootloaderCmd;
 (function (BootloaderCmd) {
     /**
-     * No args. The `service_class` is always `0x1ffa9948`. The `firmware_identifier` identifies the kind of firmware
+     * No args. The `service_class` is always `0x1ffa9948`. The `product_identifer` identifies the kind of firmware
      * that "fits" this device.
      */
     BootloaderCmd[BootloaderCmd["Info"] = 0] = "Info";
     /**
      * report Info
      * ```
-     * const [serviceClass, pageSize, flashableSize, firmwareIdentifier] = jdunpack<[number, number, number, number]>(buf, "u32 u32 u32 u32")
+     * const [serviceClass, pageSize, flashableSize, productIdentifer] = jdunpack<[number, number, number, number]>(buf, "u32 u32 u32 u32")
      * ```
      */
     /**
@@ -1068,18 +1068,18 @@ var ControlReg;
      * Constant uint32_t. A numeric code for the string above; used to identify firmware images and devices.
      *
      * ```
-     * const [firmwareIdentifier] = jdunpack<[number]>(buf, "u32")
+     * const [productIdentifier] = jdunpack<[number]>(buf, "u32")
      * ```
      */
-    ControlReg[ControlReg["FirmwareIdentifier"] = 385] = "FirmwareIdentifier";
+    ControlReg[ControlReg["ProductIdentifier"] = 385] = "ProductIdentifier";
     /**
-     * Constant uint32_t. Typically the same as `firmware_identifier` unless device was flashed by hand; the bootloader will respond to that code.
+     * Constant uint32_t. Typically the same as `product_identifier` unless device was flashed by hand; the bootloader will respond to that code.
      *
      * ```
-     * const [bootloaderFirmwareIdentifier] = jdunpack<[number]>(buf, "u32")
+     * const [bootloaderProductIdentifier] = jdunpack<[number]>(buf, "u32")
      * ```
      */
-    ControlReg[ControlReg["BootloaderFirmwareIdentifier"] = 388] = "BootloaderFirmwareIdentifier";
+    ControlReg[ControlReg["BootloaderProductIdentifier"] = 388] = "BootloaderProductIdentifier";
     /**
      * Constant string (bytes). A string describing firmware version; typically semver.
      *

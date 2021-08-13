@@ -12842,6 +12842,8 @@ var useMediaQueries = __webpack_require__(20509);
 var useInstanceName = __webpack_require__(20563);
 // EXTERNAL MODULE: ./src/components/hooks/useBestRegister.ts
 var useBestRegister = __webpack_require__(39687);
+// EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
+var jdspec = __webpack_require__(13996);
 ;// CONCATENATED MODULE: ./src/components/tools/JDomTreeViewItems.tsx
 
 var JDomTreeViewItems_excluded = ["device", "serviceFilter"],
@@ -12862,6 +12864,7 @@ var JDomTreeViewItems_excluded = ["device", "serviceFilter"],
 
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
 
 
 
@@ -13023,7 +13026,7 @@ function RegisterTreeItem(props) {
 
   var optional = !!(specification !== null && specification !== void 0 && specification.optional);
   var failedGet = attempts > 2;
-  var labelText = "" + ((specification === null || specification === void 0 ? void 0 : specification.name) || id) + (optional ? "?" : "");
+  var labelText = (0,jdspec/* humanify */.lW)("" + ((specification === null || specification === void 0 ? void 0 : specification.name) || id) + (optional ? "?" : ""));
   var humanValue = (0,useRegisterValue/* useRegisterHumanValue */.e_)(register, {
     visible: true
   });
@@ -13051,9 +13054,10 @@ function EventTreeItem(props) {
   var specification = event.specification,
       id = event.id;
   var count = (0,useEventCount/* default */.Z)(event);
+  var labelText = (0,jdspec/* humanify */.lW)((specification === null || specification === void 0 ? void 0 : specification.name) || event.id);
   return /*#__PURE__*/react.createElement(StyledTreeItem, {
     nodeId: id,
-    labelText: (specification === null || specification === void 0 ? void 0 : specification.name) || event.id,
+    labelText: labelText,
     labelInfo: (count || "") + "",
     kind: constants/* EVENT_NODE_NAME */.Yuh
   });
