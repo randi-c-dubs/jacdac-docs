@@ -502,11 +502,11 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           break;
 
         case "extdatastream":
-          this.emit('datastream', true);
+          this.emit("datastream", true);
           break;
 
         case "extconsole":
-          this.emit('console', msg.body);
+          this.emit("console", msg.body);
           break;
 
         case "extmessagepacket":
@@ -534,7 +534,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
 
         case "extusercode":
           // Loaded, set the target
-          this.emit('readuser', msg.resp);
+          this.emit("readuser", msg.resp);
           this.emit(constants/* CHANGE */.Ver);
           break;
 
@@ -545,7 +545,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           break;
 
         case "extwritecode":
-          this.emit('written', undefined);
+          this.emit("written", undefined);
           break;
       }
     }
@@ -559,7 +559,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
             case 0:
               this.log("initializing");
               _context.next = 3;
-              return this.sendRequest('extinit');
+              return this.sendRequest("extinit");
 
             case 3:
               this.log("connected");
@@ -629,7 +629,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
 
             case 6:
               _context3.next = 8;
-              return this.sendRequest('extreadcode');
+              return this.sendRequest("extreadcode");
 
             case 8:
               _resp = _context3.sent;
@@ -657,7 +657,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           switch (_context4.prev = _context4.next) {
             case 0:
               _context4.next = 2;
-              return this.sendRequest('extusercode');
+              return this.sendRequest("extusercode");
 
             case 2:
             case "end":
@@ -686,13 +686,13 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
               }
 
               // Write to local storage instead
-              this.emit('written', undefined);
+              this.emit("written", undefined);
               _context5.next = 6;
               break;
 
             case 4:
               _context5.next = 6;
-              return this.sendRequest('extwritecode', {
+              return this.sendRequest("extwritecode", {
                 code: code || undefined,
                 json: json || undefined,
                 jres: jres || undefined,
@@ -721,7 +721,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           switch (_context6.prev = _context6.next) {
             case 0:
               _context6.next = 2;
-              return this.sendRequest('extquerypermission');
+              return this.sendRequest("extquerypermission");
 
             case 2:
             case "end":
@@ -745,7 +745,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           switch (_context7.prev = _context7.next) {
             case 0:
               _context7.next = 2;
-              return this.sendRequest('extrequestpermission', {
+              return this.sendRequest("extrequestpermission", {
                 console: console
               });
 
@@ -771,7 +771,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           switch (_context8.prev = _context8.next) {
             case 0:
               _context8.next = 2;
-              return this.sendRequest('extdatastream', {
+              return this.sendRequest("extdatastream", {
                 console: console
               });
 
@@ -797,7 +797,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
           switch (_context9.prev = _context9.next) {
             case 0:
               _context9.next = 2;
-              return this.sendRequest('extdatastream', {
+              return this.sendRequest("extdatastream", {
                 messages: messages
               });
 
