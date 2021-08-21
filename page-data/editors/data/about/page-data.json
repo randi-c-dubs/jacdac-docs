@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-editors-data-about-mdx","path":"/editors/data/about/","result":{"pageContext":{"frontmatter":{"hideToc":true,"hideUnderConstruction":true,"hideBreadcrumbs":true,"title":"About the Data Science Editor (Experimental)"}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-pages-editors-data-about-mdx",
+    "path": "/editors/data/about/",
+    "result": {"pageContext":{"frontmatter":{"hideToc":true,"hideUnderConstruction":true,"hideBreadcrumbs":true,"title":"About the Data Science Editor (Experimental)"}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

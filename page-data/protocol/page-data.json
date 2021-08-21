@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-protocol-mdx","path":"/protocol/","result":{"pageContext":{"frontmatter":{"title":"Protocol","order":5,"hideBreadcrumbs":true}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-pages-protocol-mdx",
+    "path": "/protocol/",
+    "result": {"pageContext":{"frontmatter":{"title":"Protocol","order":5,"hideBreadcrumbs":true}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

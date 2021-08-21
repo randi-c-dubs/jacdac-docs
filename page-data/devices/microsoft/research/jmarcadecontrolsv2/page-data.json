@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-device-tsx","path":"/devices/microsoft/research/jmarcadecontrolsv2/","result":{"pageContext":{"node":{"id":"microsoft-research-jmarcadecontrolsv2","name":"JM Arcade Controls v2","company":"Microsoft Research","productIdentifiers":[954450524]}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-device-tsx",
+    "path": "/devices/microsoft/research/jmarcadecontrolsv2/",
+    "result": {"pageContext":{"node":{"id":"microsoft-research-jmarcadecontrolsv2","name":"JM Arcade Controls v2","company":"Microsoft Research","productIdentifiers":[954450524]}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

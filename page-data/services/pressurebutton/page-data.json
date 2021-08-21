@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/pressurebutton/","result":{"pageContext":{"classIdentifier":672612547,"source":"# Pressure Button\n\n    identifier: 0x281740c3\n    tags: 8bit\n    group: button\n\nA pressure sensitive push-button.\n\n## Registers\n\n    rw threshold: u0.16 / @ active_threshold\n    \nIndicates the threshold for ``up`` events.\n"}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/pressurebutton/",
+    "result": {"pageContext":{"classIdentifier":672612547,"source":"# Pressure Button\n\n    identifier: 0x281740c3\n    tags: 8bit\n    group: button\n\nA pressure sensitive push-button.\n\n## Registers\n\n    rw threshold: u0.16 / @ active_threshold\n    \nIndicates the threshold for ``up`` events.\n"}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

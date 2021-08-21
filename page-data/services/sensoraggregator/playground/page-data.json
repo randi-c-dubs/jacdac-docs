@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-playground-tsx","path":"/services/sensoraggregator/playground/","result":{"pageContext":{"node":{"name":"Sensor Aggregator","shortName":"sensorAggregator","shortId":"sensoraggregator","classIdentifier":496034245}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-playground-tsx",
+    "path": "/services/sensoraggregator/playground/",
+    "result": {"pageContext":{"node":{"name":"Sensor Aggregator","shortName":"sensorAggregator","shortId":"sensoraggregator","classIdentifier":496034245}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

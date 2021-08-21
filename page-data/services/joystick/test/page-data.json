@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-test-tsx","path":"/services/joystick/test/","result":{"pageContext":{"node":{"name":"Joystick","shortName":"joystick","shortId":"joystick","classIdentifier":277836886}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-test-tsx",
+    "path": "/services/joystick/test/",
+    "result": {"pageContext":{"node":{"name":"Joystick","shortName":"joystick","shortId":"joystick","classIdentifier":277836886}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

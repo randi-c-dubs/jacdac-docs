@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/trafficlight/","result":{"pageContext":{"classIdentifier":365137307,"source":"# Traffic Light\n\n    identifier: 0x15c38d9b\n    tags: 8bit\n\nControls a mini traffic with a red, orange and green LED.\n\n## Registers\n\n    rw red: bool @ 0x80\n\nThe on/off state of the red light.\n\n    rw orange: bool @ 0x81\n\nThe on/off state of the red light.\n\n    rw green: bool @ 0x82\n\nThe on/off state of the red light.\n"}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/trafficlight/",
+    "result": {"pageContext":{"classIdentifier":365137307,"source":"# Traffic Light\n\n    identifier: 0x15c38d9b\n    tags: 8bit\n\nControls a mini traffic with a red, orange and green LED.\n\n## Registers\n\n    rw red: bool @ 0x80\n\nThe on/off state of the red light.\n\n    rw orange: bool @ 0x81\n\nThe on/off state of the red light.\n\n    rw green: bool @ 0x82\n\nThe on/off state of the red light.\n"}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

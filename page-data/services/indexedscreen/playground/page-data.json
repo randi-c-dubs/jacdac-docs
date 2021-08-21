@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-playground-tsx","path":"/services/indexedscreen/playground/","result":{"pageContext":{"node":{"name":"Indexed screen","shortName":"indexedScreen","shortId":"indexedscreen","classIdentifier":385496805}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-playground-tsx",
+    "path": "/services/indexedscreen/playground/",
+    "result": {"pageContext":{"node":{"name":"Indexed screen","shortName":"indexedScreen","shortId":"indexedscreen","classIdentifier":385496805}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

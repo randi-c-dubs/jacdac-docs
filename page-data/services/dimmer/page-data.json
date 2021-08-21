@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/dimmer/","result":{"pageContext":{"classIdentifier":531637829,"source":"# Dimmer\n\n    identifier: 0x1fb02645\n    \nA light or fan controller that dims the current on a line.\n\n## Registers\n\n    rw intensity : u0.16 / @ intensity\n    \nThe intensity of the current. Set to ``0`` to turn off completely the current.\n\n    enum Variant : u8 {\n        Light = 1\n        Fan = 2\n        Pump = 3\n    }\n    const variant?: Variant @ variant\n    \nThe type of physical device\n"}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/dimmer/",
+    "result": {"pageContext":{"classIdentifier":531637829,"source":"# Dimmer\n\n    identifier: 0x1fb02645\n    \nA light or fan controller that dims the current on a line.\n\n## Registers\n\n    rw intensity : u0.16 / @ intensity\n    \nThe intensity of the current. Set to ``0`` to turn off completely the current.\n\n    enum Variant : u8 {\n        Light = 1\n        Fan = 2\n        Pump = 3\n    }\n    const variant?: Variant @ variant\n    \nThe type of physical device\n"}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

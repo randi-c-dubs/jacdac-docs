@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/potentiometer/","result":{"pageContext":{"classIdentifier":522667846,"source":"# Potentiometer\n\n    identifier: 0x1f274746\n    extends: _sensor\n    group: slider\n    tags: C, 8bit\n\nA slider or rotary potentiometer.\n\n## Registers\n\n    ro position: u0.16 / @ reading\n\nThe relative position of the slider between `0` and `1`.\n\n    enum Variant: u8 {\n        Slider = 1,\n        Rotary = 2,\n    }\n    const variant?: Variant @ variant\n\nSpecifies the physical layout of the potentiometer."}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/potentiometer/",
+    "result": {"pageContext":{"classIdentifier":522667846,"source":"# Potentiometer\n\n    identifier: 0x1f274746\n    extends: _sensor\n    group: slider\n    tags: C, 8bit\n\nA slider or rotary potentiometer.\n\n## Registers\n\n    ro position: u0.16 / @ reading\n\nThe relative position of the slider between `0` and `1`.\n\n    enum Variant: u8 {\n        Slider = 1,\n        Rotary = 2,\n    }\n    const variant?: Variant @ variant\n\nSpecifies the physical layout of the potentiometer."}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

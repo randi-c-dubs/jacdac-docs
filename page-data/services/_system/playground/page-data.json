@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-playground-tsx","path":"/services/_system/playground/","result":{"pageContext":{"node":{"name":"Common registers and commands","shortName":"system","shortId":"_system","classIdentifier":536870897}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-playground-tsx",
+    "path": "/services/_system/playground/",
+    "result": {"pageContext":{"node":{"name":"Common registers and commands","shortName":"system","shortId":"_system","classIdentifier":536870897}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

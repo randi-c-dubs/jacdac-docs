@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/lightlevel/","result":{"pageContext":{"classIdentifier":400333340,"source":"# Light level\n\nA sensor that measures luminosity level.\n\n    identifier: 0x17dc9a1c\n    extends: _sensor\n    group: imaging\n    tags: 8bit, padauk\n\n## Registers\n\n    ro light_level: u0.16 / @ reading\n\nDetect light level\n\n    enum Variant: u8 {\n        PhotoResistor = 1,\n        LEDMatrix = 2,\n        Ambient = 3\n    }\n    const variant?: Variant @ variant\n\nThe type of physical sensor.\n"}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/lightlevel/",
+    "result": {"pageContext":{"classIdentifier":400333340,"source":"# Light level\n\nA sensor that measures luminosity level.\n\n    identifier: 0x17dc9a1c\n    extends: _sensor\n    group: imaging\n    tags: 8bit, padauk\n\n## Registers\n\n    ro light_level: u0.16 / @ reading\n\nDetect light level\n\n    enum Variant: u8 {\n        PhotoResistor = 1,\n        LEDMatrix = 2,\n        Ambient = 3\n    }\n    const variant?: Variant @ variant\n\nThe type of physical sensor.\n"}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

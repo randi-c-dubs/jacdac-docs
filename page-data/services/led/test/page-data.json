@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-test-tsx","path":"/services/led/test/","result":{"pageContext":{"node":{"name":"LED","shortName":"led","shortId":"led","classIdentifier":506480888}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-test-tsx",
+    "path": "/services/led/test/",
+    "result": {"pageContext":{"node":{"name":"LED","shortName":"led","shortId":"led","classIdentifier":506480888}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

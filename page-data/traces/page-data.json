@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-traces-mdx","path":"/traces/","result":{"pageContext":{"frontmatter":{"hideToc":true,"order":5,"title":"Traces"}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-pages-traces-mdx",
+    "path": "/traces/",
+    "result": {"pageContext":{"frontmatter":{"hideToc":true,"order":5,"title":"Traces"}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

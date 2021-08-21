@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-clients-makecode-mdx","path":"/clients/makecode/","result":{"pageContext":{"frontmatter":{"title":"MakeCode","weight":0}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-pages-clients-makecode-mdx",
+    "path": "/clients/makecode/",
+    "result": {"pageContext":{"frontmatter":{"title":"MakeCode","weight":0}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

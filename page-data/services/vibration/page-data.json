@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-tsx","path":"/services/vibration/","result":{"pageContext":{"classIdentifier":406832290,"source":"# Vibration motor\n\n    identifier: 0x183fc4a2\n\nA vibration motor.\n\n## Registers\n\n    rw enabled: bool @ intensity\n\nDetermines if the vibration motor responds to vibrate commands.\n\n## Commands\n\n    command vibrate @ 0x80 {\n    repeats:\n        duration: u8 8ms,\n        speed: u0.8 /\n    }\n\nStarts a sequence of vibration and pauses. To stop any existing vibration, send an empty payload.\n"}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-tsx",
+    "path": "/services/vibration/",
+    "result": {"pageContext":{"classIdentifier":406832290,"source":"# Vibration motor\n\n    identifier: 0x183fc4a2\n\nA vibration motor.\n\n## Registers\n\n    rw enabled: bool @ intensity\n\nDetermines if the vibration motor responds to vibrate commands.\n\n## Commands\n\n    command vibrate @ 0x80 {\n    repeats:\n        duration: u8 8ms,\n        speed: u0.8 /\n    }\n\nStarts a sequence of vibration and pauses. To stop any existing vibration, send an empty payload.\n"}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

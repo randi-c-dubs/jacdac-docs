@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-playground-tsx","path":"/services/waterlevel/playground/","result":{"pageContext":{"node":{"name":"Water level","shortName":"waterLevel","shortId":"waterlevel","classIdentifier":343630573}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-playground-tsx",
+    "path": "/services/waterlevel/playground/",
+    "result": {"pageContext":{"node":{"name":"Water level","shortName":"waterLevel","shortId":"waterlevel","classIdentifier":343630573}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-service-playground-tsx","path":"/services/reflectedlight/playground/","result":{"pageContext":{"node":{"name":"Reflected light","shortName":"reflectedLight","shortId":"reflectedlight","classIdentifier":309087410}}},"staticQueryHashes":["2307937736","2744294623","2898794040","413816803","63159454"]}
+{
+    "componentChunkName": "component---src-templates-service-playground-tsx",
+    "path": "/services/reflectedlight/playground/",
+    "result": {"pageContext":{"node":{"name":"Reflected light","shortName":"reflectedLight","shortId":"reflectedlight","classIdentifier":309087410}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
