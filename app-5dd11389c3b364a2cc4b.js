@@ -53853,21 +53853,26 @@ var HostedModelStore = /*#__PURE__*/function (_JDEventSource2) {
 
   return HostedModelStore;
 }(eventsource/* JDEventSource */.aE);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/iframeclient.ts
-var iframeclient = __webpack_require__(9809);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
+var client = __webpack_require__(47235);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/embed/transport.ts
 
 
 
-var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
-  (0,inheritsLoose/* default */.Z)(IFrameTransport, _JDIFrameClient);
+
+/**
+ * @internal
+ */
+var IFrameTransport = /*#__PURE__*/function (_JDClient) {
+  (0,inheritsLoose/* default */.Z)(IFrameTransport, _JDClient);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function IFrameTransport(bus) {
+  function IFrameTransport(origin) {
     var _this;
 
-    _this = _JDIFrameClient.call(this, bus) || this;
+    _this = _JDClient.call(this) || this;
     _this.ackAwaiters = {};
+    _this.origin = origin;
     _this.handleMessage = _this.handleMessage.bind((0,assertThisInitialized/* default */.Z)(_this));
     window.addEventListener("message", _this.handleMessage, false);
 
@@ -53880,6 +53885,14 @@ var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
 
   var _proto = IFrameTransport.prototype;
 
+  _proto.isOriginValid = function isOriginValid(msg) {
+    return this.origin === "*" || msg.origin === this.origin;
+  }
+  /**
+   * @internal
+   */
+  ;
+
   _proto.postReady = function postReady() {
     this.postMessage({
       type: "status",
@@ -53890,7 +53903,7 @@ var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
   }
   /**
    * Post message to client and awaits for ack if needed
-   * @param msg
+   * @internal
    */
   ;
 
@@ -53933,11 +53946,13 @@ var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
   };
 
   return IFrameTransport;
-}(iframeclient/* default */.ZP);
+}(client/* default */.Z);
 // EXTERNAL MODULE: ./src/components/ui/DarkModeContext.tsx
 var DarkModeContext = __webpack_require__(91350);
 // EXTERNAL MODULE: ./src/jacdac/Context.tsx
 var Context = __webpack_require__(20392);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/iframeclient.ts
+var iframeclient = __webpack_require__(9809);
 ;// CONCATENATED MODULE: ./src/components/ServiceManagerContext.tsx
 
 
@@ -54026,7 +54041,7 @@ var ServiceManagerProvider = function ServiceManagerProvider(_ref) {
 
     if (isHosted) {
       console.log("starting hosted services");
-      var transport = new IFrameTransport(bus);
+      var transport = new IFrameTransport(bus.parentOrigin);
       fileStorage = new HostedFileStorage(transport);
       modelStore = new HostedModelStore(transport); // notify host that we are ready
 
@@ -59322,7 +59337,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "1f2720473d3f581ae74073c777c1aca8f41fd670";
+  var sha = "b2a649cf7dc4184b64e69c1c51f3c894ee4e7991";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -80487,6 +80502,10 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
    */
 
   /**
+   * @internal
+   */
+
+  /**
    * Creates the bus with the given transport
    * @param sendPacket
    * @category Lifecycle
@@ -80824,6 +80843,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Clears known devices and service providers (simulators). Optionally reset bus timestamp.
    * @param timestamp
+   * @category Services
    */
   _proto.clear = function clear(timestamp) {
     var _this$_serviceProvide,
@@ -80866,7 +80886,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
   /**
    * Sets the default role manager service client
-   * @category Service Clients
+   * @category Services
    */
   _proto.setRoleManagerService = function setRoleManagerService(service) {
     var _this$_roleManagerCli;
@@ -81027,6 +81047,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Sends a packet to the bus
    * @param packet packet to send
+   * @internal
    */
   ;
 
@@ -81067,7 +81088,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
   /**
    * Gets the current list of known devices on the bus
-   * @category Service Clients
+   * @category Services
    */
   _proto.devices = function devices(options) {
     var _this8 = this;
@@ -81099,7 +81120,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the current list of service providers on the bus
-   * @category Service Servers
+   * @category Services
    */
   ;
 
@@ -81109,7 +81130,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Get a service providers for a given device
    * @param deviceId
-   * @category Service Servers
+   * @category Services
    */
   ;
 
@@ -81121,7 +81142,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Adds the service provider to the bus and returns the associated devoce
    * @param provider instance to add
-   * @category Service Servers
+   * @category Services
    */
   ;
 
@@ -81139,7 +81160,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Removes the service provider from the bus
    * @param provider instance to remove
-   * @category Service Servers
+   * @category Services
    */
   ;
 
@@ -81181,7 +81202,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
   /**
    * Gets the current list of services from all the known devices on the bus
-   * @category Service Clients
+   * @category Services
    */
   _proto.services = function services(options) {
     return (0,utils/* arrayConcatMany */.ue)(this.devices(options).map(function (d) {
@@ -81193,7 +81214,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
    * @param id device identifier to query
    * @param skipCreate do not create new device if missing
    * @param pkt packet that generated this device query
-   * @category Service Clients
+   * @category Services
    */
   ;
 
@@ -81389,7 +81410,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the virtual device created by this bus to handle pipes.
-   * @category Service Clients
+   * @category Services
    */
   ;
 
@@ -81500,7 +81521,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }()
   /**
    * Indicates if registers are automatically refreshed in the background.
-   * @category Service Clients
+   * @category Services
    */
   ;
 
@@ -81599,12 +81620,13 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Runs a promise with a timeout. Returns undefined if timeout happens before of disconnection.
-   * @param timeout
-   * @param p
+   * @param timeout duration to wait before declaring timeout
+   * @param promise promise to wrap
+   * @category Lifecycle
    */
   ;
 
-  _proto.withTimeout = function withTimeout(timeout, p) {
+  _proto.withTimeout = function withTimeout(timeout, promise) {
     var _this10 = this;
 
     return new Promise(function (resolve, reject) {
@@ -81631,7 +81653,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
           }
         }
       }, timeout);
-      p.then(function (v) {
+      promise.then(function (v) {
         if (!done) {
           done = true;
           clearTimeout(tid);
@@ -81762,7 +81784,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the default role manager service client, if any
-     * @category Service Clients
+     * @category Services
      */
 
   }, {
@@ -81839,7 +81861,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     /**
      * Enables or disables automatically refreshing registers in the background.
      * @param enabled true to automatically refresh registers
-     * @category Service Clients
+     * @category Services
      */
     ,
     set: function set(enabled) {
@@ -85388,6 +85410,7 @@ function iframebridgeclient_arrayLikeToArray(arr, len) { if (len == null || len 
 var ignoredServices = [constants/* SRV_CONTROL */.gm9, constants/* SRV_LOGGER */.w9j, constants/* SRV_SETTINGS */.B9b, constants/* SRV_ROLE_MANAGER */.igi, constants/* SRV_PROTO_TEST */.$Bn];
 /**
  * A client that bridges received and sent packets to a parent iframe
+ * @internal
  */
 
 var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
@@ -85755,7 +85778,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.5"};
+var package_namespaceObject = {"i8":"1.14.6"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
