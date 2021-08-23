@@ -577,6 +577,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 /**
  * A client that bridges received and sent packets to a parent iframe.
+ * @category JDOM
  */
 
 var JDBridge = /*#__PURE__*/function (_JDClient) {
@@ -672,8 +673,7 @@ var JDBridge = /*#__PURE__*/function (_JDClient) {
 
   return JDBridge;
 }(client/* JDClient */.z);
-
-
+/* harmony default export */ var bridge = (JDBridge);
 // EXTERNAL MODULE: ./node_modules/peerjs/dist/peerjs.min.js
 var peerjs_min = __webpack_require__(35168);
 var peerjs_min_default = /*#__PURE__*/__webpack_require__.n(peerjs_min);
@@ -784,7 +784,7 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
   }]);
 
   return PeerJSBridge;
-}(JDBridge);
+}(bridge);
 
 
 // EXTERNAL MODULE: ./src/components/ui/GridHeader.tsx
