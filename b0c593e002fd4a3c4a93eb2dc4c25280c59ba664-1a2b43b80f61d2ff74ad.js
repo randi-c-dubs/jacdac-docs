@@ -7734,8 +7734,8 @@ var TabPanel = __webpack_require__(3263);
 var makecode_MakeCodeSnippetContext = __webpack_require__(54888);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var makecode = __webpack_require__(93127);
+// EXTERNAL MODULE: ./src/components/makecode/services.ts + 1 modules
+var services = __webpack_require__(21389);
 ;// CONCATENATED MODULE: ./src/components/hooks/useWindowEvent.ts
 
 function useWindowEvent_useWindowEvent(type, listener, passive, deps) {
@@ -7813,7 +7813,7 @@ function parseMakeCodeSnippet(source) {
   } // sniff services
 
 
-  var mkcds = (0,makecode/* makeCodeServices */.qs)();
+  var mkcds = (0,services/* makeCodeServices */.qs)();
   mkcds.filter(function (info) {
     var src = (ghost || "") + "\n" + (code || "");
     return src.indexOf(info.client.qName) > -1 || info.client.default && src.indexOf(info.client.default) > -1;
@@ -8005,7 +8005,7 @@ function MakeCodeSimulator(props) {
     ref: frameRef,
     className: classes.iframe,
     src: url,
-    "aria-label": "MakeCode rendering iframe to generate blocks images."
+    title: "MakeCode rendering iframe to generate blocks images."
   }))));
 }
 // EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
@@ -8239,8 +8239,8 @@ var react = __webpack_require__(67294);
 var constants = __webpack_require__(71815);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
-var providerbus = __webpack_require__(31925);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 23 modules
+var providerbus = __webpack_require__(48202);
 // EXTERNAL MODULE: ./src/jacdac/Context.tsx
 var Context = __webpack_require__(20392);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/defineProperty.js

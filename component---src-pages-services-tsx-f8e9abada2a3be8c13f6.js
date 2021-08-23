@@ -721,8 +721,8 @@ var JacdacIcon = __webpack_require__(36656);
 var Markdown = __webpack_require__(59193);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/CheckCircle.js
 var CheckCircle = __webpack_require__(39545);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var jdom_makecode = __webpack_require__(93127);
+// EXTERNAL MODULE: ./src/components/makecode/services.ts + 1 modules
+var makecode_services = __webpack_require__(21389);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdutils.ts
 var jdutils = __webpack_require__(30055);
 ;// CONCATENATED MODULE: ./src/components/ServiceSpecificationList.tsx
@@ -753,7 +753,7 @@ function ServiceSpecificatinListItem(props) {
       name = service.name,
       notes = service.notes,
       tags = service.tags;
-  var makecode = (0,jdom_makecode/* resolveMakecodeServiceFromClassIdentifier */.WB)(classIdentifier);
+  var makecode = (0,makecode_services/* resolveMakecodeServiceFromClassIdentifier */.WB)(classIdentifier);
   var simulator = (0,servers/* serviceProviderDefinitionFromServiceClass */.vd)(classIdentifier);
   var device = !!((_deviceSpecifications = (0,jdom_spec/* deviceSpecificationsForService */.zn)(classIdentifier)) !== null && _deviceSpecifications !== void 0 && _deviceSpecifications.length);
   var test = (0,testspec/* serviceTestFromServiceClass */.H)(classIdentifier);
@@ -942,7 +942,7 @@ function ServiceCatalog() {
     }
 
     if (makeCode) r = r.filter(function (srv) {
-      return !!(0,jdom_makecode/* resolveMakecodeServiceFromClassIdentifier */.WB)(srv.classIdentifier);
+      return !!(0,makecode_services/* resolveMakecodeServiceFromClassIdentifier */.WB)(srv.classIdentifier);
     });
     if (mixin) r = r.filter(function (srv) {
       return (0,jdutils/* isMixinService */.fh)(srv.classIdentifier);

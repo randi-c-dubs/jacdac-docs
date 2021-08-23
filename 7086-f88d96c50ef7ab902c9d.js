@@ -288,8 +288,8 @@ var DarkModeContext = __webpack_require__(91350);
 var KindIcon = __webpack_require__(50048);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
 var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
-var providerbus = __webpack_require__(31925);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 23 modules
+var providerbus = __webpack_require__(48202);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
 var jdspec = __webpack_require__(13996);
 ;// CONCATENATED MODULE: ./src/components/shell/ToolsDrawer.tsx

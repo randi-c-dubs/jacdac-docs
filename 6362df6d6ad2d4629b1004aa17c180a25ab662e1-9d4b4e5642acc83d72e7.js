@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[274],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[5244,274],{
 
 /***/ 52377:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
@@ -98,8 +98,8 @@ var TabPanel = __webpack_require__(3263);
 var makecode_MakeCodeSnippetContext = __webpack_require__(54888);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var makecode = __webpack_require__(93127);
+// EXTERNAL MODULE: ./src/components/makecode/services.ts + 1 modules
+var services = __webpack_require__(21389);
 ;// CONCATENATED MODULE: ./src/components/hooks/useWindowEvent.ts
 
 function useWindowEvent_useWindowEvent(type, listener, passive, deps) {
@@ -177,7 +177,7 @@ function parseMakeCodeSnippet(source) {
   } // sniff services
 
 
-  var mkcds = (0,makecode/* makeCodeServices */.qs)();
+  var mkcds = (0,services/* makeCodeServices */.qs)();
   mkcds.filter(function (info) {
     var src = (ghost || "") + "\n" + (code || "");
     return src.indexOf(info.client.qName) > -1 || info.client.default && src.indexOf(info.client.default) > -1;
@@ -369,7 +369,7 @@ function MakeCodeSimulator(props) {
     ref: frameRef,
     className: classes.iframe,
     src: url,
-    "aria-label": "MakeCode rendering iframe to generate blocks images."
+    title: "MakeCode rendering iframe to generate blocks images."
   }))));
 }
 // EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
@@ -572,6 +572,93 @@ function CodeBlock(props) {
     default:
       return /*#__PURE__*/react.createElement(HighlightedCode, props);
   }
+}
+
+/***/ }),
+
+/***/ 31921:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ ServiceSpecificationCard; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(85420);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(95823);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(4998);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(29114);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80453);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(31186);
+/* harmony import */ var _jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13173);
+/* harmony import */ var _IDChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(92681);
+/* harmony import */ var gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36176);
+/* harmony import */ var _ui_Markdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(59193);
+/* harmony import */ var _ServiceSpecificationStatusAlert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(49102);
+/* harmony import */ var _jacdac_ts_src_servers_servers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(20079);
+/* harmony import */ var _jacdac_Context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(20392);
+/* harmony import */ var _KindIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(50048);
+/* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(71815);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(35313);
+
+
+
+
+
+
+
+
+
+
+
+
+function ServiceSpecificationCard(props) {
+  var _spec, _spec2, _spec3, _spec4, _spec5;
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_jacdac_Context__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z),
+      bus = _useContext.bus;
+
+  var serviceClass = props.serviceClass,
+      specification = props.specification,
+      showReleaseStatus = props.showReleaseStatus,
+      showServiceClass = props.showServiceClass;
+  var spec = specification;
+  if (!spec && serviceClass !== undefined) spec = (0,_jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_1__/* .serviceSpecificationFromClassIdentifier */ .d5)(serviceClass);
+  var sc = ((_spec = spec) === null || _spec === void 0 ? void 0 : _spec.classIdentifier) || serviceClass;
+  var srv = ((_spec2 = spec) === null || _spec2 === void 0 ? void 0 : _spec2.shortId) || (sc === null || sc === void 0 ? void 0 : sc.toString(16));
+  var hostDefinition = (0,_jacdac_ts_src_servers_servers__WEBPACK_IMPORTED_MODULE_6__/* .serviceProviderDefinitionFromServiceClass */ .vd)(sc);
+
+  var handleSimulatorClick = function handleSimulatorClick() {
+    (0,_jacdac_ts_src_servers_servers__WEBPACK_IMPORTED_MODULE_6__/* .addServiceProvider */ .Q6)(bus, hostDefinition);
+    (0,gatsby__WEBPACK_IMPORTED_MODULE_10__.navigate)("/dashboard/");
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
+    title: ((_spec3 = spec) === null || _spec3 === void 0 ? void 0 : _spec3.name) || "???",
+    subheader: showServiceClass && srv && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_IDChip__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
+      id: sc,
+      filter: "srv:" + srv
+    }),
+    action: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, hostDefinition && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z, {
+      size: "small",
+      onClick: handleSimulatorClick,
+      avatar: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_KindIcon__WEBPACK_IMPORTED_MODULE_8__/* .default */ .ZP, {
+        kind: _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__/* .VIRTUAL_DEVICE_NODE_NAME */ .UX7
+      }),
+      "aria-label": "start simulator and open dashboard",
+      label: "simulator"
+    }))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, null, ((_spec4 = spec) === null || _spec4 === void 0 ? void 0 : _spec4.notes["short"]) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, {
+    variant: "body2",
+    component: "div"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ui_Markdown__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {
+    source: ((_spec5 = spec) === null || _spec5 === void 0 ? void 0 : _spec5.notes["short"].split(".", 1)[0]) + "."
+  })), showReleaseStatus && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceSpecificationStatusAlert__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+    specification: spec
+  })), spec && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: "outlined",
+    "aria-label": "open service " + spec.shortId + " page",
+    to: "/services/" + spec.shortId + "/"
+  }, "More...")));
 }
 
 /***/ }),

@@ -553,10 +553,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Page; }
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(33287);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(83332);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(70079);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(23581);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(33287);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(83332);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(70079);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23581);
 /* harmony import */ var _components_ui_ThemedLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56251);
 /* harmony import */ var _jacdac_ts_src_jdom_spec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13173);
 /* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81794);
@@ -566,6 +566,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _jacdac_Context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(20392);
 /* harmony import */ var _jacdac_useChange__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(54774);
 /* harmony import */ var _components_ui_DarkModeContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(91350);
+/* harmony import */ var _components_makecode_iframebridgeclient__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(43380);
+
 
 
 
@@ -609,7 +611,7 @@ function Carousel() {
   var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_jacdac_Context__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z),
       bus = _useContext.bus;
 
-  var iframeBridge = bus.iframeBridge;
+  var iframeBridge = bus.nodeData[_components_makecode_iframebridgeclient__WEBPACK_IMPORTED_MODULE_10__/* .default.DATA_ID */ .Z.DATA_ID];
   var deviceFilter = iframeBridge.deviceFilter.bind(iframeBridge);
   var serviceFilter = iframeBridge.serviceFilter.bind(iframeBridge);
   var extensions = (0,_jacdac_useChange__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z)(iframeBridge, function (_) {
@@ -626,9 +628,9 @@ function Carousel() {
     deviceFilter: deviceFilter,
     serviceFilter: serviceFilter,
     showStartSimulators: false
-  }), !!(extensions !== null && extensions !== void 0 && extensions.length) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, {
+  }), !!(extensions !== null && extensions !== void 0 && extensions.length) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
     m: 1
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
     size: "medium",
     color: "primary",
     variant: "contained",
@@ -643,7 +645,7 @@ function Page() {
       toggleDarkMode = _useContext2.toggleDarkMode,
       darkModeMounted = _useContext2.darkModeMounted;
 
-  var rawTheme = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z)({
+  var rawTheme = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)({
     palette: {
       primary: {
         main: "#63c"
@@ -655,7 +657,7 @@ function Page() {
       contrastThreshold: 3.1
     }
   });
-  var theme = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)(rawTheme);
+  var theme = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z)(rawTheme);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (darkModeMounted) toggleDarkMode("light");
   }, [darkModeMounted]);

@@ -879,8 +879,8 @@ var Save = __webpack_require__(8567);
 var jdspec = __webpack_require__(13996);
 // EXTERNAL MODULE: ./node_modules/react-use-id-hook/dist/react-use-id-hook.esm.js
 var react_use_id_hook_esm = __webpack_require__(19640);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var makecode = __webpack_require__(93127);
+// EXTERNAL MODULE: ./src/components/makecode/services.ts + 1 modules
+var services = __webpack_require__(21389);
 ;// CONCATENATED MODULE: ./src/components/makecode/MakeCodeEditorExtension.tsx
 
 
@@ -906,7 +906,7 @@ var makecode = __webpack_require__(93127);
 function toTypescript(config) {
   var ns = "myModules";
   return "// auto-generated, do not edit.\nnamespace " + ns + " {\n" + config.roles.map(function (role) {
-    return "\n    //% fixedInstance block=\"" + role.name + "\"\n    export const " + (0,jdspec/* camelize */._A)(role.name) + " = new " + (0,makecode/* resolveMakecodeServiceFromClassIdentifier */.WB)(role.service).client.qName + "(\"" + (0,jdspec/* camelize */._A)(role.name) + "\");\n";
+    return "\n    //% fixedInstance block=\"" + role.name + "\"\n    export const " + (0,jdspec/* camelize */._A)(role.name) + " = new " + (0,services/* resolveMakecodeServiceFromClassIdentifier */.WB)(role.service).client.qName + "(\"" + (0,jdspec/* camelize */._A)(role.name) + "\");\n";
   }).join("") + "\n\n    // start after main\n    control.runInParallel(function() {\n        " + config.roles.map(function (role) {
     return "    " + ns + "." + (0,jdspec/* camelize */._A)(role.name) + ".start();\n        ";
   }).join("") + "\n    })\n}\n    ";
@@ -915,7 +915,7 @@ function toTypescript(config) {
 function toDependencies(config) {
   var r = {};
   config === null || config === void 0 ? void 0 : config.roles.forEach(function (role) {
-    var mk = (0,makecode/* resolveMakecodeServiceFromClassIdentifier */.WB)(role.service);
+    var mk = (0,services/* resolveMakecodeServiceFromClassIdentifier */.WB)(role.service);
     r[mk.client.name] = "github:" + mk.client.repo;
   });
   return r;
@@ -1030,7 +1030,7 @@ function MakeCodeEditorExtension() {
   }, [client]);
 
   var hasMakeCodeService = function hasMakeCodeService(srv) {
-    return !!(0,makecode/* resolveMakecodeService */.K9)(srv);
+    return !!(0,services/* resolveMakecodeService */.K9)(srv);
   };
 
   var update = function update() {

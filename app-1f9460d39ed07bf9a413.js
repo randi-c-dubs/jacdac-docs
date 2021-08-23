@@ -39318,40 +39318,6 @@ var LIGHT_PROG_COL1_SET = 0xcf;
 
 /***/ }),
 
-/***/ 93127:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "qs": function() { return /* binding */ makeCodeServices; },
-  "K9": function() { return /* binding */ resolveMakecodeService; },
-  "WB": function() { return /* binding */ resolveMakecodeServiceFromClassIdentifier; }
-});
-
-;// CONCATENATED MODULE: ./jacdac-ts/jacdac-spec/services/makecode-extensions.json
-var makecode_extensions_namespaceObject = JSON.parse('[{"service":"accelerometer","client":{"name":"jacdac-accelerometer","repo":"microsoft/pxt-jacdac/accelerometer","qName":"modules.AccelerometerClient","default":"modules.accelerometer"}},{"service":"barometer","client":{"name":"jacdac-barometer","repo":"microsoft/pxt-jacdac/barometer","qName":"modules.BarometerClient","default":"modules.barometer"}},{"service":"button","client":{"name":"jacdac-button","repo":"microsoft/pxt-jacdac/button","qName":"modules.ButtonClient","default":"modules.button"}},{"service":"buzzer","client":{"name":"jacdac-buzzer","repo":"microsoft/pxt-jacdac/buzzer","qName":"modules.BuzzerClient","default":"modules.buzzer"}},{"service":"characterscreen","client":{"name":"jacdac-character-screen","repo":"microsoft/pxt-jacdac/character-screen","qName":"modules.CharacterScreenClient","default":"modules.characterScreen"}},{"service":"compass","client":{"name":"jacdac-compass","repo":"microsoft/pxt-jacdac/compass","qName":"modules.CompassClient","default":"modules.compass"}},{"service":"distance","client":{"name":"jacdac-distance","repo":"microsoft/pxt-jacdac/distance","qName":"modules.DistanceClient","default":"modules.distance"}},{"service":"dmx","client":{"name":"jacdac-dmx","repo":"microsoft/pxt-jacdac/dmx","qName":"modules.DmxClient","default":"modules.dmx"}},{"service":"eco2","client":{"name":"jacdac-e-co2","repo":"microsoft/pxt-jacdac/e-co2","qName":"modules.ECO2Client","default":"modules.eCO2"}},{"service":"gyroscope","client":{"name":"jacdac-gyroscope","repo":"microsoft/pxt-jacdac/gyroscope","qName":"modules.GyroscopeClient","default":"modules.gyroscope"}},{"service":"heartrate","client":{"name":"jacdac-heart-rate","repo":"microsoft/pxt-jacdac/heart-rate","qName":"modules.HeartRateClient","default":"modules.heartRate"}},{"service":"hidkeyboard","client":{"name":"jacdac-hid-keyboard","repo":"microsoft/pxt-jacdac/hid-keyboard","qName":"modules.HidKeyboardClient","default":"modules.hidKeyboard"}},{"service":"hidmouse","client":{"name":"jacdac-hid-mouse","repo":"microsoft/pxt-jacdac/hid-mouse","qName":"modules.HidMouseClient","default":"modules.hidMouse"}},{"service":"humidity","client":{"name":"jacdac-humidity","repo":"microsoft/pxt-jacdac/humidity","qName":"modules.HumidityClient","default":"modules.humidity"}},{"service":"illuminance","client":{"name":"jacdac-illuminance","repo":"microsoft/pxt-jacdac/illuminance","qName":"modules.IlluminanceClient","default":"modules.illuminance"}},{"service":"joystick","client":{"name":"jacdac-joystick","repo":"microsoft/pxt-jacdac/joystick","qName":"modules.JoystickClient","default":"modules.joystick"}},{"service":"led","client":{"name":"jacdac-led","repo":"microsoft/pxt-jacdac/led","qName":"modules.LedClient","default":"modules.led"}},{"service":"ledpixel","client":{"name":"jacdac-led-pixel","repo":"microsoft/pxt-jacdac/led-pixel","qName":"modules.LedPixelClient","default":"modules.ledPixel"}},{"service":"lightlevel","client":{"name":"jacdac-light-level","repo":"microsoft/pxt-jacdac/light-level","qName":"modules.LightLevelClient","default":"modules.lightLevel"}},{"service":"magnetomer","client":{"name":"jacdac-magnetometer","repo":"microsoft/pxt-jacdac/magnetometer","qName":"modules.MagnetometerClient","default":"modules.magnetometer"}},{"service":"modelrunner","client":{"name":"jacdac-model-runner","repo":"microsoft/pxt-jacdac/model-runner","qName":"modules.ModelRunnerClient","default":"modules.modelRunner"}},{"service":"motion","client":{"name":"jacdac-motion","repo":"microsoft/pxt-jacdac/motion","qName":"modules.MotionClient","default":"modules.motion"}},{"service":"motor","client":{"name":"jacdac-motor","repo":"microsoft/pxt-jacdac/motor","qName":"modules.MotorClient","default":"modules.motor"}},{"service":"multitouch","client":{"name":"jacdac-multitouch","repo":"microsoft/pxt-jacdac/multitouch","qName":"modules.MultitouchClient","default":"modules.multitouch"}},{"service":"potentiometer","client":{"name":"jacdac-potentiometer","repo":"microsoft/pxt-jacdac/potentiometer","qName":"modules.PotentiometerClient","default":"modules.potentiometer"}},{"service":"power","client":{"name":"jacdac-power","repo":"microsoft/pxt-jacdac/power","qName":"modules.PowerClient","default":"modules.power"}},{"service":"pulseoximeter","client":{"name":"jacdac-pulse-oximeter","repo":"microsoft/pxt-jacdac/pulse-oximeter","qName":"modules.PulseOximeterClient","default":"modules.pulseOximeter"}},{"service":"raingauge","client":{"name":"jacdac-rain-gauge","repo":"microsoft/pxt-jacdac/rain-gauge","qName":"modules.RainGaugeClient","default":"modules.rainGauge"}},{"service":"realtimeclock","client":{"name":"jacdac-real-time-clock","repo":"microsoft/pxt-jacdac/real-time-clock","qName":"modules.RealTimeClockClient","default":"modules.realTimeClock"}},{"service":"reflectedlight","client":{"name":"jacdac-reflected-light","repo":"microsoft/pxt-jacdac/reflected-light","qName":"modules.ReflectedLightClient","default":"modules.reflectedLight"}},{"service":"rotaryencoder","client":{"name":"jacdac-rotary-encoder","repo":"microsoft/pxt-jacdac/rotary-encoder","qName":"modules.RotaryEncoderClient","default":"modules.rotaryEncoder"}},{"service":"sensoraggregator","client":{"name":"jacdac-sensor-aggregator","repo":"microsoft/pxt-jacdac/sensor-aggregator","qName":"modules.SensorAggregatorClient","default":"modules.sensorAggregator"}},{"service":"servo","client":{"name":"jacdac-servo","repo":"microsoft/pxt-jacdac/servo","qName":"modules.ServoClient","default":"modules.servo"}},{"service":"soilmoisture","client":{"name":"jacdac-soil-moisture","repo":"microsoft/pxt-jacdac/soil-moisture","qName":"modules.SoilMoistureClient","default":"modules.soilMoisture"}},{"service":"solenoid","client":{"name":"jacdac-solenoid","repo":"microsoft/pxt-jacdac/solenoid","qName":"modules.SolenoidClient","default":"modules.solenoid"}},{"service":"soundlevel","client":{"name":"jacdac-sound-level","repo":"microsoft/pxt-jacdac/sound-level","qName":"modules.SoundLevelClient","default":"modules.soundLevel"}},{"service":"tcp","client":{"name":"jacdac-tcp","repo":"microsoft/pxt-jacdac/tcp","qName":"modules.TcpClient","default":"modules.tcp"}},{"service":"thermocouple","client":{"name":"jacdac-thermocouple","repo":"microsoft/pxt-jacdac/thermocouple","qName":"modules.ThermocoupleClient","default":"modules.thermocouple"}},{"service":"thermometer","client":{"name":"jacdac-thermometer","repo":"microsoft/pxt-jacdac/thermometer","qName":"modules.ThermometerClient","default":"modules.thermometer"}},{"service":"tvoc","client":{"name":"jacdac-tvoc","repo":"microsoft/pxt-jacdac/tvoc","qName":"modules.TvocClient","default":"modules.tvoc"}},{"service":"uvindex","client":{"name":"jacdac-uv-index","repo":"microsoft/pxt-jacdac/uv-index","qName":"modules.UvIndexClient","default":"modules.uvIndex"}},{"service":"waterlevel","client":{"name":"jacdac-water-level","repo":"microsoft/pxt-jacdac/water-level","qName":"modules.WaterLevelClient","default":"modules.waterLevel"}},{"service":"weightscale","client":{"name":"jacdac-weight-scale","repo":"microsoft/pxt-jacdac/weight-scale","qName":"modules.WeightScaleClient","default":"modules.weightScale"}},{"service":"wifi","client":{"name":"jacdac-wifi","repo":"microsoft/pxt-jacdac/wifi","qName":"modules.WifiClient","default":"modules.wifi"}},{"service":"winddirection","client":{"name":"jacdac-wind-direction","repo":"microsoft/pxt-jacdac/wind-direction","qName":"modules.WindDirectionClient","default":"modules.windDirection"}},{"service":"windspeed","client":{"name":"jacdac-wind-speed","repo":"microsoft/pxt-jacdac/wind-speed","qName":"modules.WindSpeedClient","default":"modules.windSpeed"}}]');
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
-var spec = __webpack_require__(13173);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/makecode.ts
-
-
-function makeCodeServices() {
-  return makecode_extensions_namespaceObject.slice(0);
-}
-function resolveMakecodeService(service) {
-  return service && makecode_extensions_namespaceObject.find(function (mk) {
-    return mk.service === service.shortId;
-  });
-}
-function resolveMakecodeServiceFromClassIdentifier(serviceClass) {
-  var srv = (0,spec/* serviceSpecificationFromClassIdentifier */.d5)(serviceClass);
-  return srv && resolveMakecodeService(srv);
-}
-
-/***/ }),
-
 /***/ 60154:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -39422,6 +39388,16 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
      * @category JDOM
      */
 
+  }, {
+    key: "nodeData",
+    get:
+    /**
+     * Gets a databag to store custom information
+     */
+    function get() {
+      if (!this._nodeData) this._nodeData = {};
+      return this._nodeData;
+    }
   }]);
 
   return JDNode;
@@ -59507,7 +59483,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "57cc252c4e875bc175b72119793a876be1225d8d";
+  var sha = "a5d65ccfd281f9065a86bb20bd3c55566531683c";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60548,8 +60524,8 @@ function PacketStats() {
 }
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Forum.js
 var Forum = __webpack_require__(22203);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
-var providerbus = __webpack_require__(31925);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 23 modules
+var providerbus = __webpack_require__(48202);
 ;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/useScrollTrigger/useScrollTrigger.js
 
 
@@ -61147,6 +61123,321 @@ function MakeCodeSnippetProvider(props) {
       simUrl: simUrl
     }
   }, children);
+}
+
+/***/ }),
+
+/***/ 43380:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export IFrameBridgeClient */
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(53719);
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(25342);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85413);
+/* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
+/* harmony import */ var _jacdac_ts_src_jdom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(47235);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(21389);
+/* harmony import */ var _jacdac_ts_src_jdom_packet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57683);
+/* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81794);
+
+
+
+
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+
+
+var ignoredServices = [_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_CONTROL */ .gm9, _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_LOGGER */ .w9j, _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_SETTINGS */ .B9b, _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_ROLE_MANAGER */ .igi, _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_PROTO_TEST */ .$Bn];
+/**
+ * A client that bridges received and sent packets to a parent iframe
+ * @internal
+ */
+
+var IFrameBridgeClient = /*#__PURE__*/function (_JDClient) {
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(IFrameBridgeClient, _JDClient);
+
+  // this is a unique id used to trace packets sent by this bridge
+  function IFrameBridgeClient(bus, frameId) {
+    var _this;
+
+    _this = _JDClient.call(this) || this;
+    _this.bridgeId = "bridge" + Math.random();
+    _this.packetSent = 0;
+    _this.packetProcessed = 0;
+    _this._lastAspectRatio = 0;
+    _this.bus = bus;
+    _this.frameId = frameId;
+    _this.postPacket = _this.postPacket.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this));
+    _this.handleMessage = _this.handleMessage.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this));
+    _this.handleResize = (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__/* .debounce */ .Ds)(_this.handleResize.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this)), 200);
+
+    _this.registerEvents();
+
+    _this.bus.nodeData[IFrameBridgeClient.DATA_ID] = (0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this);
+    return _this;
+  }
+
+  var _proto = IFrameBridgeClient.prototype;
+
+  _proto.isOriginValid = function isOriginValid(msg) {
+    return this.origin === "*" || msg.origin === this.origin;
+  };
+
+  _proto.registerEvents = function registerEvents() {
+    var _this2 = this;
+
+    console.debug("jdiframe: listening for packets");
+    this.mount(this.bus.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_PROCESS */ .wY8, this.postPacket));
+    this.mount(this.bus.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_SEND */ .RaS, this.postPacket));
+    this.mount(this.bus.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .DEVICE_ANNOUNCE */ .Hob, this.handleResize)); // force compute add blocks button
+
+    this.mount(this.bus.subscribe(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .DEVICE_ANNOUNCE */ .Hob, function () {
+      return _this2.emit(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .CHANGE */ .Ver);
+    })); // don't use bus.schedulere here
+
+    var id = setInterval(this.handleResize, 1000);
+    this.mount(function () {
+      return clearInterval(id);
+    });
+    window.addEventListener("message", this.handleMessage, false);
+    this.mount(function () {
+      return window.removeEventListener("message", _this2.handleMessage, false);
+    });
+
+    if (window.parent && window.parent !== window) {
+      var frameid = window.location.hash.slice(1);
+      console.debug({
+        frameid: frameid
+      }); // notify makecode we are ready
+
+      window.parent.postMessage({
+        type: "ready",
+        frameid: frameid
+      }, "*");
+    }
+  };
+
+  _proto.handleMessage = function handleMessage(event) {
+    if (!this.isOriginValid(event)) return;
+    var data = event.data;
+    var msg = data;
+
+    if (msg && msg.channel === "jacdac" && msg.type === "messagepacket") {
+      this.handleMessageJacdac(msg);
+    } else if ((data === null || data === void 0 ? void 0 : data.source) === "pxtdriver") {
+      this.handleDriverMessage(data);
+    } else {// unknown message
+      // console.log({ data })
+    }
+  };
+
+  _proto.handleDriverMessage = function handleDriverMessage(msg) {
+    //console.log("pxt message", msg)
+    switch (msg.type) {
+      case "run":
+        {
+          // simulation is starting
+          this._runOptions = msg;
+          this.emit(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .CHANGE */ .Ver);
+          break;
+        }
+
+      case "stop":
+        // start again
+        this._runOptions = undefined;
+        break;
+    }
+  };
+
+  _proto.handleResize = function handleResize() {
+    var _document = document,
+        body = _document.body;
+    var size = body.getBoundingClientRect();
+    var ar = size.width / (size.height + 12);
+    var value = (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__/* .roundWithPrecision */ .JI)(Math.min(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_0__/* .EMBED_MIN_ASPECT_RATIO */ .rFG, size.width / size.height), 4);
+
+    if (!isNaN(ar) && this._lastAspectRatio !== value) {
+      window.parent.postMessage({
+        type: "aspectratio",
+        value: value,
+        frameid: this.frameId,
+        sender: this.bridgeId
+      }, "*");
+      this._lastAspectRatio = value;
+    }
+  };
+
+  _proto.handleMessageJacdac = function handleMessageJacdac(msg) {
+    if (msg.sender === this.bridgeId) // returning packet
+      return; // try frame format (sent by hardware, hosts)
+
+    var pkts = _jacdac_ts_src_jdom_packet__WEBPACK_IMPORTED_MODULE_3__/* .default.fromFrame */ .Z.fromFrame(msg.data, this.bus.timestamp);
+
+    if (!pkts.length) {
+      // try as a single packet (send by the MakeCode simulator)
+      var pkt = _jacdac_ts_src_jdom_packet__WEBPACK_IMPORTED_MODULE_3__/* .default.fromBinary */ .Z.fromBinary(msg.data, this.bus.timestamp);
+      pkts = pkt && [pkt];
+    } // bail out if unknown packet
+
+
+    if (!pkts) return;
+    this.packetProcessed += pkts.length;
+
+    for (var _iterator = _createForOfIteratorHelperLoose(pkts), _step; !(_step = _iterator()).done;) {
+      var _pkt = _step.value;
+      // we're adding a little trace to avoid resending our own packets
+      _pkt.sender = this.bridgeId; // send to native bus
+
+      this.bus.sendPacketAsync(_pkt); // send to javascript bus
+
+      this.bus.processPacket(_pkt);
+    }
+  };
+
+  _proto.postPacket = function postPacket(pkt) {
+    // check if this packet was already sent from another spot
+    if (!!pkt.sender || !window.parent || window.parent === window) return;
+    this.packetSent++;
+    pkt.sender = this.bridgeId;
+    var msg = {
+      type: "messagepacket",
+      channel: "jacdac",
+      broadcast: true,
+      data: pkt.toBuffer(),
+      sender: this.bridgeId
+    };
+    window.parent.postMessage(msg, this.origin);
+  };
+
+  _proto.deviceFilter = function deviceFilter(device) {
+    var _this3 = this;
+
+    return device.services().some(function (srv) {
+      return _this3.serviceFilter(srv);
+    });
+  };
+
+  _proto.serviceFilter = function serviceFilter(srv) {
+    return ignoredServices.indexOf(srv.serviceClass) < 1;
+  };
+
+  _proto.postAddExtensions = function postAddExtensions() {
+    var _this$_runOptions;
+
+    var extensions = this.candidateExtensions;
+    console.log("addextensions", {
+      extensions: extensions,
+      deps: (_this$_runOptions = this._runOptions) === null || _this$_runOptions === void 0 ? void 0 : _this$_runOptions.dependencies
+    }); // list all devices connected to the bus
+    // and query for them, let makecode show the missing ones
+    // send message to makecode
+
+    window.parent.postMessage({
+      type: "addextensions",
+      extensions: extensions,
+      broadcast: true
+    }, "*");
+  };
+
+  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(IFrameBridgeClient, [{
+    key: "origin",
+    get: function get() {
+      return this.bus.parentOrigin;
+    }
+  }, {
+    key: "dependencies",
+    get: function get() {
+      var _this$_runOptions2;
+
+      return (_this$_runOptions2 = this._runOptions) === null || _this$_runOptions2 === void 0 ? void 0 : _this$_runOptions2.dependencies;
+    }
+  }, {
+    key: "candidateExtensions",
+    get: function get() {
+      var _this$_runOptions3;
+
+      if (!this._runOptions) {
+        console.log("no run options");
+        return [];
+      }
+
+      var devices = this.bus.devices({
+        announced: true,
+        ignoreSelf: true
+      }).filter(this.deviceFilter.bind(this));
+      var extensions = (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__/* .unique */ .Tw)((0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_4__/* .arrayConcatMany */ .ue)(devices.map(function (device) {
+        return device.services().map(function (srv) {
+          return (0,_services__WEBPACK_IMPORTED_MODULE_2__/* .resolveMakecodeServiceFromClassIdentifier */ .WB)(srv.serviceClass);
+        }).map(function (info) {
+          return info === null || info === void 0 ? void 0 : info.client.repo;
+        }).filter(function (q) {
+          return !!q;
+        });
+      })));
+      var dependencies = Object.values(((_this$_runOptions3 = this._runOptions) === null || _this$_runOptions3 === void 0 ? void 0 : _this$_runOptions3.dependencies) || {}).filter(function (d) {
+        return /^github:/.test(d);
+      }).map(function (d) {
+        return /^github:([^#]+)(#.?)?/.exec(d)[1];
+      });
+
+      if ((dependencies === null || dependencies === void 0 ? void 0 : dependencies.length) > 0) {
+        // remove all needed extenions that are already in the dependencies
+        extensions = extensions.filter(function (extension) {
+          //console.log(`check ext`, { extension })
+          return dependencies.indexOf(extension) < 0;
+        });
+      }
+
+      return extensions;
+    }
+  }]);
+
+  return IFrameBridgeClient;
+}(_jacdac_ts_src_jdom_client__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
+IFrameBridgeClient.DATA_ID = "makecodeiframeclient";
+/* harmony default export */ __webpack_exports__["Z"] = (IFrameBridgeClient);
+
+/***/ }),
+
+/***/ 21389:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "qs": function() { return /* binding */ makeCodeServices; },
+  "K9": function() { return /* binding */ resolveMakecodeService; },
+  "WB": function() { return /* binding */ resolveMakecodeServiceFromClassIdentifier; }
+});
+
+;// CONCATENATED MODULE: ./jacdac-ts/jacdac-spec/services/makecode-extensions.json
+var makecode_extensions_namespaceObject = JSON.parse('[{"service":"accelerometer","client":{"name":"jacdac-accelerometer","repo":"microsoft/pxt-jacdac/accelerometer","qName":"modules.AccelerometerClient","default":"modules.accelerometer"}},{"service":"barometer","client":{"name":"jacdac-barometer","repo":"microsoft/pxt-jacdac/barometer","qName":"modules.BarometerClient","default":"modules.barometer"}},{"service":"button","client":{"name":"jacdac-button","repo":"microsoft/pxt-jacdac/button","qName":"modules.ButtonClient","default":"modules.button"}},{"service":"buzzer","client":{"name":"jacdac-buzzer","repo":"microsoft/pxt-jacdac/buzzer","qName":"modules.BuzzerClient","default":"modules.buzzer"}},{"service":"characterscreen","client":{"name":"jacdac-character-screen","repo":"microsoft/pxt-jacdac/character-screen","qName":"modules.CharacterScreenClient","default":"modules.characterScreen"}},{"service":"compass","client":{"name":"jacdac-compass","repo":"microsoft/pxt-jacdac/compass","qName":"modules.CompassClient","default":"modules.compass"}},{"service":"distance","client":{"name":"jacdac-distance","repo":"microsoft/pxt-jacdac/distance","qName":"modules.DistanceClient","default":"modules.distance"}},{"service":"dmx","client":{"name":"jacdac-dmx","repo":"microsoft/pxt-jacdac/dmx","qName":"modules.DmxClient","default":"modules.dmx"}},{"service":"eco2","client":{"name":"jacdac-e-co2","repo":"microsoft/pxt-jacdac/e-co2","qName":"modules.ECO2Client","default":"modules.eCO2"}},{"service":"gyroscope","client":{"name":"jacdac-gyroscope","repo":"microsoft/pxt-jacdac/gyroscope","qName":"modules.GyroscopeClient","default":"modules.gyroscope"}},{"service":"heartrate","client":{"name":"jacdac-heart-rate","repo":"microsoft/pxt-jacdac/heart-rate","qName":"modules.HeartRateClient","default":"modules.heartRate"}},{"service":"hidkeyboard","client":{"name":"jacdac-hid-keyboard","repo":"microsoft/pxt-jacdac/hid-keyboard","qName":"modules.HidKeyboardClient","default":"modules.hidKeyboard"}},{"service":"hidmouse","client":{"name":"jacdac-hid-mouse","repo":"microsoft/pxt-jacdac/hid-mouse","qName":"modules.HidMouseClient","default":"modules.hidMouse"}},{"service":"humidity","client":{"name":"jacdac-humidity","repo":"microsoft/pxt-jacdac/humidity","qName":"modules.HumidityClient","default":"modules.humidity"}},{"service":"illuminance","client":{"name":"jacdac-illuminance","repo":"microsoft/pxt-jacdac/illuminance","qName":"modules.IlluminanceClient","default":"modules.illuminance"}},{"service":"joystick","client":{"name":"jacdac-joystick","repo":"microsoft/pxt-jacdac/joystick","qName":"modules.JoystickClient","default":"modules.joystick"}},{"service":"led","client":{"name":"jacdac-led","repo":"microsoft/pxt-jacdac/led","qName":"modules.LedClient","default":"modules.led"}},{"service":"ledpixel","client":{"name":"jacdac-led-pixel","repo":"microsoft/pxt-jacdac/led-pixel","qName":"modules.LedPixelClient","default":"modules.ledPixel"}},{"service":"lightlevel","client":{"name":"jacdac-light-level","repo":"microsoft/pxt-jacdac/light-level","qName":"modules.LightLevelClient","default":"modules.lightLevel"}},{"service":"magnetomer","client":{"name":"jacdac-magnetometer","repo":"microsoft/pxt-jacdac/magnetometer","qName":"modules.MagnetometerClient","default":"modules.magnetometer"}},{"service":"modelrunner","client":{"name":"jacdac-model-runner","repo":"microsoft/pxt-jacdac/model-runner","qName":"modules.ModelRunnerClient","default":"modules.modelRunner"}},{"service":"motion","client":{"name":"jacdac-motion","repo":"microsoft/pxt-jacdac/motion","qName":"modules.MotionClient","default":"modules.motion"}},{"service":"motor","client":{"name":"jacdac-motor","repo":"microsoft/pxt-jacdac/motor","qName":"modules.MotorClient","default":"modules.motor"}},{"service":"multitouch","client":{"name":"jacdac-multitouch","repo":"microsoft/pxt-jacdac/multitouch","qName":"modules.MultitouchClient","default":"modules.multitouch"}},{"service":"potentiometer","client":{"name":"jacdac-potentiometer","repo":"microsoft/pxt-jacdac/potentiometer","qName":"modules.PotentiometerClient","default":"modules.potentiometer"}},{"service":"power","client":{"name":"jacdac-power","repo":"microsoft/pxt-jacdac/power","qName":"modules.PowerClient","default":"modules.power"}},{"service":"pulseoximeter","client":{"name":"jacdac-pulse-oximeter","repo":"microsoft/pxt-jacdac/pulse-oximeter","qName":"modules.PulseOximeterClient","default":"modules.pulseOximeter"}},{"service":"raingauge","client":{"name":"jacdac-rain-gauge","repo":"microsoft/pxt-jacdac/rain-gauge","qName":"modules.RainGaugeClient","default":"modules.rainGauge"}},{"service":"realtimeclock","client":{"name":"jacdac-real-time-clock","repo":"microsoft/pxt-jacdac/real-time-clock","qName":"modules.RealTimeClockClient","default":"modules.realTimeClock"}},{"service":"reflectedlight","client":{"name":"jacdac-reflected-light","repo":"microsoft/pxt-jacdac/reflected-light","qName":"modules.ReflectedLightClient","default":"modules.reflectedLight"}},{"service":"rotaryencoder","client":{"name":"jacdac-rotary-encoder","repo":"microsoft/pxt-jacdac/rotary-encoder","qName":"modules.RotaryEncoderClient","default":"modules.rotaryEncoder"}},{"service":"sensoraggregator","client":{"name":"jacdac-sensor-aggregator","repo":"microsoft/pxt-jacdac/sensor-aggregator","qName":"modules.SensorAggregatorClient","default":"modules.sensorAggregator"}},{"service":"servo","client":{"name":"jacdac-servo","repo":"microsoft/pxt-jacdac/servo","qName":"modules.ServoClient","default":"modules.servo"}},{"service":"soilmoisture","client":{"name":"jacdac-soil-moisture","repo":"microsoft/pxt-jacdac/soil-moisture","qName":"modules.SoilMoistureClient","default":"modules.soilMoisture"}},{"service":"solenoid","client":{"name":"jacdac-solenoid","repo":"microsoft/pxt-jacdac/solenoid","qName":"modules.SolenoidClient","default":"modules.solenoid"}},{"service":"soundlevel","client":{"name":"jacdac-sound-level","repo":"microsoft/pxt-jacdac/sound-level","qName":"modules.SoundLevelClient","default":"modules.soundLevel"}},{"service":"tcp","client":{"name":"jacdac-tcp","repo":"microsoft/pxt-jacdac/tcp","qName":"modules.TcpClient","default":"modules.tcp"}},{"service":"thermocouple","client":{"name":"jacdac-thermocouple","repo":"microsoft/pxt-jacdac/thermocouple","qName":"modules.ThermocoupleClient","default":"modules.thermocouple"}},{"service":"thermometer","client":{"name":"jacdac-thermometer","repo":"microsoft/pxt-jacdac/thermometer","qName":"modules.ThermometerClient","default":"modules.thermometer"}},{"service":"tvoc","client":{"name":"jacdac-tvoc","repo":"microsoft/pxt-jacdac/tvoc","qName":"modules.TvocClient","default":"modules.tvoc"}},{"service":"uvindex","client":{"name":"jacdac-uv-index","repo":"microsoft/pxt-jacdac/uv-index","qName":"modules.UvIndexClient","default":"modules.uvIndex"}},{"service":"waterlevel","client":{"name":"jacdac-water-level","repo":"microsoft/pxt-jacdac/water-level","qName":"modules.WaterLevelClient","default":"modules.waterLevel"}},{"service":"weightscale","client":{"name":"jacdac-weight-scale","repo":"microsoft/pxt-jacdac/weight-scale","qName":"modules.WeightScaleClient","default":"modules.weightScale"}},{"service":"wifi","client":{"name":"jacdac-wifi","repo":"microsoft/pxt-jacdac/wifi","qName":"modules.WifiClient","default":"modules.wifi"}},{"service":"winddirection","client":{"name":"jacdac-wind-direction","repo":"microsoft/pxt-jacdac/wind-direction","qName":"modules.WindDirectionClient","default":"modules.windDirection"}},{"service":"windspeed","client":{"name":"jacdac-wind-speed","repo":"microsoft/pxt-jacdac/wind-speed","qName":"modules.WindSpeedClient","default":"modules.windSpeed"}}]');
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
+var spec = __webpack_require__(13173);
+;// CONCATENATED MODULE: ./src/components/makecode/services.ts
+
+
+function makeCodeServices() {
+  return makecode_extensions_namespaceObject.slice(0);
+}
+function resolveMakecodeService(service) {
+  return service && makecode_extensions_namespaceObject.find(function (mk) {
+    return mk.service === service.shortId;
+  });
+}
+function resolveMakecodeServiceFromClassIdentifier(serviceClass) {
+  var srv = (0,spec/* serviceSpecificationFromClassIdentifier */.d5)(serviceClass);
+  return srv && resolveMakecodeService(srv);
 }
 
 /***/ }),
@@ -77743,7 +78034,7 @@ JacdacContext.displayName = "Jacdac";
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20392);
-/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31925);
+/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48202);
 
 
 
@@ -77774,7 +78065,7 @@ function JacdacProvider(props) {
 
 /***/ }),
 
-/***/ 31925:
+/***/ 48202:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85707,275 +85998,10 @@ function createWebSerialBus() {
 function createAnyUSBBus() {
   return new JDBus([createUSBTransport(), createWebSerialTransport()]);
 }
+// EXTERNAL MODULE: ./src/components/makecode/iframebridgeclient.ts
+var iframebridgeclient = __webpack_require__(43380);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
-var makecode = __webpack_require__(93127);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/iframebridgeclient.ts
-
-
-
-
-function iframebridgeclient_createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = iframebridgeclient_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function iframebridgeclient_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return iframebridgeclient_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return iframebridgeclient_arrayLikeToArray(o, minLen); }
-
-function iframebridgeclient_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-
-
-
-
-
-
-var ignoredServices = [constants/* SRV_CONTROL */.gm9, constants/* SRV_LOGGER */.w9j, constants/* SRV_SETTINGS */.B9b, constants/* SRV_ROLE_MANAGER */.igi, constants/* SRV_PROTO_TEST */.$Bn];
-/**
- * A client that bridges received and sent packets to a parent iframe
- * @internal
- */
-
-var IFrameBridgeClient = /*#__PURE__*/function (_JDClient) {
-  (0,inheritsLoose/* default */.Z)(IFrameBridgeClient, _JDClient);
-
-  // this is a unique id used to trace packets sent by this bridge
-  function IFrameBridgeClient(bus, frameId) {
-    var _this;
-
-    _this = _JDClient.call(this) || this;
-    _this.bridgeId = "bridge" + Math.random();
-    _this.packetSent = 0;
-    _this.packetProcessed = 0;
-    _this._lastAspectRatio = 0;
-    _this.bus = bus;
-    _this.frameId = frameId;
-    _this.postPacket = _this.postPacket.bind((0,assertThisInitialized/* default */.Z)(_this));
-    _this.handleMessage = _this.handleMessage.bind((0,assertThisInitialized/* default */.Z)(_this));
-    _this.handleResize = (0,utils/* debounce */.Ds)(_this.handleResize.bind((0,assertThisInitialized/* default */.Z)(_this)), 200);
-
-    _this.registerEvents();
-
-    _this.bus.iframeBridge = (0,assertThisInitialized/* default */.Z)(_this);
-    return _this;
-  }
-
-  var _proto = IFrameBridgeClient.prototype;
-
-  _proto.isOriginValid = function isOriginValid(msg) {
-    return this.origin === "*" || msg.origin === this.origin;
-  };
-
-  _proto.registerEvents = function registerEvents() {
-    var _this2 = this;
-
-    console.debug("jdiframe: listening for packets");
-    this.mount(this.bus.subscribe(constants/* PACKET_PROCESS */.wY8, this.postPacket));
-    this.mount(this.bus.subscribe(constants/* PACKET_SEND */.RaS, this.postPacket));
-    this.mount(this.bus.subscribe(constants/* DEVICE_ANNOUNCE */.Hob, this.handleResize)); // force compute add blocks button
-
-    this.mount(this.bus.subscribe(constants/* DEVICE_ANNOUNCE */.Hob, function () {
-      return _this2.emit(constants/* CHANGE */.Ver);
-    })); // don't use bus.schedulere here
-
-    var id = setInterval(this.handleResize, 1000);
-    this.mount(function () {
-      return clearInterval(id);
-    });
-    window.addEventListener("message", this.handleMessage, false);
-    this.mount(function () {
-      return window.removeEventListener("message", _this2.handleMessage, false);
-    });
-
-    if (window.parent && window.parent !== window) {
-      var frameid = window.location.hash.slice(1);
-      console.debug({
-        frameid: frameid
-      }); // notify makecode we are ready
-
-      window.parent.postMessage({
-        type: "ready",
-        frameid: frameid
-      }, "*");
-    }
-  };
-
-  _proto.handleMessage = function handleMessage(event) {
-    if (!this.isOriginValid(event)) return;
-    var data = event.data;
-    var msg = data;
-
-    if (msg && msg.channel === "jacdac" && msg.type === "messagepacket") {
-      this.handleMessageJacdac(msg);
-    } else if ((data === null || data === void 0 ? void 0 : data.source) === "pxtdriver") {
-      this.handleDriverMessage(data);
-    } else {// unknown message
-      // console.log({ data })
-    }
-  };
-
-  _proto.handleDriverMessage = function handleDriverMessage(msg) {
-    //console.log("pxt message", msg)
-    switch (msg.type) {
-      case "run":
-        {
-          // simulation is starting
-          this._runOptions = msg;
-          this.emit(constants/* CHANGE */.Ver);
-          break;
-        }
-
-      case "stop":
-        // start again
-        this._runOptions = undefined;
-        break;
-    }
-  };
-
-  _proto.handleResize = function handleResize() {
-    var _document = document,
-        body = _document.body;
-    var size = body.getBoundingClientRect();
-    var ar = size.width / (size.height + 12);
-    var value = (0,utils/* roundWithPrecision */.JI)(Math.min(constants/* EMBED_MIN_ASPECT_RATIO */.rFG, size.width / size.height), 4);
-
-    if (!isNaN(ar) && this._lastAspectRatio !== value) {
-      window.parent.postMessage({
-        type: "aspectratio",
-        value: value,
-        frameid: this.frameId,
-        sender: this.bridgeId
-      }, "*");
-      this._lastAspectRatio = value;
-    }
-  };
-
-  _proto.handleMessageJacdac = function handleMessageJacdac(msg) {
-    if (msg.sender === this.bridgeId) // returning packet
-      return; // try frame format (sent by hardware, hosts)
-
-    var pkts = packet/* default.fromFrame */.Z.fromFrame(msg.data, this.bus.timestamp);
-
-    if (!pkts.length) {
-      // try as a single packet (send by the MakeCode simulator)
-      var pkt = packet/* default.fromBinary */.Z.fromBinary(msg.data, this.bus.timestamp);
-      pkts = pkt && [pkt];
-    } // bail out if unknown packet
-
-
-    if (!pkts) return;
-    this.packetProcessed += pkts.length;
-
-    for (var _iterator = iframebridgeclient_createForOfIteratorHelperLoose(pkts), _step; !(_step = _iterator()).done;) {
-      var _pkt = _step.value;
-      // we're adding a little trace to avoid resending our own packets
-      _pkt.sender = this.bridgeId; // send to native bus
-
-      this.bus.sendPacketAsync(_pkt); // send to javascript bus
-
-      this.bus.processPacket(_pkt);
-    }
-  };
-
-  _proto.postPacket = function postPacket(pkt) {
-    // check if this packet was already sent from another spot
-    if (!!pkt.sender || !window.parent || window.parent === window) return;
-    this.packetSent++;
-    pkt.sender = this.bridgeId;
-    var msg = {
-      type: "messagepacket",
-      channel: "jacdac",
-      broadcast: true,
-      data: pkt.toBuffer(),
-      sender: this.bridgeId
-    };
-    window.parent.postMessage(msg, this.origin);
-  };
-
-  _proto.deviceFilter = function deviceFilter(device) {
-    var _this3 = this;
-
-    return device.services().some(function (srv) {
-      return _this3.serviceFilter(srv);
-    });
-  };
-
-  _proto.serviceFilter = function serviceFilter(srv) {
-    return ignoredServices.indexOf(srv.serviceClass) < 1;
-  };
-
-  _proto.postAddExtensions = function postAddExtensions() {
-    var _this$_runOptions;
-
-    var extensions = this.candidateExtensions;
-    console.log("addextensions", {
-      extensions: extensions,
-      deps: (_this$_runOptions = this._runOptions) === null || _this$_runOptions === void 0 ? void 0 : _this$_runOptions.dependencies
-    }); // list all devices connected to the bus
-    // and query for them, let makecode show the missing ones
-    // send message to makecode
-
-    window.parent.postMessage({
-      type: "addextensions",
-      extensions: extensions,
-      broadcast: true
-    }, "*");
-  };
-
-  (0,createClass/* default */.Z)(IFrameBridgeClient, [{
-    key: "origin",
-    get: function get() {
-      return this.bus.parentOrigin;
-    }
-  }, {
-    key: "dependencies",
-    get: function get() {
-      var _this$_runOptions2;
-
-      return (_this$_runOptions2 = this._runOptions) === null || _this$_runOptions2 === void 0 ? void 0 : _this$_runOptions2.dependencies;
-    }
-  }, {
-    key: "candidateExtensions",
-    get: function get() {
-      var _this$_runOptions3;
-
-      if (!this._runOptions) {
-        console.log("no run options");
-        return [];
-      }
-
-      var devices = this.bus.devices({
-        announced: true,
-        ignoreSelf: true
-      }).filter(this.deviceFilter.bind(this));
-      var extensions = (0,utils/* unique */.Tw)((0,utils/* arrayConcatMany */.ue)(devices.map(function (device) {
-        return device.services().map(function (srv) {
-          return (0,makecode/* resolveMakecodeServiceFromClassIdentifier */.WB)(srv.serviceClass);
-        }).map(function (info) {
-          return info === null || info === void 0 ? void 0 : info.client.repo;
-        }).filter(function (q) {
-          return !!q;
-        });
-      })));
-      var dependencies = Object.values(((_this$_runOptions3 = this._runOptions) === null || _this$_runOptions3 === void 0 ? void 0 : _this$_runOptions3.dependencies) || {}).filter(function (d) {
-        return /^github:/.test(d);
-      }).map(function (d) {
-        return /^github:([^#]+)(#.?)?/.exec(d)[1];
-      });
-
-      if ((dependencies === null || dependencies === void 0 ? void 0 : dependencies.length) > 0) {
-        // remove all needed extenions that are already in the dependencies
-        extensions = extensions.filter(function (extension) {
-          //console.log(`check ext`, { extension })
-          return dependencies.indexOf(extension) < 0;
-        });
-      }
-
-      return extensions;
-    }
-  }]);
-
-  return IFrameBridgeClient;
-}(client/* default */.Z);
-/* harmony default export */ var iframebridgeclient = (IFrameBridgeClient);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
 var serviceprovider = __webpack_require__(73138);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/joystickserver.ts
@@ -86106,7 +86132,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.10"};
+var package_namespaceObject = {"i8":"1.14.11"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -86162,7 +86188,7 @@ function createBus() {
   // always start bridge
 
   if (typeof window !== "undefined") {
-    new iframebridgeclient(b, args.frameId) // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    new iframebridgeclient/* default */.Z(b, args.frameId) // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;
     window.__jacdacBus = b;
   }
