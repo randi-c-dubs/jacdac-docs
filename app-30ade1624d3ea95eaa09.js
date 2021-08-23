@@ -37935,6 +37935,10 @@ var JDEventSource = /*#__PURE__*/function () {
    * Gets a counter map from events to new listener counts
    * @category JDOM
    */
+
+  /**
+   * @internal
+   */
   function JDEventSource() {
     this.nodeId = nextNodeId++;
     this.listeners = {};
@@ -37946,6 +37950,7 @@ var JDEventSource = /*#__PURE__*/function () {
    * @param eventName name or names of the events to subscribe
    * @param handler handler to register
    * @returns current object instance
+   * @category JDOM
    */
 
 
@@ -37965,6 +37970,7 @@ var JDEventSource = /*#__PURE__*/function () {
    * @param eventName name or names of the events to subscribe
    * @param handler handler to unregister
    * @returns current object instance
+   * @category JDOM
    */
   ;
 
@@ -37981,6 +37987,7 @@ var JDEventSource = /*#__PURE__*/function () {
    * @param eventName name or names of the events to subscribe
    * @param handler handler to execute
    * @returns current object instance
+   * @category JDOM
    */
   ;
 
@@ -59315,7 +59322,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "1761f0d4f10d87a7051751bfdc7e3375ca83a282";
+  var sha = "1f2720473d3f581ae74073c777c1aca8f41fd670";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60336,13 +60343,13 @@ function PacketStats() {
   var _useContext = (0,react.useContext)(Context/* default */.Z),
       bus = _useContext.bus;
 
-  var stats = bus.stats;
+  var packetStats = bus.packetStats;
 
   var _useMediaQueries = (0,useMediaQueries/* default */.Z)(),
       mobile = _useMediaQueries.mobile;
 
-  var current = (0,useChange/* default */.Z)(stats, function (s) {
-    return s.current;
+  var current = (0,useChange/* default */.Z)(packetStats, function (_) {
+    return _.current;
   });
   var diagnostics = flags/* default.diagnostics */.Z.diagnostics;
   if (mobile || !current.bytes) return null;
@@ -77739,22 +77746,44 @@ var JDField = /*#__PURE__*/function (_JDNode) {
 var JDServiceMemberNode = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDServiceMemberNode, _JDNode);
 
+  /**
+   * Parent service
+   * @category JDOM
+   */
+
+  /**
+   * Identifier of the event.
+   */
+
+  /**
+   * @internal
+   */
   function JDServiceMemberNode(service, code, isPacket) {
     var _this;
 
     _this = _JDNode.call(this) || this;
+    _this._specification = null;
     _this.service = service;
     _this.code = code;
     _this.isPacket = isPacket;
-    _this._specification = null;
     return _this;
   }
+  /**
+   * Gets the node identifier in the JDOM tree
+   * @category JDOM
+   */
+
 
   (0,createClass/* default */.Z)(JDServiceMemberNode, [{
     key: "id",
     get: function get() {
       return this.nodeKind + ":" + this.service.device.deviceId + ":" + this.service.serviceIndex.toString(16) + ":" + this.code.toString(16);
     }
+    /**
+     * Gets the event name, if specified.
+     * @category JDOM
+     */
+
   }, {
     key: "name",
     get: function get() {
@@ -77762,11 +77791,21 @@ var JDServiceMemberNode = /*#__PURE__*/function (_JDNode) {
 
       return ((_this$specification = this.specification) === null || _this$specification === void 0 ? void 0 : _this$specification.name) || this.code.toString(16);
     }
+    /**
+     * Gets the qualitified event name, if specified.
+     * @category JDOM
+     */
+
   }, {
     key: "qualifiedName",
     get: function get() {
       return this.service.qualifiedName + "." + this.name;
     }
+    /**
+     * Gets the event specification if known.
+     * @category Specification
+     */
+
   }, {
     key: "specification",
     get: function get() {
@@ -77779,17 +77818,31 @@ var JDServiceMemberNode = /*#__PURE__*/function (_JDNode) {
         });
       return this._specification;
     }
+    /**
+     * Gets the parent service client instance.
+     * @category JDOM
+     */
+
   }, {
     key: "parent",
     get: function get() {
       return this.service;
     }
+    /**
+     * Gets the event friendly name.
+     * @category JDOM
+     */
+
   }, {
     key: "friendlyName",
     get: function get() {
       var parts = [this.service.friendlyName, this.name];
       return parts.join(".");
     }
+    /**
+     * @internal
+     */
+
   }]);
 
   return JDServiceMemberNode;
@@ -78066,13 +78119,7 @@ var JDRegister = /*#__PURE__*/function (_JDServiceMemberNode) {
   return JDRegister;
 }(servicemembernode);
 /* harmony default export */ var jdom_register = (JDRegister);
-function stableSortRegisters(registers) {
-  return registers === null || registers === void 0 ? void 0 : registers.sort(function (a, b) {
-    return a.compareTo(b);
-  });
-}
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/event.ts
-
 
 
 
@@ -78094,6 +78141,11 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
     _this._count = 0;
     return _this;
   }
+  /**
+   * Returns the ``EVENT_NODE_NAME`` identifier
+   * @category JDOM
+   */
+
 
   var _proto = JDEvent.prototype;
 
@@ -78128,6 +78180,11 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
     get: function get() {
       return constants/* EVENT_NODE_NAME */.Yuh;
     }
+    /**
+     * Gets the field node
+     * @category Service Clients
+     */
+
   }, {
     key: "fields",
     get: function get() {
@@ -78139,11 +78196,21 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
       });
       return this._fields.slice();
     }
+    /**
+     * Gets the list of fields
+     * @category JDOM
+     */
+
   }, {
     key: "children",
     get: function get() {
       return this.fields;
     }
+    /**
+     * Gets the raw data attached to the last event packet
+     * @category Data
+     */
+
   }, {
     key: "data",
     get: function get() {
@@ -78151,30 +78218,53 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
 
       return (_this$_lastReportPkt = this._lastReportPkt) === null || _this$_lastReportPkt === void 0 ? void 0 : _this$_lastReportPkt.data;
     }
+    /**
+     * Gets the unpacked data attached to the last event packet, if the event specification is known.
+     * @category Data
+     */
+
+  }, {
+    key: "unpacked",
+    get: function get() {
+      var _this$_lastReportPkt2;
+
+      var _ref = this.specification || {},
+          packFormat = _ref.packFormat;
+
+      return packFormat && ((_this$_lastReportPkt2 = this._lastReportPkt) === null || _this$_lastReportPkt2 === void 0 ? void 0 : _this$_lastReportPkt2.jdunpack(packFormat));
+    }
+    /**
+     * Gets a counter of occurences for this event.
+     * @category Data
+     */
+
   }, {
     key: "count",
     get: function get() {
       return this._count;
     }
+    /**
+     * Gets the timestamp of the last packet with data received for this event.
+     * @category Data
+     */
+
   }, {
     key: "lastDataTimestamp",
     get: function get() {
-      var _this$_lastReportPkt2;
+      var _this$_lastReportPkt3;
 
-      return (_this$_lastReportPkt2 = this._lastReportPkt) === null || _this$_lastReportPkt2 === void 0 ? void 0 : _this$_lastReportPkt2.timestamp;
+      return (_this$_lastReportPkt3 = this._lastReportPkt) === null || _this$_lastReportPkt3 === void 0 ? void 0 : _this$_lastReportPkt3.timestamp;
     }
-  }, {
-    key: "intValue",
-    get: function get() {
-      var d = this.data;
-      return d && (0,buffer/* intOfBuffer */.wr)(d);
-    }
+    /**
+     * @internal
+     */
+
   }, {
     key: "decoded",
     get: function get() {
-      var _this$_lastReportPkt3;
+      var _this$_lastReportPkt4;
 
-      return (_this$_lastReportPkt3 = this._lastReportPkt) === null || _this$_lastReportPkt3 === void 0 ? void 0 : _this$_lastReportPkt3.decoded;
+      return (_this$_lastReportPkt4 = this._lastReportPkt) === null || _this$_lastReportPkt4 === void 0 ? void 0 : _this$_lastReportPkt4.decoded;
     }
   }]);
 
@@ -78739,11 +78829,6 @@ var JDService = /*#__PURE__*/function (_JDNode) {
   return JDService;
 }(node/* default */.ZP);
 /* harmony default export */ var service = (JDService);
-function stableSortServices(services) {
-  return services === null || services === void 0 ? void 0 : services.sort(function (a, b) {
-    return a.compareTo(b);
-  });
-}
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/eventsource.ts
 var eventsource = __webpack_require__(45484);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/qualityofservice.ts
@@ -79772,6 +79857,9 @@ var realtimeclockserver = __webpack_require__(83090);
 var BusStatsMonitor = /*#__PURE__*/function (_JDEventSource) {
   (0,inheritsLoose/* default */.Z)(BusStatsMonitor, _JDEventSource);
 
+  /**
+   * @internal
+   */
   function BusStatsMonitor(bus) {
     var _this;
 
@@ -79791,16 +79879,15 @@ var BusStatsMonitor = /*#__PURE__*/function (_JDEventSource) {
       acks: 0,
       bytes: 0
     };
-    _this.bus = bus;
-
-    _this.bus.on(constants/* PACKET_SEND */.RaS, _this.handlePacketSend.bind((0,assertThisInitialized/* default */.Z)(_this)));
-
-    _this.bus.on(constants/* PACKET_PROCESS */.wY8, _this.handlePacketProcess.bind((0,assertThisInitialized/* default */.Z)(_this)));
-
-    _this.bus.on(constants/* SELF_ANNOUNCE */.Pbc, _this.handleSelfAnnounce.bind((0,assertThisInitialized/* default */.Z)(_this)));
-
+    bus.on(constants/* PACKET_SEND */.RaS, _this.handlePacketSend.bind((0,assertThisInitialized/* default */.Z)(_this)));
+    bus.on(constants/* PACKET_PROCESS */.wY8, _this.handlePacketProcess.bind((0,assertThisInitialized/* default */.Z)(_this)));
+    bus.on(constants/* SELF_ANNOUNCE */.Pbc, _this.handleSelfAnnounce.bind((0,assertThisInitialized/* default */.Z)(_this)));
     return _this;
   }
+  /**
+   * Computes the current packet statistics of the bus
+   */
+
 
   var _proto = BusStatsMonitor.prototype;
 
@@ -80395,8 +80482,14 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
    */
 
   /**
+   * A timer and interval schedular to orchastrate bus timestamps
+   * @category Scheduling
+   */
+
+  /**
    * Creates the bus with the given transport
    * @param sendPacket
+   * @category Lifecycle
    */
   function JDBus(transports, options) {
     var _this;
@@ -80414,7 +80507,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     _this.selfDeviceId = (options === null || options === void 0 ? void 0 : options.deviceId) || (0,random/* randomDeviceId */.b_)();
     _this.scheduler = (options === null || options === void 0 ? void 0 : options.scheduler) || new WallClockScheduler();
     _this.parentOrigin = (options === null || options === void 0 ? void 0 : options.parentOrigin) || "*";
-    _this.stats = new BusStatsMonitor((0,assertThisInitialized/* default */.Z)(_this));
+    _this.packetStats = new BusStatsMonitor((0,assertThisInitialized/* default */.Z)(_this));
     transports === null || transports === void 0 ? void 0 : transports.filter(function (tr) {
       return !!tr;
     }).map(function (tr) {
@@ -80796,7 +80889,11 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
       this._roleManagerClient.startRefreshRoles();
     }
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.toString = function toString() {
     return this.id;
@@ -80865,8 +80962,17 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
     this.scheduler.resetTime(delta);
     this.emit(constants/* CHANGE */.Ver);
-  };
+  }
+  /**
+   * Gets the current bus-relavite time in milliseconds
+   * @category Scheduling
+   */
+  ;
 
+  /**
+   * Creates a promise that awaits for the given duration using the bus scheduler
+   * @category Scheduling
+   */
   _proto.delay = function delay(millis, value) {
     var _this7 = this;
 
@@ -80875,7 +80981,12 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
         return resolve(value);
       }, millis);
     });
-  };
+  }
+  /**
+   * Gets the current desired minimum logger verbosity on the bus
+   * @category Diagnostics
+   */
+  ;
 
   _proto.handleRealTimeClockSync = /*#__PURE__*/function () {
     var _handleRealTimeClockSync = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee5(device) {
@@ -81668,7 +81779,12 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     key: "minLoggerPriority",
     get: function get() {
       return this._minLoggerPriority;
-    },
+    }
+    /**
+     * Sets the current desired minimum logger verbosity on the bus
+     * @category Diagnostics
+     */
+    ,
     set: function set(priority) {
       if (priority !== this._minLoggerPriority) {
         this._minLoggerPriority = priority;
