@@ -55,12 +55,10 @@ exports.Z = _default;
 
 /***/ }),
 
-/***/ 43771:
+/***/ 14308:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ SettingsClient; }
-/* harmony export */ });
+/* unused harmony export SettingsClient */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(85413);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
@@ -80,6 +78,10 @@ exports.Z = _default;
 
 
 
+/**
+ * A settings service client implementation.
+ * @category Clients
+ */
 
 var SettingsClient = /*#__PURE__*/function (_JDServiceClient) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(SettingsClient, _JDServiceClient);
@@ -394,8 +396,7 @@ var SettingsClient = /*#__PURE__*/function (_JDServiceClient) {
 
   return SettingsClient;
 }(_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (SettingsClient);
 
 /***/ }),
 
@@ -593,8 +594,8 @@ var CardActions = __webpack_require__(31186);
 var DeviceCardHeader = __webpack_require__(31477);
 // EXTERNAL MODULE: ./src/components/useServiceClient.ts
 var useServiceClient = __webpack_require__(79465);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/settingsclient.ts
-var settingsclient = __webpack_require__(43771);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/clients/settingsclient.ts
+var settingsclient = __webpack_require__(14308);
 // EXTERNAL MODULE: ./src/jacdac/useChange.ts
 var useChange = __webpack_require__(54774);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Delete.js

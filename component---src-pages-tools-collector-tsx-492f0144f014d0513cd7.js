@@ -323,12 +323,10 @@ exports.Z = _default;
 
 /***/ }),
 
-/***/ 84264:
+/***/ 10207:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "F": function() { return /* binding */ SensorAggregatorClient; }
-/* harmony export */ });
+/* unused harmony export SensorAggregatorClient */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(85413);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
@@ -582,6 +580,7 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
 
   return SensorAggregatorClient;
 }(_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
+/* harmony default export */ __webpack_exports__["Z"] = (SensorAggregatorClient);
 
 /***/ }),
 
@@ -1473,8 +1472,8 @@ function DataSetGrid(props) {
 var ReadingFieldGrid = __webpack_require__(29065);
 // EXTERNAL MODULE: ./src/components/DeviceCardHeader.tsx + 2 modules
 var DeviceCardHeader = __webpack_require__(31477);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/sensoraggregatorclient.ts
-var sensoraggregatorclient = __webpack_require__(84264);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/clients/sensoraggregatorclient.ts
+var sensoraggregatorclient = __webpack_require__(10207);
 // EXTERNAL MODULE: ./src/components/useChartPalette.ts
 var useChartPalette = __webpack_require__(74039);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
@@ -1836,7 +1835,7 @@ function Collector() {
                 break;
               }
 
-              client = new sensoraggregatorclient/* SensorAggregatorClient */.F(aggregator);
+              client = new sensoraggregatorclient/* default */.Z(aggregator);
               _context.next = 17;
               return client.setInputs(createSensorConfig());
 
@@ -1961,7 +1960,7 @@ function Collector() {
   }, [recording, samplingIntervalDelay, samplingCount, registerIdsChecked, aggregator]);
   (0,react.useEffect)(function () {
     if (aggregator) {
-      var client = new sensoraggregatorclient/* SensorAggregatorClient */.F(aggregator);
+      var client = new sensoraggregatorclient/* default */.Z(aggregator);
       return client.subscribeSample(function (values) {
         return addRow(values);
       });

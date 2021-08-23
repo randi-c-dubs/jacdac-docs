@@ -126,7 +126,7 @@ function MDXContent(_ref) {
   }, "yarn add jacdac-ts\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "then import components as needed using ES6 import syntax"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-javascript"
-  }, "import { createUSBBus } -ts\nconst jd = createUSBBus()\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "import { createUSBBus } from \"jacdac-ts\"\nconst jd = createUSBBus()\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "cdn--umd",
     "style": {
       "position": "relative"

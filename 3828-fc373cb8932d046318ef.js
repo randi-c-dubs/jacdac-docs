@@ -661,7 +661,7 @@ function NodeCalls() {
       bus = _useContext.bus;
 
   var nodes = {};
-  (0,_jacdac_ts_src_jdom_node__WEBPACK_IMPORTED_MODULE_2__/* .visitNodes */ .L)(bus, function (n) {
+  (0,_jacdac_ts_src_jdom_node__WEBPACK_IMPORTED_MODULE_2__/* .visitNodes */ .LR)(bus, function (n) {
     return nodes[n.id] = n;
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ui_PaperBox__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {
@@ -719,7 +719,7 @@ function NodeListeners() {
       bus = _useContext2.bus;
 
   var nodes = {};
-  (0,_jacdac_ts_src_jdom_node__WEBPACK_IMPORTED_MODULE_2__/* .visitNodes */ .L)(bus, function (n) {
+  (0,_jacdac_ts_src_jdom_node__WEBPACK_IMPORTED_MODULE_2__/* .visitNodes */ .LR)(bus, function (n) {
     return nodes[n.id] = n;
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ui_PaperBox__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {

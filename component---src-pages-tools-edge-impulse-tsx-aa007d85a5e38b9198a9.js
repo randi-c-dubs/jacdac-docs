@@ -1076,12 +1076,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Trend__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(25090);
 /* harmony import */ var _material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(52377);
 /* harmony import */ var _components_ServiceList__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(15548);
-/* harmony import */ var _model_uploader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(46905);
+/* harmony import */ var _model_uploader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(10037);
 /* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(81794);
 /* harmony import */ var _components_devices_useDeviceName__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(5738);
 /* harmony import */ var _components_ReadingFieldGrid__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(29065);
 /* harmony import */ var _components_useChartPalette__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(74039);
-/* harmony import */ var _jacdac_ts_src_jdom_sensoraggregatorclient__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(84264);
+/* harmony import */ var _jacdac_ts_src_jdom_clients_sensoraggregatorclient__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(10207);
 /* harmony import */ var _material_ui_lab__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(99330);
 /* harmony import */ var _jacdac_ts_src_jdom_pretty__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(10913);
 /* harmony import */ var _components_alert_ConnectAlert__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(94431);
@@ -1152,7 +1152,7 @@ var EdgeImpulseClient = /*#__PURE__*/function (_JDClient) {
     _this.handleError = _this.handleError.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_27__/* .default */ .Z)(_this));
     _this.handleReport = _this.handleReport.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_27__/* .default */ .Z)(_this));
     _this.handlePing = _this.handlePing.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_27__/* .default */ .Z)(_this));
-    _this.aggregatorClient = new _jacdac_ts_src_jdom_sensoraggregatorclient__WEBPACK_IMPORTED_MODULE_21__/* .SensorAggregatorClient */ .F(_this.aggregator);
+    _this.aggregatorClient = new _jacdac_ts_src_jdom_clients_sensoraggregatorclient__WEBPACK_IMPORTED_MODULE_21__/* .default */ .Z(_this.aggregator);
 
     _this.aggregatorClient.subscribeSample(_this.handleReport);
 

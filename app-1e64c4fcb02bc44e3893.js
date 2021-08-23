@@ -37353,6 +37353,7 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
 
   return JDClient;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .JDEventSource */ .aE);
+/* harmony default export */ __webpack_exports__["Z"] = (JDClient);
 
 /***/ }),
 
@@ -37915,25 +37916,57 @@ function dependencyId(nodes) {
   }).join(",")) || "";
 }
 var nextNodeId = 0;
+/**
+ * Base class for evented nodes in Jacdac
+ */
+
 var JDEventSource = /*#__PURE__*/function () {
-  // debugging
+  /**
+   * Gets an internal unique node identifier, mostly used for debugging.
+   * @category JDOM
+   */
+
+  /**
+   * Gets a counter of event emit calls.
+   * @category JDOM
+   */
+
+  /**
+   * Gets a counter map from events to new listener counts
+   * @category JDOM
+   */
   function JDEventSource() {
     this.nodeId = nextNodeId++;
     this.listeners = {};
     this.eventStats = {};
     this.newListenerStats = undefined;
   }
+  /**
+   * Registers a handler for one or more events
+   * @param eventName name or names of the events to subscribe
+   * @param handler handler to register
+   * @returns current object instance
+   */
+
 
   var _proto = JDEventSource.prototype;
 
   _proto.on = function on(eventName, handler) {
     var _this = this;
 
+    if (!handler) return this;
     normalizeEventNames(eventName).forEach(function (eventName) {
       return _this.addListenerInternal(eventName, handler, false);
     });
     return this;
-  };
+  }
+  /**
+   * Unregisters a handler for one or more events
+   * @param eventName name or names of the events to subscribe
+   * @param handler handler to unregister
+   * @returns current object instance
+   */
+  ;
 
   _proto.off = function off(eventName, handler) {
     var _this2 = this;
@@ -37942,7 +37975,14 @@ var JDEventSource = /*#__PURE__*/function () {
       return _this2.removeListenerInternal(eventName, handler);
     });
     return this;
-  };
+  }
+  /**
+   * Registers a handler for one or more events to run only once.
+   * @param eventName name or names of the events to subscribe
+   * @param handler handler to execute
+   * @returns current object instance
+   */
+  ;
 
   _proto.once = function once(eventName, handler) {
     var _this3 = this;
@@ -37999,11 +38039,12 @@ var JDEventSource = /*#__PURE__*/function () {
     }
   }
   /**
-   * Synchronously calls each of the listeners registered for the event named eventName, in the order they were registered, passing the supplied arguments to each.
+   * Synchronously calls each of the listeners registered for the event named eventName,
+   * in the order they were registered, passing the supplied arguments to each.
    * @param eventName
    * @param args
+   * @category JDOM
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;
 
   _proto.emit = function emit(eventName) {
@@ -38041,13 +38082,27 @@ var JDEventSource = /*#__PURE__*/function () {
     }
 
     return true;
-  };
+  }
+  /**
+   * Gets the number of listeners for a given event
+   * @param eventName name of the event
+   * @returns number of registered handlers
+   * @category JDOM
+   */
+  ;
 
   _proto.listenerCount = function listenerCount(eventName) {
     if (!eventName) return 0;
     var listeners = this.listeners[eventName];
     return (listeners === null || listeners === void 0 ? void 0 : listeners.length) || 0;
-  };
+  }
+  /**
+   * Gets the list stack trace where an event was registered. Only enabled if ``Flags.debug`` is true.
+   * @param eventName name of the event
+   * @returns stack traces where a listener was added
+   * @category JDOM
+   */
+  ;
 
   _proto.listenerStackTraces = function listenerStackTraces(eventName) {
     var listeners = this.listeners[eventName];
@@ -38057,6 +38112,7 @@ var JDEventSource = /*#__PURE__*/function () {
   }
   /**
    * Returns an array listing the events for which the emitter has registered listeners.
+   * @category JDOM
    */
   ;
 
@@ -38066,6 +38122,7 @@ var JDEventSource = /*#__PURE__*/function () {
   /**
    * Creates an observable from the given event
    * @param eventName
+   * @category JDOM
    */
   ;
 
@@ -38076,6 +38133,7 @@ var JDEventSource = /*#__PURE__*/function () {
    * Subscribes to an event and returns the unsubscription handler
    * @param eventName
    * @param next
+   * @category JDOM
    */
   ;
 
@@ -38084,7 +38142,12 @@ var JDEventSource = /*#__PURE__*/function () {
     return observer.subscribe({
       next: next
     }).unsubscribe;
-  };
+  }
+  /**
+   * Gets a counter for the ``CHANGE`` event.
+   * @category JDOM
+   */
+  ;
 
   (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(JDEventSource, [{
     key: "changeId",
@@ -38134,17 +38197,14 @@ function fromEvent(eventEmitter, eventNames) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ Flags; }
-/* harmony export */ });
+/* unused harmony export Flags */
 var Flags = function Flags() {};
-
 Flags.diagnostics = false;
 Flags.webUSB = true;
 Flags.webSerial = true;
 Flags.webBluetooth = false;
 Flags.storage = false;
-
+/* harmony default export */ __webpack_exports__["Z"] = (Flags);
 
 /***/ }),
 
@@ -39170,13 +39230,12 @@ function _sendStayInBootloaderCommand() {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ JDIFrameClient; },
-/* harmony export */   "H": function() { return /* binding */ inIFrame; }
+/* harmony export */   "Hs": function() { return /* binding */ inIFrame; }
 /* harmony export */ });
+/* unused harmony export JDIFrameClient */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
 /* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47235);
-
 
 
 
@@ -39205,9 +39264,8 @@ var JDIFrameClient = /*#__PURE__*/function (_JDClient) {
   }]);
 
   return JDIFrameClient;
-}(_client__WEBPACK_IMPORTED_MODULE_0__/* .JDClient */ .z);
-
-
+}(_client__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z);
+/* harmony default export */ __webpack_exports__["ZP"] = (JDIFrameClient);
 function inIFrame() {
   try {
     return typeof window !== "undefined" && window.self !== window.top;
@@ -39315,14 +39373,16 @@ function resolveMakecodeServiceFromClassIdentifier(serviceClass) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "z": function() { return /* binding */ JDNode; },
-/* harmony export */   "L": function() { return /* binding */ visitNodes; }
+/* harmony export */   "LR": function() { return /* binding */ visitNodes; }
 /* harmony export */ });
+/* unused harmony export JDNode */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
 /* harmony import */ var _eventsource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45484);
 
 
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
  * Base class for JDOM Node classes.
@@ -39337,12 +39397,18 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
   }
   /**
    * Globally unique identifier in the tree
+   * @category JDOM
    */
 
 
   var _proto = JDNode.prototype;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  /**
+   * Emit event in current node and parent nodes
+   * @param event event to emit
+   * @param arg event arguments
+   * @category JDOM
+   */
   _proto.emitPropagated = function emitPropagated(event, arg) {
     var current = this;
 
@@ -39361,18 +39427,21 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
     get:
     /**
      * A human friendly name
+     * @category JDOM
      */
     function get() {
       return this.name;
     }
     /**
      * Gets the name including parents
+     * @category JDOM
      */
 
   }]);
 
   return JDNode;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .JDEventSource */ .aE);
+/* harmony default export */ __webpack_exports__["ZP"] = (JDNode);
 function visitNodes(node, vis) {
   var todo = [node];
 
@@ -41280,9 +41349,7 @@ function printPacket(pkt, opts) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ ProtocolTestServer; }
-/* harmony export */ });
+/* unused harmony export ProtocolTestServer */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(25342);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85413);
@@ -41292,7 +41359,6 @@ function printPacket(pkt, opts) {
 /* harmony import */ var _pack__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(91635);
 /* harmony import */ var _pipes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93642);
 /* harmony import */ var _serviceserver__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(50457);
-
 
 
 
@@ -41382,8 +41448,7 @@ var ProtocolTestServer = /*#__PURE__*/function (_JDServiceServer) {
 
   return ProtocolTestServer;
 }(_serviceserver__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z);
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (ProtocolTestServer);
 
 /***/ }),
 
@@ -41439,9 +41504,7 @@ function randomDeviceId() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ JDRegisterServer; }
-/* harmony export */ });
+/* unused harmony export JDRegisterServer */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(85413);
@@ -41508,6 +41571,11 @@ function defaultPayload(specification) {
   var rs = fields.map(defaultFieldPayload);
   return rs;
 }
+/**
+ * A register "server" instance, used to assembly service servers.
+ * @category Servers
+ */
+
 
 var JDRegisterServer = /*#__PURE__*/function (_JDEventSource) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(JDRegisterServer, _JDEventSource);
@@ -41690,8 +41758,7 @@ var JDRegisterServer = /*#__PURE__*/function (_JDEventSource) {
 
   return JDRegisterServer;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_4__/* .JDEventSource */ .aE);
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (JDRegisterServer);
 
 /***/ }),
 
@@ -41754,8 +41821,10 @@ var JDServiceClient = /*#__PURE__*/function (_JDClient) {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": function() { return /* binding */ JDServiceProvider; }
+  "Z": function() { return /* binding */ serviceprovider; }
 });
+
+// UNUSED EXPORTS: JDServiceProvider
 
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(73108);
@@ -41791,6 +41860,10 @@ var serviceserver = __webpack_require__(50457);
 
 
 
+/**
+ * A control service server
+ * @category Servers
+ */
 
 var ControlServer = /*#__PURE__*/function (_JDServiceServer) {
   (0,inheritsLoose/* default */.Z)(ControlServer, _JDServiceServer);
@@ -41917,8 +41990,7 @@ var ControlServer = /*#__PURE__*/function (_JDServiceServer) {
 
   return ControlServer;
 }(serviceserver/* default */.Z);
-
-
+/* harmony default export */ var controlserver = (ControlServer);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/eventsource.ts
 var eventsource = __webpack_require__(45484);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/random.ts
@@ -41944,6 +42016,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+/**
+ * Implements a device with service servers.
+ * @category Servers
+ */
 
 var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
   (0,inheritsLoose/* default */.Z)(JDServiceProvider, _JDEventSource);
@@ -41955,7 +42031,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
     _this._restartCounter = 0;
     _this._packetCount = 0;
     _this._eventCounter = undefined;
-    _this.controlService = new ControlServer(options);
+    _this.controlService = new controlserver(options);
     _this._services = [];
     _this.deviceId = options === null || options === void 0 ? void 0 : options.deviceId;
 
@@ -42256,8 +42332,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 
   return JDServiceProvider;
 }(eventsource/* JDEventSource */.aE);
-
-
+/* harmony default export */ var serviceprovider = (JDServiceProvider);
 
 /***/ }),
 
@@ -42265,9 +42340,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ JDServiceServer; }
-/* harmony export */ });
+/* unused harmony export JDServiceServer */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(25342);
@@ -42293,6 +42366,10 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 
 var CALIBRATION_DELAY = 5000;
 
+/**
+ * Base class for service server implementations
+ * @category Servers
+ */
 var JDServiceServer = /*#__PURE__*/function (_JDEventSource) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(JDServiceServer, _JDEventSource);
 
@@ -42656,8 +42733,7 @@ var JDServiceServer = /*#__PURE__*/function (_JDEventSource) {
 
   return JDServiceServer;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (JDServiceServer);
 
 /***/ }),
 
@@ -43048,21 +43124,29 @@ function hasPipeReport(info) {
 
 /***/ }),
 
-/***/ 79918:
+/***/ 61649:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ Trace; }
-/* harmony export */ });
+/* unused harmony export Trace */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
 /* harmony import */ var _pretty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10913);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81794);
 
 
 
+var TRACE_OVERSHOOT = 1.1;
+/**
+ * A sequence of packets.
+ * @category Trace
+ */
 
 var Trace = /*#__PURE__*/function () {
+  /**
+   * Constructs a new empty trace or from an existing list of packets
+   * @param packets list of packets
+   * @param description description of the trace
+   */
   function Trace(packets, description) {
     if (packets === void 0) {
       packets = [];
@@ -43071,21 +43155,35 @@ var Trace = /*#__PURE__*/function () {
     this.packets = packets;
     this.description = description;
   }
+  /**
+   * Number of packets in trace
+   */
+
 
   var _proto = Trace.prototype;
 
-  _proto.addPacket = function addPacket(pkt, maxLength) {
+  /**
+   * Appends a packet to the trace
+   * @param packet packet to add
+   * @param maxLength If positive, prunes older packets when the length reaches maxLength
+   */
+  _proto.addPacket = function addPacket(packet, maxLength) {
     if (maxLength === void 0) {
       maxLength = -1;
     }
 
-    this.packets.push(pkt);
+    this.packets.push(packet);
 
-    if (maxLength > 0 && this.packets.length > maxLength * 1.1) {
+    if (maxLength > 0 && this.packets.length > maxLength * TRACE_OVERSHOOT) {
       // 10% overshoot of max
       this.packets = this.packets.slice(-maxLength);
     }
-  };
+  }
+  /**
+   * Gets a text-rendered view of the trace
+   * @returns text where each line is a packet
+   */
+  ;
 
   _proto.serializeToText = function serializeToText() {
     var _this$packets$;
@@ -43108,12 +43206,20 @@ var Trace = /*#__PURE__*/function () {
     get: function get() {
       return this.packets.length;
     }
+    /**
+     * Duration in milliseconds between the first and last packet.
+     */
+
   }, {
     key: "duration",
     get: function get() {
       if (!this.packets.length) return 0;
       return this.packets[this.packets.length - 1].timestamp - this.packets[0].timestamp;
     }
+    /**
+     * Timestamp of the first packet, defaults to 0 if trace is empty.
+     */
+
   }, {
     key: "startTimestamp",
     get: function get() {
@@ -43121,6 +43227,10 @@ var Trace = /*#__PURE__*/function () {
 
       return ((_this$packets$2 = this.packets[0]) === null || _this$packets$2 === void 0 ? void 0 : _this$packets$2.timestamp) || 0;
     }
+    /**
+     * Timestamp of the last packet, defaults to 0 if trace is empty.
+     */
+
   }, {
     key: "endTimestamp",
     get: function get() {
@@ -43132,18 +43242,15 @@ var Trace = /*#__PURE__*/function () {
 
   return Trace;
 }();
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (Trace);
 
 /***/ }),
 
-/***/ 35391:
+/***/ 93829:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ TracePlayer; }
-/* harmony export */ });
+/* unused harmony export TracePlayer */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25342);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85413);
@@ -43155,6 +43262,10 @@ var Trace = /*#__PURE__*/function () {
 
 
 
+/**
+ * A player for packet traces.
+ * @category Trace
+ */
 var TracePlayer = /*#__PURE__*/function (_JDClient) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(TracePlayer, _JDClient);
 
@@ -43277,9 +43388,8 @@ var TracePlayer = /*#__PURE__*/function (_JDClient) {
   }]);
 
   return TracePlayer;
-}(_client__WEBPACK_IMPORTED_MODULE_0__/* .JDClient */ .z);
-
-
+}(_client__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z);
+/* harmony default export */ __webpack_exports__["Z"] = (TracePlayer);
 
 /***/ }),
 
@@ -43288,8 +43398,8 @@ var TracePlayer = /*#__PURE__*/function (_JDClient) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "e": function() { return /* binding */ ConnectionState; },
-/* harmony export */   "P": function() { return /* binding */ JDTransport; }
+/* harmony export */   "em": function() { return /* binding */ ConnectionState; },
+/* harmony export */   "P2": function() { return /* binding */ JDTransport; }
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(53719);
@@ -43764,6 +43874,7 @@ var JDTransport = /*#__PURE__*/function (_JDEventSource) {
 
   return JDTransport;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
+/* harmony default export */ __webpack_exports__["ZP"] = (JDTransport);
 
 /***/ }),
 
@@ -47948,7 +48059,7 @@ var BitRadioServer = /*#__PURE__*/function (_JDServiceServer) {
 
     console.log("bitradio: send", msg);
 
-    if ((0,iframeclient/* inIFrame */.H)()) {
+    if ((0,iframeclient/* inIFrame */.Hs)()) {
       window.parent.postMessage(msg, "*");
     }
   };
@@ -50973,7 +51084,7 @@ function DeviceSpecificationList(props) {
 /* harmony import */ var _material_ui_icons_AccountTree__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(89615);
 /* harmony import */ var _ui_IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(79885);
 /* harmony import */ var _buttons_ConnectButtons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45608);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(43226);
 /* harmony import */ var _trace_TraceClearButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(77653);
 /* harmony import */ var _trace_TracePlayButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(86360);
 
@@ -51411,7 +51522,7 @@ var FileSystemNode = /*#__PURE__*/function (_JDNode) {
   }
 
   return FileSystemNode;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
 var FileSystem = /*#__PURE__*/function (_FileSystemNode) {
   (0,inheritsLoose/* default */.Z)(FileSystem, _FileSystemNode);
 
@@ -52233,7 +52344,7 @@ function allKinds() {
 
 /***/ }),
 
-/***/ 69882:
+/***/ 43226:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52255,8 +52366,8 @@ var react = __webpack_require__(67294);
 var Context = __webpack_require__(20392);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
 var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/traceplayer.ts
-var traceplayer = __webpack_require__(35391);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace/traceplayer.ts
+var traceplayer = __webpack_require__(93829);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/createClass.js
 var createClass = __webpack_require__(53719);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
@@ -52265,9 +52376,9 @@ var assertThisInitialized = __webpack_require__(25342);
 var inheritsLoose = __webpack_require__(85413);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace.ts
-var trace = __webpack_require__(79918);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/tracerecorder.ts
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace/trace.ts
+var trace = __webpack_require__(61649);
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/trace/tracerecorder.ts
 
 
 
@@ -52275,6 +52386,10 @@ var trace = __webpack_require__(79918);
 
 
 var RECORDING_TRACE_MAX_ITEMS = 100000;
+/**
+ * A recorder of packets to create traces.
+ * @category Trace
+ */
 
 var TraceRecorder = /*#__PURE__*/function (_JDClient) {
   (0,inheritsLoose/* default */.Z)(TraceRecorder, _JDClient);
@@ -52340,9 +52455,8 @@ var TraceRecorder = /*#__PURE__*/function (_JDClient) {
   }]);
 
   return TraceRecorder;
-}(client/* JDClient */.z);
-
-
+}(client/* default */.Z);
+/* harmony default export */ var tracerecorder = (TraceRecorder);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/dist/specconstants.ts
 var specconstants = __webpack_require__(73512);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
@@ -52694,7 +52808,7 @@ function compileFilter(props) {
 }
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/traceview.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/trace/traceview.ts
 
 
 
@@ -52707,6 +52821,10 @@ var FILTERED_TRACE_MAX_ITEMS = 100;
 var DUPLICATE_PACKET_MERGE_HORIZON_MAX_DISTANCE = 10;
 var DUPLICATE_PACKET_MERGE_HORIZON_MAX_TIME = 5000;
 
+/**
+ * A filtered view over a packet trace
+ * @category Trace
+ */
 var TraceView = /*#__PURE__*/function (_JDClient) {
   (0,inheritsLoose/* default */.Z)(TraceView, _JDClient);
 
@@ -52962,8 +53080,7 @@ var TraceView = /*#__PURE__*/function (_JDClient) {
 
   return TraceView;
 }(client/* JDClient */.z);
-
-
+/* harmony default export */ var traceview = (TraceView);
 // EXTERNAL MODULE: ./src/components/hooks/useLocalStorage.ts
 var useLocalStorage = __webpack_require__(34093);
 ;// CONCATENATED MODULE: ./src/components/PacketsContext.tsx
@@ -53149,8 +53266,8 @@ var PacketsProvider = function PacketsProvider(_ref) {
 
 
   (0,react.useEffect)(function () {
-    recorder.current = new TraceRecorder(bus);
-    view.current = new TraceView(bus, filter);
+    recorder.current = new tracerecorder(bus);
+    view.current = new traceview(bus, filter);
     player.current = new traceplayer/* default */.Z(bus);
     setTrace(view.current.trace);
     view.current.mount(view.current.subscribe(constants/* CHANGE */.Ver, function () {
@@ -53738,6 +53855,7 @@ var iframeclient = __webpack_require__(9809);
 var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
   (0,inheritsLoose/* default */.Z)(IFrameTransport, _JDIFrameClient);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function IFrameTransport(bus) {
     var _this;
 
@@ -53808,7 +53926,7 @@ var IFrameTransport = /*#__PURE__*/function (_JDIFrameClient) {
   };
 
   return IFrameTransport;
-}(iframeclient/* default */.Z);
+}(iframeclient/* default */.ZP);
 // EXTERNAL MODULE: ./src/components/ui/DarkModeContext.tsx
 var DarkModeContext = __webpack_require__(91350);
 // EXTERNAL MODULE: ./src/jacdac/Context.tsx
@@ -53895,7 +54013,7 @@ var ServiceManagerProvider = function ServiceManagerProvider(_ref) {
   }, children);
 
   function createProps() {
-    var isHosted = (0,iframeclient/* inIFrame */.H)();
+    var isHosted = (0,iframeclient/* inIFrame */.Hs)();
     var fileStorage = new BrowserFileStorage();
     var modelStore = undefined;
 
@@ -54199,14 +54317,14 @@ function ConnectButton(props) {
   var connectionState = (0,_jacdac_useChange__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(transport, function (t) {
     return t.connectionState;
   });
-  var showDisconnect = connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connected */ .e.Connected || connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnecting */ .e.Disconnecting;
-  var inProgress = connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connecting */ .e.Connecting || connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnecting */ .e.Disconnecting;
+  var showDisconnect = connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connected */ .em.Connected || connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnecting */ .em.Disconnecting;
+  var inProgress = connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connecting */ .em.Connecting || connectionState == _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnecting */ .em.Disconnecting;
 
   var _useMediaQueries = (0,_hooks_useMediaQueries__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(),
       mobile = _useMediaQueries.mobile;
 
   var small = full !== true && (!full || mobile);
-  var disabled = connectionState != _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connected */ .e.Connected && connectionState != _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnected */ .e.Disconnected;
+  var disabled = connectionState != _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Connected */ .em.Connected && connectionState != _jacdac_ts_src_jdom_transport_transport__WEBPACK_IMPORTED_MODULE_2__/* .ConnectionState.Disconnected */ .em.Disconnected;
   var onClick = showDisconnect ? function () {
     return transport.disconnect();
   } : function () {
@@ -59197,7 +59315,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "4b0524921b51a0ea7b02f17d790d691f6d8a988c";
+  var sha = "1761f0d4f10d87a7051751bfdc7e3375ca83a282";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60239,7 +60357,7 @@ function PacketStats() {
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Forum.js
 var Forum = __webpack_require__(22203);
 // EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 25 modules
-var providerbus = __webpack_require__(219);
+var providerbus = __webpack_require__(68004);
 ;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/useScrollTrigger/useScrollTrigger.js
 
 
@@ -60905,7 +61023,7 @@ function useRoleManagerClient() {
 /* harmony export */ });
 /* harmony import */ var _material_ui_icons_Clear__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(58590);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43226);
 /* harmony import */ var _ui_IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(79885);
 // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
@@ -60941,7 +61059,7 @@ function TraceClearButton(props) {
 /* harmony import */ var _material_ui_icons_PlayArrow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(42404);
 /* harmony import */ var _material_ui_icons_Stop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34257);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43226);
 /* harmony import */ var _ui_IconButtonWithProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16845);
 
 var _excluded = ["disabled"];
@@ -76465,7 +76583,7 @@ function Suspense(props) {
 /* harmony import */ var _jacdac_Provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(727);
 /* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(84377);
 /* harmony import */ var _DbContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(94904);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(43226);
 /* harmony import */ var _ServiceManagerContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(99808);
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(35414);
 /* harmony import */ var _makecode_MakeCodeSnippetContext__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(54888);
@@ -77433,7 +77551,7 @@ JacdacContext.displayName = "Jacdac";
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20392);
-/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(219);
+/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(68004);
 
 
 
@@ -77464,7 +77582,7 @@ function JacdacProvider(props) {
 
 /***/ }),
 
-/***/ 219:
+/***/ 68004:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77607,7 +77725,8 @@ var JDField = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDField;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
+/* harmony default export */ var jdom_field = (JDField);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/servicemembernode.ts
 
 
@@ -77674,7 +77793,8 @@ var JDServiceMemberNode = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDServiceMemberNode;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
+/* harmony default export */ var servicemembernode = (JDServiceMemberNode);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pack.ts
 var pack = __webpack_require__(91635);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/packobject.ts
@@ -77833,7 +77953,7 @@ var JDRegister = /*#__PURE__*/function (_JDServiceMemberNode) {
           _this5 = this;
 
       if (!this._fields) this._fields = (_this$specification3 = this.specification) === null || _this$specification3 === void 0 ? void 0 : _this$specification3.fields.map(function (field, index) {
-        return new JDField(_this5, index, field);
+        return new jdom_field(_this5, index, field);
       });
       return this._fields.slice();
     }
@@ -77944,7 +78064,8 @@ var JDRegister = /*#__PURE__*/function (_JDServiceMemberNode) {
   }]);
 
   return JDRegister;
-}(JDServiceMemberNode);
+}(servicemembernode);
+/* harmony default export */ var jdom_register = (JDRegister);
 function stableSortRegisters(registers) {
   return registers === null || registers === void 0 ? void 0 : registers.sort(function (a, b) {
     return a.compareTo(b);
@@ -77976,6 +78097,9 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
 
   var _proto = JDEvent.prototype;
 
+  /**
+   * @internal
+   */
   _proto.processEvent = function processEvent(pkt) {
     var device = this.service.device;
     var ec = (device.eventCounter || 0) + 1; // how many packets ahead and behind current are we?
@@ -78011,7 +78135,7 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
           _this2 = this;
 
       if (!this._fields) this._fields = (_this$specification = this.specification) === null || _this$specification === void 0 ? void 0 : _this$specification.fields.map(function (field, index) {
-        return new JDField(_this2, index, field);
+        return new jdom_field(_this2, index, field);
       });
       return this._fields.slice();
     }
@@ -78055,7 +78179,8 @@ var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
   }]);
 
   return JDEvent;
-}(JDServiceMemberNode);
+}(servicemembernode);
+/* harmony default export */ var jdom_event = (JDEvent);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/dist/specconstants.ts
 var specconstants = __webpack_require__(73512);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pipes.ts
@@ -78173,7 +78298,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     if (!this._registers) {
       var spec = this.specification;
       this._registers = ((spec === null || spec === void 0 ? void 0 : spec.packets) || []).filter(jdom_spec/* isRegister */.x5).map(function (pkt) {
-        return new JDRegister(_this2, pkt.identifier);
+        return new jdom_register(_this2, pkt.identifier);
       });
     }
 
@@ -78200,7 +78325,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
         return undefined;
       }
 
-      this._registers.push(register = new JDRegister(this, registerCode));
+      this._registers.push(register = new jdom_register(this, registerCode));
     }
 
     return register;
@@ -78223,7 +78348,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
         return undefined;
       }
 
-      this._events.push(event = new JDEvent(this, eventCode));
+      this._events.push(event = new jdom_event(this, eventCode));
     }
 
     return event;
@@ -78612,7 +78737,8 @@ var JDService = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDService;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
+/* harmony default export */ var service = (JDService);
 function stableSortServices(services) {
   return services === null || services === void 0 ? void 0 : services.sort(function (a, b) {
     return a.compareTo(b);
@@ -78623,6 +78749,8 @@ var eventsource = __webpack_require__(45484);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/qualityofservice.ts
 
 
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 
 var QualityOfService = /*#__PURE__*/function (_JDEventSource) {
@@ -78649,6 +78777,9 @@ var QualityOfService = /*#__PURE__*/function (_JDEventSource) {
 
   var _proto = QualityOfService.prototype;
 
+  /**
+   * @internal
+   */
   _proto.processAnnouncement = function processAnnouncement(pkt) {
     // collect metrics
     var received = this._receivedPackets;
@@ -78661,7 +78792,10 @@ var QualityOfService = /*#__PURE__*/function (_JDEventSource) {
 
     this._receivedPackets = 0;
     this.emit(constants/* CHANGE */.Ver);
-  } // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  }
+  /**
+   * @internal
+   */
   ;
 
   _proto.processPacket = function processPacket(pkt) {
@@ -78763,8 +78897,7 @@ var LEDController = /*#__PURE__*/function (_JDEventSource) {
 
   return LEDController;
 }(eventsource/* JDEventSource */.aE);
-
-
+/* harmony default export */ var ledcontroller = (LEDController);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/device.ts
 
 
@@ -78795,6 +78928,20 @@ function device_arrayLikeToArray(arr, len) { if (len == null || len > arr.length
 var JDDevice = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDDevice, _JDNode);
 
+  /**
+   * Indicates if the device is connected to a bus
+   * @category Lifecycle
+   */
+
+  /**
+   * Timestamp of the last packet received from the device
+   * @category Lifecycle
+   */
+
+  /**
+   * Timestamp of the last service update packet received from the device
+   * @category Lifecycle
+   */
   function JDDevice(bus, deviceId, pkt) {
     var _this;
 
@@ -78833,6 +78980,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets a unique identifier for this device in the bus
+   * @category JDOM
    */
   ;
 
@@ -78840,6 +78988,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Indicates if the device contains at least one service matching the service class
    * @param serviceClass service class to match
    * @returns true if at least one service present
+   * @category Service Clients
    */
   _proto.hasService = function hasService(serviceClass) {
     if (!this.announced) return false;
@@ -78856,6 +79005,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets or allocates a pipe port
    * @param id identifier of the port
    * @returns a pipe port
+   * @category Pipes
    */
   ;
 
@@ -78868,6 +79018,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the number of services hosted by the device
+   * @category Service Clients
    */
   ;
 
@@ -78875,13 +79026,19 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets the service class at a given index
    * @param index index of the service
    * @returns service class
+   * @category Service Clients
    */
   _proto.serviceClassAt = function serviceClassAt(index) {
     if (index == 0) return 0;
     index <<= 2;
     if (!this.announced || index + 4 > this._servicesData.length) return undefined;
     return (0,utils/* read32 */.Zy)(this._servicesData, index);
-  };
+  }
+  /**
+   * Gets the list of service classes
+   * @category Service Clients
+   */
+  ;
 
   _proto.initServices = function initServices(force) {
     var _this2 = this;
@@ -78896,7 +79053,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
       var s = [];
 
       for (var i = 0; i < n; ++i) {
-        s.push(new JDService(this, i));
+        s.push(new service(this, i));
       }
 
       this._services = s;
@@ -78915,6 +79072,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets the service client at the given service index
    * @param serviceIndex index of the service client
    * @returns service client
+   * @category Service Clients
    */
   ;
 
@@ -78928,6 +79086,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets a filtered list of service clients.
    * @param options filters for services
    * @returns services matching the filter
+   * @category Service Clients
    */
   ;
 
@@ -78956,6 +79115,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the list of child services.
+   * @category JDOM
    */
   ;
 
@@ -78967,7 +79127,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     var pkt = !payload ? packet/* default.onlyHeader */.Z.onlyHeader(cmd) : packet/* default.from */.Z.from(cmd, payload);
     pkt.serviceIndex = constants/* JD_SERVICE_INDEX_CTRL */.fey;
     return pkt.sendCmdAsync(this);
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.processAnnouncement = function processAnnouncement(pkt) {
     this.qualityOfService.processAnnouncement(pkt);
@@ -79005,7 +79169,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
       this.bus.emit(constants/* CHANGE */.Ver);
       this.emit(constants/* CHANGE */.Ver);
     }
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.processPacket = function processPacket(pkt) {
     this.qualityOfService.processPacket(pkt);
@@ -79014,7 +79182,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     if (pkt.isReport) this.emit(constants/* PACKET_REPORT */.deN, pkt);else if (pkt.isEvent) this.emit(constants/* PACKET_EVENT */.F5$, pkt);
     var service = this.service(pkt.serviceIndex);
     if (service) service.processPacket(pkt);
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.disconnect = function disconnect() {
     this.connected = false;
@@ -79022,7 +79194,13 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     this.emit(constants/* CHANGE */.Ver);
   };
 
-  _proto.identify = /*#__PURE__*/function () {
+  /**
+   * Sends an ``identify`` command to the device
+   * @category Lifecycle
+   */
+  _proto.identify =
+  /*#__PURE__*/
+  function () {
     var _identify = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
       var statusLight, ctrl;
       return regenerator_default().wrap(function _callee$(_context) {
@@ -79091,8 +79269,17 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
 
     return identify;
-  }();
+  }()
+  /**
+   * Indicates the device should be identifying.
+   * @category Lifecycle
+   */
+  ;
 
+  /**
+   * Sends a ``reset`` command to the device
+   * @category Lifecycle
+   */
   _proto.reset = function reset() {
     var _this$service;
 
@@ -79270,6 +79457,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the short id of the device
+     * @category JDOM
      */
 
   }, {
@@ -79279,6 +79467,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Identifies node as a device
+     * @category JDOM
      */
 
   }, {
@@ -79306,6 +79495,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if the device is part of a trace replay
+     * @category Lifecycle
      */
 
   }, {
@@ -79313,11 +79503,21 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     get: function get() {
       return this._replay;
     }
+    /**
+     * Gets the device short name
+     * @category JDOM
+     */
+
   }, {
     key: "friendlyName",
     get: function get() {
       return this.shortId;
     }
+    /**
+     * Gets the device short name
+     * @category JDOM
+     */
+
   }, {
     key: "qualifiedName",
     get: function get() {
@@ -79326,6 +79526,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     /**
      * Indicates if service information is available.
      * This happens after a announce packet has been received.
+     * @category Lifecycle
      */
 
   }, {
@@ -79337,6 +79538,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the control announce flag from the annouce packet.
+     * @category Announce
      */
 
   }, {
@@ -79346,6 +79548,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the restart counter from the announce packet.
+     * @category Announce
      */
 
   }, {
@@ -79355,6 +79558,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the status light announce flags from the announce packet.
+     * @category Announce
      */
 
   }, {
@@ -79364,6 +79568,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if the device is announced as a client
+     * @category Announce
      */
 
   }, {
@@ -79374,6 +79579,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     /**
      * Gets the number of packets sent since the last announce packet,
      * as read from the announce packet.
+     * @category Announce
      */
 
   }, {
@@ -79383,6 +79589,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
 
       return ((_this$_servicesData2 = this._servicesData) === null || _this$_servicesData2 === void 0 ? void 0 : _this$_servicesData2[2]) || 0;
     }
+    /**
+     * Gets the device short identifier
+     * @category JDOM
+     */
+
   }, {
     key: "shortId",
     get: function get() {
@@ -79392,6 +79603,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the bus instance hosting this device.
+     * @category JDOM
      */
 
   }, {
@@ -79401,6 +79613,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the firmware information if any.
+     * @category Firmware
      */
 
   }, {
@@ -79410,6 +79623,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Sets the firmware information.
+     * @category Firmware
      */
     ,
     set: function set(info) {
@@ -79425,6 +79639,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if no packet from this device has been observed in a while.
+     * @category Lifecycle
      */
 
   }, {
@@ -79434,6 +79649,8 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Sets the lost status
+     * @category Lifecycle
+     * @internal
      */
     ,
     set: function set(v) {
@@ -79455,6 +79672,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * A flashing sequence is in progress
+     * @category Lifecycle
      */
 
   }, {
@@ -79464,6 +79682,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Sets the flashing sequence state
+     * @category Lifecycle
      */
     ,
     set: function set(value) {
@@ -79474,11 +79693,20 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
         this.bus.emit(constants/* CHANGE */.Ver);
       }
     }
+    /**
+     * Gets the number of events received by the service clients in this device
+     * @category Lifecycle
+     */
+
   }, {
     key: "eventCounter",
     get: function get() {
       return this._eventCounter;
-    },
+    }
+    /**
+     * @internal
+     */
+    ,
     set: function set(v) {
       this._eventCounter = v;
     }
@@ -79508,7 +79736,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }, {
     key: "statusLight",
     get: function get() {
-      if (!this._statusLight && this.statusLightFlags !== constants/* ControlAnnounceFlags.StatusLightNone */.P99.StatusLightNone) this._statusLight = new LEDController(this.service(0), constants/* ControlCmd.SetStatusLight */.VSW.SetStatusLight);
+      if (!this._statusLight && this.statusLightFlags !== constants/* ControlAnnounceFlags.StatusLightNone */.P99.StatusLightNone) this._statusLight = new ledcontroller(this.service(0), constants/* ControlCmd.SetStatusLight */.VSW.SetStatusLight);
       return this._statusLight;
     }
   }, {
@@ -79529,7 +79757,8 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDDevice;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
+/* harmony default export */ var jdom_device = (JDDevice);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/flashing.ts
 var flashing = __webpack_require__(91758);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/realtimeclockserver.ts
@@ -79639,7 +79868,7 @@ var BusStatsMonitor = /*#__PURE__*/function (_JDEventSource) {
 var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceclient.ts
 var serviceclient = __webpack_require__(56763);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/rolemanagerclient.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/clients/rolemanagerclient.ts
 
 
 
@@ -80014,6 +80243,7 @@ var RoleManagerClient = /*#__PURE__*/function (_JDServiceClient) {
   return RoleManagerClient;
 }(serviceclient/* JDServiceClient */.P);
 RoleManagerClient.unroledSrvs = [constants/* SRV_CONTROL */.gm9, constants/* SRV_ROLE_MANAGER */.igi, constants/* SRV_LOGGER */.w9j];
+/* harmony default export */ var rolemanagerclient = (RoleManagerClient);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/random.ts
 var random = __webpack_require__(80303);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/scheduler.ts
@@ -80161,6 +80391,10 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDBus, _JDNode);
 
   /**
+   * @internal
+   */
+
+  /**
    * Creates the bus with the given transport
    * @param sendPacket
    */
@@ -80175,7 +80409,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     _this._lastResetInTime = 0;
     _this._restartCounter = 0;
     _this._minLoggerPriority = constants/* LoggerPriority.Debug */.qit.Debug;
-    _this._gcDevicesEnabled = 0;
+    _this._gcDevicesFrozen = 0;
     _this._serviceProviders = [];
     _this.selfDeviceId = (options === null || options === void 0 ? void 0 : options.deviceId) || (0,random/* randomDeviceId */.b_)();
     _this.scheduler = (options === null || options === void 0 ? void 0 : options.scheduler) || new WallClockScheduler();
@@ -80203,6 +80437,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the list of transports registers with the bus
+   * @category Transports and Bridges
    */
 
 
@@ -80210,6 +80445,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
   /**
    * Adds a transport to the bus
+   * @category Transports and Bridges
    */
   _proto.addTransport = function addTransport(transport) {
     var _this2 = this;
@@ -80225,6 +80461,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the list of bridges registered with the bus
+   * @category Transports and Bridges
    */
   ;
 
@@ -80232,6 +80469,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
    * Add a bridge to the bus and returns a callback to remove it.
    * @param bridge
    * @returns callback to remove bridge
+   * @category Transports and Bridges
    */
   _proto.addBridge = function addBridge(bridge) {
     var _this3 = this;
@@ -80278,6 +80516,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Connects the bus going through the transports chronologically. Does nothing if already connected.
    * @param background connection was triggered automatically
+   * @category Lifecycle
    */
   ;
 
@@ -80339,6 +80578,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }()
   /**
    * Disconnects the bus and any connected transport.
+   * @category Lifecycle
    */
   ;
 
@@ -80383,7 +80623,8 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     return disconnect;
   }()
   /**
-   * Starts process packet and updates the JDOM nodes
+   * Starts to process packets and updates the JDOM nodes
+   * @category Lifecycle
    */
   ;
 
@@ -80400,6 +80641,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Stops processing packets
+   * @category Lifecycle
    */
   ;
 
@@ -80444,6 +80686,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }()
   /**
    * Stops the bus and all transport connections.
+   * @category Lifecycle
    */
   ;
 
@@ -80481,6 +80724,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Indicates that the bus is sending commands keep devices in bootloader mode.
    * This property is signaled by CHANGE.
+   * @category Lifecycle
    */
   ;
 
@@ -80523,9 +80767,14 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets a unique identifier for this node in the Jacdac DOM.
+   * @category JDOM
    */
   ;
 
+  /**
+   * Sets the default role manager service client
+   * @category Service Clients
+   */
   _proto.setRoleManagerService = function setRoleManagerService(service) {
     var _this$_roleManagerCli;
 
@@ -80541,7 +80790,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
     if (service && service !== ((_this$_roleManagerCli = this._roleManagerClient) === null || _this$_roleManagerCli === void 0 ? void 0 : _this$_roleManagerCli.service)) {
       //console.debug("mount role manager")
-      this._roleManagerClient = new RoleManagerClient(service);
+      this._roleManagerClient = new rolemanagerclient(service);
       this.emit(constants/* ROLE_MANAGER_CHANGE */.kqR);
       this.emit(constants/* CHANGE */.Ver);
 
@@ -80551,7 +80800,14 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
   _proto.toString = function toString() {
     return this.id;
-  };
+  }
+  /**
+   * Resolves a JDOM node from an identifier
+   * @param id node identifier
+   * @returns node if found, undefined otherwise
+   * @category JDOM
+   */
+  ;
 
   _proto.node = function node(id) {
     var _this6 = this;
@@ -80656,19 +80912,26 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
       serviceClass: constants/* SRV_ROLE_MANAGER */.igi
     })[0];
     this.setRoleManagerService(service);
-  };
+  }
+  /**
+   * Sends a packet to the bus
+   * @param packet packet to send
+   */
+  ;
 
-  _proto.sendPacketAsync = /*#__PURE__*/function () {
-    var _sendPacketAsync = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee6(p) {
+  _proto.sendPacketAsync =
+  /*#__PURE__*/
+  function () {
+    var _sendPacketAsync = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee6(packet) {
       return regenerator_default().wrap(function _callee6$(_context6) {
         while (1) {
           switch (_context6.prev = _context6.next) {
             case 0:
-              p.timestamp = this.timestamp;
-              this.emit(constants/* PACKET_SEND */.RaS, p);
+              packet.timestamp = this.timestamp;
+              this.emit(constants/* PACKET_SEND */.RaS, packet);
               _context6.next = 4;
               return Promise.all(this._transports.map(function (transport) {
-                return transport.sendPacketAsync(p);
+                return transport.sendPacketAsync(packet);
               }));
 
             case 4:
@@ -80684,10 +80947,16 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     }
 
     return sendPacketAsync;
-  }();
+  }()
+  /**
+   * Gets the list of known firmware blobs
+   * @category Firmware
+   */
+  ;
 
   /**
    * Gets the current list of known devices on the bus
+   * @category Service Clients
    */
   _proto.devices = function devices(options) {
     var _this8 = this;
@@ -80719,6 +80988,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the current list of service providers on the bus
+   * @category Service Servers
    */
   ;
 
@@ -80728,6 +80998,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Get a service providers for a given device
    * @param deviceId
+   * @category Service Servers
    */
   ;
 
@@ -80737,7 +81008,9 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     });
   }
   /**
-   * Adds the service provider to the bus
+   * Adds the service provider to the bus and returns the associated devoce
+   * @param provider instance to add
+   * @category Service Servers
    */
   ;
 
@@ -80754,7 +81027,8 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Removes the service provider from the bus
-   * @param provider
+   * @param provider instance to remove
+   * @category Service Servers
    */
   ;
 
@@ -80787,10 +81061,16 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
 
       this.emit(constants/* CHANGE */.Ver);
     }
-  };
+  }
+  /**
+   * Gets the list of devices
+   * @category JDOM
+   */
+  ;
 
   /**
    * Gets the current list of services from all the known devices on the bus
+   * @category Service Clients
    */
   _proto.services = function services(options) {
     return (0,utils/* arrayConcatMany */.ue)(this.devices(options).map(function (d) {
@@ -80799,7 +81079,10 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets a device on the bus
-   * @param id
+   * @param id device identifier to query
+   * @param skipCreate do not create new device if missing
+   * @param pkt packet that generated this device query
+   * @category Service Clients
    */
   ;
 
@@ -80819,7 +81102,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
         return undefined;
       }
 
-      d = new JDDevice(this, id, pkt);
+      d = new jdom_device(this, id, pkt);
 
       this._devices.push(d);
 
@@ -80837,6 +81120,11 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     return d;
   };
 
+  /**
+   * Enables or disables automatically scanning and resolving firmware updates
+   * @param enabled true to scan firmware in the background
+   * @category Firmware
+   */
   _proto.setBackgroundFirmwareScans = function setBackgroundFirmwareScans(enabled) {
     var _this9 = this;
 
@@ -80878,15 +81166,30 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
         this.off(constants/* DEVICE_ANNOUNCE */.Hob, d);
       }
     }
-  };
+  }
+  /**
+   * Push a context to disable cleaning device that haven't issued packets recently.
+   * @category Lifecycle
+   */
+  ;
 
-  _proto.freezeDevices = function freezeDevices() {
-    this._gcDevicesEnabled++;
-  };
+  _proto.pushDeviceFrozen = function pushDeviceFrozen() {
+    this._gcDevicesFrozen++;
+  }
+  /**
+   * Pop a context to disable cleaning device that haven't issued packets recently.
+   * @category Lifecycle
+   */
+  ;
 
-  _proto.unfreezeDevices = function unfreezeDevices() {
-    this._gcDevicesEnabled = Math.max(0, this._gcDevicesEnabled - 1);
-  };
+  _proto.popDeviceFrozen = function popDeviceFrozen() {
+    this._gcDevicesFrozen = Math.max(0, this._gcDevicesFrozen - 1);
+  }
+  /**
+   * Indicates if the device list if currently frozen.
+   * @category Lifecycle
+   */
+  ;
 
   _proto.gcDevices = function gcDevices() {
     if (this.devicesFrozen) {
@@ -80922,6 +81225,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   /**
    * Ingests and process a packet received from the bus.
    * @param pkt a jacdac packet
+   * @internal
    */
   ;
 
@@ -80971,7 +81275,12 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
       this.emit(constants/* PACKET_RECEIVE */.u_S, pkt);
       if (pkt.isEvent) this.emit(constants/* PACKET_EVENT */.F5$, pkt);else if (pkt.isReport) this.emit(constants/* PACKET_REPORT */.deN, pkt);
     }
-  };
+  }
+  /**
+   * Gets the virtual device created by this bus to handle pipes.
+   * @category Service Clients
+   */
+  ;
 
   _proto.handleSelfAnnounce = function handleSelfAnnounce() {
     return Promise.all([this.sendAnnounce(), this.sendResetIn(), this.pingLoggers()]).then(function () {});
@@ -81077,7 +81386,12 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     }
 
     return pingLoggers;
-  }();
+  }()
+  /**
+   * Indicates if registers are automatically refreshed in the background.
+   * @category Service Clients
+   */
+  ;
 
   /**
    * Cycles through all known registers and refreshes the once that have REPORT_UPDATE registered
@@ -81243,6 +81557,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     /**
      * Turn on or off the safe boot mode where the bus keeps devices in bootloader mode.
      * Triggers a CHANGE event.
+     * @category Lifecycle
      */
     ,
     set: function set(enabled) {
@@ -81266,6 +81581,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     /**
      * Indicates if any of the transports is connected.
      * Some transports might be in the process of connecting or disconnecting.
+     * @category Lifecycle
      */
 
   }, {
@@ -81278,6 +81594,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     /**
      * Indicates if any of the transports is disconnected.
      * Some transports might be in the process of connecting or disconnecting.
+     * @category Lifecycle
      */
 
   }, {
@@ -81292,26 +81609,51 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     get: function get() {
       return this.nodeKind;
     }
+    /**
+     * Gets the bus name
+     * @category JDOM
+     */
+
   }, {
     key: "name",
     get: function get() {
       return "bus";
     }
+    /**
+     * Gets the bus name
+     * @category JDOM
+     */
+
   }, {
     key: "friendlyName",
     get: function get() {
       return this.name;
     }
+    /**
+     * Gets the bus name
+     * @category JDOM
+     */
+
   }, {
     key: "qualifiedName",
     get: function get() {
       return this.name;
     }
+    /**
+     * Returns the ``BUS_NODE_NAME``
+     * @category JDOM
+     */
+
   }, {
     key: "nodeKind",
     get: function get() {
       return constants/* BUS_NODE_NAME */.oPG;
     }
+    /**
+     * Gets the default role manager service client, if any
+     * @category Service Clients
+     */
+
   }, {
     key: "roleManager",
     get: function get() {
@@ -81333,6 +81675,11 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
         this.emit(constants/* CHANGE */.Ver);
       }
     }
+    /**
+     * Returns undefined
+     * @category JDOM
+     */
+
   }, {
     key: "parent",
     get: function get() {
@@ -81342,7 +81689,12 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     key: "firmwareBlobs",
     get: function get() {
       return this._firmwareBlobs;
-    },
+    }
+    /**
+     * Sets the list of known firmware blobs
+     * @category Firmware
+     */
+    ,
     set: function set(blobs) {
       this._firmwareBlobs = blobs;
       this.emit(constants/* FIRMWARE_BLOBS_CHANGE */.Kvv);
@@ -81356,7 +81708,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }, {
     key: "devicesFrozen",
     get: function get() {
-      return this._gcDevicesEnabled > 0;
+      return this._gcDevicesFrozen > 0;
     }
   }, {
     key: "selfDevice",
@@ -81367,10 +81719,16 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
     key: "backgroundRefreshRegisters",
     get: function get() {
       return !!this._refreshRegistersInterval;
-    },
-    set: function set(value) {
-      if (!!value !== this.backgroundRefreshRegisters) {
-        if (!value) {
+    }
+    /**
+     * Enables or disables automatically refreshing registers in the background.
+     * @param enabled true to automatically refresh registers
+     * @category Service Clients
+     */
+    ,
+    set: function set(enabled) {
+      if (!!enabled !== this.backgroundRefreshRegisters) {
+        if (!enabled) {
           if (this._refreshRegistersInterval) this.scheduler.clearInterval(this._refreshRegistersInterval);
           this._refreshRegistersInterval = undefined;
         } else {
@@ -81381,7 +81739,8 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDBus;
-}(node/* JDNode */.z);
+}(node/* default */.ZP);
+/* harmony default export */ var bus = (bus_JDBus);
 // EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
 var gatsby_browser_entry = __webpack_require__(35313);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/defineProperty.js
@@ -83712,7 +84071,7 @@ var WebUSBTransport = /*#__PURE__*/function (_JDTransport) {
   }();
 
   return WebUSBTransport;
-}(transport/* JDTransport */.P);
+}(transport/* default */.ZP);
 
 function defaultOptions() {
   return isWebUSBSupported() && {
@@ -83730,7 +84089,7 @@ function usb_createUSBTransport(options) {
 function createUSBBus(options) {
   return new JDBus([usb_createUSBTransport(options)]);
 }
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/eventtargetobservable.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/transport/eventtargetobservable.ts
 var eventtargetobservable_EventTargetObservable = /*#__PURE__*/function () {
   function EventTargetObservable(element, eventName) {
     this.element = element;
@@ -83756,6 +84115,7 @@ var eventtargetobservable_EventTargetObservable = /*#__PURE__*/function () {
 
   return EventTargetObservable;
 }();
+/* harmony default export */ var eventtargetobservable = (eventtargetobservable_EventTargetObservable);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/transport/workertransport.ts
 
 
@@ -83943,7 +84303,7 @@ var WorkerTransport = /*#__PURE__*/function (_JDTransport) {
   };
 
   return WorkerTransport;
-}(transport/* JDTransport */.P);
+}(transport/* JDTransport */.P2);
 
 function createUSBWorkerTransport(worker) {
   return isWebUSBEnabled() && new WorkerTransport(constants/* USB_TRANSPORT */.W3h, worker, {
@@ -83953,8 +84313,8 @@ function createUSBWorkerTransport(worker) {
         return dev === null || dev === void 0 ? void 0 : dev.serialNumber;
       });
     },
-    connectObservable: new eventtargetobservable_EventTargetObservable(navigator.usb, "connect"),
-    disconnectObservable: new eventtargetobservable_EventTargetObservable(navigator.usb, "disconnect")
+    connectObservable: new eventtargetobservable(navigator.usb, "connect"),
+    disconnectObservable: new eventtargetobservable(navigator.usb, "disconnect")
   });
 }
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/transport/bluetooth.ts
@@ -84249,7 +84609,7 @@ var BluetoothTransport = /*#__PURE__*/function (_JDTransport) {
   };
 
   return BluetoothTransport;
-}(transport/* JDTransport */.P);
+}(transport/* default */.ZP);
 
 function createBluetoothTransport() {
   return new BluetoothTransport();
@@ -84877,7 +85237,7 @@ var WebSerialTransport = /*#__PURE__*/function (_JDTransport) {
   }();
 
   return WebSerialTransport;
-}(transport/* JDTransport */.P);
+}(transport/* default */.ZP);
 
 function createWebSerialTransport() {
   return new WebSerialTransport();
@@ -85145,9 +85505,8 @@ var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
   }]);
 
   return IFrameBridgeClient;
-}(iframeclient/* default */.Z);
-
-
+}(iframeclient/* default */.ZP);
+/* harmony default export */ var iframebridgeclient = (IFrameBridgeClient);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
@@ -85280,7 +85639,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.4"};
+var package_namespaceObject = {"i8":"1.14.5"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -85327,7 +85686,7 @@ UIFlags.peers = args.peers;
 
 function createBus() {
   var worker = typeof window !== "undefined" && new Worker((0,gatsby_browser_entry.withPrefix)("/jacdac-worker-" + package_namespaceObject.i8 + ".js"));
-  var b = new bus_JDBus([flags/* default.webUSB */.Z.webUSB && worker && createUSBWorkerTransport(worker), flags/* default.webSerial */.Z.webSerial && createWebSerialTransport(), flags/* default.webBluetooth */.Z.webBluetooth && createBluetoothTransport()], {
+  var b = new bus([flags/* default.webUSB */.Z.webUSB && worker && createUSBWorkerTransport(worker), flags/* default.webSerial */.Z.webSerial && createWebSerialTransport(), flags/* default.webBluetooth */.Z.webBluetooth && createBluetoothTransport()], {
     parentOrigin: args.parentOrigin
   }); // parentOrigin: args.parentOrigin,
   //if (Flags.webUSB) b.setBackgroundFirmwareScans(true)
@@ -85336,7 +85695,7 @@ function createBus() {
   // always start bridge
 
   if (typeof window !== "undefined") {
-    new IFrameBridgeClient(b, args.frameId) // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    new iframebridgeclient(b, args.frameId) // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;
     window.__jacdacBus = b;
   }
@@ -85349,8 +85708,8 @@ function cachedBus() {
   return typeof Window !== "undefined" && window.__jacdacBus;
 }
 
-var bus = cachedBus() || createBus();
-/* harmony default export */ var providerbus = (bus);
+var providerbus_bus = cachedBus() || createBus();
+/* harmony default export */ var providerbus = (providerbus_bus);
 
 /***/ }),
 
@@ -87740,7 +88099,7 @@ exports.components = {
     return Promise.all(/* import() | component---src-pages-tools-model-editor-tsx */[__webpack_require__.e(3643), __webpack_require__.e(8270), __webpack_require__.e(7476), __webpack_require__.e(372)]).then(__webpack_require__.bind(__webpack_require__, 70438));
   },
   "component---src-pages-tools-model-uploader-tsx": function componentSrcPagesToolsModelUploaderTsx() {
-    return Promise.all(/* import() | component---src-pages-tools-model-uploader-tsx */[__webpack_require__.e(6559), __webpack_require__.e(5637)]).then(__webpack_require__.bind(__webpack_require__, 46905));
+    return Promise.all(/* import() | component---src-pages-tools-model-uploader-tsx */[__webpack_require__.e(6559), __webpack_require__.e(5637)]).then(__webpack_require__.bind(__webpack_require__, 10037));
   },
   "component---src-pages-tools-packet-inspector-tsx": function componentSrcPagesToolsPacketInspectorTsx() {
     return Promise.all(/* import() | component---src-pages-tools-packet-inspector-tsx */[__webpack_require__.e(6559), __webpack_require__.e(1424), __webpack_require__.e(3643), __webpack_require__.e(7617), __webpack_require__.e(5244), __webpack_require__.e(2937)]).then(__webpack_require__.bind(__webpack_require__, 55662));

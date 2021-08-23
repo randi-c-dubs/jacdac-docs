@@ -99,12 +99,10 @@ var ListItemText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(fu
 
 /***/ }),
 
-/***/ 84264:
+/***/ 10207:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "F": function() { return /* binding */ SensorAggregatorClient; }
-/* harmony export */ });
+/* unused harmony export SensorAggregatorClient */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(85413);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
@@ -358,6 +356,7 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
 
   return SensorAggregatorClient;
 }(_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
+/* harmony default export */ __webpack_exports__["Z"] = (SensorAggregatorClient);
 
 /***/ }),
 
@@ -638,7 +637,7 @@ function useGridBreakpoints(itemCount) {
 
 /***/ }),
 
-/***/ 46905:
+/***/ 10037:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -958,7 +957,7 @@ var serviceclient = __webpack_require__(56763);
 var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pack.ts
 var pack = __webpack_require__(91635);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/modelrunner.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/clients/modelrunnerclient.ts
 
 
 
@@ -1266,6 +1265,7 @@ var ModelRunnerClient = /*#__PURE__*/function (_JDServiceClient) {
 
   return ModelRunnerClient;
 }(serviceclient/* JDServiceClient */.P);
+/* harmony default export */ var modelrunnerclient = (ModelRunnerClient);
 /*
 export async function testAGG(bus: JDBus) {
     const aggService = bus.services({ serviceClass: SRV_SENSOR_AGGREGATOR })[0]
@@ -1327,8 +1327,8 @@ export async function testTF(bus: JDBus, model: Uint8Array) {
 var RegisterInput = __webpack_require__(24162);
 // EXTERNAL MODULE: ./src/components/ui/CircularProgressWithLabel.tsx
 var CircularProgressWithLabel = __webpack_require__(29177);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/sensoraggregatorclient.ts
-var sensoraggregatorclient = __webpack_require__(84264);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/clients/sensoraggregatorclient.ts
+var sensoraggregatorclient = __webpack_require__(10207);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Paper/Paper.js
 var Paper = __webpack_require__(58063);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pretty.ts
@@ -1568,7 +1568,7 @@ function ModelActions(props) {
                             break;
                           }
 
-                          aggregator = new sensoraggregatorclient/* SensorAggregatorClient */.F(sensorAggregatorService);
+                          aggregator = new sensoraggregatorclient/* default */.Z(sensorAggregatorService);
                           _context.next = 4;
                           return aggregator.setInputs(sensorInput);
 
@@ -1578,7 +1578,7 @@ function ModelActions(props) {
                             break;
                           }
 
-                          runner = new ModelRunnerClient(service);
+                          runner = new modelrunnerclient(service);
                           _context.next = 8;
                           return runner.deployModel(model, setProgress);
 

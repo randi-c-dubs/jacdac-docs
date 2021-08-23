@@ -190,7 +190,7 @@ function DeviceCard(props) {
 /* harmony import */ var _material_ui_icons_Fingerprint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52995);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4998);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(23729);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43226);
 /* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(84377);
 /* harmony import */ var _ui_Tooltip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(60102);
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
@@ -255,7 +255,7 @@ function IDChip(props) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4998);
 /* harmony import */ var _KindIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50048);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(43226);
 /* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(84377);
 /* harmony import */ var _ui_Tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(60102);
 

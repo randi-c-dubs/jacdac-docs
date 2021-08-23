@@ -28,12 +28,10 @@ exports.Z = _default;
 
 /***/ }),
 
-/***/ 43771:
+/***/ 14308:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": function() { return /* binding */ SettingsClient; }
-/* harmony export */ });
+/* unused harmony export SettingsClient */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(85413);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
@@ -53,6 +51,10 @@ exports.Z = _default;
 
 
 
+/**
+ * A settings service client implementation.
+ * @category Clients
+ */
 
 var SettingsClient = /*#__PURE__*/function (_JDServiceClient) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(SettingsClient, _JDServiceClient);
@@ -367,8 +369,7 @@ var SettingsClient = /*#__PURE__*/function (_JDServiceClient) {
 
   return SettingsClient;
 }(_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
-
-
+/* harmony default export */ __webpack_exports__["Z"] = (SettingsClient);
 
 /***/ }),
 
@@ -812,7 +813,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_KeyboardKeyInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(82860);
 /* harmony import */ var _components_ui_IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(79885);
 /* harmony import */ var _material_ui_icons_Delete__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(94500);
-/* harmony import */ var _jacdac_ts_src_jdom_settingsclient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(43771);
+/* harmony import */ var _jacdac_ts_src_jdom_clients_settingsclient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(14308);
 /* harmony import */ var _components_useServiceClient__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(79465);
 /* harmony import */ var _jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(81794);
 /* harmony import */ var _jacdac_ts_src_jdom_pack__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(91635);
@@ -1050,7 +1051,7 @@ function HIDEvents() {
   };
 
   var settings = (0,_components_useServiceClient__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z)(settingsService, function (srv) {
-    return new _jacdac_ts_src_jdom_settingsclient__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z(srv);
+    return new _jacdac_ts_src_jdom_clients_settingsclient__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z(srv);
   });
   (0,_components_hooks_useServiceProviderFromServiceClass__WEBPACK_IMPORTED_MODULE_21__/* .default */ .Z)(_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__/* .SRV_SETTINGS */ .B9b);
   (0,_jacdac_useChange__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(settings, /*#__PURE__*/(0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_29__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {

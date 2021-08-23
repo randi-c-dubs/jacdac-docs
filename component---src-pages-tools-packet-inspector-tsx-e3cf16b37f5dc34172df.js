@@ -629,7 +629,7 @@ function PacketBadge(props) {
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(50144);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(38030);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(33287);
-/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(69882);
+/* harmony import */ var _PacketsContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43226);
 /* harmony import */ var _PacketBadge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(97309);
 /* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(84377);
 /* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(71815);
@@ -724,7 +724,7 @@ var react = __webpack_require__(67294);
 // EXTERNAL MODULE: ./src/components/ui/Alert.tsx
 var Alert = __webpack_require__(95453);
 // EXTERNAL MODULE: ./src/components/PacketsContext.tsx + 3 modules
-var PacketsContext = __webpack_require__(69882);
+var PacketsContext = __webpack_require__(43226);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/History.js
 var History = __webpack_require__(9080);
 // EXTERNAL MODULE: ./src/components/KindChip.tsx

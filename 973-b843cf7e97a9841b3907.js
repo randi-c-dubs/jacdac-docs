@@ -146,8 +146,8 @@ exports.Z = _default;
 /* unused harmony export replayLog */
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81794);
 /* harmony import */ var _packet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57683);
-/* harmony import */ var _traceplayer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35391);
-/* harmony import */ var _trace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(79918);
+/* harmony import */ var _trace_traceplayer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93829);
+/* harmony import */ var _trace_trace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(61649);
 function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -176,7 +176,7 @@ function parseTrace(contents) {
 
     packets.push(_packet__WEBPACK_IMPORTED_MODULE_1__/* .default.fromBinary */ .Z.fromBinary(data, timestamp));
   });
-  if (packets.length) return new _trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z(packets, description.join("\n").trim());else return undefined;
+  if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z(packets, description.join("\n").trim());else return undefined;
 }
 function parseLogicLog(logcontents) {
   if (!logcontents) return undefined;
@@ -385,7 +385,7 @@ var Typography = __webpack_require__(80453);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Clear.js
 var Clear = __webpack_require__(58590);
 // EXTERNAL MODULE: ./src/components/PacketsContext.tsx + 3 modules
-var PacketsContext = __webpack_require__(69882);
+var PacketsContext = __webpack_require__(43226);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(73108);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/regenerator/index.js
@@ -397,8 +397,8 @@ var logparser = __webpack_require__(87202);
 var packet = __webpack_require__(57683);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace.ts
-var jdom_trace = __webpack_require__(79918);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace/trace.ts
+var trace_trace = __webpack_require__(61649);
 ;// CONCATENATED MODULE: ./src/components/trace/TraceImportButton.tsx
 
 
@@ -465,7 +465,7 @@ function TraceImportButton(props) {
                   packets = (0,utils/* arrayConcatMany */.ue)(frames.map(function (frame) {
                     return packet/* default.fromFrame */.Z.fromFrame(frame.data, frame.timestamp);
                   }));
-                  if (packets !== null && packets !== void 0 && packets.length) trace = new jdom_trace/* default */.Z(packets);
+                  if (packets !== null && packets !== void 0 && packets.length) trace = new trace_trace/* default */.Z(packets);
                 } catch (e) {
                   console.log("logic parse error", e);
                 }
