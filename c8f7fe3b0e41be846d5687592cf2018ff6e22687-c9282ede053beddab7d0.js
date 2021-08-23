@@ -13052,7 +13052,7 @@ function DeviceTreeItem(props) {
       mobile = _useMediaQueries.mobile;
 
   var showActions = !mobile;
-  var dropped = (0,useChange/* default */.Z)(device.qualityOfService, function (_) {
+  var dropped = (0,useChange/* default */.Z)(device.packetStats, function (_) {
     return _.dropped;
   });
   var serviceNames = (0,utils/* ellipseJoin */.VA)(services.filter(function (service) {

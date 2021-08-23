@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-db63c747fce8f1452147.js"
+    "url": "webpack-runtime-23a61011e4da7930d71e.js"
   },
   {
     "url": "styles.398f08cbfe4966beb62e.css"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "3392342d28d3e692a798ccb3babda6d9"
+    "revision": "ba475706d646b93726a9a2c9e915ee61"
   },
   {
     "url": "static/webfonts/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"
@@ -63,11 +63,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/2307937736.json",
-    "revision": "c1a2ed18f5fac06de936fabf1db81868"
+    "revision": "a884cf8b1353513948120e0d4f2c58be"
   },
   {
     "url": "page-data/sq/d/2744294623.json",
-    "revision": "4a1f1555456c787a290a2c748ade4156"
+    "revision": "961c53df0cee637dae3b64efe4abe2ff"
   },
   {
     "url": "page-data/sq/d/2898794040.json",
@@ -75,7 +75,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/413816803.json",
-    "revision": "30b881193b7cff227c847fdef09adea0"
+    "revision": "7d10cb61f297275800fee8a072387402"
   },
   {
     "url": "page-data/sq/d/63159454.json",
@@ -83,7 +83,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "8db2e957560295c05b7fa29e9a486f53"
+    "revision": "9e8228d0783ea38a12919c03feeb0d36"
   },
   {
     "url": "polyfill-c8b2d85fd2462382eb5f.js"
@@ -255,7 +255,7 @@ self.__precacheManifest = [
     "revision": "294420ed95d7fc98e315a668eeabe26b"
   },
   {
-    "url": "859a83de993caea7524bf57c2975f3be6812c8c3-f5c4d47d32ec961557de.js"
+    "url": "859a83de993caea7524bf57c2975f3be6812c8c3-2597c262b8eac0643de8.js"
   },
   {
     "url": "component---src-templates-service-test-tsx-8be4ff3f1e9477866b0b.js"
@@ -1325,7 +1325,7 @@ self.__precacheManifest = [
     "url": "4345cd43a9669cbe728debadba6874d54d45298f-5c5e2815dd6e6cb9e28e.js"
   },
   {
-    "url": "component---src-pages-tools-accelerometer-theremin-tsx-8265cfb11f3022cf139e.js"
+    "url": "component---src-pages-tools-accelerometer-theremin-tsx-e7b008325d647a1435c5.js"
   },
   {
     "url": "page-data/tools/accelerometer-theremin/page-data.json",
@@ -1397,7 +1397,7 @@ self.__precacheManifest = [
     "revision": "b6c300b15b3dc3b3a622d97bee697abf"
   },
   {
-    "url": "component---src-pages-tools-lightsensor-accessible-tsx-fbc6cc5f948a2aa0c853.js"
+    "url": "component---src-pages-tools-lightsensor-accessible-tsx-dd7e5b0897ba0599e32b.js"
   },
   {
     "url": "page-data/tools/lightsensor-accessible/page-data.json",
@@ -1421,7 +1421,7 @@ self.__precacheManifest = [
     "url": "41a69591c06d74ab821d0a6f985f09ba8c9c9577-3515d78d572d4eb64c8c.js"
   },
   {
-    "url": "component---src-pages-tools-model-editor-tsx-f7e85ef0346fb4b8e2fc.js"
+    "url": "component---src-pages-tools-model-editor-tsx-a88702199a3341eab63d.js"
   },
   {
     "url": "page-data/tools/model-editor/page-data.json",
@@ -1602,7 +1602,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/jacdac-docs/app-5dd11389c3b364a2cc4b.js`))) {
+  if (!resources || !(await caches.match(`/jacdac-docs/app-de98d60a5b629cdb3a46.js`))) {
     return await fetch(event.request)
   }
 

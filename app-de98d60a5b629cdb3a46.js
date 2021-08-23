@@ -37352,7 +37352,7 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
   };
 
   return JDClient;
-}(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .JDEventSource */ .aE);
+}(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["Z"] = (JDClient);
 
 /***/ }),
@@ -38194,6 +38194,7 @@ var EventObservable = /*#__PURE__*/function () {
   return EventObservable;
 }();
 
+/* harmony default export */ __webpack_exports__["ZP"] = (JDEventSource);
 function fromEvent(eventEmitter, eventNames) {
   return new EventObservable(eventEmitter, normalizeEventNames(eventNames));
 }
@@ -39423,7 +39424,11 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
       current.emit(event, arg);
       current = current.parent;
     }
-  };
+  }
+  /**
+   * @hidden
+   */
+  ;
 
   _proto.toString = function toString() {
     return this.friendlyName;
@@ -39447,7 +39452,7 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDNode;
-}(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .JDEventSource */ .aE);
+}(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["ZP"] = (JDNode);
 function visitNodes(node, vis) {
   var todo = [node];
@@ -41764,7 +41769,7 @@ var JDRegisterServer = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDRegisterServer;
-}(_eventsource__WEBPACK_IMPORTED_MODULE_4__/* .JDEventSource */ .aE);
+}(_eventsource__WEBPACK_IMPORTED_MODULE_4__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["Z"] = (JDRegisterServer);
 
 /***/ }),
@@ -42338,7 +42343,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDServiceProvider;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 /* harmony default export */ var serviceprovider = (JDServiceProvider);
 
 /***/ }),
@@ -42739,7 +42744,7 @@ var JDServiceServer = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDServiceServer;
-}(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
+}(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["Z"] = (JDServiceServer);
 
 /***/ }),
@@ -43880,7 +43885,7 @@ var JDTransport = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDTransport;
-}(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
+}(_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["ZP"] = (JDTransport);
 
 /***/ }),
@@ -51458,7 +51463,7 @@ var FielddataSet = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return FielddataSet;
-}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_1__/* .JDEventSource */ .aE);
+}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_1__/* .default */ .ZP);
 
 
 
@@ -53852,7 +53857,7 @@ var HostedModelStore = /*#__PURE__*/function (_JDEventSource2) {
   }();
 
   return HostedModelStore;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/embed/transport.ts
@@ -59337,7 +59342,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "b2a649cf7dc4184b64e69c1c51f3c894ee4e7991";
+  var sha = "ecccbfe2a4f6972fb5faaa22a513d11571f61013";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60378,8 +60383,8 @@ function PacketStats() {
 }
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/Forum.js
 var Forum = __webpack_require__(22203);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 25 modules
-var providerbus = __webpack_require__(68004);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
+var providerbus = __webpack_require__(31925);
 ;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/useScrollTrigger/useScrollTrigger.js
 
 
@@ -77573,7 +77578,7 @@ JacdacContext.displayName = "Jacdac";
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20392);
-/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(68004);
+/* harmony import */ var _providerbus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31925);
 
 
 
@@ -77604,7 +77609,7 @@ function JacdacProvider(props) {
 
 /***/ }),
 
-/***/ 68004:
+/***/ 31925:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78328,6 +78333,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var JDService = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDService, _JDNode);
 
+  /**
+   * Gets the service class
+   * @category Control
+   */
   // packets received since last announce
   function JDService(device, serviceIndex) {
     var _this;
@@ -78339,6 +78348,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     _this._clients = [];
     _this.device = device;
     _this.serviceIndex = serviceIndex;
+    _this.serviceClass = _this.device.serviceClassAt(_this.serviceIndex);
 
     var statusCodeChanged = _this.event(specconstants/* BaseEvent.StatusCodeChanged */.DVg.StatusCodeChanged);
 
@@ -78355,6 +78365,11 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     });
     return _this;
   }
+  /**
+   * Gets the node identifier
+   * @category JDOM
+   */
+
 
   var _proto = JDService.prototype;
 
@@ -78394,6 +78409,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
   }()
   /**
    * Gets the specification of the service. Undefined if unknown
+   * @category Services
    */
   ;
 
@@ -78408,7 +78424,12 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
 
     return this._registers.slice(0);
-  };
+  }
+  /**
+   * Gets the registers and events
+   * @category JDOM
+   */
+  ;
 
   _proto.register = function register(registerCode) {
     if (registerCode === undefined) return undefined; // cache known registers
@@ -78664,16 +78685,21 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     get: function get() {
       return this.nodeKind + ":" + this.device.deviceId + ":" + this.serviceIndex.toString(16);
     }
+    /**
+     * Gets the ``SERVICE_NODE_NAME`` identifier
+     * @category JDOM
+     */
+
   }, {
     key: "nodeKind",
     get: function get() {
       return constants/* SERVICE_NODE_NAME */.M_U;
     }
-  }, {
-    key: "serviceClass",
-    get: function get() {
-      return this.device.serviceClassAt(this.serviceIndex);
-    }
+    /**
+     * Gets the service name
+     * @category JDOM
+     */
+
   }, {
     key: "name",
     get: function get() {
@@ -78681,6 +78707,11 @@ var JDService = /*#__PURE__*/function (_JDNode) {
 
       return (_serviceName = (0,pretty/* serviceName */.HV)(this.serviceClass)) === null || _serviceName === void 0 ? void 0 : _serviceName.toLowerCase();
     }
+    /**
+     * Gets the service name and parent names
+     * @category JDOM
+     */
+
   }, {
     key: "friendlyName",
     get: function get() {
@@ -78690,11 +78721,21 @@ var JDService = /*#__PURE__*/function (_JDNode) {
       }).length > 1) parts.push("[" + this.serviceIndex.toString(16) + "]");
       return parts.join(".");
     }
+    /**
+     * Gets the service qualified name
+     * @category JDOM
+     */
+
   }, {
     key: "qualifiedName",
     get: function get() {
       return this.device.qualifiedName + "[" + this.serviceIndex.toString(16) + "]";
     }
+    /**
+     * Gets the device holding the service
+     * @category JDOM
+     */
+
   }, {
     key: "parent",
     get: function get() {
@@ -78751,7 +78792,12 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
   }, {
     key: "readingRegister",
-    get: function get() {
+    get:
+    /**
+     * Gets the ``reading`` register associated to this service, if the specification supports it.
+     * @category Registers
+     */
+    function get() {
       if (!this._readingRegister) {
         var _this$specification;
 
@@ -78765,7 +78811,12 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
   }, {
     key: "valueRegister",
-    get: function get() {
+    get:
+    /**
+     * Gets the ``value`` register associated to this service, if the specification supports it.
+     * @category Registers
+     */
+    function get() {
       if (!this._valueRegister) {
         var _this$specification2;
 
@@ -78779,7 +78830,12 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
   }, {
     key: "intensityRegister",
-    get: function get() {
+    get:
+    /**
+     * Gets the ``intensity`` register associated to this service, if the specification supports it.
+     * @category Registers
+     */
+    function get() {
       if (!this._intensityRegister) {
         var _this$specification3;
 
@@ -78793,7 +78849,12 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
   }, {
     key: "statusCodeRegister",
-    get: function get() {
+    get:
+    /**
+     * Gets the ``status_code`` register associated to this service, if the specification supports it.
+     * @category Registers
+     */
+    function get() {
       if (!this._statusCodeRegister) {
         var _this$specification4;
 
@@ -78846,77 +78907,6 @@ var JDService = /*#__PURE__*/function (_JDNode) {
 /* harmony default export */ var service = (JDService);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/eventsource.ts
 var eventsource = __webpack_require__(45484);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/qualityofservice.ts
-
-
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-
-var QualityOfService = /*#__PURE__*/function (_JDEventSource) {
-  (0,inheritsLoose/* default */.Z)(QualityOfService, _JDEventSource);
-
-  function QualityOfService() {
-    var _this;
-
-    _this = _JDEventSource.call(this) || this;
-    _this._receivedPackets = 0;
-    _this._data = Array(10).fill(0).map(function (_) {
-      return {
-        received: 0,
-        total: 0
-      };
-    });
-    _this._dataIndex = 0;
-    return _this;
-  }
-  /**
-   * Average packet dropped per announce period
-   */
-
-
-  var _proto = QualityOfService.prototype;
-
-  /**
-   * @internal
-   */
-  _proto.processAnnouncement = function processAnnouncement(pkt) {
-    // collect metrics
-    var received = this._receivedPackets;
-    var total = pkt.data[2];
-    this._data[this._dataIndex] = {
-      received: received,
-      total: total
-    };
-    this._dataIndex = (this._dataIndex + 1) % this._data.length; // reset counter
-
-    this._receivedPackets = 0;
-    this.emit(constants/* CHANGE */.Ver);
-  }
-  /**
-   * @internal
-   */
-  ;
-
-  _proto.processPacket = function processPacket(pkt) {
-    this._receivedPackets++;
-  };
-
-  (0,createClass/* default */.Z)(QualityOfService, [{
-    key: "dropped",
-    get: function get() {
-      var r = this._data.filter(function (e) {
-        return !!e.total;
-      }) // ignore total 0
-      .reduce(function (s, e) {
-        return s + (e.total - e.received);
-      }, 0) / this._data.length || 0;
-      return r;
-    }
-  }]);
-
-  return QualityOfService;
-}(eventsource/* JDEventSource */.aE);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/ledcontroller.ts
 
 
@@ -78996,7 +78986,7 @@ var LEDController = /*#__PURE__*/function (_JDEventSource) {
   }();
 
   return LEDController;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 /* harmony default export */ var ledcontroller = (LEDController);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/device.ts
 
@@ -79020,11 +79010,75 @@ function device_arrayLikeToArray(arr, len) { if (len == null || len > arr.length
 
 
 
+var DeviceStats = /*#__PURE__*/function (_JDEventSource) {
+  (0,inheritsLoose/* default */.Z)(DeviceStats, _JDEventSource);
 
+  function DeviceStats() {
+    var _this;
+
+    _this = _JDEventSource.call(this) || this;
+    _this._receivedPackets = 0;
+    _this._data = Array(10).fill(0).map(function () {
+      return {
+        received: 0,
+        total: 0
+      };
+    });
+    _this._dataIndex = 0;
+    return _this;
+  }
+  /**
+   * Average packet dropped per announce period
+   */
+
+
+  var _proto = DeviceStats.prototype;
+
+  /**
+   * @internal
+   */
+  _proto.processAnnouncement = function processAnnouncement(pkt) {
+    // collect metrics
+    var received = this._receivedPackets;
+    var total = pkt.data[2];
+    this._data[this._dataIndex] = {
+      received: received,
+      total: total
+    };
+    this._dataIndex = (this._dataIndex + 1) % this._data.length; // reset counter
+
+    this._receivedPackets = 0;
+    this.emit(constants/* CHANGE */.Ver);
+  }
+  /**
+   * @internal
+   */
+  ;
+
+  _proto.processPacket = function processPacket(pkt) {
+    this._receivedPackets++;
+  };
+
+  (0,createClass/* default */.Z)(DeviceStats, [{
+    key: "dropped",
+    get: function get() {
+      var r = this._data.filter(function (e) {
+        return !!e.total;
+      }) // ignore total 0
+      .reduce(function (s, e) {
+        return s + (e.total - e.received);
+      }, 0) / this._data.length || 0;
+      return r;
+    }
+  }]);
+
+  return DeviceStats;
+}(eventsource/* default */.ZP);
 /**
  * A Jacdac device hosting services.
  * @category JDOM
  */
+
 var JDDevice = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDDevice, _JDNode);
 
@@ -79042,35 +79096,41 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Timestamp of the last service update packet received from the device
    * @category Lifecycle
    */
-  function JDDevice(bus, deviceId, pkt) {
-    var _this;
 
-    _this = _JDNode.call(this) || this;
-    _this._flashing = false;
-    _this.qualityOfService = new QualityOfService();
-    _this.bus = bus;
-    _this.deviceId = deviceId;
-    _this.connected = true;
-    _this._lost = false;
-    _this._identifying = false;
-    _this._source = pkt === null || pkt === void 0 ? void 0 : pkt.sender;
-    _this._replay = !!(pkt !== null && pkt !== void 0 && pkt.replay);
-    return _this;
+  /**
+   * @internal
+   */
+  function JDDevice(bus, deviceId, pkt) {
+    var _this2;
+
+    _this2 = _JDNode.call(this) || this;
+    _this2._flashing = false;
+    _this2.packetStats = new DeviceStats();
+    _this2.bus = bus;
+    _this2.deviceId = deviceId;
+    _this2.connected = true;
+    _this2._lost = false;
+    _this2._identifying = false;
+    _this2._source = pkt === null || pkt === void 0 ? void 0 : pkt.sender;
+    _this2._replay = !!(pkt !== null && pkt !== void 0 && pkt.replay);
+    return _this2;
   }
   /**
    * Quality of service statistics for this device
+   * @category Diagnostics
    */
 
 
-  var _proto = JDDevice.prototype;
+  var _proto2 = JDDevice.prototype;
 
   /**
    * Gets a description of the device.
    * @returns a descriptive string for this device
+   * @category Diagnostics
    */
-  _proto.describe = function describe() {
+  _proto2.describe = function describe() {
     var ignoredServices = [constants/* SRV_CONTROL */.gm9, constants/* SRV_LOGGER */.w9j];
-    return this.toString() + (this.physical ? "" : " (sim)") + ": " + this.services().filter(function (srv) {
+    return this.toString() + (this.isPhysical ? "" : " (sim)") + ": " + this.services().filter(function (srv) {
       return ignoredServices.indexOf(srv.serviceClass) < 0;
     }).map(function (s) {
       var _s$specification;
@@ -79088,9 +79148,9 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Indicates if the device contains at least one service matching the service class
    * @param serviceClass service class to match
    * @returns true if at least one service present
-   * @category Service Clients
+   * @category Services
    */
-  _proto.hasService = function hasService(serviceClass) {
+  _proto2.hasService = function hasService(serviceClass) {
     if (!this.announced) return false;
     if (serviceClass === 0) return true; // skip first 4 bytes
 
@@ -79105,11 +79165,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets or allocates a pipe port
    * @param id identifier of the port
    * @returns a pipe port
-   * @category Pipes
+   * @category Services
    */
   ;
 
-  _proto.port = function port(id) {
+  _proto2.port = function port(id) {
     if (!this._ports) this._ports = {};
     var key = id + "";
     var ex = this._ports[key];
@@ -79118,7 +79178,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the number of services hosted by the device
-   * @category Service Clients
+   * @category Services
    */
   ;
 
@@ -79126,9 +79186,9 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets the service class at a given index
    * @param index index of the service
    * @returns service class
-   * @category Service Clients
+   * @category Services
    */
-  _proto.serviceClassAt = function serviceClassAt(index) {
+  _proto2.serviceClassAt = function serviceClassAt(index) {
     if (index == 0) return 0;
     index <<= 2;
     if (!this.announced || index + 4 > this._servicesData.length) return undefined;
@@ -79136,12 +79196,12 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }
   /**
    * Gets the list of service classes
-   * @category Service Clients
+   * @category Services
    */
   ;
 
-  _proto.initServices = function initServices(force) {
-    var _this2 = this;
+  _proto2.initServices = function initServices(force) {
+    var _this3 = this;
 
     if (force) this._services = undefined;
 
@@ -79163,7 +79223,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
       var codes = [constants/* ControlReg.ProductIdentifier */.toU.ProductIdentifier];
       codes.forEach(function (code) {
         return ctrl.register(code).once(constants/* REPORT_UPDATE */.rGZ, function () {
-          return _this2.emit(constants/* CHANGE */.Ver);
+          return _this3.emit(constants/* CHANGE */.Ver);
         });
       });
     }
@@ -79172,11 +79232,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets the service client at the given service index
    * @param serviceIndex index of the service client
    * @returns service client
-   * @category Service Clients
+   * @category Services
    */
   ;
 
-  _proto.service = function service(serviceIndex) {
+  _proto2.service = function service(serviceIndex) {
     if (!this.announced) return undefined;
     this.initServices();
     serviceIndex = serviceIndex | 0;
@@ -79186,11 +79246,11 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Gets a filtered list of service clients.
    * @param options filters for services
    * @returns services matching the filter
-   * @category Service Clients
+   * @category Services
    */
   ;
 
-  _proto.services = function services(options) {
+  _proto2.services = function services(options) {
     var _this$_services2;
 
     if (!this.announced) return [];
@@ -79219,7 +79279,10 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    */
   ;
 
-  _proto.sendCtrlCommand = function sendCtrlCommand(cmd, payload) {
+  /**
+   * @internal
+   */
+  _proto2.sendCtrlCommand = function sendCtrlCommand(cmd, payload) {
     if (payload === void 0) {
       payload = null;
     }
@@ -79233,8 +79296,8 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    */
   ;
 
-  _proto.processAnnouncement = function processAnnouncement(pkt) {
-    this.qualityOfService.processAnnouncement(pkt);
+  _proto2.processAnnouncement = function processAnnouncement(pkt) {
+    this.packetStats.processAnnouncement(pkt);
     var changed = false;
     var w0 = this._servicesData ? (0,buffer/* getNumber */.Dx)(this._servicesData, buffer/* NumberFormat.UInt32LE */.y4.UInt32LE, 0) : 0;
     var w1 = (0,buffer/* getNumber */.Dx)(pkt.data, buffer/* NumberFormat.UInt32LE */.y4.UInt32LE, 0); // compare service data
@@ -79275,8 +79338,8 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    */
   ;
 
-  _proto.processPacket = function processPacket(pkt) {
-    this.qualityOfService.processPacket(pkt);
+  _proto2.processPacket = function processPacket(pkt) {
+    this.packetStats.processPacket(pkt);
     this.lost = false;
     this.emit(constants/* PACKET_RECEIVE */.u_S, pkt);
     if (pkt.isReport) this.emit(constants/* PACKET_REPORT */.deN, pkt);else if (pkt.isEvent) this.emit(constants/* PACKET_EVENT */.F5$, pkt);
@@ -79288,17 +79351,22 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    */
   ;
 
-  _proto.disconnect = function disconnect() {
+  _proto2.disconnect = function disconnect() {
     this.connected = false;
     this.emit(constants/* DISCONNECT */.PYu);
     this.emit(constants/* CHANGE */.Ver);
-  };
+  }
+  /**
+   * Gets a controller for the status light, if any
+   * @category Control
+   */
+  ;
 
   /**
    * Sends an ``identify`` command to the device
    * @category Lifecycle
    */
-  _proto.identify =
+  _proto2.identify =
   /*#__PURE__*/
   function () {
     var _identify = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
@@ -79380,13 +79448,22 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
    * Sends a ``reset`` command to the device
    * @category Lifecycle
    */
-  _proto.reset = function reset() {
+  _proto2.reset = function reset() {
     var _this$service;
 
     return (_this$service = this.service(0)) === null || _this$service === void 0 ? void 0 : _this$service.sendCmdAsync(constants/* ControlCmd.Reset */.VSW.Reset);
-  };
+  }
+  /**
+   * Tries to retrive the product identifier from the device
+   * @param retry number of devices
+   * @returns promise that returns product identifier if received
+   * @category Control
+   */
+  ;
 
-  _proto.resolveProductIdentifier = /*#__PURE__*/function () {
+  _proto2.resolveProductIdentifier =
+  /*#__PURE__*/
+  function () {
     var _resolveProductIdentifier = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee2(retry) {
       var _this$service2;
 
@@ -79409,7 +79486,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
               return _context2.abrupt("return", undefined);
 
             case 4:
-              if (!(retry-- > 0 && fwIdRegister.data === undefined)) {
+              if (!(retry-- >= 0 && fwIdRegister.data === undefined)) {
                 _context2.next = 9;
                 break;
               }
@@ -79437,10 +79514,15 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
 
     return resolveProductIdentifier;
-  }();
+  }()
+  /**
+   * Returns the product identifier synchronously. If needed, tries to refresh the value in the background.
+   * @category Control
+   */
+  ;
 
-  _proto.initAcks = function initAcks() {
-    var _this3 = this;
+  _proto2.initAcks = function initAcks() {
+    var _this4 = this;
 
     if (this._ackAwaiting) return;
     this._ackAwaiting = [];
@@ -79448,7 +79530,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
       if (rep.serviceIndex != constants/* JD_SERVICE_INDEX_CRC_ACK */.$rs) return;
       var numdone = 0;
 
-      for (var _iterator = device_createForOfIteratorHelperLoose(_this3._ackAwaiting), _step; !(_step = _iterator()).done;) {
+      for (var _iterator = device_createForOfIteratorHelperLoose(_this4._ackAwaiting), _step; !(_step = _iterator()).done;) {
         var aa = _step.value;
 
         if (aa.pkt && aa.pkt.crc == rep.serviceCommand) {
@@ -79459,7 +79541,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
         }
       }
 
-      if (numdone) _this3._ackAwaiting = _this3._ackAwaiting.filter(function (aa) {
+      if (numdone) _this4._ackAwaiting = _this4._ackAwaiting.filter(function (aa) {
         return !!aa.pkt;
       });
     });
@@ -79467,7 +79549,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     var resend = function resend() {
       var numdrop = 0;
 
-      for (var _iterator2 = device_createForOfIteratorHelperLoose(_this3._ackAwaiting), _step2; !(_step2 = _iterator2()).done;) {
+      for (var _iterator2 = device_createForOfIteratorHelperLoose(_this4._ackAwaiting), _step2; !(_step2 = _iterator2()).done;) {
         var aa = _step2.value;
 
         if (aa.pkt) {
@@ -79477,12 +79559,12 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
             aa.errCb();
             numdrop++;
           } else {
-            aa.pkt.sendCmdAsync(_this3);
+            aa.pkt.sendCmdAsync(_this4);
           }
         }
       }
 
-      if (numdrop) _this3._ackAwaiting = _this3._ackAwaiting.filter(function (aa) {
+      if (numdrop) _this4._ackAwaiting = _this4._ackAwaiting.filter(function (aa) {
         return !!aa.pkt;
       });
       setTimeout(resend, Math.random() * (constants/* ACK_MAX_DELAY */.Iwd - constants/* ACK_MIN_DELAY */.V7w) + constants/* ACK_MIN_DELAY */.V7w);
@@ -79490,10 +79572,14 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
 
 
     setTimeout(resend, 40);
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
-  _proto.sendPktWithAck = function sendPktWithAck(pkt) {
-    var _this4 = this;
+  _proto2.sendPktWithAck = function sendPktWithAck(pkt) {
+    var _this5 = this;
 
     pkt.requiresAck = true;
     this.initAcks();
@@ -79509,13 +79595,19 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
         }
       };
 
-      _this4._ackAwaiting.push(ack);
+      _this5._ackAwaiting.push(ack);
 
-      pkt.sendCmdAsync(_this4);
+      pkt.sendCmdAsync(_this5);
     });
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
-  _proto.floodPing = /*#__PURE__*/function () {
+  _proto2.floodPing =
+  /*#__PURE__*/
+  function () {
     var _floodPing = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee3(numPkts, size) {
       var pkt;
       return regenerator_default().wrap(function _callee3$(_context3) {
@@ -79577,15 +79669,17 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if the devices is a physical device, not emulated.
+     * @category Transport
      */
 
   }, {
-    key: "physical",
+    key: "isPhysical",
     get: function get() {
       return this._source === constants/* USB_TRANSPORT */.W3h || this._source === constants/* BLUETOOTH_TRANSPORT */.HZx || this._source === constants/* SERIAL_TRANSPORT */.NbT || this._source === constants/* PACKETIO_TRANSPORT */.GII;
     }
     /**
      * Indicates the source of packets
+     * @category Transport
      */
 
   }, {
@@ -79595,7 +79689,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if the device is part of a trace replay
-     * @category Lifecycle
+     * @category Transport
      */
 
   }, {
@@ -79638,7 +79732,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the control announce flag from the annouce packet.
-     * @category Announce
+     * @category Control
      */
 
   }, {
@@ -79648,7 +79742,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the restart counter from the announce packet.
-     * @category Announce
+     * @category Control
      */
 
   }, {
@@ -79658,7 +79752,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Gets the status light announce flags from the announce packet.
-     * @category Announce
+     * @category Control
      */
 
   }, {
@@ -79668,7 +79762,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Indicates if the device is announced as a client
-     * @category Announce
+     * @category Control
      */
 
   }, {
@@ -79679,7 +79773,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     /**
      * Gets the number of packets sent since the last announce packet,
      * as read from the announce packet.
-     * @category Announce
+     * @category Control
      */
 
   }, {
@@ -79772,7 +79866,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * A flashing sequence is in progress
-     * @category Lifecycle
+     * @category Firmware
      */
 
   }, {
@@ -79782,7 +79876,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
     }
     /**
      * Sets the flashing sequence state
-     * @category Lifecycle
+     * @category Firmware
      */
     ,
     set: function set(value) {
@@ -79965,7 +80059,7 @@ var BusStatsMonitor = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return BusStatsMonitor;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/servers.ts + 25 modules
 var servers = __webpack_require__(20079);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceclient.ts
@@ -81114,7 +81208,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
       return !!r.productIdentifier;
     });
     if (options !== null && options !== void 0 && options.physical) r = r.filter(function (r) {
-      return !!r.physical;
+      return !!r.isPhysical;
     });
     return r;
   }
@@ -85778,7 +85872,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.6"};
+var package_namespaceObject = {"i8":"1.14.8"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 

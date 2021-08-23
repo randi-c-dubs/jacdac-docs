@@ -566,7 +566,7 @@ var WorkerProxy = /*#__PURE__*/function (_JDEventSource) {
   };
 
   return WorkerProxy;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 var _workers = {};
 var loaders = {
   data: createDataWorker,
@@ -857,7 +857,7 @@ var ModelDataSet = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return ModelDataSet;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 
 
 ;// CONCATENATED MODULE: ./src/components/model-editor/CollectData.tsx
@@ -1501,7 +1501,7 @@ var MBModel = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return MBModel;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 
 
 ;// CONCATENATED MODULE: ./src/components/model-editor/TrainModel.tsx

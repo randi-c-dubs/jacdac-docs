@@ -1771,7 +1771,7 @@ var JDTestCommandRunner = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return JDTestCommandRunner;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 var JDTestRunner = /*#__PURE__*/function (_JDEventSource2) {
   (0,inheritsLoose/* default */.Z)(JDTestRunner, _JDEventSource2);
 
@@ -2020,7 +2020,7 @@ var JDTestRunner = /*#__PURE__*/function (_JDEventSource2) {
   }]);
 
   return JDTestRunner;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 var JDServiceTestRunner = /*#__PURE__*/function (_JDServiceClient) {
   (0,inheritsLoose/* default */.Z)(JDServiceTestRunner, _JDServiceClient);
 

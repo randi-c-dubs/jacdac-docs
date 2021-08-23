@@ -8239,8 +8239,8 @@ var react = __webpack_require__(67294);
 var constants = __webpack_require__(71815);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 25 modules
-var providerbus = __webpack_require__(68004);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
+var providerbus = __webpack_require__(31925);
 // EXTERNAL MODULE: ./src/jacdac/Context.tsx
 var Context = __webpack_require__(20392);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/defineProperty.js
@@ -11263,7 +11263,7 @@ var WorkspaceServices = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return WorkspaceServices;
-}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
+}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP);
 WorkspaceServices.WORKSPACE_CHANGE = "workspaceChange";
 function resolveWorkspaceServices(workspace) {
   var workspaceWithServices = workspace;
@@ -11343,7 +11343,7 @@ var BlockServices = /*#__PURE__*/function (_JDEventSource2) {
   }]);
 
   return BlockServices;
-}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .JDEventSource */ .aE);
+}(_jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP);
 function resolveBlockServices(block) {
   var blockWithServices = block;
   var services = blockWithServices === null || blockWithServices === void 0 ? void 0 : blockWithServices.jacdacServices;
@@ -12393,7 +12393,7 @@ var WorkerProxy = /*#__PURE__*/function (_JDEventSource) {
   };
 
   return WorkerProxy;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 var _workers = {};
 var loaders = {
   data: createDataWorker,
@@ -15979,7 +15979,7 @@ var ReactField = /*#__PURE__*/function (_ReactFieldBase) {
 
     _this = _ReactFieldBase.call.apply(_ReactFieldBase, [this].concat(args)) || this;
     _this.SERIALIZABLE = true;
-    _this.events = new _jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_9__/* .JDEventSource */ .aE();
+    _this.events = new _jacdac_ts_src_jdom_eventsource__WEBPACK_IMPORTED_MODULE_9__/* .default */ .ZP();
     _this.darkMode = "dark";
     return _this;
   }

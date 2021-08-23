@@ -1468,7 +1468,7 @@ var VMEnvironment = /*#__PURE__*/function (_JDEventSource) {
   };
 
   return VMEnvironment;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 // EXTERNAL MODULE: ./jacdac-ts/src/vm/expr.ts
 var vm_expr = __webpack_require__(18108);
 // EXTERNAL MODULE: ./jacdac-ts/src/vm/compile.ts + 1 modules
@@ -2516,7 +2516,7 @@ var VMHandlerRunner = /*#__PURE__*/function (_JDEventSource) {
   }]);
 
   return VMHandlerRunner;
-}(eventsource/* JDEventSource */.aE);
+}(eventsource/* default */.ZP);
 
 function isEveryHandler(h) {
   (0,utils/* assert */.hu)(!!h);
