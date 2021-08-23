@@ -878,6 +878,14 @@ function cmdCode(cmd) {
 function isWhiteSpace(code) {
   return code == 32 || code == 13 || code == 10 || code == 9;
 }
+/**
+ * Encodes a light command into a buffer
+ * @param format
+ * @param args
+ * @returns
+ * @category Data Packing
+ */
+
 
 function lightEncode(format, args) {
   // tokens are white-space separated

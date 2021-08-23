@@ -37891,7 +37891,6 @@ function errorPath(e) {
 /* harmony export */   "BX": function() { return /* binding */ dependencyId; },
 /* harmony export */   "aE": function() { return /* binding */ JDEventSource; }
 /* harmony export */ });
-/* unused harmony exports dependencyChangeId, fromEvent */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _flags__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21258);
@@ -37905,11 +37904,6 @@ function normalizeEventNames(eventNames) {
   return eventNames;
 }
 
-function dependencyChangeId(nodes) {
-  return (nodes === null || nodes === void 0 ? void 0 : nodes.map(function (node) {
-    return node ? node.nodeId + ":" + node.changeId : "?";
-  }).join(",")) || "";
-}
 function dependencyId(nodes) {
   return (nodes === null || nodes === void 0 ? void 0 : nodes.map(function (node) {
     return (node === null || node === void 0 ? void 0 : node.nodeId) || "?";
@@ -38134,7 +38128,7 @@ var JDEventSource = /*#__PURE__*/function () {
   ;
 
   _proto.observe = function observe(eventName) {
-    return fromEvent(this, eventName);
+    return new EventObservable(this, normalizeEventNames(eventName));
   }
   /**
    * Subscribes to an event and returns the unsubscription handler
@@ -38195,9 +38189,6 @@ var EventObservable = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["ZP"] = (JDEventSource);
-function fromEvent(eventEmitter, eventNames) {
-  return new EventObservable(eventEmitter, normalizeEventNames(eventNames));
-}
 
 /***/ }),
 
@@ -38227,7 +38218,7 @@ Flags.storage = false;
 /* harmony export */   "oN": function() { return /* binding */ flashFirmwareBlob; },
 /* harmony export */   "s_": function() { return /* binding */ sendStayInBootloaderCommand; }
 /* harmony export */ });
-/* unused harmony exports parseUF2, generateDeviceList, computeUpdates */
+/* unused harmony export parseUF2 */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -38887,11 +38878,14 @@ function parseUF2(uf2, store) {
     }
   }
 }
-function generateDeviceList(uf2) {
-  return parseUF2(uf2, "").map(function (b) {
-    return "* ``0x" + b.productIdentifier.toString(16) + "`` " + b.name;
-  }).join("\n");
-}
+
+/**
+ * Parse a UF2 firmware file and extracts firmware blobs
+ * @param blob
+ * @param store
+ * @returns
+ * @category Firmware
+ */
 function parseFirmwareFile(_x5, _x6) {
   return _parseFirmwareFile.apply(this, arguments);
 }
@@ -38925,6 +38919,14 @@ function _parseFirmwareFile() {
 function scanCore(_x7, _x8, _x9, _x10) {
   return _scanCore.apply(this, arguments);
 }
+/**
+ * Scan bus for device with an available firmware update
+ * @param bus
+ * @param timeout
+ * @returns
+ * @category Firmware
+ */
+
 
 function _scanCore() {
   _scanCore = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee8(bus, numTries, makeFlashers, recovery) {
@@ -39067,6 +39069,13 @@ function _scanCore() {
 function scanFirmwares(_x11, _x12) {
   return _scanFirmwares.apply(this, arguments);
 }
+/**
+ * Indicates if a firmware blob is applicated to the device information
+ * @param dev
+ * @param blob
+ * @returns
+ * @category Firmware
+ */
 
 function _scanFirmwares() {
   _scanFirmwares = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee9(bus, timeout) {
@@ -39102,26 +39111,24 @@ function _scanFirmwares() {
 function updateApplicable(dev, blob) {
   return dev && blob && dev.bootloaderProductIdentifier == blob.productIdentifier && dev.version !== blob.version;
 }
-function computeUpdates(devices, blobs) {
-  return (blobs || []).map(function (blob) {
-    var updateCandidates = devices.filter(function (d) {
-      return updateApplicable(d, blob);
-    });
-    if (updateCandidates.length == 0) return undefined;
-    return {
-      blob: blob,
-      updateCandidates: updateCandidates
-    };
-  }).filter(function (r) {
-    return !!r;
-  });
-}
+/**
+ * Flash firmware blob onto device
+ * @param bus
+ * @param blob
+ * @param updateCandidates
+ * @param ignoreFirmwareCheck
+ * @param progress
+ * @returns
+ * @category Firmware
+ */
+
 function flashFirmwareBlob(_x13, _x14, _x15, _x16, _x17) {
   return _flashFirmwareBlob2.apply(this, arguments);
 }
 /**
  * This command can be sent every 50ms to keep devices in bootloader mode
  * @param bus
+ * @category Firmware
  */
 
 function _flashFirmwareBlob2() {
@@ -39238,42 +39245,11 @@ function _sendStayInBootloaderCommand() {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Hs": function() { return /* binding */ inIFrame; }
+/* harmony export */   "H": function() { return /* binding */ inIFrame; }
 /* harmony export */ });
-/* unused harmony export JDIFrameClient */
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
-/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47235);
-
-
-
-var JDIFrameClient = /*#__PURE__*/function (_JDClient) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(JDIFrameClient, _JDClient);
-
-  function JDIFrameClient(bus) {
-    var _this;
-
-    _this = _JDClient.call(this) || this;
-    _this.bus = bus;
-    return _this;
-  }
-
-  var _proto = JDIFrameClient.prototype;
-
-  _proto.isOriginValid = function isOriginValid(msg) {
-    return this.origin === "*" || msg.origin === this.origin;
-  };
-
-  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(JDIFrameClient, [{
-    key: "origin",
-    get: function get() {
-      return this.bus.parentOrigin;
-    }
-  }]);
-
-  return JDIFrameClient;
-}(_client__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z);
-/* harmony default export */ __webpack_exports__["ZP"] = (JDIFrameClient);
+/**
+ * @internal
+ */
 function inIFrame() {
   try {
     return typeof window !== "undefined" && window.self !== window.top;
@@ -39380,9 +39356,6 @@ function resolveMakecodeServiceFromClassIdentifier(serviceClass) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LR": function() { return /* binding */ visitNodes; }
-/* harmony export */ });
 /* unused harmony export JDNode */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
@@ -39453,20 +39426,7 @@ var JDNode = /*#__PURE__*/function (_JDEventSource) {
 
   return JDNode;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_0__/* .default */ .ZP);
-/* harmony default export */ __webpack_exports__["ZP"] = (JDNode);
-function visitNodes(node, vis) {
-  var todo = [node];
-
-  while (todo.length) {
-    var _node = todo.pop();
-
-    vis(_node);
-
-    _node.children.forEach(function (child) {
-      return todo.push(child);
-    });
-  }
-}
+/* harmony default export */ __webpack_exports__["Z"] = (JDNode);
 
 /***/ }),
 
@@ -39491,31 +39451,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-
-/*
-
-## Format strings
-
-Format strings are space-separated sequences of type descriptions.
-All numbers are understood to be little endian.
-The following type descriptions are supported:
-
-* `u8`, `u16`, `u32` - unsigned, 1, 2, and 4 bytes long respectively
-* `i8`, `i16`, `i32` - similar, but signed
-* `b` - buffer until the end of input (has to be last)
-* `s` - similar, but utf-8 encoded string
-* `z` - NUL-terminated utf-8 string
-* `b[10]` - 10 byte buffer (10 is just an example, here and below)
-* `s[10]` - 10 byte utf-8 string; trailing NUL bytes (if any) are removed
-* `x[10]` - 10 bytes of padding
-
-There is one more token, `r:`. The type descriptions following it are repeated in order
-until the input buffer is exhausted.
-When unpacking, fields after `r:` are repeated as an array of tuples.
-
-In case there's only a single field repeating,
-it's also possible to append `[]` to its type, to get an array of values.
-*/
 // ASCII codes of characters
 var ch_b = 98;
 var ch_i = 105;
@@ -39726,6 +39661,12 @@ function jdunpackCore(buf, fmt, repeat) {
     return res;
   }
 }
+/**
+ Unpacks a byte buffer into structured data as specified in the format string.
+ See jdpack for format string reference.
+ @category Data Packing
+*/
+
 
 function jdunpack(buf, fmt) {
   if (!buf || !fmt) return undefined; // hot path for buffers
@@ -39820,6 +39761,31 @@ function jdpackCore(trg, fmt, data, off) {
   if (data.length > idx) throw new Error("format '" + fmt + "' too short");
   return off;
 }
+/**
+
+* Format strings are space-separated sequences of type descriptions.
+* All numbers are understood to be little endian.
+* The following type descriptions are supported:
+* 
+* - `u8`, `u16`, `u32` - unsigned, 1, 2, and 4 bytes long respectively
+* - `i8`, `i16`, `i32` - similar, but signed
+* - `b` - buffer until the end of input (has to be last)
+* - `s` - similar, but utf-8 encoded string
+* - `z` - NUL-terminated utf-8 string
+* - `b[10]` - 10 byte buffer (10 is just an example, here and below)
+* - `s[10]` - 10 byte utf-8 string; trailing NUL bytes (if any) are removed
+* - `x[10]` - 10 bytes of padding
+* 
+* There is one more token, `r:`. The type descriptions following it are repeated in order
+* until the input buffer is exhausted.
+* When unpacking, fields after `r:` are repeated as an array of tuples.
+* 
+* In case there's only a single field repeating,
+* it's also possible to append `[]` to its type, to get an array of values.
+* 
+* @category Data Packing
+*/
+
 
 function jdpack(fmt, data) {
   var _data$;
@@ -39842,6 +39808,15 @@ function jdpack(fmt, data) {
   jdpackCore(res, fmt, data, 0);
   return res;
 }
+/**
+ * Checks if two packed values serialize to the same buffer
+ * @param fmt packing format string
+ * @param left left data
+ * @param right right data
+ * @returns true if both data serialize to the same buffer
+ * @category Data Packing
+ */
+
 function jdpackEqual(fmt, left, right) {
   if (!left !== !right) return false;
   if (!left) return true;
@@ -40339,6 +40314,7 @@ function frameToPackets(frame, timestamp) {
  * @param data
  * @param fields
  * @returns
+ * @category Data Packing
  */
 function unpackedToObject(data, fields, defaultName) {
   if (!data || !fields) return undefined;
@@ -40367,6 +40343,14 @@ function unpackedToObject(data, fields, defaultName) {
 
   return r;
 }
+/**
+ * Converts an object structure into a flat packed data array
+ * @param pkt
+ * @param msg
+ * @returns
+ * @category Data Packing
+ */
+
 function objectToUnpacked(pkt, // eslint-disable-next-line @typescript-eslint/no-explicit-any
 msg) {
   if (!msg) return [];
@@ -42761,7 +42745,6 @@ __webpack_require__.d(__webpack_exports__, {
   "Ht": function() { return /* binding */ deviceSpecificationFromProductIdentifier; },
   "qx": function() { return /* binding */ deviceSpecifications; },
   "zn": function() { return /* binding */ deviceSpecificationsForService; },
-  "Cf": function() { return /* binding */ hasPipeReport; },
   "uM": function() { return /* binding */ identifierToUrlPath; },
   "ao": function() { return /* binding */ isCommand; },
   "n6": function() { return /* binding */ isConstRegister; },
@@ -42823,6 +42806,7 @@ var _deviceRegistry = devices_namespaceObject;
 /**
  * Override built-in service specifications
  * @param specs
+ * @category Specification
  */
 
 function loadServiceSpecifications(specs) {
@@ -42831,14 +42815,25 @@ function loadServiceSpecifications(specs) {
 /**
  * Adds a custom service specification
  * @param service
+ * @category Specification
  */
 
 function addCustomServiceSpecification(service) {
   if (service && service.classIdentifier) _customServiceSpecifications[service.classIdentifier] = service;
 }
+/**
+ * Clears any custom service specification
+ * @category Specification
+ */
+
 function clearCustomServiceSpecifications() {
   _customServiceSpecifications = {};
 }
+/**
+ * Returns a map from service short ids to service specifications
+ * @category Specification
+ */
+
 function serviceMap() {
   var m = {};
 
@@ -42848,9 +42843,19 @@ function serviceMap() {
 
   return m;
 }
+/**
+ * Returns the list of service specifications
+ * @category Specification
+ */
+
 function serviceSpecifications() {
   return _serviceSpecifications.slice(0);
 }
+/**
+ * Resolve the device specification from the product identiier
+ * @category Specification
+ */
+
 function deviceSpecificationFromProductIdentifier(productIdentifier) {
   if (isNaN(productIdentifier)) return undefined;
 
@@ -42862,6 +42867,10 @@ function deviceSpecificationFromProductIdentifier(productIdentifier) {
 
   return spec;
 }
+/**
+ * @internal
+ */
+
 function deviceSpecificationFromIdentifier(id) {
   if (id === undefined) return undefined;
 
@@ -42871,27 +42880,44 @@ function deviceSpecificationFromIdentifier(id) {
 
   return spec;
 }
+/**
+ * Gets the list of devices that use this service class
+ * @param serviceClass
+ * @category Specification
+ */
+
 function deviceSpecificationsForService(serviceClass) {
   if (isNaN(serviceClass)) return undefined;
   return _deviceRegistry.filter(function (spec) {
     return spec.services.indexOf(serviceClass) > -1;
   });
 }
+/**
+ * Gets the list of device specifications
+ * @returns
+ * @category Specification
+ */
+
 function deviceSpecifications() {
   return _deviceRegistry.slice(0);
 }
+/**
+ * @internal
+ */
+
 function identifierToUrlPath(id) {
   return id === null || id === void 0 ? void 0 : id.replace(/-/g, "/");
 }
 /**
  * Checks if classIdentifier is compatible with requiredClassIdentifier
+ * @category Specification
  */
 
 function isInstanceOf(classIdentifier, requiredClassIdentifier) {
   var _classSpec$extends;
 
   // garbage data
-  if (classIdentifier === undefined) return false; // direct hit
+  if (isNaN(classIdentifier)) return false; // direct hit
 
   if (classIdentifier === requiredClassIdentifier) return true; // lookup inheritance chain
 
@@ -42901,12 +42927,20 @@ function isInstanceOf(classIdentifier, requiredClassIdentifier) {
     return !!extendSpec && isInstanceOf(extendSpec.classIdentifier, requiredClassIdentifier);
   }));
 }
+/**
+ * Checks if the service supports the Jacdac infrastructure
+ * @param spec
+ * @returns
+ * @category Specification
+ */
+
 function isInfrastructure(spec) {
   return spec && ([constants/* SRV_CONTROL */.gm9, constants/* SRV_ROLE_MANAGER */.igi, constants/* SRV_LOGGER */.w9j, constants/* SRV_POWER */.mQG, constants/* SRV_SETTINGS */.B9b, constants/* SRV_BOOTLOADER */.PWm, constants/* SRV_PROTO_TEST */.$Bn].indexOf(spec.classIdentifier) > -1 || spec.shortId[0] === "_");
 }
 /**
  * Looks up a service specification by name
  * @param shortId
+ * @category Specification
  */
 
 function serviceSpecificationFromName(shortId) {
@@ -42920,6 +42954,7 @@ function serviceSpecificationFromName(shortId) {
 /**
  * Looks up a service specification by class
  * @param classIdentifier
+ * @category Specification
  */
 
 function serviceSpecificationFromClassIdentifier(classIdentifier) {
@@ -42928,6 +42963,13 @@ function serviceSpecificationFromClassIdentifier(classIdentifier) {
     return s.classIdentifier === classIdentifier;
   }) || _customServiceSpecifications[classIdentifier];
 }
+/**
+ * Indicates if the specified service is a sensor
+ * @param spec
+ * @returns
+ * @category Specification
+ */
+
 function isSensor(spec) {
   return spec && spec.packets.some(function (pkt) {
     return isReading(pkt);
@@ -42937,6 +42979,13 @@ function isSensor(spec) {
     return pkt.identifier == constants/* SensorReg.StreamingInterval */.q9t.StreamingInterval;
   });
 }
+/**
+ * Indicates if the specified service is an actuator
+ * @param spec
+ * @returns
+ * @category Specification
+ */
+
 function isActuator(spec) {
   return spec && spec.packets.some(function (pkt) {
     return pkt.identifier === SystemReg.Value;
@@ -42944,54 +42993,138 @@ function isActuator(spec) {
     return pkt.identifier === SystemReg.Intensity;
   });
 }
+/**
+ * Indicates if the packet information is a register
+ * @param spec
+ * @returns
+ * @category Specification
+ */
+
 function isRegister(pkt) {
   return pkt && (pkt.kind == "const" || pkt.kind == "ro" || pkt.kind == "rw");
 }
+/**
+ * Indicates if the packet information is a ``reading`` register
+ * @param spec
+ * @returns
+ * @category Specification
+ */
+
 function isReading(pkt) {
   return pkt && pkt.kind == "ro" && pkt.identifier == constants/* SystemReg.Reading */.ZJq.Reading;
 }
 var ignoredRegister = [constants/* SystemReg.StatusCode */.ZJq.StatusCode, constants/* SystemReg.InstanceName */.ZJq.InstanceName, constants/* SystemReg.StreamingInterval */.ZJq.StreamingInterval, constants/* SystemReg.StreamingPreferredInterval */.ZJq.StreamingPreferredInterval, constants/* SystemReg.StreamingSamples */.ZJq.StreamingSamples, constants/* SystemReg.ReadingError */.ZJq.ReadingError, constants/* SystemReg.ReadingResolution */.ZJq.ReadingResolution, constants/* SystemReg.MinReading */.ZJq.MinReading, constants/* SystemReg.MaxReading */.ZJq.MaxReading, constants/* SystemReg.MinValue */.ZJq.MinValue, constants/* SystemReg.MaxValue */.ZJq.MaxValue, constants/* SystemReg.MaxPower */.ZJq.MaxPower];
+/**
+ * Indicates if the register is usable from a high-level programming environment.
+ * @category Specification
+ */
+
 function isHighLevelRegister(pkt) {
   return isRegister(pkt) && !pkt.lowLevel && !pkt.internal && ignoredRegister.indexOf(pkt.identifier) < 0;
 }
 var ignoredEvents = [constants/* SystemEvent.StatusCodeChanged */.nSK.StatusCodeChanged];
+/**
+ * Indicates if the event is usable from a high-level programming environment.
+ * @category Specification
+ */
+
 function isHighLevelEvent(pkt) {
   return isEvent(pkt) && !pkt.lowLevel && !pkt.internal && ignoredEvents.indexOf(pkt.identifier) < 0;
 }
+/**
+ * Indicate if the register code is an auxilliary register to support streaming.
+ * @param code
+ * @returns
+ * @category Specification
+ */
+
 function isOptionalReadingRegisterCode(code) {
   var regs = [constants/* SystemReg.MinReading */.ZJq.MinReading, constants/* SystemReg.MaxReading */.ZJq.MaxReading, constants/* SystemReg.ReadingError */.ZJq.ReadingError, constants/* SystemReg.ReadingResolution */.ZJq.ReadingResolution, constants/* SystemReg.StreamingPreferredInterval */.ZJq.StreamingPreferredInterval];
   return regs.indexOf(code) > -1;
 }
+/**
+ * Indicates if the packet info represents an ``intensity`` register
+ * @category Specification
+ */
+
 function isIntensity(pkt) {
   return pkt && pkt.kind == "rw" && pkt.identifier == constants/* SystemReg.Intensity */.ZJq.Intensity;
 }
+/**
+ * Indicates if the packet info represents a ``value`` register
+ * @category Specification
+ */
+
 function isValue(pkt) {
   return pkt && pkt.kind == "rw" && pkt.identifier == constants/* SystemReg.Value */.ZJq.Value;
 }
+/**
+ * Indicates if the packet info represents a ``intensity`` or a ``value`` register
+ * @category Specification
+ */
+
 function isValueOrIntensity(pkt) {
   return pkt && pkt.kind == "rw" && (pkt.identifier == constants/* SystemReg.Value */.ZJq.Value || pkt.identifier == constants/* SystemReg.Intensity */.ZJq.Intensity);
 }
+/**
+ * Indicates if the packet info represents an ``const`` register
+ * @category Specification
+ */
+
 function isConstRegister(pkt) {
   return (pkt === null || pkt === void 0 ? void 0 : pkt.kind) == "const";
 }
+/**
+ * Indicates if the packet info represents an ``event``
+ * @category Specification
+ */
+
 function isEvent(pkt) {
   return pkt.kind == "event";
 }
+/**
+ * Indicates if the packet info represents a ``command``
+ * @category Specification
+ */
+
 function isCommand(pkt) {
   return pkt.kind == "command";
 }
+/**
+ * Indicates if the packet info represents a ``pipe_report``
+ * @category Specification
+ */
+
 function isPipeReport(pkt) {
   return pkt.kind == "pipe_report";
 }
+/**
+ * Indicates if the `report` packet is the report specication of the `cmd` command.
+ * @category Specification
+ */
+
 function isReportOf(cmd, report) {
   return report.secondary && report.kind == "report" && cmd.kind == "command" && cmd.name == report.name;
 }
+/**
+ * Indicates if the `report` packet is the *pipe* report specication of the `cmd` command.
+ * @category Specification
+ */
+
 function isPipeReportOf(cmd, pipeReport) {
   return pipeReport.kind == "pipe_report" && cmd.kind == "command" && cmd.pipeType && cmd.pipeType === pipeReport.pipeType;
 }
+/**
+ * @internal
+ */
+
 function isIntegerType(tp) {
   return /^[ui]\d+(\.|$)/.test(tp) || tp == "pipe_port" || tp == "bool";
 }
+/**
+ * @internal
+ */
+
 function numberFormatFromStorageType(tp) {
   switch (tp) {
     case -1:
@@ -43025,6 +43158,10 @@ function numberFormatFromStorageType(tp) {
       return null;
   }
 }
+/**
+ * @internal
+ */
+
 function numberFormatToStorageType(nf) {
   switch (nf) {
     case buffer/* NumberFormat.Int8LE */.y4.Int8LE:
@@ -43055,14 +43192,26 @@ function numberFormatToStorageType(nf) {
       return null;
   }
 }
+/**
+ * @internal
+ */
+
 function scaleIntToFloat(v, info) {
   if (!info.shift) return v;
   if (info.shift < 0) return v * (1 << -info.shift);else return v / (1 << info.shift);
 }
+/**
+ * @internal
+ */
+
 function scaleFloatToInt(v, info) {
   if (!info.shift) return v;
   if (info.shift < 0) return Math.round(v / (1 << -info.shift));else return Math.round(v * (1 << info.shift));
 }
+/**
+ * @internal
+ */
+
 function storageTypeRange(tp) {
   if (tp == 0) throw new Error("no range for 0");
 
@@ -43075,6 +43224,10 @@ function storageTypeRange(tp) {
     return [0, _v - 1];
   }
 }
+/**
+ * @internal
+ */
+
 function clampToStorage(v, tp) {
   var _storageTypeRange = storageTypeRange(tp),
       min = _storageTypeRange[0],
@@ -43085,6 +43238,10 @@ function clampToStorage(v, tp) {
   if (v > max) return max;
   return v;
 }
+/**
+ * @internal
+ */
+
 function memberValueToString(value, info) {
   if (value === undefined || value === null) return "";
 
@@ -43099,6 +43256,10 @@ function memberValueToString(value, info) {
       return "" + value;
   }
 }
+/**
+ * @internal
+ */
+
 function tryParseMemberValue(text, info) {
   if (!text) return {};
   if (info.type === "string") return {
@@ -43123,15 +43284,18 @@ function tryParseMemberValue(text, info) {
     };
   }
 }
+/**
+ * Parses a device identifier into a buffer, returns undefined if invalid
+ * @param id
+ * @returns
+ * @category Specification
+ */
+
 function parseDeviceId(id) {
+  if (!id) return undefined;
   id = id.replace(/\s/g, "");
-  if (id.length != 16 || !/^[a-f0-9]+$/i.test(id)) return null;
+  if (id.length != 16 || !/^[a-f0-9]+$/i.test(id)) return undefined;
   return fromHex(id);
-}
-function hasPipeReport(info) {
-  return info.fields.find(function (f) {
-    return f.type == "pipe";
-  });
 }
 
 /***/ }),
@@ -48071,7 +48235,7 @@ var BitRadioServer = /*#__PURE__*/function (_JDServiceServer) {
 
     console.log("bitradio: send", msg);
 
-    if ((0,iframeclient/* inIFrame */.Hs)()) {
+    if ((0,iframeclient/* inIFrame */.H)()) {
       window.parent.postMessage(msg, "*");
     }
   };
@@ -51534,7 +51698,7 @@ var FileSystemNode = /*#__PURE__*/function (_JDNode) {
   }
 
   return FileSystemNode;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 var FileSystem = /*#__PURE__*/function (_FileSystemNode) {
   (0,inheritsLoose/* default */.Z)(FileSystem, _FileSystemNode);
 
@@ -52705,6 +52869,7 @@ function parsePacketFilter(bus, text) {
     return isNaN(t) ? undefined : t;
   }
 }
+
 function compileFilter(props) {
   var announce = props.announce,
       repeatedAnnounce = props.repeatedAnnounce,
@@ -54040,7 +54205,7 @@ var ServiceManagerProvider = function ServiceManagerProvider(_ref) {
   }, children);
 
   function createProps() {
-    var isHosted = (0,iframeclient/* inIFrame */.Hs)();
+    var isHosted = (0,iframeclient/* inIFrame */.H)();
     var fileStorage = new BrowserFileStorage();
     var modelStore = undefined;
 
@@ -59342,7 +59507,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "697c35330647b2c01a5a6520a82f79122ff20540";
+  var sha = "57cc252c4e875bc175b72119793a876be1225d8d";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -77752,7 +77917,7 @@ var JDField = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDField;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 /* harmony default export */ var jdom_field = (JDField);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/servicemembernode.ts
 
@@ -77866,7 +78031,7 @@ var JDServiceMemberNode = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDServiceMemberNode;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 /* harmony default export */ var servicemembernode = (JDServiceMemberNode);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pack.ts
 var pack = __webpack_require__(91635);
@@ -78338,6 +78503,10 @@ var JDService = /*#__PURE__*/function (_JDNode) {
    * @category Control
    */
   // packets received since last announce
+
+  /**
+   * @internal
+   */
   function JDService(device, serviceIndex) {
     var _this;
 
@@ -78379,7 +78548,13 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     });
   };
 
-  _proto.resolveInstanceName = /*#__PURE__*/function () {
+  /**
+   * Resolves the service instance name, if resolved
+   * @category Control
+   */
+  _proto.resolveInstanceName =
+  /*#__PURE__*/
+  function () {
     var _resolveInstanceName = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee() {
       var r;
       return regenerator_default().wrap(function _callee$(_context) {
@@ -78431,8 +78606,14 @@ var JDService = /*#__PURE__*/function (_JDNode) {
    */
   ;
 
+  /**
+   * Gets a register for the given code
+   * @param registerCode register identifier as found in the specification
+   * @returns a register instance (if found in specifiaction)
+   * @category Registers
+   */
   _proto.register = function register(registerCode) {
-    if (registerCode === undefined) return undefined; // cache known registers
+    if (isNaN(registerCode)) return undefined; // cache known registers
 
     this.registers();
 
@@ -78455,9 +78636,17 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
 
     return register;
-  };
+  }
+  /**
+   * Gets an event for the given code
+   * @param eventCode event identifier as found in the specification
+   * @returns a event instance (if found in specifiaction)
+   * @category Events
+   */
+  ;
 
   _proto.event = function event(eventCode) {
+    if (isNaN(eventCode)) return undefined;
     if (!this._events) this._events = [];
 
     var event = this._events.find(function (ev) {
@@ -78478,9 +78667,18 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
 
     return event;
-  };
+  }
+  /**
+   * Send packet to the service server
+   * @param pkt packet to send
+   * @param ack acknolegment required
+   * @category Packets
+   */
+  ;
 
-  _proto.sendPacketAsync = /*#__PURE__*/function () {
+  _proto.sendPacketAsync =
+  /*#__PURE__*/
+  function () {
     var _sendPacketAsync = (0,asyncToGenerator/* default */.Z)( /*#__PURE__*/regenerator_default().mark(function _callee2(pkt, ack) {
       return regenerator_default().wrap(function _callee2$(_context2) {
         while (1) {
@@ -78524,12 +78722,26 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }
 
     return sendPacketAsync;
-  }();
+  }()
+  /**
+   * Send a command to the service server
+   * @param pkt packet to send
+   * @param ack acknolegment required
+   * @category Packets
+   */
+  ;
 
   _proto.sendCmdAsync = function sendCmdAsync(cmd, data, ack) {
     var pkt = data ? packet/* default.from */.Z.from(cmd, data) : packet/* default.onlyHeader */.Z.onlyHeader(cmd);
     return this.sendPacketAsync(pkt, ack);
-  };
+  }
+  /**
+   * Send a command and await response to the service server
+   * @param pkt packet to send
+   * @param ack acknolegment required
+   * @category Packets
+   */
+  ;
 
   _proto.sendCmdAwaitResponseAsync = function sendCmdAwaitResponseAsync(pkt, timeout) {
     var _this3 = this;
@@ -78564,7 +78776,11 @@ var JDService = /*#__PURE__*/function (_JDNode) {
       // or on first invocation of handleRes()
 
     });
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.processPacket = function processPacket(pkt) {
     this.emit(constants/* PACKET_RECEIVE */.u_S, pkt);
@@ -78602,7 +78818,11 @@ var JDService = /*#__PURE__*/function (_JDNode) {
     }).forEach(function (r) {
       return r.clearGetTimestamp();
     });
-  };
+  }
+  /**
+   * @internal
+   */
+  ;
 
   _proto.compareTo = function compareTo(b) {
     return this.serviceClass - b.serviceClass || (0,utils/* strcmp */.eT)(this.device.deviceId, b.device.deviceId) || this.serviceIndex - b.serviceIndex;
@@ -78866,6 +79086,11 @@ var JDService = /*#__PURE__*/function (_JDNode) {
 
       return this._statusCodeRegister;
     }
+    /**
+     * Gets the service instance name, if resolved
+     * @category Control
+     */
+
   }, {
     key: "instanceName",
     get: function get() {
@@ -78903,7 +79128,7 @@ var JDService = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDService;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 /* harmony default export */ var service = (JDService);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/eventsource.ts
 var eventsource = __webpack_require__(45484);
@@ -79951,7 +80176,7 @@ var JDDevice = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDDevice;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 /* harmony default export */ var jdom_device = (JDDevice);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/flashing.ts
 var flashing = __webpack_require__(91758);
@@ -80447,7 +80672,9 @@ var random = __webpack_require__(80303);
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-/** @internal */
+/**
+ * A time scheduler to orchestrate time in the bus.
+ */
 
 /** @internal */
 var WallClockScheduler = /*#__PURE__*/function () {
@@ -81971,7 +82198,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   }]);
 
   return JDBus;
-}(node/* default */.ZP);
+}(node/* default */.Z);
 /* harmony default export */ var bus = (bus_JDBus);
 // EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
 var gatsby_browser_entry = __webpack_require__(35313);
@@ -85480,8 +85707,8 @@ function createWebSerialBus() {
 function createAnyUSBBus() {
   return new JDBus([createUSBTransport(), createWebSerialTransport()]);
 }
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/iframeclient.ts
-var iframeclient = __webpack_require__(9809);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
+var client = __webpack_require__(47235);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/makecode.ts + 1 modules
 var makecode = __webpack_require__(93127);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/iframebridgeclient.ts
@@ -85507,14 +85734,14 @@ var ignoredServices = [constants/* SRV_CONTROL */.gm9, constants/* SRV_LOGGER */
  * @internal
  */
 
-var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
-  (0,inheritsLoose/* default */.Z)(IFrameBridgeClient, _JDIFrameClient);
+var IFrameBridgeClient = /*#__PURE__*/function (_JDClient) {
+  (0,inheritsLoose/* default */.Z)(IFrameBridgeClient, _JDClient);
 
   // this is a unique id used to trace packets sent by this bridge
   function IFrameBridgeClient(bus, frameId) {
     var _this;
 
-    _this = _JDIFrameClient.call(this, bus) || this;
+    _this = _JDClient.call(this) || this;
     _this.bridgeId = "bridge" + Math.random();
     _this.packetSent = 0;
     _this.packetProcessed = 0;
@@ -85532,6 +85759,10 @@ var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
   }
 
   var _proto = IFrameBridgeClient.prototype;
+
+  _proto.isOriginValid = function isOriginValid(msg) {
+    return this.origin === "*" || msg.origin === this.origin;
+  };
 
   _proto.registerEvents = function registerEvents() {
     var _this2 = this;
@@ -85690,6 +85921,11 @@ var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
   };
 
   (0,createClass/* default */.Z)(IFrameBridgeClient, [{
+    key: "origin",
+    get: function get() {
+      return this.bus.parentOrigin;
+    }
+  }, {
     key: "dependencies",
     get: function get() {
       var _this$_runOptions2;
@@ -85738,10 +85974,8 @@ var IFrameBridgeClient = /*#__PURE__*/function (_JDIFrameClient) {
   }]);
 
   return IFrameBridgeClient;
-}(iframeclient/* default */.ZP);
+}(client/* default */.Z);
 /* harmony default export */ var iframebridgeclient = (IFrameBridgeClient);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
-var client = __webpack_require__(47235);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
 var serviceprovider = __webpack_require__(73138);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/joystickserver.ts
@@ -85872,7 +86106,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.9"};
+var package_namespaceObject = {"i8":"1.14.10"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 

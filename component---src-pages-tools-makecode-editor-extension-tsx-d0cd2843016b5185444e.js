@@ -408,7 +408,7 @@ var MakeCodeEditorExtensionClient = /*#__PURE__*/function (_JDClient) {
 
     _this = _JDClient.call(this) || this;
     _this.pendingCommands = {};
-    _this.extensionId = (0,iframeclient/* inIFrame */.Hs)() ? window.location.hash.substr(1) : undefined;
+    _this.extensionId = (0,iframeclient/* inIFrame */.H)() ? window.location.hash.substr(1) : undefined;
     _this._connected = false;
     _this._visible = false;
     _this.nextRequestId = 1;

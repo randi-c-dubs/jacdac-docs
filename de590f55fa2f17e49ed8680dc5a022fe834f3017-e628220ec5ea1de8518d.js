@@ -489,6 +489,10 @@ var utils = __webpack_require__(81794);
 
 
 
+/**
+ * @internal
+ */
+
 function packArguments(info, args) {
   var repeatIdx = -1;
   var numReps = 0;
@@ -558,6 +562,13 @@ var CmdButton = __webpack_require__(82613);
 
 
 
+
+function hasPipeReport(info) {
+  return info.fields.find(function (f) {
+    return f.type == "pipe";
+  });
+}
+
 function CommandInput(props) {
   var service = props.service,
       command = props.command,
@@ -569,7 +580,7 @@ function CommandInput(props) {
       bus = _useContext.bus;
 
   var specification = service.specification;
-  var requiredArgLength = command.fields.length - ((0,jdom_spec/* hasPipeReport */.Cf)(command) ? 1 : 0);
+  var requiredArgLength = command.fields.length - (hasPipeReport(command) ? 1 : 0);
   var missingArguments = ((args === null || args === void 0 ? void 0 : args.length) || 0) !== requiredArgLength;
   var disabled = missingArguments;
   var reportSpec = command.hasReport && specification.packets.find(function (p) {
@@ -602,7 +613,7 @@ function CommandInput(props) {
               break;
 
             case 9:
-              if (!(setReports && (0,jdom_spec/* hasPipeReport */.Cf)(command))) {
+              if (!(setReports && hasPipeReport(command))) {
                 _context.next = 27;
                 break;
               }
