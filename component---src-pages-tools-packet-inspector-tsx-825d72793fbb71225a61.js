@@ -658,6 +658,8 @@ var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_10__/* .default */
   });
 });
 function PacketListItem(props) {
+  var _decoded$info;
+
   var packet = props.packet,
       count = props.count,
       showTime = props.showTime;
@@ -685,7 +687,8 @@ function PacketListItem(props) {
   var selected = packet === selectedPacket;
   var logMessage = packet.serviceClass === _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__/* .SRV_LOGGER */ .w9j && packet.isReport && packet.isEvent;
   var pipePackets = packet.meta[_jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_4__/* .META_PIPE */ .YHR];
-  var primary = packet.isCRCAck && "crc ack " + packet.friendlyCommandName || packet.isAnnounce && "announce from " + packet.friendlyDeviceName || pipePackets && "pipe port:" + packet.pipePort + " " + pipePackets.length + " packets" || logMessage && (0,_jacdac_ts_src_jdom_pack__WEBPACK_IMPORTED_MODULE_7__/* .jdunpack */ .TE)(packet.data, "s")[0] || ((decoded === null || decoded === void 0 ? void 0 : decoded.info.name) || packet.friendlyCommandName) + " " + (decoded ? (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_6__/* .ellipseJoin */ .VA)(decoded.decoded.map(function (f) {
+  var name = (decoded === null || decoded === void 0 ? void 0 : (_decoded$info = decoded.info) === null || _decoded$info === void 0 ? void 0 : _decoded$info.name) || packet.friendlyCommandName;
+  var primary = packet.isCRCAck && "crc ack " + name || packet.isAnnounce && "announce from " + name || packet.isRegisterGet && "get " + name || pipePackets && "pipe port:" + packet.pipePort + " " + pipePackets.length + " packets" || logMessage && (0,_jacdac_ts_src_jdom_pack__WEBPACK_IMPORTED_MODULE_7__/* .jdunpack */ .TE)(packet.data, "s")[0] || "" + (packet.isRegisterSet ? "set " : "") + name + " " + (decoded ? (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_6__/* .ellipseJoin */ .VA)(decoded.decoded.map(function (f) {
     return f.humanValue;
   }), 18) : "");
   var secondary = "" + (showTime ? (0,_jacdac_ts_src_jdom_pretty__WEBPACK_IMPORTED_MODULE_5__/* .prettyDuration */ .Xh)(packet.timestamp) + ": " : "") + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName;
@@ -1034,12 +1037,13 @@ function PacketInspector() {
   }, "Click on a packet in the ", /*#__PURE__*/react.createElement(History/* default */.Z, null), " packet list.");
   var decoded = packet.decoded;
   var info = decoded === null || decoded === void 0 ? void 0 : decoded.info;
+  var name = (info === null || info === void 0 ? void 0 : info.name) || packet.friendlyCommandName;
   var ack = packet.meta[constants/* META_ACK */.K3O];
   var pipePackets = packet.meta[constants/* META_PIPE */.YHR];
   var get = packet.meta[constants/* META_GET */.cWR];
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, /*#__PURE__*/react.createElement(PacketBadge/* default */.Z, {
     packet: packet
-  }), packet.friendlyCommandName + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
+  }), name + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
     kind: info === null || info === void 0 ? void 0 : info.kind
   }), ", size ", packet.size), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "body2"
