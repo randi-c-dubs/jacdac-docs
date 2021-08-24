@@ -697,7 +697,7 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
     _this._peer = new (peerjs_min_default())();
 
     _this._peer.on("open", function () {
-      _this.log("open");
+      _this.log("peer: connected");
 
       _this.emit(constants/* CHANGE */.Ver);
     });
@@ -705,7 +705,7 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
     _this._peer.on("connection", _this.addConnection.bind((0,assertThisInitialized/* default */.Z)(_this)));
 
     _this._peer.on("disconnected", function () {
-      _this.log("disconnected");
+      _this.log("peer: disconnected");
 
       _this.bus = undefined;
     });
@@ -728,12 +728,12 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
   _proto.addConnection = function addConnection(conn) {
     var _this2 = this;
 
-    this.log("connection");
+    this.log("peer: connection");
 
     this._connections.push(conn);
 
     conn.on("open", function () {
-      _this2.log("open");
+      _this2.log("peer: opened");
 
       _this2.emit(constants/* CHANGE */.Ver);
     });
@@ -876,7 +876,8 @@ function ConnectItem(props) {
     onChange: handleChange,
     fullWidth: true,
     type: "text",
-    label: "Peer identifier"
+    label: "Peer identifier",
+    helperText: "Copy the remote connection identifier"
   })), /*#__PURE__*/react.createElement(CardActions/* default */.Z, null, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
     disabled: disconnected || !id || id === myid,
     variant: "contained",
@@ -923,7 +924,7 @@ function Peers() {
     severity: "warning"
   }, "Experimental feature"), /*#__PURE__*/react.createElement("p", null, "This section allows you to connect multiple Jacdac dashboard in real time over the web (using WebRTC). This functionality uses the \xA0", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     href: "https://peerjs.com/peerserver.html"
-  }, "PeerServer Cloud Service"), "to establish connections. No data is sent through the server."), !enabled && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
+  }, "PeerServer Cloud Service"), " \xA0 to establish connections. No data is sent through the server."), !enabled && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
     severity: "error"
   }, "This functionality is not enabled."), enabled && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     container: true,
