@@ -142,7 +142,7 @@ function MDXContent(_ref) {
   }))), "JavaScript/TypeScript ES6"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "If you are using JavaScript/TypeScript ES6, import all APIs "), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-vanilla"
-  }, "import { createUSBBus, CHANGE } from \"jacdac-ts\"\n\nconst bus = createUSBBus();\nbus.on(CHANGE, () => console.log(bus.devices()))\n// call connect from a user interaction\nbus.connect();\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "import { createUSBBus, CHANGE } from \"jacdac-ts\"\n\nconst bus = createUSBBus();\nbus.on(CHANGE, () => console.log(bus.devices()))\n// call connect from a user interaction\nbus.connect();\n-----\nbus.on(CHANGE, () => console.log(bus.devices()));\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "nodejs-commonjses6",
     "style": {
       "position": "relative"
@@ -175,7 +175,7 @@ function MDXContent(_ref) {
     "rel": "nofollow noopener noreferrer"
   }, "node-usb"), " npm package, make sure to configure your machine to use USB."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
-    "className": "language-vanilla"
+    "className": "language-typescript"
   }, "import { createUSBBus, createNodeUSBOptions, ... } from \"jacdac-ts\"\n\nconst options = createNodeUSBOptions()\nconst bus = createUSBBus(options);\n...\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "vanilla-javascript",
     "style": {
@@ -260,4 +260,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-javascript-jdom-mdx-2342759e2af90d74e4da.js.map
+//# sourceMappingURL=component---src-pages-clients-javascript-jdom-mdx-750165acd4c36bbd1b25.js.map

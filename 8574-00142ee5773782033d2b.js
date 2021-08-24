@@ -45,10 +45,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var HTML_TEMPLATE = "<p>Open Javascript console to see messages...</p>";
 function CodeSandboxButton(props) {
   var {
+    title,
     source
   } = props;
+  var {
+    js = "",
+    html = HTML_TEMPLATE
+  } = source;
   var {
     setError
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_AppContext__WEBPACK_IMPORTED_MODULE_1__/* .default */ .ZP);
@@ -59,8 +65,8 @@ function CodeSandboxButton(props) {
 
   var handleClick = /*#__PURE__*/function () {
     var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(function* () {
-      var content = source;
-      var html = "\n<html>\n    <script src=\"./node_modules/jacdac-ts/dist/jacdac-umd.js\" />\n    <body>\n        <p>\n            Open console to see messages...\n        </p>\n        <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
+      var indexJs = "\nimport \"milligram\";\nimport { createUSBBus, CHANGE } from \"jacdac-ts\";\nconst btn = document.getElementById(\"connectbtn\");\nconst bus = createUSBBus();\nbus.on(CHANGE, () => { btn.innerText = bus.connected ? \"connected \uD83C\uDF89\" : \"connect\" })\nbtn.onclick = async () => bus.connect();\n\n" + js + "\n";
+      var indexHtml = "\n<html>\n    <body>\n        <h1>Jacdac " + (title || "demo") + "</h1>\n        <div>\n        <button id=\"connectbtn\">connect</button>\n        </div>    \n" + html + "\n        <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
 
       try {
         setImporting(true);
@@ -75,15 +81,16 @@ function CodeSandboxButton(props) {
               "package.json": {
                 content: {
                   dependencies: {
-                    "jacdac-ts": "latest"
+                    "jacdac-ts": "latest",
+                    milligram: "latest"
                   }
                 }
               },
               "index.js": {
-                content
+                content: indexJs
               },
               "index.html": {
-                content: html
+                content: indexHtml
               }
             }
           })
@@ -114,4 +121,4 @@ function CodeSandboxButton(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=8574-2ce81ff066c2f9e93856.js.map
+//# sourceMappingURL=8574-00142ee5773782033d2b.js.map

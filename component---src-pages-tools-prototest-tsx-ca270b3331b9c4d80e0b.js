@@ -114,6 +114,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ CodeBlock; }
 });
 
+// EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(47895);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 var defineProperty = __webpack_require__(75167);
 // EXTERNAL MODULE: ./node_modules/react/index.js
@@ -490,6 +492,8 @@ var Suspense = __webpack_require__(69672);
 ;// CONCATENATED MODULE: ./src/components/CodeBlock.tsx
 
 
+var _excluded = ["children", "className"];
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,defineProperty/* default */.Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -563,7 +567,7 @@ function HighlightedCode(props) {
         float: "right"
       }
     }, /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(CodeSandboxButton, {
-      source: children
+      source: codeSandbox
     }))), actions && /*#__PURE__*/react.createElement("div", {
       style: {
         float: "right"
@@ -589,8 +593,11 @@ function CodeBlock(props) {
   var {
     children,
     className
-  } = props;
+  } = props,
+      rest = (0,objectWithoutProperties/* default */.Z)(props, _excluded);
+
   var language = (className === null || className === void 0 ? void 0 : className.replace(/language-/, "")) || "";
+  console.log("snippet", props);
 
   switch (language) {
     case "trace":
@@ -604,10 +611,22 @@ function CodeBlock(props) {
       });
 
     case "vanilla":
-      return /*#__PURE__*/react.createElement(HighlightedCode, Object.assign({}, props, {
-        className: "javascript",
-        codeSandbox: true
-      }));
+      {
+        var [source, js, html] = children.split(/\n-{5,}\n/gi);
+        console.log({
+          children,
+          source,
+          js,
+          html
+        });
+        return /*#__PURE__*/react.createElement(HighlightedCode, Object.assign({}, rest, {
+          className: "javascript",
+          codeSandbox: {
+            js,
+            html
+          }
+        }), source);
+      }
 
     default:
       return /*#__PURE__*/react.createElement(HighlightedCode, props);
@@ -1247,4 +1266,4 @@ function ProtocolTest() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-prototest-tsx-12c7b960cbb53feba22e.js.map
+//# sourceMappingURL=component---src-pages-tools-prototest-tsx-ca270b3331b9c4d80e0b.js.map
