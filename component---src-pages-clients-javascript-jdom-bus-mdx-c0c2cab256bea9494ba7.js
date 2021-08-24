@@ -141,7 +141,7 @@ function MDXContent(_ref) {
   }, "CONNECTION_STATE"), " event, you can track changes of the state."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-vanilla"
-  }, "// am i connected?\nconst connected = bus.connected\n// track connection state\nbus.on(CONNECTION_STATE, () => log(`connected: ${bus.connected}`))\n-----\nimport { CONNECTION_STATE } from \"jacdac-ts\"\n\n// am i connected?\nlog(`connected: ${bus.connected}`)\n// track connection state\nbus.on(CONNECTION_STATE, () => log(`connected: ${bus.connected}`))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "// am i connected?\nconst connected = bus.connected\n// track connection state\nbus.on(CONNECTION_STATE, () => {\n    console.log(`connected: ${bus.connected}`)\n})\n-----\nimport { CONNECTION_STATE } from \"jacdac-ts\"\n\n// am i connected?\nlog(`connected: ${bus.connected}`)\n// track connection state\nbus.on(CONNECTION_STATE, () => log(`connected: ${bus.connected}`))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "methods",
     "style": {
       "position": "relative"
@@ -190,8 +190,8 @@ function MDXContent(_ref) {
     "href": "./device"
   }, "devices"), " JDOM."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
-    "className": "language-javascript"
-  }, "const devices = bus.devices()\nfor(const device of devices)\n    console.log(device)\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+    "className": "language-vanilla"
+  }, "const devices = bus.devices()\nfor(const device of devices)\n    console.log(device)\n-----\nimport { DEVICE_ANNOUNCE } from \"jacdac-ts\"\n\nlog(`connect to see devices`)\n// listen for device announcing services\nbus.on(DEVICE_ANNOUNCE, () => {\n    // query the current list of devices\n    const devices = bus.devices()\n    // print to console\n    log(\"\")\n    for(const device of devices)\n        log(device)\n})\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "events",
     "style": {
       "position": "relative"
@@ -239,68 +239,8 @@ function MDXContent(_ref) {
     parentName: "h3"
   }, "CHANGE")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "Catch all event raised when some change happened to the bus, whether it is a connection change or a change in the list of services\nor the error state changed."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
-    "className": "language-javascript"
-  }, "import { CHANGE } from \"jacdac-ts\"\n\nbus.on(CHANGE, () => {\n    const devices = bus.devices()\n    for(const device of devices)\n        console.log(device)\n})\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
-    "id": "connection_state",
-    "style": {
-      "position": "relative"
-    }
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
-    parentName: "h3",
-    "href": "#connection_state",
-    "aria-label": "connection_state permalink",
-    "className": "anchor before"
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("svg", {
-    parentName: "a",
-    "aria-hidden": "true",
-    "focusable": "false",
-    "height": "16",
-    "version": "1.1",
-    "viewBox": "0 0 16 16",
-    "width": "16"
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("path", {
-    parentName: "svg",
-    "fillRule": "evenodd",
-    "d": "M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
-  }))), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("inlineCode", {
-    parentName: "h3"
-  }, "CONNECTION_STATE")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "Raised when the connection state of the bus has changed."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
-    parentName: "pre",
-    "className": "language-javascript"
-  }, "bus.on(CONNECTION_STATE, state => console.log(`bus connection state: ${state}`))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
-    "id": "connect-connecting-disconnecting-disconnect",
-    "style": {
-      "position": "relative"
-    }
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
-    parentName: "h3",
-    "href": "#connect-connecting-disconnecting-disconnect",
-    "aria-label": "connect connecting disconnecting disconnect permalink",
-    "className": "anchor before"
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("svg", {
-    parentName: "a",
-    "aria-hidden": "true",
-    "focusable": "false",
-    "height": "16",
-    "version": "1.1",
-    "viewBox": "0 0 16 16",
-    "width": "16"
-  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("path", {
-    parentName: "svg",
-    "fillRule": "evenodd",
-    "d": "M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
-  }))), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("inlineCode", {
-    parentName: "h3"
-  }, "CONNECT"), ", ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("inlineCode", {
-    parentName: "h3"
-  }, "CONNECTING"), ", ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("inlineCode", {
-    parentName: "h3"
-  }, "DISCONNECTING"), ", ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("inlineCode", {
-    parentName: "h3"
-  }, "DISCONNECT")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "Raised on each connection state changes."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
-    parentName: "pre",
-    "className": "language-javascript"
-  }, "bus.on(CONNECT, state => console.log(`bus connected`))\nbus.on(CONNECTING, state => console.log(`bus connecting`))\nbus.on(DISCONNECTING, state => console.log(`bus disconnecting`))\nbus.on(DISCONNECT, state => console.log(`bus disconnected`))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
+    "className": "language-vanilla"
+  }, "import { CHANGE } from \"jacdac-ts\"\n\nbus.on(CHANGE, () => {\n    const devices = bus.devices()\n    for(const device of devices)\n        console.log(device)\n})\n-----\nimport { } from \"jacdac-ts\"\n\nlog(`connect to see devices`)\n// listen for device announcing services\nbus.on(CHANGE, () => {\n    // query the current list of devices\n    const devices = bus.devices()\n    // print to console\n    log(`connected: ${bus.connected}`)\n    for(const device of devices)\n        log(device)\n})\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
     "id": "error",
     "style": {
       "position": "relative"
@@ -353,4 +293,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-javascript-jdom-bus-mdx-4fb256e8bc6fef7f4263.js.map
+//# sourceMappingURL=component---src-pages-clients-javascript-jdom-bus-mdx-c0c2cab256bea9494ba7.js.map
