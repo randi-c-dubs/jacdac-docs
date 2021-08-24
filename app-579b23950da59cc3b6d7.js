@@ -19310,6 +19310,34 @@ exports.Z = _default;
 
 /***/ }),
 
+/***/ 32441:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+var __webpack_unused_export__;
+
+
+var _interopRequireDefault = __webpack_require__(8580);
+
+var _interopRequireWildcard = __webpack_require__(1022);
+
+__webpack_unused_export__ = ({
+  value: true
+});
+exports.Z = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(67294));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(58786));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M3 6h18V4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v-2H3V6zm10 6H9v1.78c-.61.55-1 1.33-1 2.22s.39 1.67 1 2.22V20h4v-1.78c.61-.55 1-1.34 1-2.22s-.39-1.67-1-2.22V12zm-2 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM22 8h-6c-.5 0-1 .5-1 1v10c0 .5.5 1 1 1h6c.5 0 1-.5 1-1V9c0-.5-.5-1-1-1zm-1 10h-4v-8h4v8z"
+}), 'DevicesOther');
+
+exports.Z = _default;
+
+/***/ }),
+
 /***/ 58526:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -58950,7 +58978,7 @@ function useLocalStorage(key, initialValue) {
 /* harmony export */ });
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59355);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8129);
-/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8391);
+/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48534);
 
 
 function useMediaQueries() {
@@ -59307,7 +59335,7 @@ function TransportIcon(props) {
 
 /***/ }),
 
-/***/ 8391:
+/***/ 48534:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59540,7 +59568,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "5806127c99e5b8d1b6541a78a06075c29ae16a4d";
+  var sha = "5ba60155df76e1d44451592376393e477b006d4f";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60681,6 +60709,43 @@ function OpenVMEditorButton(props) {
     to: "/editors/vm/"
   }, /*#__PURE__*/react.createElement(Extension/* default */.Z, null));
 }
+// EXTERNAL MODULE: ./node_modules/@material-ui/icons/DevicesOther.js
+var DevicesOther = __webpack_require__(32441);
+;// CONCATENATED MODULE: ./src/components/ui/BridgeButtons.tsx
+
+
+
+
+
+
+function BridgeButton(props) {
+  var bridge = props.bridge,
+      className = props.className;
+  return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+    className: className,
+    color: "inherit",
+    title: bridge.bridgeId
+  }, /*#__PURE__*/react.createElement(DevicesOther/* default */.Z, null));
+}
+
+function BridgeButtons(props) {
+  var className = props.className;
+
+  var _useContext = (0,react.useContext)(Context/* default */.Z),
+      bus = _useContext.bus;
+
+  var bridges = (0,useChange/* default */.Z)(bus, function (_) {
+    return _ === null || _ === void 0 ? void 0 : _.bridges;
+  });
+  if (!(bridges !== null && bridges !== void 0 && bridges.length)) return null;
+  return /*#__PURE__*/react.createElement(react.Fragment, null, bridges.map(function (bridge) {
+    return /*#__PURE__*/react.createElement(BridgeButton, {
+      key: bridge.bridgeId,
+      bridge: bridge,
+      className: className
+    });
+  }));
+}
 ;// CONCATENATED MODULE: ./src/components/shell/MainAppBar.tsx
 
 
@@ -60689,6 +60754,7 @@ function OpenVMEditorButton(props) {
 
 
  // tslint:disable-next-line: no-submodule-imports
+
 
 
 
@@ -60796,7 +60862,9 @@ function MainAppBar() {
     to: "/"
   }, "Jacdac"))), /*#__PURE__*/react.createElement("div", {
     className: classes.grow
-  }), /*#__PURE__*/react.createElement(PacketStats, null), /*#__PURE__*/react.createElement(OpenDashboardButton, {
+  }), /*#__PURE__*/react.createElement(PacketStats, null), /*#__PURE__*/react.createElement(BridgeButtons, {
+    className: (0,clsx_m/* default */.Z)(classes.menuButton)
+  }), /*#__PURE__*/react.createElement(OpenDashboardButton, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton)
   }), /*#__PURE__*/react.createElement(OpenVMEditorButton, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton)
@@ -91129,7 +91197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "onServiceWorkerUpdateReady": function() { return /* binding */ onServiceWorkerUpdateReady; },
 /* harmony export */   "wrapPageElement": function() { return /* binding */ wrapPageElement; }
 /* harmony export */ });
-/* harmony import */ var _src_components_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8391);
+/* harmony import */ var _src_components_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48534);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73935);
 
