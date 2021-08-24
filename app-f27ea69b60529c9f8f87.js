@@ -59568,7 +59568,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "a990ed00111970de2c8c6c7e62c659e579afa30a";
+  var sha = "3f674c857a98d9047a03233fca1546ccdf362776";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -86297,6 +86297,7 @@ var package_namespaceObject = {"i8":"1.14.16"};
 
 
 
+
 function sniffQueryArguments() {
   var _window$location$hash;
 
@@ -86315,7 +86316,8 @@ function sniffQueryArguments() {
     peers: params.get("peers") === "1",
     parentOrigin: params.get("parentOrigin"),
     frameId: (_window$location$hash = window.location.hash) === null || _window$location$hash === void 0 ? void 0 : _window$location$hash.slice(1),
-    widget: params.get("widget") === "1"
+    widget: params.get("widget") === "1",
+    trace: params.get("trace") === "1"
   };
 }
 
@@ -86328,6 +86330,7 @@ var UIFlags = function UIFlags() {}; // defeat react fast-refresh
 
 UIFlags.widget = args.widget;
 UIFlags.peers = args.peers;
+UIFlags.trace = args.trace;
 
 function createBus() {
   var worker = typeof window !== "undefined" && new Worker((0,gatsby_browser_entry.withPrefix)("/jacdac-worker-" + package_namespaceObject.i8 + ".js"));
@@ -86345,6 +86348,11 @@ function createBus() {
     window.__jacdacBus = b;
   }
 
+  if (UIFlags.trace) b.on(constants/* PACKET_SEND */.RaS, function (pkt) {
+    return console.trace("pkt: send", {
+      pkt: pkt
+    });
+  });
   return b;
 }
 
