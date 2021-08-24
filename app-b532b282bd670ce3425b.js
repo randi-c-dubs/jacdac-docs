@@ -59568,7 +59568,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "5ba60155df76e1d44451592376393e477b006d4f";
+  var sha = "a990ed00111970de2c8c6c7e62c659e579afa30a";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -60721,10 +60721,16 @@ var DevicesOther = __webpack_require__(32441);
 function BridgeButton(props) {
   var bridge = props.bridge,
       className = props.className;
+
+  var handleClick = function handleClick() {
+    return bridge.bus = undefined;
+  };
+
   return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
     className: className,
     color: "inherit",
-    title: bridge.bridgeId
+    title: "disconnect " + bridge.bridgeId,
+    onClick: handleClick
   }, /*#__PURE__*/react.createElement(DevicesOther/* default */.Z, null));
 }
 
