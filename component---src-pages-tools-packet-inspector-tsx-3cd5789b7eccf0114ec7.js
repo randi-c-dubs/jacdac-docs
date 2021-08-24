@@ -1041,6 +1041,7 @@ function PacketInspector() {
   var ack = packet.meta[constants/* META_ACK */.K3O];
   var pipePackets = packet.meta[constants/* META_PIPE */.YHR];
   var get = packet.meta[constants/* META_GET */.cWR];
+  var sentTrace = packet.meta[constants/* META_SENT_TRACE */.LPW];
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, /*#__PURE__*/react.createElement(PacketBadge/* default */.Z, {
     packet: packet
   }), name + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
@@ -1075,7 +1076,7 @@ function PacketInspector() {
   }), /*#__PURE__*/react.createElement(PacketSpecification/* default */.Z, {
     serviceClass: packet.serviceClass,
     packetInfo: info
-  })));
+  })), sentTrace && /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h3", null, "Sent trace"), /*#__PURE__*/react.createElement("pre", null, sentTrace)));
 }
 ;// CONCATENATED MODULE: ./src/pages/tools/packet-inspector.tsx
 

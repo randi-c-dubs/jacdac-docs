@@ -37519,6 +37519,7 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
 /* harmony export */   "GiR": function() { return /* binding */ META_ACK_FAILED; },
 /* harmony export */   "YHR": function() { return /* binding */ META_PIPE; },
 /* harmony export */   "cWR": function() { return /* binding */ META_GET; },
+/* harmony export */   "LPW": function() { return /* binding */ META_SENT_TRACE; },
 /* harmony export */   "q5h": function() { return /* binding */ REGISTER_PRE_GET; },
 /* harmony export */   "DnH": function() { return /* binding */ TRACE_FILTER_HORIZON; },
 /* harmony export */   "rFG": function() { return /* binding */ EMBED_MIN_ASPECT_RATIO; },
@@ -37853,6 +37854,7 @@ var META_ACK = "ACK";
 var META_ACK_FAILED = "ACK_FAILED";
 var META_PIPE = "PIPE";
 var META_GET = "GET";
+var META_SENT_TRACE = "SEND_TRACE";
 var REGISTER_PRE_GET = "registerPreGet";
 var TRACE_FILTER_HORIZON = 100;
 var EMBED_MIN_ASPECT_RATIO = 1.22;
@@ -38250,6 +38252,7 @@ var EventObservable = /*#__PURE__*/function () {
  */
 var Flags = function Flags() {};
 Flags.diagnostics = false;
+Flags.trace = false;
 Flags.webUSB = true;
 Flags.webSerial = true;
 Flags.webBluetooth = false;
@@ -59568,7 +59571,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "d5e112ac2a5805fd4f0af7788c9586b229875665";
+  var sha = "c2526f40b4e599e06136f49b55d71886c47c8f2f";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -81246,6 +81249,12 @@ function bus_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 
 
 
+
+/**
+ * Creation options for a bus
+ * @category JDOM
+ */
+
 var SCAN_FIRMWARE_INTERVAL = 30000;
 /**
  * A Jacdac bus manager. This instance maintains the list of devices on the bus.
@@ -81823,13 +81832,14 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
           switch (_context6.prev = _context6.next) {
             case 0:
               packet.timestamp = this.timestamp;
+              if (flags/* default.trace */.Z.trace) packet.meta[constants/* META_SENT_TRACE */.LPW] = new Error().stack;
               this.emit(constants/* PACKET_SEND */.RaS, packet);
-              _context6.next = 4;
+              _context6.next = 5;
               return Promise.all(this._transports.map(function (transport) {
                 return transport.sendPacketAsync(packet);
               }));
 
-            case 4:
+            case 5:
             case "end":
               return _context6.stop();
           }
@@ -86297,7 +86307,6 @@ var package_namespaceObject = {"i8":"1.14.16"};
 
 
 
-
 function sniffQueryArguments() {
   var _window$location$hash;
 
@@ -86326,11 +86335,11 @@ flags/* default.diagnostics */.Z.diagnostics = args.diagnostics;
 flags/* default.webUSB */.Z.webUSB = args.webUSB;
 flags/* default.webBluetooth */.Z.webBluetooth = args.webBluetooth;
 flags/* default.webSerial */.Z.webSerial = args.webSerial;
+flags/* default.trace */.Z.trace = args.trace;
 var UIFlags = function UIFlags() {}; // defeat react fast-refresh
 
 UIFlags.widget = args.widget;
 UIFlags.peers = args.peers;
-UIFlags.trace = args.trace;
 
 function createBus() {
   var worker = typeof window !== "undefined" && new Worker((0,gatsby_browser_entry.withPrefix)("/jacdac-worker-" + package_namespaceObject.i8 + ".js"));
@@ -86348,11 +86357,6 @@ function createBus() {
     window.__jacdacBus = b;
   }
 
-  if (UIFlags.trace) b.on(constants/* PACKET_SEND */.RaS, function (pkt) {
-    return console.trace("pkt: send", {
-      pkt: pkt
-    });
-  });
   return b;
 }
 

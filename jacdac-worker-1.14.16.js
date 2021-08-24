@@ -4338,6 +4338,10 @@ class Flags {
  */
 Flags.diagnostics = false;
 /**
+ * Trace who and what generates packets
+ */
+Flags.trace = false;
+/**
  * Enables/disabled WebUSB
  */
 Flags.webUSB = true;
