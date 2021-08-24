@@ -677,11 +677,14 @@ var JDBridge = /*#__PURE__*/function (_JDClient) {
 // EXTERNAL MODULE: ./node_modules/peerjs/dist/peerjs.min.js
 var peerjs_min = __webpack_require__(35168);
 var peerjs_min_default = /*#__PURE__*/__webpack_require__.n(peerjs_min);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/flags.ts
+var flags = __webpack_require__(21258);
 ;// CONCATENATED MODULE: ./src/components/peer/peerjsbridge.ts
 
 
 
 // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
 
 
 
@@ -694,7 +697,11 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
 
     _this = _JDBridge.call(this) || this;
     _this._connections = [];
-    _this._peer = new (peerjs_min_default())();
+    var diagnostics = flags/* default.diagnostics */.Z.diagnostics;
+    _this._peer = new (peerjs_min_default())({
+      secure: true,
+      debug: diagnostics ? 4 : 0
+    });
 
     _this._peer.on("open", function () {
       _this.log("peer: connected");
@@ -764,7 +771,9 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
   };
 
   _proto.connect = function connect(id) {
-    var conn = this._peer.connect(id);
+    var conn = this._peer.connect(id, {
+      reliable: false
+    });
 
     this.addConnection(conn);
   };
@@ -793,9 +802,12 @@ var GridHeader = __webpack_require__(95393);
 var Alert = __webpack_require__(95453);
 // EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 23 modules
 var providerbus = __webpack_require__(48202);
+// EXTERNAL MODULE: ./src/components/ui/LoadingProgress.tsx
+var LoadingProgress = __webpack_require__(2285);
 ;// CONCATENATED MODULE: ./src/components/peer/PeerConfiguration.tsx
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
 
 
 
@@ -887,7 +899,8 @@ function ConnectItem(props) {
 
 function ConnectionItem(props) {
   var connection = props.connection;
-  var label = connection.label;
+  var label = connection.label,
+      open = connection.open;
 
   var handleDisconnect = function handleDisconnect() {
     return connection.close();
@@ -898,10 +911,10 @@ function ConnectionItem(props) {
     xs: true
   }, /*#__PURE__*/react.createElement(Card/* default */.Z, null, /*#__PURE__*/react.createElement(CardHeader/* default */.Z, {
     title: label
-  }), /*#__PURE__*/react.createElement(CardActions/* default */.Z, null, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
+  }), /*#__PURE__*/react.createElement(CardActions/* default */.Z, null, open ? /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
     variant: "outlined",
     onClick: handleDisconnect
-  }, "Disconnect"))));
+  }, "Disconnect") : /*#__PURE__*/react.createElement(LoadingProgress/* default */.Z, null))));
 }
 
 function Peers() {
@@ -924,7 +937,7 @@ function Peers() {
     severity: "warning"
   }, "Experimental feature"), /*#__PURE__*/react.createElement("p", null, "This section allows you to connect multiple Jacdac dashboard in real time over the web (using WebRTC). This functionality uses the \xA0", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     href: "https://peerjs.com/peerserver.html"
-  }, "PeerServer Cloud Service"), " \xA0 to establish connections. No data is sent through the server."), !enabled && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
+  }, "PeerServer Cloud Service"), " ", "\xA0 to establish connections. No data is sent through the server."), !enabled && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
     severity: "error"
   }, "This functionality is not enabled."), enabled && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     container: true,
