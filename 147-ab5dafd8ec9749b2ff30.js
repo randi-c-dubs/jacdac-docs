@@ -791,8 +791,8 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
 var GridHeader = __webpack_require__(95393);
 // EXTERNAL MODULE: ./src/components/ui/Alert.tsx
 var Alert = __webpack_require__(95453);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/flags.ts
-var flags = __webpack_require__(21258);
+// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 23 modules
+var providerbus = __webpack_require__(48202);
 ;// CONCATENATED MODULE: ./src/components/peer/PeerConfiguration.tsx
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
@@ -907,7 +907,7 @@ function Peers() {
   var _useContext2 = (0,react.useContext)(Context/* default */.Z),
       bus = _useContext2.bus;
 
-  var enabled = flags/* default.peers */.Z.peers;
+  var enabled = providerbus/* UIFlags.peers */.A.peers;
   var peer = (0,useChange/* default */.Z)(bus, function (_) {
     return _.bridges.find(function (b) {
       return b instanceof PeerJSBridge;
