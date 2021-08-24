@@ -673,11 +673,6 @@ function FirmwareCard(props) {
   var version = firmwareBlobs === null || firmwareBlobs === void 0 ? void 0 : firmwareBlobs[0].version; // version starts with v
 
   var updateAvailable = !!tag && !!version && tag !== version.replace(/^v/, "").substr(0, tag.length);
-  console.log({
-    version: version,
-    tag: tag,
-    updateAvailable: updateAvailable
-  });
   var downloadColor = updateAvailable ? "primary" : "inherit";
   var downloadVariant = updateAvailable ? "contained" : "text"; // initialize with latest release
 

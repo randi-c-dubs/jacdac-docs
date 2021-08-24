@@ -10,7 +10,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36176);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
-/* harmony import */ var _components_DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24239);
+/* harmony import */ var _components_DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73482);
 
 
 

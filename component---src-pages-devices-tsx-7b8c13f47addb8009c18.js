@@ -89,7 +89,7 @@ var react = __webpack_require__(67294);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Box/Box.js + 13 modules
 var Box = __webpack_require__(33287);
 // EXTERNAL MODULE: ./src/components/DeviceSpecificationList.tsx + 3 modules
-var DeviceSpecificationList = __webpack_require__(24239);
+var DeviceSpecificationList = __webpack_require__(73482);
 // EXTERNAL MODULE: ./src/components/ServiceSpecificationSelect.tsx
 var ServiceSpecificationSelect = __webpack_require__(14247);
 ;// CONCATENATED MODULE: ./src/components/FilteredDeviceSpecificationList.tsx

@@ -50757,7 +50757,7 @@ function DeviceActions(props) {
 
 /***/ }),
 
-/***/ 24239:
+/***/ 73482:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50993,13 +50993,14 @@ var GridListTile = /*#__PURE__*/react.forwardRef(function GridListTile(props, re
 /* harmony default export */ var GridListTile_GridListTile = ((0,withStyles/* default */.Z)(GridListTile_styles, {
   name: 'MuiGridListTile'
 })(GridListTile));
-;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/GridListTileBar/GridListTileBar.js
+;// CONCATENATED MODULE: ./node_modules/@material-ui/core/esm/ImageListItemBar/ImageListItemBar.js
 
 
 
 
 
-var GridListTileBar_styles = function styles(theme) {
+
+var ImageListItemBar_styles = function styles(theme) {
   return {
     /* Styles applied to the root element. */
     root: {
@@ -51013,13 +51014,13 @@ var GridListTileBar_styles = function styles(theme) {
       fontFamily: theme.typography.fontFamily
     },
 
-    /* Styles applied to the root element if `titlePosition="bottom"`. */
-    titlePositionBottom: {
+    /* Styles applied to the root element if `position="bottom"`. */
+    positionBottom: {
       bottom: 0
     },
 
-    /* Styles applied to the root element if `titlePosition="top"`. */
-    titlePositionTop: {
+    /* Styles applied to the root element if `position="top"`. */
+    positionTop: {
       top: 0
     },
 
@@ -51074,17 +51075,7 @@ var GridListTileBar_styles = function styles(theme) {
     }
   };
 };
-var GridListTileBar_warnedOnce = false;
-/**
- * ⚠️ The GridListTileBar component was renamed to ImageListItemBar to align with the current Material Design naming.
- *
- * You should use `import { ImageListItemBar } from '@material-ui/core'`
- * or `import ImageListItemBar from '@material-ui/core/ImageListItemBar'`.
- */
-
-var GridListTileBar = /*#__PURE__*/react.forwardRef(function GridListTileBar(props, ref) {
-  if (false) {}
-
+var ImageListItemBar = /*#__PURE__*/react.forwardRef(function ImageListItemBar(props, ref) {
   var actionIcon = props.actionIcon,
       _props$actionPosition = props.actionPosition,
       actionPosition = _props$actionPosition === void 0 ? 'right' : _props$actionPosition,
@@ -51092,13 +51083,18 @@ var GridListTileBar = /*#__PURE__*/react.forwardRef(function GridListTileBar(pro
       className = props.className,
       subtitle = props.subtitle,
       title = props.title,
-      _props$titlePosition = props.titlePosition,
-      titlePosition = _props$titlePosition === void 0 ? 'bottom' : _props$titlePosition,
-      other = (0,objectWithoutProperties/* default */.Z)(props, ["actionIcon", "actionPosition", "classes", "className", "subtitle", "title", "titlePosition"]);
+      _props$position = props.position,
+      positionProp = _props$position === void 0 ? 'bottom' : _props$position,
+      titlePosition = props.titlePosition,
+      other = (0,objectWithoutProperties/* default */.Z)(props, ["actionIcon", "actionPosition", "classes", "className", "subtitle", "title", "position", "titlePosition"]);
 
+  var position = titlePosition || positionProp;
   var actionPos = actionIcon && actionPosition;
   return /*#__PURE__*/react.createElement("div", (0,esm_extends/* default */.Z)({
-    className: (0,clsx_m/* default */.Z)(classes.root, className, titlePosition === 'top' ? classes.titlePositionTop : classes.titlePositionBottom, subtitle && classes.rootSubtitle),
+    className: (0,clsx_m/* default */.Z)(classes.root, className, subtitle && classes.rootSubtitle, {
+      'bottom': classes.positionBottom,
+      'top': classes.positionTop
+    }[position]),
     ref: ref
   }, other), /*#__PURE__*/react.createElement("div", {
     className: (0,clsx_m/* default */.Z)(classes.titleWrap, {
@@ -51114,9 +51110,9 @@ var GridListTileBar = /*#__PURE__*/react.forwardRef(function GridListTileBar(pro
   }, actionIcon) : null);
 });
  false ? 0 : void 0;
-/* harmony default export */ var GridListTileBar_GridListTileBar = ((0,withStyles/* default */.Z)(GridListTileBar_styles, {
-  name: 'MuiGridListTileBar'
-})(GridListTileBar));
+/* harmony default export */ var ImageListItemBar_ImageListItemBar = ((0,withStyles/* default */.Z)(ImageListItemBar_styles, {
+  name: 'MuiImageListItemBar'
+})(ImageListItemBar));
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/makeStyles.js
 var makeStyles = __webpack_require__(10920);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/createStyles.js
@@ -51205,7 +51201,7 @@ function DeviceSpecificationList(props) {
       src: imageUrl,
       alt: spec.name,
       loading: "lazy"
-    }), /*#__PURE__*/react.createElement(GridListTileBar_GridListTileBar, {
+    }), /*#__PURE__*/react.createElement(ImageListItemBar_ImageListItemBar, {
       title: spec.name,
       subtitle: /*#__PURE__*/react.createElement(Markdown/* default */.Z, {
         className: classes.ellipsis,
@@ -58161,7 +58157,7 @@ function Home() {
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(80838);
 /* harmony import */ var gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2359);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
-/* harmony import */ var _DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24239);
+/* harmony import */ var _DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(73482);
 /* harmony import */ var _CarouselGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(30043);
 /* harmony import */ var _CenterGrid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(83580);
 /* harmony import */ var _FeatureItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19586);
@@ -59483,7 +59479,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "8c3336c98f9ebc2bf910c9985c2a6db98cc5e58d";
+  var sha = "7ab8e01350bd36e042bde2e5a7b4b4d505114379";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer

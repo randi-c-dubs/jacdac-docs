@@ -52,7 +52,7 @@ var ServiceSpecificationStatusAlert = __webpack_require__(49102);
 // EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
 var gatsby_theme_material_ui = __webpack_require__(36176);
 // EXTERNAL MODULE: ./src/components/DeviceSpecificationList.tsx + 3 modules
-var DeviceSpecificationList = __webpack_require__(24239);
+var DeviceSpecificationList = __webpack_require__(73482);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
 var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/test/testspec.ts + 1 modules
