@@ -71,7 +71,14 @@ function MDXContent(_ref) {
   }, "node"), ".\nIt processes the incoming and outcoming packets,\nhandles the connection to the underlying communiction transport\nand maintains a set of active ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "p",
     "href": "/jacdac-docs/clients/javascript/jdom/device/"
-  }, "devices"), " nodes."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "devices"), " nodes."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("ul", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
+    parentName: "ul"
+  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
+    parentName: "li",
+    "href": "https://microsoft.github.io/jacdac-ts/classes/JDBus.html",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
+  }, "API reference"))), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "webusb-bus",
     "style": {
       "position": "relative"
@@ -142,14 +149,14 @@ function MDXContent(_ref) {
     parentName: "pre",
     "className": "language-vanilla"
   }, "// am i connected?\nconst connected = bus.connected\n// track connection state\nbus.on(CONNECTION_STATE, () => {\n    console.log(`connected: ${bus.connected}`)\n})\n-----\nimport { CONNECTION_STATE } from \"jacdac-ts\"\n\n// am i connected?\nlog(`connected: ${bus.connected}`)\n// track connection state\nbus.on(CONNECTION_STATE, () => log(`connected: ${bus.connected}`))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
-    "id": "methods",
+    "id": "recipes",
     "style": {
       "position": "relative"
     }
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "h2",
-    "href": "#methods",
-    "aria-label": "methods permalink",
+    "href": "#recipes",
+    "aria-label": "recipes permalink",
     "className": "anchor before"
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("svg", {
     parentName: "a",
@@ -163,15 +170,15 @@ function MDXContent(_ref) {
     parentName: "svg",
     "fillRule": "evenodd",
     "d": "M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
-  }))), "Methods"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
-    "id": "devices",
+  }))), "Recipes"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h3", {
+    "id": "listing-devices",
     "style": {
       "position": "relative"
     }
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "h3",
-    "href": "#devices",
-    "aria-label": "devices permalink",
+    "href": "#listing-devices",
+    "aria-label": "listing devices permalink",
     "className": "anchor before"
   }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("svg", {
     parentName: "a",
@@ -185,9 +192,9 @@ function MDXContent(_ref) {
     parentName: "svg",
     "fillRule": "evenodd",
     "d": "M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
-  }))), "Devices"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "You can query the bus at any to receive a snapshot of the ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
+  }))), "Listing devices"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "You can query the bus at any to receive a snapshot of the ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "p",
-    "href": "./device"
+    "href": "/jacdac-docs/clients/javascript/jdom/device"
   }, "devices"), " JDOM."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-vanilla"
@@ -293,4 +300,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-javascript-jdom-bus-mdx-c0c2cab256bea9494ba7.js.map
+//# sourceMappingURL=component---src-pages-clients-javascript-jdom-bus-mdx-93bc8e513d3b8979369d.js.map
