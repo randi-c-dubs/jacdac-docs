@@ -66,7 +66,7 @@ function CodeSandboxButton(props) {
   var handleClick = /*#__PURE__*/function () {
     var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(function* () {
       var indexJs = "\nimport \"milligram\";\nimport { createUSBBus, CHANGE } from \"jacdac-ts\";\nconst btn = document.getElementById(\"connectbtn\");\nconst bus = createUSBBus();\nbus.on(CHANGE, () => { btn.innerText = bus.connected ? \"connected \uD83C\uDF89\" : \"connect\" })\nbtn.onclick = async () => bus.connect();\n\n" + js + "\n";
-      var indexHtml = "\n<html>\n    <body>\n        <h1>Jacdac " + (title || "demo") + "</h1>\n        <div>\n        <button id=\"connectbtn\">connect</button>\n        </div>    \n" + html + "\n        <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
+      var indexHtml = "\n<html>\n    <body>\n        <h1>Jacdac " + (title || "demo") + "</h1>\n        <div>\n        <button id=\"connectbtn\">connect</button>\n        </div>    \n\n" + html + "\n\n    <footer>\n        <small>\n        Need to learn more about Jacdac?\n        <a target=\"_blank\" href=\"https://aka.ms/jacdac\">Read the docs</a>\n        or\n        <a\n            target=\"_blank\"\n            href=\"https://github.com/microsoft/jacdac/discussions\"\n            >start a discussion</a\n        >.\n        </small>\n    </footer>\n    <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
 
       try {
         setImporting(true);
@@ -121,4 +121,4 @@ function CodeSandboxButton(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=8574-00142ee5773782033d2b.js.map
+//# sourceMappingURL=8574-0827dbe9789167d73a3a.js.map
