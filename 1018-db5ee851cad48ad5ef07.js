@@ -251,8 +251,7 @@ function Toc(props) {
     }, {
       name: "Tools",
       path: "/tools/",
-      order: 0.7,
-      collapse: true
+      order: 0.7
     }, {
       name: "Reference",
       path: "/reference/",
@@ -320,7 +319,8 @@ function Toc(props) {
         children = entry.children,
         name = entry.name;
     var selected = pagePath === path;
-    var sub = level === 1 || !!children && !!children.length;
+    var sub = level === 1 || !!(children !== null && children !== void 0 && children.length);
+    var showSub = sub && !!(children !== null && children !== void 0 && children.length) && pagePath.startsWith(path);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z, {
       button: true,
       selected: selected,
@@ -335,7 +335,7 @@ function Toc(props) {
       primary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, {
         variant: sub ? "button" : "caption"
       }, name)
-    }))), sub && !!(children !== null && children !== void 0 && children.length) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, {
+    }))), showSub && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, {
       ml: level > 0 ? 1 : 0
     }, children === null || children === void 0 ? void 0 : children.map(function (child) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TocListItem, {
