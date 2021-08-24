@@ -55997,7 +55997,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "1a2a307bccc2d28a18efa8e50d3dc4dcecf9fa2e";
+  var sha = "e6f3626add2f6f6a7fafecc7529976f78f1a43f6";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -77357,7 +77357,9 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   ;
 
   _proto.toString = function toString() {
-    return this.id;
+    var _this$_devices, _this$_transports;
+
+    return "bus: " + (((_this$_devices = this._devices) === null || _this$_devices === void 0 ? void 0 : _this$_devices.length) || 0) + " devices, " + (((_this$_transports = this._transports) === null || _this$_transports === void 0 ? void 0 : _this$_transports.filter(tr => tr.connected).map(tr => tr.type).join(", ")) || "");
   }
   /**
    * Resolves a JDOM node from an identifier
@@ -87647,4 +87649,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-5a7657fc43f3615c38d1.js.map
+//# sourceMappingURL=app-534722fe976efcfcb521.js.map
