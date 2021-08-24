@@ -215,8 +215,10 @@ function Toc(props) {
     }
   */
 
-  var handleClick = function handleClick() {
-    setDrawerType(_AppContext__WEBPACK_IMPORTED_MODULE_2__/* .DrawerType.None */ .jw.None);
+  var handleClick = function handleClick(node) {
+    return function () {
+      if (node.collapse) setDrawerType(_AppContext__WEBPACK_IMPORTED_MODULE_2__/* .DrawerType.None */ .jw.None);
+    };
   };
 
   var tree = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
@@ -224,27 +226,33 @@ function Toc(props) {
     var toc = [{
       name: "Home",
       path: "/",
-      order: 0
+      order: 0,
+      collapse: true
     }, {
       name: "Dashboard",
       path: "/dashboard/",
-      order: 0.5
+      order: 0.5,
+      collapse: true
     }, {
       name: "Protocol",
       path: "/protocol/",
-      order: 0.55
+      order: 0.55,
+      collapse: true
     }, {
       name: "Hardware",
       path: "/hardware/",
-      order: 0.6
+      order: 0.6,
+      collapse: true
     }, {
       name: "Software",
       path: "/software/",
-      order: 0.6
+      order: 0.6,
+      collapse: true
     }, {
       name: "Tools",
       path: "/tools/",
-      order: 0.7
+      order: 0.7,
+      collapse: true
     }, {
       name: "Reference",
       path: "/reference/",
@@ -321,7 +329,7 @@ function Toc(props) {
       style: {
         color: theme.palette.text.primary
       },
-      onClick: handleClick,
+      onClick: handleClick(entry),
       to: path
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z, {
       primary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, {
@@ -331,7 +339,7 @@ function Toc(props) {
       ml: level > 0 ? 1 : 0
     }, children === null || children === void 0 ? void 0 : children.map(function (child) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TocListItem, {
-        key: "tocitem" + child.path,
+        key: child.path,
         entry: child,
         level: level + 1
       });
@@ -342,11 +350,15 @@ function Toc(props) {
     dense: true,
     className: classes.root
   }, tree.map(function (entry) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TocListItem, {
-      key: entry.path,
-      entry: entry,
-      level: 0
-    });
+    return (
+      /*#__PURE__*/
+      // eslint-disable-next-line react/prop-types
+      react__WEBPACK_IMPORTED_MODULE_0__.createElement(TocListItem, {
+        key: entry.path,
+        entry: entry,
+        level: 0
+      })
+    );
   }));
 }
 
