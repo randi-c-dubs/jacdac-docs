@@ -715,9 +715,13 @@ var PeerJSBridge = /*#__PURE__*/function (_JDBridge) {
       _this.log("peer: disconnected");
 
       _this.bus = undefined;
-    });
+    }); // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
-    _this._peer.on("error", console.error);
+
+    _this._peer.on("error", function (e) {
+      console.error(e);
+      _this.bus = undefined;
+    });
 
     _this.mount(function () {
       if (!_this._peer.destroyed) {
