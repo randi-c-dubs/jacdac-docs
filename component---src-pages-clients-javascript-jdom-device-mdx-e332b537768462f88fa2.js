@@ -77,7 +77,14 @@ function MDXContent(_ref) {
   }, "bus"), "."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "This object inherits methods and properties from ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "p",
     "href": "/jacdac-docs/clients/javascript/jdom/node/"
-  }, "node"), "."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
+  }, "node"), "."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("ul", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
+    parentName: "ul"
+  }, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
+    parentName: "li",
+    "href": "https://microsoft.github.io/jacdac-ts/classes/JDDevice.html",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
+  }, "API reference"))), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-vanilla"
   }, "const devices = bus.devices();\n-----\nimport { DEVICE_ANNOUNCE } from \"jacdac-ts\"\n\nlog(`connect to see devices`)\n// listen for device announcing services\nbus.on(DEVICE_ANNOUNCE, () => {\n    // query the current list of devices\n    const devices = bus.devices()\n    // print to console\n    log(\"\")\n    for(const device of devices)\n        log(device)\n})\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
@@ -507,4 +514,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-javascript-jdom-device-mdx-ca5586a04a4eb87809a3.js.map
+//# sourceMappingURL=component---src-pages-clients-javascript-jdom-device-mdx-e332b537768462f88fa2.js.map
