@@ -537,23 +537,26 @@ var IconButtonWithTooltip = __webpack_require__(79885);
 
 
 
-function TraceSaveButton(props) {
-  var disabled = props.disabled;
-
+function TraceSaveButton() {
   var _useContext = (0,react.useContext)(PacketsContext/* default */.Z),
       replayTrace = _useContext.replayTrace,
-      recording = _useContext.recording;
+      trace = _useContext.trace,
+      recording = _useContext.recording,
+      tracing = _useContext.tracing;
 
   var _useContext2 = (0,react.useContext)(ServiceManagerContext/* default */.ZP),
       fileStorage = _useContext2.fileStorage;
 
+  var savedTrace = replayTrace || trace;
+
   var saveTrace = function saveTrace() {
-    fileStorage.saveText("trace.jd.txt", replayTrace.serializeToText());
+    var text = savedTrace.serializeToText();
+    fileStorage.saveText("trace.jd.txt", text);
   };
 
   return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
     title: "save trace",
-    disabled: disabled || recording || !(replayTrace !== null && replayTrace !== void 0 && replayTrace.packets.length),
+    disabled: recording || tracing || !(savedTrace !== null && savedTrace !== void 0 && savedTrace.packets.length),
     size: "small",
     key: "save",
     onClick: saveTrace
@@ -648,9 +651,7 @@ function PacketRecorder() {
   }, replayTrace.packets.length, " packets"), /*#__PURE__*/react.createElement(TraceImportButton, {
     icon: true,
     disabled: tracing || recording
-  }), /*#__PURE__*/react.createElement(TraceSaveButton, {
-    disabled: tracing || !replayTrace
-  }), "|", /*#__PURE__*/react.createElement(TraceRecordButton, {
+  }), /*#__PURE__*/react.createElement(TraceSaveButton, null), "|", /*#__PURE__*/react.createElement(TraceRecordButton, {
     size: "small"
   }), /*#__PURE__*/react.createElement(TracePlayButton/* default */.Z, {
     size: "small"
