@@ -189,7 +189,7 @@ function DrawerSearchInput() {
     onChange: handleChange,
     onFocus: handleFocus,
     onBlur: handleBlur,
-    InputProps: focused && {
+    InputProps: focused ? {
       endAdornment: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z, {
         position: "end"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_IconButtonWithTooltip__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {
@@ -197,7 +197,7 @@ function DrawerSearchInput() {
         size: "small",
         onClick: handleClear
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Clear__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, null)))
-    }
+    } : undefined
   });
 }
 
