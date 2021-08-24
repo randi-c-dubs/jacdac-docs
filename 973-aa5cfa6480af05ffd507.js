@@ -143,7 +143,7 @@ exports.Z = _default;
 /* harmony export */   "k9": function() { return /* binding */ parseTrace; },
 /* harmony export */   "Rx": function() { return /* binding */ parseLogicLog; }
 /* harmony export */ });
-/* unused harmony export replayLog */
+/* unused harmony export replayLogicLog */
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81794);
 /* harmony import */ var _packet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57683);
 /* harmony import */ var _trace_traceplayer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93829);
@@ -157,6 +157,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+
+/**
+ * Parse a trace text file
+ * @param contents
+ * @returns
+ * @category Trace
+ */
 
 function parseTrace(contents) {
   var description = [];
@@ -178,6 +185,13 @@ function parseTrace(contents) {
   });
   if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z(packets, description.join("\n").trim());else return undefined;
 }
+/**
+ * Parses a logic analyzer log into a trace
+ * @param logcontents
+ * @returns
+ * @category Trace
+ */
+
 function parseLogicLog(logcontents) {
   if (!logcontents) return undefined;
   var res = [];
@@ -261,7 +275,15 @@ function parseLogicLog(logcontents) {
 
   return res;
 }
-function replayLog(bus, frames, speed) {
+/**
+ * Replays a parsed logic log
+ * @param bus
+ * @param frames
+ * @param speed
+ * @category Trace
+ */
+
+function replayLogicLog(bus, frames, speed) {
   var packets = arrayConcatMany(frames.map(function (frame) {
     return Packet.fromFrame(frame.data, frame.timestamp);
   }));

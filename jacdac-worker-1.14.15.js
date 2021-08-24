@@ -4306,6 +4306,31 @@ const ERROR_MICROBIT_JACDAC_MISSING = "microbit/jacdac-missing";
 const ERROR_MICROBIT_INVALID_MEMORY = "microbit/invalid-memory";
 const JACDAC_ERROR = "JacdacError";
 
+/**
+ * Common Jacdac error type
+ * @category Runtime
+ */
+class JDError extends Error {
+    constructor(message, jacdacName) {
+        super(message);
+        this.jacdacName = jacdacName;
+        this.name = JACDAC_ERROR;
+    }
+}
+/**
+ * Extract the Jacdac error code if any
+ * @param e
+ * @returns
+ * @category Runtime
+ */
+function errorCode(e) {
+    return e.name === JACDAC_ERROR ? e?.jacdacName : undefined;
+}
+
+/**
+ * Various flags to control the runtime environment
+ * @category Runtime
+ */
 class Flags {
 }
 /**
@@ -5178,17 +5203,6 @@ class CMSISProto {
     }
 }
 
-class JDError extends Error {
-    constructor(message, jacdacName) {
-        super(message);
-        this.jacdacName = jacdacName;
-        this.name = JACDAC_ERROR;
-    }
-}
-function errorPath(e) {
-    return e?.jacdacName;
-}
-
 const USB_FILTERS = {
     filters: [
         {
@@ -5216,7 +5230,7 @@ class USBIO {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         this.onData = (v) => { };
         this.onError = (e) => {
-            console.warn(`usb error: ${errorPath(e) || ""} ${e ? e.stack : e}`);
+            console.warn(`usb error: ${errorCode(e) || ""} ${e ? e.stack : e}`);
         };
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -5455,9 +5469,7 @@ class USBTransportProxy {
                     message: e.message,
                     stack: e.stack,
                     name: e.name,
-                    jacdacName: e.name === JACDAC_ERROR
-                        ? e.jacdacName
-                        : undefined,
+                    jacdacName: errorCode(e),
                 },
             });
         };
@@ -5494,7 +5506,7 @@ function handleError(resp, e) {
             message: e.message,
             stack: e.stack,
             name: e.name,
-            jacdacName: e.name === JACDAC_ERROR ? e.jacdacName : undefined,
+            jacdacName: errorCode(e),
         },
     });
 }

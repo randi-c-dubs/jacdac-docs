@@ -99,7 +99,7 @@ var ListItemText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(fu
 
 /***/ }),
 
-/***/ 10207:
+/***/ 59381:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* unused harmony export SensorAggregatorClient */
@@ -108,12 +108,12 @@ var ListItemText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(fu
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(73512);
-/* harmony import */ var _buffer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3482);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71815);
-/* harmony import */ var _pack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(91635);
-/* harmony import */ var _serviceclient__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(56763);
-/* harmony import */ var _spec__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13173);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(81794);
+/* harmony import */ var _jdom_buffer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3482);
+/* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71815);
+/* harmony import */ var _jdom_pack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(91635);
+/* harmony import */ var _jdom_serviceclient__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(56763);
+/* harmony import */ var _jdom_spec__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13173);
+/* harmony import */ var _jdom_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(81794);
 
 
 
@@ -194,10 +194,10 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
                     serviceIndex = input.serviceIndex,
                     serviceClass = input.serviceClass;
                 if (!!deviceId !== !!serviceIndex) error("deviceId and serviceIndex must be specified together");
-                var specification = (0,_spec__WEBPACK_IMPORTED_MODULE_6__/* .serviceSpecificationFromClassIdentifier */ .d5)(serviceClass);
+                var specification = (0,_jdom_spec__WEBPACK_IMPORTED_MODULE_6__/* .serviceSpecificationFromClassIdentifier */ .d5)(serviceClass);
                 if (!specification) error("missing specification from service 0x" + serviceClass.toString(16));
                 var freeze = !!deviceId;
-                var readingReg = specification.packets.find(_spec__WEBPACK_IMPORTED_MODULE_6__/* .isReading */ .vz);
+                var readingReg = specification.packets.find(_jdom_spec__WEBPACK_IMPORTED_MODULE_6__/* .isReading */ .vz);
                 if (!readingReg) error("service 0x" + serviceClass.toString(16) + " does not have a reading register");
                 var sampleType = undefined;
                 var sampleSize = 0;
@@ -216,13 +216,13 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
                 }
 
                 totalSampleSize += sampleSize;
-                return (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .bufferConcat */ .gX)(freeze ? (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .fromHex */ .H_)(deviceId) : new Uint8Array(8), (0,_pack__WEBPACK_IMPORTED_MODULE_4__/* .jdpack */ .AV)("u32 u8 u8 u8 i8", [serviceClass, freeze ? serviceIndex : 0, sampleSize, sampleType, sampleShift]));
+                return (0,_jdom_utils__WEBPACK_IMPORTED_MODULE_7__/* .bufferConcat */ .gX)(freeze ? (0,_jdom_utils__WEBPACK_IMPORTED_MODULE_7__/* .fromHex */ .H_)(deviceId) : new Uint8Array(8), (0,_jdom_pack__WEBPACK_IMPORTED_MODULE_4__/* .jdpack */ .AV)("u32 u8 u8 u8 i8", [serviceClass, freeze ? serviceIndex : 0, sampleSize, sampleType, sampleShift]));
               });
-              if (totalSampleSize > _constants__WEBPACK_IMPORTED_MODULE_3__/* .JD_SERIAL_MAX_PAYLOAD_SIZE */ .MdP) error("samples won't fit in packet"); // u32 is x[4]
+              if (totalSampleSize > _jdom_constants__WEBPACK_IMPORTED_MODULE_3__/* .JD_SERIAL_MAX_PAYLOAD_SIZE */ .MdP) error("samples won't fit in packet"); // u32 is x[4]
 
-              inputs.unshift((0,_pack__WEBPACK_IMPORTED_MODULE_4__/* .jdpack */ .AV)("u16 u16 u32", [cfg.samplingInterval, cfg.samplesInWindow, 0]));
+              inputs.unshift((0,_jdom_pack__WEBPACK_IMPORTED_MODULE_4__/* .jdpack */ .AV)("u16 u16 u32", [cfg.samplingInterval, cfg.samplesInWindow, 0]));
               _context.next = 9;
-              return this.service.register(_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SensorAggregatorReg.Inputs */ .HUt.Inputs).sendSetAsync((0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .bufferConcatMany */ .Gb)(inputs));
+              return this.service.register(_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SensorAggregatorReg.Inputs */ .HUt.Inputs).sendSetAsync((0,_jdom_utils__WEBPACK_IMPORTED_MODULE_7__/* .bufferConcatMany */ .Gb)(inputs));
 
             case 9:
             case "end":
@@ -265,8 +265,8 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
 
   _proto.subscribeSample = function subscribeSample(handler) {
     var reg = this.service.register(_jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_1__/* .SensorAggregatorReg.CurrentSample */ .HUt.CurrentSample);
-    return this.mount(reg.subscribe(_constants__WEBPACK_IMPORTED_MODULE_3__/* .REPORT_RECEIVE */ .Gb8, function () {
-      return handler((0,_buffer__WEBPACK_IMPORTED_MODULE_2__/* .bufferToArray */ ._W)(reg.data, _buffer__WEBPACK_IMPORTED_MODULE_2__/* .NumberFormat.Float32LE */ .y4.Float32LE));
+    return this.mount(reg.subscribe(_jdom_constants__WEBPACK_IMPORTED_MODULE_3__/* .REPORT_RECEIVE */ .Gb8, function () {
+      return handler((0,_jdom_buffer__WEBPACK_IMPORTED_MODULE_2__/* .bufferToArray */ ._W)(reg.data, _jdom_buffer__WEBPACK_IMPORTED_MODULE_2__/* .NumberFormat.Float32LE */ .y4.Float32LE));
     }));
   };
 
@@ -355,7 +355,7 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
   }();
 
   return SensorAggregatorClient;
-}(_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
+}(_jdom_serviceclient__WEBPACK_IMPORTED_MODULE_5__/* .JDServiceClient */ .P);
 /* harmony default export */ __webpack_exports__["Z"] = (SensorAggregatorClient);
 
 /***/ }),
@@ -637,7 +637,7 @@ function useGridBreakpoints(itemCount) {
 
 /***/ }),
 
-/***/ 10037:
+/***/ 83625:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -957,7 +957,7 @@ var serviceclient = __webpack_require__(56763);
 var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pack.ts
 var pack = __webpack_require__(91635);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/clients/modelrunnerclient.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/clients/modelrunnerclient.ts
 
 
 
@@ -994,19 +994,19 @@ var pack = __webpack_require__(91635);
 */
 
 function isMLModelSupported(model, formatRegValue) {
-  return utils/* read32 */.Zy(model, 0) == formatRegValue || utils/* read32 */.Zy(model, 4) == formatRegValue;
+  return (0,utils/* read32 */.Zy)(model, 0) == formatRegValue || (0,utils/* read32 */.Zy)(model, 4) == formatRegValue;
 }
 function getMLModelFormatName(model) {
   var map = serviceSpecificationFromClassIdentifier(SRV_MODEL_RUNNER).enums["ModelFormat"].members;
-  var m0 = U.read32(model, 0);
-  var m1 = U.read32(model, 4);
+  var m0 = read32(model, 0);
+  var m1 = read32(model, 4);
 
   for (var _i = 0, _Object$keys = Object.keys(map); _i < _Object$keys.length; _i++) {
     var _v = _Object$keys[_i];
     if (map[_v] == m0 || map[_v] == m1) return _v;
   }
 
-  return "0x" + U.toHex(model.slice(0, 8));
+  return "0x" + toHex(model.slice(0, 8));
 }
 /**
  * A client for the model runner service
@@ -1222,7 +1222,7 @@ var ModelRunnerClient = /*#__PURE__*/function (_JDServiceClient) {
                   return (0,buffer/* bufferToArray */._W)(r.data, buffer/* NumberFormat.UInt16LE */.y4.UInt16LE);
                 }),
                 lastError: this.getReg(constants/* ModelRunnerReg.LastError */.FEd.LastError, function (r) {
-                  return utils/* uint8ArrayToString */.DA(r.data);
+                  return (0,utils/* uint8ArrayToString */.DA)(r.data);
                 })
               };
               _i2 = 0, _Object$keys2 = Object.keys(info);
@@ -1327,8 +1327,8 @@ export async function testTF(bus: JDBus, model: Uint8Array) {
 var RegisterInput = __webpack_require__(24162);
 // EXTERNAL MODULE: ./src/components/ui/CircularProgressWithLabel.tsx
 var CircularProgressWithLabel = __webpack_require__(29177);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/clients/sensoraggregatorclient.ts
-var sensoraggregatorclient = __webpack_require__(10207);
+// EXTERNAL MODULE: ./jacdac-ts/src/clients/sensoraggregatorclient.ts
+var sensoraggregatorclient = __webpack_require__(59381);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Paper/Paper.js
 var Paper = __webpack_require__(58063);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pretty.ts

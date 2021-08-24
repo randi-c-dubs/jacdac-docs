@@ -37854,14 +37854,19 @@ var JACDAC_ERROR = "JacdacError";
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "p": function() { return /* binding */ JDError; },
-/* harmony export */   "Z": function() { return /* binding */ errorPath; }
+/* harmony export */   "uY": function() { return /* binding */ errorCode; }
 /* harmony export */ });
+/* unused harmony export JDError */
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
 /* harmony import */ var _babel_runtime_helpers_esm_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83001);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 
 
+
+/**
+ * Common Jacdac error type
+ * @category Runtime
+ */
 
 var JDError = /*#__PURE__*/function (_Error) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(JDError, _Error);
@@ -37877,8 +37882,16 @@ var JDError = /*#__PURE__*/function (_Error) {
 
   return JDError;
 }( /*#__PURE__*/(0,_babel_runtime_helpers_esm_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(Error));
-function errorPath(e) {
-  return e === null || e === void 0 ? void 0 : e.jacdacName;
+/* harmony default export */ __webpack_exports__["ZP"] = (JDError);
+/**
+ * Extract the Jacdac error code if any
+ * @param e
+ * @returns
+ * @category Runtime
+ */
+
+function errorCode(e) {
+  return e.name === _constants__WEBPACK_IMPORTED_MODULE_0__/* .JACDAC_ERROR */ .T9W ? e === null || e === void 0 ? void 0 : e.jacdacName : undefined;
 }
 
 /***/ }),
@@ -37903,6 +37916,11 @@ function normalizeEventNames(eventNames) {
   if (typeof eventNames === "string") eventNames = [eventNames];
   return eventNames;
 }
+/**
+ * Base interface for evented nodes in Jacdac
+ * @category JDOM
+ */
+
 
 function dependencyId(nodes) {
   return (nodes === null || nodes === void 0 ? void 0 : nodes.map(function (node) {
@@ -37912,6 +37930,7 @@ function dependencyId(nodes) {
 var nextNodeId = 0;
 /**
  * Base class for evented nodes in Jacdac
+ * @category JDOM
  */
 
 var JDEventSource = /*#__PURE__*/function () {
@@ -38197,6 +38216,10 @@ var EventObservable = /*#__PURE__*/function () {
 
 "use strict";
 /* unused harmony export Flags */
+/**
+ * Various flags to control the runtime environment
+ * @category Runtime
+ */
 var Flags = function Flags() {};
 Flags.diagnostics = false;
 Flags.webUSB = true;
@@ -38216,9 +38239,9 @@ Flags.storage = false;
 /* harmony export */   "CQ": function() { return /* binding */ scanFirmwares; },
 /* harmony export */   "Kl": function() { return /* binding */ updateApplicable; },
 /* harmony export */   "oN": function() { return /* binding */ flashFirmwareBlob; },
-/* harmony export */   "s_": function() { return /* binding */ sendStayInBootloaderCommand; }
+/* harmony export */   "is": function() { return /* binding */ sendStayInBootloaderCommand; }
 /* harmony export */ });
-/* unused harmony export parseUF2 */
+/* unused harmony export parseUF2Firmware */
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(73108);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42656);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -38255,6 +38278,11 @@ var uf2ExtTags = {
   pageSize: 0x0be9f7,
   productIdentifier: 0xc8a729
 };
+/**
+ * UF2 page data structure
+ * @category Firmware
+ * @internal
+ */
 
 function timestamp() {
   if (!_startTime) _startTime = Date.now();
@@ -38793,7 +38821,15 @@ var FlashClient = /*#__PURE__*/function () {
 var UF2_MAGIC_START0 = 0x0a324655;
 var UF2_MAGIC_START1 = 0x9e5d5157;
 var UF2_MAGIC_END = 0x0ab16f30;
-function parseUF2(uf2, store) {
+/**
+ * Parses a UF2 firmware binary into firmware blobs
+ * @param uf2
+ * @param store
+ * @returns
+ * @category Firmware
+ */
+
+function parseUF2Firmware(uf2, store) {
   var blobs = [];
   var currBlob;
 
@@ -38878,6 +38914,10 @@ function parseUF2(uf2, store) {
     }
   }
 }
+/**
+ * Firmware information
+ * @internal
+ */
 
 /**
  * Parse a UF2 firmware file and extracts firmware blobs
@@ -38903,7 +38943,7 @@ function _parseFirmwareFile() {
           case 2:
             data = _context7.sent;
             buf = new Uint8Array(data);
-            uf2Blobs = parseUF2(buf, store);
+            uf2Blobs = parseUF2Firmware(buf, store);
             return _context7.abrupt("return", uf2Blobs);
 
           case 6:
@@ -39426,6 +39466,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+
+/**
+ * @category Data Packing
+ */
 
 // ASCII codes of characters
 var ch_b = 98;
@@ -40285,6 +40329,11 @@ function frameToPackets(frame, timestamp) {
 /* harmony export */   "f": function() { return /* binding */ unpackedToObject; }
 /* harmony export */ });
 /* unused harmony export objectToUnpacked */
+/**
+ * Unpacked data mapped as an object
+ * @category Data Packing
+ */
+
 /**
  * Unrolls an array of packed values into a friendly object structure
  * @param data
@@ -42337,6 +42386,10 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 
 
 var CALIBRATION_DELAY = 5000;
+/**
+ * Server instiation options
+ * @category Servers
+ */
 
 /**
  * Base class for service server implementations
@@ -49640,29 +49693,25 @@ var AppProvider = function AppProvider(_ref) {
   var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(_jacdac_Context__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z),
       bus = _useContext.bus;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({}),
-      secrets = _useState[0],
-      setSecrets = _useState[1];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(DrawerType.None),
+      type = _useState[0],
+      setType = _useState[1];
 
-  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(DrawerType.None),
-      type = _useState2[0],
-      setType = _useState2[1];
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(""),
+      searchQuery = _useState2[0],
+      setSearchQuery = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(""),
-      searchQuery = _useState3[0],
-      setSearchQuery = _useState3[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      toolsMenu = _useState3[0],
+      _setToolsMenu = _useState3[1];
 
   var _useState4 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
-      toolsMenu = _useState4[0],
-      _setToolsMenu = _useState4[1];
+      showDeviceHostsDialog = _useState4[0],
+      setShowDeviceHostsDialog = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
-      showDeviceHostsDialog = _useState5[0],
-      setShowDeviceHostsDialog = _useState5[1];
-
-  var _useState6 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(undefined),
-      showSelectRoleDialogService = _useState6[0],
-      setShowSelectRoleDialogService = _useState6[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(undefined),
+      showSelectRoleDialogService = _useState5[0],
+      setShowSelectRoleDialogService = _useState5[1];
 
   var _useSnackbar = (0,notistack__WEBPACK_IMPORTED_MODULE_1__/* .useSnackbar */ .Ds)(),
       _enqueueSnackbar = _useSnackbar.enqueueSnackbar; // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49671,7 +49720,7 @@ var AppProvider = function AppProvider(_ref) {
   var setError = function setError(e) {
     if (!e || (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_5__/* .isCancelError */ .G5)(e)) return;
     var msg = (e === null || e === void 0 ? void 0 : e.message) || e + "";
-    var code = (0,_jacdac_ts_src_jdom_error__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(e);
+    var code = (0,_jacdac_ts_src_jdom_error__WEBPACK_IMPORTED_MODULE_4__/* .errorCode */ .uY)(e);
 
     _enqueueSnackbar(msg, {
       variant: "error",
@@ -52612,6 +52661,14 @@ var spec = __webpack_require__(13173);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/packetfilter.ts
 
 
+
+/**
+ * Given a filter text, compiles packet filter
+ * @param bus
+ * @param text
+ * @returns
+ * @category Trace
+ */
 function parsePacketFilter(bus, text) {
   if (!text) {
     return {
@@ -52969,6 +53026,10 @@ var utils = __webpack_require__(81794);
 var FILTERED_TRACE_MAX_ITEMS = 100;
 var DUPLICATE_PACKET_MERGE_HORIZON_MAX_DISTANCE = 10;
 var DUPLICATE_PACKET_MERGE_HORIZON_MAX_TIME = 5000;
+/**
+ * A grouped packet
+ * @category Trace
+ */
 
 /**
  * A filtered view over a packet trace
@@ -59479,7 +59540,7 @@ var useStyles = (0,makeStyles/* default */.Z)(function (theme) {
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "7ab8e01350bd36e042bde2e5a7b4b4d505114379";
+  var sha = "917bea40816a99109232f2e200f578cf188ca193";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -78344,6 +78405,9 @@ var packobject = __webpack_require__(53616);
 var JDRegister = /*#__PURE__*/function (_JDServiceMemberNode) {
   (0,inheritsLoose/* default */.Z)(JDRegister, _JDServiceMemberNode);
 
+  /**
+   * @internal
+   */
   function JDRegister(service, code) {
     var _this;
 
@@ -78606,6 +78670,9 @@ var JDRegister = /*#__PURE__*/function (_JDServiceMemberNode) {
 var JDEvent = /*#__PURE__*/function (_JDServiceMemberNode) {
   (0,inheritsLoose/* default */.Z)(JDEvent, _JDServiceMemberNode);
 
+  /**
+   * @internal
+   */
   function JDEvent(service, code) {
     var _this;
 
@@ -79522,9 +79589,17 @@ function device_arrayLikeToArray(arr, len) { if (len == null || len > arr.length
 
 
 
+
+/**
+ * Collects packet statistics about the device
+ * @category JDOM
+ */
 var DeviceStats = /*#__PURE__*/function (_JDEventSource) {
   (0,inheritsLoose/* default */.Z)(DeviceStats, _JDEventSource);
 
+  /**
+   * @internal
+   */
   function DeviceStats() {
     var _this;
 
@@ -79541,6 +79616,7 @@ var DeviceStats = /*#__PURE__*/function (_JDEventSource) {
   }
   /**
    * Average packet dropped per announce period
+   * @category Statistics
    */
 
 
@@ -80596,6 +80672,10 @@ function rolemanagerclient_arrayLikeToArray(arr, len) { if (len == null || len >
 
 
 
+/**
+ * A service role assigment
+ * @category Clients
+ */
 
 /**
  * A client for the role manager service
@@ -80961,6 +81041,7 @@ var random = __webpack_require__(80303);
 
 /**
  * A time scheduler to orchestrate time in the bus.
+ * @category JDOM
  */
 
 /** @internal */
@@ -81092,11 +81173,11 @@ function bus_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 
 
 var SCAN_FIRMWARE_INTERVAL = 30000;
-
 /**
  * A Jacdac bus manager. This instance maintains the list of devices on the bus.
  * @category JDOM
  */
+
 var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   (0,inheritsLoose/* default */.Z)(JDBus, _JDNode);
 
@@ -82310,7 +82391,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
           if (_this11._devices.some(function (d) {
             return d.flashing;
           })) return;
-          (0,flashing/* sendStayInBootloaderCommand */.s_)(_this11);
+          (0,flashing/* sendStayInBootloaderCommand */.is)(_this11);
         }, 50);
         this.emit(constants/* CHANGE */.Ver);
       } else if (!enabled && this._safeBootInterval) {
@@ -84220,7 +84301,7 @@ var USBIO = /*#__PURE__*/function () {
     this.onData = function (v) {};
 
     this.onError = function (e) {
-      console.warn("usb error: " + ((0,jdom_error/* default */.Z)(e) || "") + " " + (e ? e.stack : e));
+      console.warn("usb error: " + ((0,jdom_error/* errorCode */.uY)(e) || "") + " " + (e ? e.stack : e));
     };
 
     this.options = options;
@@ -84299,7 +84380,7 @@ var USBIO = /*#__PURE__*/function () {
   };
 
   _proto.error = function error(msg, code) {
-    var e = new jdom_error/* JDError */.p("device " + (this.dev ? this.dev.productName : "n/a") + " (" + msg + ")", code);
+    var e = new jdom_error/* default */.ZP("device " + (this.dev ? this.dev.productName : "n/a") + " (" + msg + ")", code);
     this.onError(e);
   };
 
@@ -85382,7 +85463,7 @@ var WebSerialIO = /*#__PURE__*/function () {
     this.onData = function (v) {};
 
     this.onError = function (e) {
-      console.warn("usb error: " + ((0,jdom_error/* default */.Z)(e) || "") + " " + (e ? e.stack : e));
+      console.warn("usb error: " + ((0,jdom_error/* errorCode */.uY)(e) || "") + " " + (e ? e.stack : e));
     };
 
     navigator.serial;
@@ -85440,7 +85521,7 @@ var WebSerialIO = /*#__PURE__*/function () {
   };
 
   _proto.error = function error(msg, code) {
-    var e = new jdom_error/* JDError */.p("serial device " + this.devInfo() + " (" + msg + ")", code);
+    var e = new jdom_error/* default */.ZP("serial device " + this.devInfo() + " (" + msg + ")", code);
     this.onError(e);
   };
 
@@ -85460,7 +85541,8 @@ var WebSerialIO = /*#__PURE__*/function () {
               return this.reader.cancel();
 
             case 4:
-              this.reader.releaseLock();
+              this.reader.releaseLock(); // eslint-disable-next-line no-empty
+
               _context.next = 9;
               break;
 
@@ -85470,7 +85552,7 @@ var WebSerialIO = /*#__PURE__*/function () {
 
             case 9:
               try {
-                this.writer.releaseLock();
+                this.writer.releaseLock(); // eslint-disable-next-line no-empty
               } catch (_unused2) {}
 
               _context.next = 12;
@@ -86128,7 +86210,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.11"};
+var package_namespaceObject = {"i8":"1.14.15"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -88588,7 +88670,7 @@ exports.components = {
     return Promise.all(/* import() | component---src-pages-tools-model-editor-tsx */[__webpack_require__.e(3643), __webpack_require__.e(8270), __webpack_require__.e(7476), __webpack_require__.e(372)]).then(__webpack_require__.bind(__webpack_require__, 70438));
   },
   "component---src-pages-tools-model-uploader-tsx": function componentSrcPagesToolsModelUploaderTsx() {
-    return Promise.all(/* import() | component---src-pages-tools-model-uploader-tsx */[__webpack_require__.e(6559), __webpack_require__.e(5637)]).then(__webpack_require__.bind(__webpack_require__, 10037));
+    return Promise.all(/* import() | component---src-pages-tools-model-uploader-tsx */[__webpack_require__.e(6559), __webpack_require__.e(5637)]).then(__webpack_require__.bind(__webpack_require__, 83625));
   },
   "component---src-pages-tools-packet-inspector-tsx": function componentSrcPagesToolsPacketInspectorTsx() {
     return Promise.all(/* import() | component---src-pages-tools-packet-inspector-tsx */[__webpack_require__.e(6559), __webpack_require__.e(1424), __webpack_require__.e(3643), __webpack_require__.e(7617), __webpack_require__.e(5244), __webpack_require__.e(2937)]).then(__webpack_require__.bind(__webpack_require__, 55662));
