@@ -45,7 +45,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var HTML_TEMPLATE = "<p>Open Javascript console to see messages...</p>";
 function CodeSandboxButton(props) {
   var {
     title,
@@ -53,7 +52,7 @@ function CodeSandboxButton(props) {
   } = props;
   var {
     js = "",
-    html = HTML_TEMPLATE
+    html = ""
   } = source;
   var {
     setError
@@ -65,8 +64,12 @@ function CodeSandboxButton(props) {
 
   var handleClick = /*#__PURE__*/function () {
     var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(function* () {
-      var indexJs = "\nimport \"milligram\";\nimport { createUSBBus, CHANGE } from \"jacdac-ts\";\nconst btn = document.getElementById(\"connectbtn\");\nconst bus = createUSBBus();\nbus.on(CHANGE, () => { btn.innerText = bus.connected ? \"connected \uD83C\uDF89\" : \"connect\" })\nbtn.onclick = async () => bus.connect();\n\n" + js + "\n";
-      var indexHtml = "\n<html>\n    <body>\n        <h1>Jacdac " + (title || "demo") + "</h1>\n        <div>\n        <button id=\"connectbtn\">connect</button>\n        </div>    \n\n" + html + "\n\n    <footer>\n        <small>\n        Need to learn more about Jacdac?\n        <a target=\"_blank\" href=\"https://aka.ms/jacdac\">Read the docs</a>\n        or\n        <a\n            target=\"_blank\"\n            href=\"https://github.com/microsoft/jacdac/discussions\"\n            >start a discussion</a\n        >.\n        </small>\n    </footer>\n    <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
+      // find imports
+      var i = js.indexOf("\n\n");
+      var imports = js.slice(0, i);
+      var code = js.slice(i + 2).trim();
+      var indexJs = "\nimport \"milligram\";\nimport { createUSBBus, CHANGE } from \"jacdac-ts\";\n" + imports + "\nconst connectEl = document.getElementById(\"connectbtn\");\nconst logEl = document.getElementById(\"log\")\nconst log = (msg) => logEl.innerText += msg + \"\\n\"\nconst bus = createUSBBus();\nbus.on(CHANGE, () => { connectEl.innerText = bus.connected ? \"connected \uD83C\uDF89\" : \"connect\" })\nconnectEl.onclick = async () => bus.connect();\n\n" + code + "\n";
+      var indexHtml = "\n<html>\n    <body>\n        <h1>Jacdac " + (title || "demo") + "</h1>\n        <div>\n        <button id=\"connectbtn\">connect</button>\n        </div>    \n\n" + html + "\n        <pre id=\"log\"></pre>\n\n    <footer>\n        <small>\n        Need to learn more about Jacdac?\n        <a target=\"_blank\" href=\"https://aka.ms/jacdac\">Read the docs</a>\n        or\n        <a\n            target=\"_blank\"\n            href=\"https://github.com/microsoft/jacdac/discussions\"\n            >start a discussion</a\n        >.\n        </small>\n    </footer>\n    <script src=\"./index.js\" />\n    </body>\n</html>    \n        ";
 
       try {
         setImporting(true);
@@ -121,4 +124,4 @@ function CodeSandboxButton(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=8574-0827dbe9789167d73a3a.js.map
+//# sourceMappingURL=8574-af6448fa7b4af09a0a34.js.map

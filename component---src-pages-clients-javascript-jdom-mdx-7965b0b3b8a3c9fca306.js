@@ -97,7 +97,7 @@ function MDXContent(_ref) {
     parentName: "li"
   }, "commands"), ",\nand may return ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("strong", {
     parentName: "li"
-  }, "acks"), ". "), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
+  }, "acks"), "."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
     parentName: "ul"
   }, "A ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("strong", {
     parentName: "li"
@@ -139,10 +139,10 @@ function MDXContent(_ref) {
     parentName: "svg",
     "fillRule": "evenodd",
     "d": "M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
-  }))), "JavaScript/TypeScript ES6"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "If you are using JavaScript/TypeScript ES6, import all APIs and spin off a WebUSB bus to get started.\nThe example below displays all devices whenever a change (connection, device detected...) is detected on the bus."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
+  }))), "JavaScript/TypeScript ES6"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "If you are using JavaScript/TypeScript ES6, import all APIs and spin off a WebUSB bus to get started.\nThe example below displays device that get announced on the bus."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("pre", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("code", {
     parentName: "pre",
     "className": "language-vanilla"
-  }, "import { createUSBBus, CHANGE } from \"jacdac-ts\"\n\nconst bus = createUSBBus();\nbus.on(CHANGE, () => console.log(bus.devices()))\n// call connect from a user interaction\nbus.connect();\n-----\nbus.on(CHANGE, () => console.log(bus.devices()));\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "import { createUSBBus, DEVICE_ANNOUNCE } from \"jacdac-ts\"\n\nconst bus = createUSBBus();\nbus.on(DEVICE_ANNOUNCE, device => log(device))\n// call connect from a user interaction\nbus.connect();\n-----\nimport { DEVICE_ANNOUNCE } from \"jacdac-ts\"\n\n// listen for new device\nbus.on(DEVICE_ANNOUNCE, device => log(device))\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "nodejs-commonjses6",
     "style": {
       "position": "relative"
@@ -260,4 +260,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-javascript-jdom-mdx-5b3ee52322e804c62d65.js.map
+//# sourceMappingURL=component---src-pages-clients-javascript-jdom-mdx-7965b0b3b8a3c9fca306.js.map
