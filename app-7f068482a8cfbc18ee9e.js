@@ -40222,7 +40222,7 @@ function printPacket(pkt, opts) {
     }
   }
 
-  pdesc += "; " + sender;
+  if (sender) pdesc += "; " + sender;
   return (!isNaN(pkt.timestamp) && (_opts = opts) !== null && _opts !== void 0 && _opts.showTime ? Math.round(pkt.timestamp) + "ms: " : "") + pdesc;
 }
 
@@ -56156,7 +56156,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "34291af273342a2286bb8130ce6991805d220210";
+  var sha = "be0007502df6559a1bad1d9542af9f7181bf9775";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -87811,4 +87811,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-313b19ba1a7274277b4d.js.map
+//# sourceMappingURL=app-7f068482a8cfbc18ee9e.js.map
