@@ -1049,7 +1049,6 @@ function CodeBlock(props) {
       rest = (0,objectWithoutProperties/* default */.Z)(props, _excluded);
 
   var language = (className === null || className === void 0 ? void 0 : className.replace(/language-/, "")) || "";
-  console.log("snippet", props);
 
   switch (language) {
     case "trace":
@@ -1065,12 +1064,6 @@ function CodeBlock(props) {
     case "vanilla":
       {
         var [source, js, html] = children.split(/\n-{5,}\n/gi);
-        console.log({
-          children,
-          source,
-          js,
-          html
-        });
         return /*#__PURE__*/react.createElement(HighlightedCode, Object.assign({}, rest, {
           className: "javascript",
           codeSandbox: {
@@ -1757,7 +1750,7 @@ function PacketInspector() {
   var ack = packet.meta[constants/* META_ACK */.K3O];
   var pipePackets = packet.meta[constants/* META_PIPE */.YHR];
   var get = packet.meta[constants/* META_GET */.cWR];
-  var sentTrace = packet.meta[constants.META_SENT_TRACE];
+  var sentTrace = packet.meta[constants/* META_TRACE */.EEP];
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, /*#__PURE__*/react.createElement(PacketBadge/* default */.Z, {
     packet: packet
   }), name + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
@@ -1802,4 +1795,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-packet-inspector-tsx-875d69b72cc8b0862f5d.js.map
+//# sourceMappingURL=component---src-pages-tools-packet-inspector-tsx-90340e92d4e64f04def0.js.map

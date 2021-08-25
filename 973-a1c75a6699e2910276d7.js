@@ -148,6 +148,8 @@ exports.Z = _default;
 /* harmony import */ var _packet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57683);
 /* harmony import */ var _trace_traceplayer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93829);
 /* harmony import */ var _trace_trace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(61649);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(71815);
+
 
 
 
@@ -167,8 +169,20 @@ function parseTrace(contents) {
     var m = /^(\d+.?\d*)\s+([a-f0-9]{12,})/i.exec(ln);
 
     if (!m) {
-      // probably junk data
-      if (packets.length == 0) description.push(ln);
+      // might be a stack trace
+      if (/^\s+at\s/.test(ln)) {
+        var lastPacket = packets[packets.length - 1];
+
+        if (lastPacket) {
+          var trace = lastPacket.meta[_constants__WEBPACK_IMPORTED_MODULE_4__/* .META_TRACE */ .EEP] || "";
+          trace += ln + "\n";
+          lastPacket.meta[_constants__WEBPACK_IMPORTED_MODULE_4__/* .META_TRACE */ .EEP] = trace;
+        }
+      } else {
+        // probably junk data
+        if (packets.length == 0) description.push(ln);
+      }
+
       return;
     }
 
@@ -755,4 +769,4 @@ function AppDrawer(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=973-5d25141504d046a0dd24.js.map
+//# sourceMappingURL=973-a1c75a6699e2910276d7.js.map

@@ -40189,6 +40189,7 @@ function printPacket(pkt, opts) {
   var devname = pkt.friendlyDeviceName;
   var service_name = pkt.friendlyServiceName;
   var cmdname = pkt.friendlyCommandName;
+  var sender = pkt.sender;
   var pdesc = devname + "/" + service_name + ": " + cmdname + "; sz=" + pkt.size;
   if (frame_flags & _constants__WEBPACK_IMPORTED_MODULE_3__/* .JD_FRAME_FLAG_COMMAND */ .e4B) pdesc = "to " + pdesc;else pdesc = "from " + pdesc;
   if (frame_flags & _constants__WEBPACK_IMPORTED_MODULE_3__/* .JD_FRAME_FLAG_ACK_REQUESTED */ .amS) pdesc = "[ack:" + (0,_utils__WEBPACK_IMPORTED_MODULE_1__/* .hexNum */ .Rj)(pkt.crc) + "] " + pdesc;
@@ -40221,6 +40222,7 @@ function printPacket(pkt, opts) {
     }
   }
 
+  pdesc += "; " + sender;
   return (!isNaN(pkt.timestamp) && (_opts = opts) !== null && _opts !== void 0 && _opts.showTime ? Math.round(pkt.timestamp) + "ms: " : "") + pdesc;
 }
 
@@ -56154,7 +56156,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "c16fbdf03daeb95ae0933f3f9369eae2c1d21077";
+  var sha = "34291af273342a2286bb8130ce6991805d220210";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -82941,7 +82943,7 @@ var preferDefault = m => m && m.default || m;
 exports.components = {
   "component---cache-caches-gatsby-plugin-offline-app-shell-js": () => __webpack_require__.e(/* import() | component---cache-caches-gatsby-plugin-offline-app-shell-js */ 4306).then(__webpack_require__.bind(__webpack_require__, 45569)),
   "component---src-components-spec-tsx": () => __webpack_require__.e(/* import() | component---src-components-spec-tsx */ 7655).then(__webpack_require__.bind(__webpack_require__, 52217)),
-  "component---src-pages-404-mdx": () => __webpack_require__.e(/* import() | component---src-pages-404-mdx */ 2154).then(__webpack_require__.bind(__webpack_require__, 24120)),
+  "component---src-pages-404-tsx": () => __webpack_require__.e(/* import() | component---src-pages-404-tsx */ 9218).then(__webpack_require__.bind(__webpack_require__, 63205)),
   "component---src-pages-clients-javascript-jdom-bus-mdx": () => __webpack_require__.e(/* import() | component---src-pages-clients-javascript-jdom-bus-mdx */ 2611).then(__webpack_require__.bind(__webpack_require__, 19712)),
   "component---src-pages-clients-javascript-jdom-device-mdx": () => __webpack_require__.e(/* import() | component---src-pages-clients-javascript-jdom-device-mdx */ 2588).then(__webpack_require__.bind(__webpack_require__, 8131)),
   "component---src-pages-clients-javascript-jdom-event-mdx": () => __webpack_require__.e(/* import() | component---src-pages-clients-javascript-jdom-event-mdx */ 8160).then(__webpack_require__.bind(__webpack_require__, 54201)),
@@ -87809,4 +87811,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-db404ee7f6a2b15dc174.js.map
+//# sourceMappingURL=app-313b19ba1a7274277b4d.js.map

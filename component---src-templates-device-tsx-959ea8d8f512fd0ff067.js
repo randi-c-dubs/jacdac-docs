@@ -1474,7 +1474,6 @@ function CodeBlock(props) {
       rest = (0,objectWithoutProperties/* default */.Z)(props, _excluded);
 
   var language = (className === null || className === void 0 ? void 0 : className.replace(/language-/, "")) || "";
-  console.log("snippet", props);
 
   switch (language) {
     case "trace":
@@ -1490,12 +1489,6 @@ function CodeBlock(props) {
     case "vanilla":
       {
         var [source, js, html] = children.split(/\n-{5,}\n/gi);
-        console.log({
-          children,
-          source,
-          js,
-          html
-        });
         return /*#__PURE__*/react.createElement(HighlightedCode, Object.assign({}, rest, {
           className: "javascript",
           codeSandbox: {
@@ -1995,4 +1988,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-device-tsx-9329d569922ca97930f2.js.map
+//# sourceMappingURL=component---src-templates-device-tsx-959ea8d8f512fd0ff067.js.map
