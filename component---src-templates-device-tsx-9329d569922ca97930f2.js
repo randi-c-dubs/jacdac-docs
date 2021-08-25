@@ -579,8 +579,19 @@ exports.Z = _default;
 /***
  *  DTDL specification: https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md.
  */
+
+/**
+ * @internal
+ */
 var DTDL_REFERENCE_URL = "https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md";
-var DTDL_NAME = "Digital Twins Definition Language"; //   needed?
+/**
+ * @internal
+ */
+
+var DTDL_NAME = "Digital Twins Definition Language";
+/**
+ * @internal
+ */
 
 var DTDL_CONTEXT = ["dtmi:dtdl:context;2"]; // warps fields into an object
 
@@ -1984,4 +1995,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-device-tsx-3511af97f32029bd0686.js.map
+//# sourceMappingURL=component---src-templates-device-tsx-9329d569922ca97930f2.js.map

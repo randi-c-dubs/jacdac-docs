@@ -99,8 +99,11 @@ function MDXContent(_ref) {
     parentName: "pre"
   }, "/dtmi/jacdac/services/x{id}-1.json\n")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "For example, ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "p",
-    "href": "/jacdac-docs/dtmi/jacdac/services/x0-1.json"
-  }, "/dtmi/jacdac/services/x0-1.json"), "."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "To download all service models, go use ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
+    "href": "/jacdac-docs/dtmi/jacdac/services/x1473a263-1.json"
+  }, "/dtmi/jacdac/services/x1473a263-1.json"), " points to the ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
+    parentName: "p",
+    "href": "/jacdac-docs/services/button"
+  }, "button"), " DTDL."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("p", null, "To download all service models, go use ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "p",
     "href": "/jacdac-docs/dtmi/jacdac/services.json"
   }, "/dtmi/jacdac/services.json")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
@@ -185,4 +188,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-dtmi-mdx-4dea47f3e54b4fa19923.js.map
+//# sourceMappingURL=component---src-pages-dtmi-mdx-0e7e6ab6907dc907f09b.js.map

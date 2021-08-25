@@ -1757,7 +1757,7 @@ function PacketInspector() {
   var ack = packet.meta[constants/* META_ACK */.K3O];
   var pipePackets = packet.meta[constants/* META_PIPE */.YHR];
   var get = packet.meta[constants/* META_GET */.cWR];
-  var sentTrace = packet.meta[constants/* META_SENT_TRACE */.LPW];
+  var sentTrace = packet.meta[constants.META_SENT_TRACE];
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, /*#__PURE__*/react.createElement(PacketBadge/* default */.Z, {
     packet: packet
   }), name + " " + (packet.isCommand ? "to" : "from") + " " + packet.friendlyDeviceName + "/" + packet.friendlyServiceName), /*#__PURE__*/react.createElement("div", null, (0,pretty/* prettyDuration */.Xh)(packet.timestamp), ",", " ", /*#__PURE__*/react.createElement(KindChip/* default */.Z, {
@@ -1802,4 +1802,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-packet-inspector-tsx-c67d83b92390878ce51e.js.map
+//# sourceMappingURL=component---src-pages-tools-packet-inspector-tsx-875d69b72cc8b0862f5d.js.map

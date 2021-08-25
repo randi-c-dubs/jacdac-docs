@@ -177,7 +177,7 @@ function parseTrace(contents) {
 
     packets.push(_packet__WEBPACK_IMPORTED_MODULE_1__/* .default.fromBinary */ .Z.fromBinary(data, timestamp));
   });
-  if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z(packets, description.join("\n").trim());else return undefined;
+  if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP(packets, description.join("\n").trim());else return undefined;
 }
 /**
  * Parses a logic analyzer log into a trace
@@ -456,7 +456,7 @@ function TraceImportButton(props) {
               var frames = (0,logparser/* parseLogicLog */.Rx)(txt); // ensure format is ok
 
               var packets = (0,utils/* arrayConcatMany */.ue)(frames.map(frame => packet/* default.fromFrame */.Z.fromFrame(frame.data, frame.timestamp)));
-              if (packets !== null && packets !== void 0 && packets.length) trace = new trace_trace/* default */.Z(packets);
+              if (packets !== null && packets !== void 0 && packets.length) trace = new trace_trace/* default */.ZP(packets);
             } catch (e) {
               console.log("logic parse error", e);
             }
@@ -755,4 +755,4 @@ function AppDrawer(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=973-fad1bf1b945993578e67.js.map
+//# sourceMappingURL=973-5d25141504d046a0dd24.js.map

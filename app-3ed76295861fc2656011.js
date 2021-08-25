@@ -36972,7 +36972,7 @@ var JDClient = /*#__PURE__*/function (_JDEventSource) {
 /* harmony export */   "GiR": function() { return /* binding */ META_ACK_FAILED; },
 /* harmony export */   "YHR": function() { return /* binding */ META_PIPE; },
 /* harmony export */   "cWR": function() { return /* binding */ META_GET; },
-/* harmony export */   "LPW": function() { return /* binding */ META_SENT_TRACE; },
+/* harmony export */   "EEP": function() { return /* binding */ META_TRACE; },
 /* harmony export */   "q5h": function() { return /* binding */ REGISTER_PRE_GET; },
 /* harmony export */   "DnH": function() { return /* binding */ TRACE_FILTER_HORIZON; },
 /* harmony export */   "rFG": function() { return /* binding */ EMBED_MIN_ASPECT_RATIO; },
@@ -37307,7 +37307,7 @@ var META_ACK = "ACK";
 var META_ACK_FAILED = "ACK_FAILED";
 var META_PIPE = "PIPE";
 var META_GET = "GET";
-var META_SENT_TRACE = "SEND_TRACE";
+var META_TRACE = "TRACE";
 var REGISTER_PRE_GET = "registerPreGet";
 var TRACE_FILTER_HORIZON = 100;
 var EMBED_MIN_ASPECT_RATIO = 1.22;
@@ -37387,9 +37387,11 @@ function errorCode(e) {
 /* harmony export */   "BX": function() { return /* binding */ dependencyId; },
 /* harmony export */   "aE": function() { return /* binding */ JDEventSource; }
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53719);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _flags__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21258);
+/* harmony import */ var _trace_trace__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61649);
+
 
 
 
@@ -37509,7 +37511,7 @@ var JDEventSource = /*#__PURE__*/function () {
       handler,
       once: !!once,
       // debug only collection of trace for leak detection
-      stackTrace: _flags__WEBPACK_IMPORTED_MODULE_1__/* .default.diagnostics */ .Z.diagnostics && new Error().stack
+      stackTrace: _flags__WEBPACK_IMPORTED_MODULE_1__/* .default.diagnostics */ .Z.diagnostics && (0,_trace_trace__WEBPACK_IMPORTED_MODULE_2__/* .stack */ .kn)()
     });
     this.emit(_constants__WEBPACK_IMPORTED_MODULE_0__/* .NEW_LISTENER */ .nxl, eventName, handler); // diagnostics
 
@@ -37644,7 +37646,7 @@ var JDEventSource = /*#__PURE__*/function () {
    */
   ;
 
-  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(JDEventSource, [{
+  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(JDEventSource, [{
     key: "changeId",
     get: function get() {
       return this.eventStats[_constants__WEBPACK_IMPORTED_MODULE_0__/* .CHANGE */ .Ver] || 0;
@@ -41926,14 +41928,27 @@ function parseDeviceId(id) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "kn": function() { return /* binding */ stack; }
+/* harmony export */ });
 /* unused harmony export Trace */
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
-/* harmony import */ var _pretty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10913);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81794);
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53719);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
+/* harmony import */ var _pretty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10913);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(81794);
+
 
 
 
 var TRACE_OVERSHOOT = 1.1;
+/**
+ * Collect stack trace at the current execution position
+ * @returns
+ */
+
+function stack() {
+  return new Error().stack.replace(/^Error\n/, "").replace(/webpack-internal:\/\/\//g, "").replace(/https:\/\/microsoft\.github\.io\/jacdac-docs/g, "");
+}
 /**
  * A sequence of packets.
  * @category Trace
@@ -41987,7 +42002,12 @@ var Trace = /*#__PURE__*/function () {
     var _this$packets$;
 
     var start = ((_this$packets$ = this.packets[0]) === null || _this$packets$ === void 0 ? void 0 : _this$packets$.timestamp) || 0;
-    var text = this.packets.map(pkt => pkt.timestamp - start + "\t" + (0,_utils__WEBPACK_IMPORTED_MODULE_1__/* .toHex */ .NC)(pkt.toBuffer()) + "\t" + (0,_pretty__WEBPACK_IMPORTED_MODULE_0__/* .printPacket */ .$_)(pkt, {}).replace(/\r?\n/g, " "));
+    var text = this.packets.map(pkt => {
+      var t = (0,_utils__WEBPACK_IMPORTED_MODULE_2__/* .roundWithPrecision */ .JI)(pkt.timestamp - start, 3) + "\t" + (0,_utils__WEBPACK_IMPORTED_MODULE_2__/* .toHex */ .NC)(pkt.toBuffer()) + "\t" + (0,_pretty__WEBPACK_IMPORTED_MODULE_1__/* .printPacket */ .$_)(pkt, {}).replace(/\r?\n/g, " ");
+      var trace = pkt.meta[_constants__WEBPACK_IMPORTED_MODULE_0__/* .META_TRACE */ .EEP];
+      if (trace) t += "\n" + trace;
+      return t;
+    });
 
     if (this.description) {
       text.unshift(this.description);
@@ -41997,7 +42017,7 @@ var Trace = /*#__PURE__*/function () {
     return text.join("\n");
   };
 
-  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(Trace, [{
+  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(Trace, [{
     key: "length",
     get: function get() {
       return this.packets.length;
@@ -42038,7 +42058,7 @@ var Trace = /*#__PURE__*/function () {
 
   return Trace;
 }();
-/* harmony default export */ __webpack_exports__["Z"] = (Trace);
+/* harmony default export */ __webpack_exports__["ZP"] = (Trace);
 
 /***/ }),
 
@@ -49845,7 +49865,7 @@ var TraceRecorder = /*#__PURE__*/function (_JDClient) {
   _proto.start = function start() {
     if (this.recording) return;
     this._subscription = this.bus.subscribe([constants/* PACKET_PROCESS */.wY8, constants/* PACKET_SEND */.RaS], this.handlePacket);
-    this._trace = new trace/* default */.Z();
+    this._trace = new trace/* default */.ZP();
     this.emit(constants/* START */.tj6);
     this.emit(constants/* CHANGE */.Ver);
   };
@@ -50250,7 +50270,7 @@ var TraceView = /*#__PURE__*/function (_JDClient) {
     _this._packetFilter = undefined;
     _this._filteredPackets = [];
     _this.bus = bus;
-    _this._trace = new trace/* default */.Z();
+    _this._trace = new trace/* default */.ZP();
     _this.handlePacket = _this.handlePacket.bind((0,assertThisInitialized/* default */.Z)(_this));
     _this.handleFilterUpdate = _this.handleFilterUpdate.bind((0,assertThisInitialized/* default */.Z)(_this));
     _this.notifyPacketsChanged = (0,utils/* throttle */.P2)(() => {
@@ -50278,7 +50298,7 @@ var TraceView = /*#__PURE__*/function (_JDClient) {
   };
 
   _proto.clear = function clear() {
-    this.trace = new trace/* default */.Z();
+    this.trace = new trace/* default */.ZP();
     this._filteredPackets = [];
     this.setFilteredPackets();
     this.emit(constants/* CHANGE */.Ver);
@@ -56125,7 +56145,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "45fa07d5f3ed2a3ef14c047568458a4b2a3e7443";
+  var sha = "6b4093da3a8c9e5cfe306ca3bd7167b94029c116";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -77132,6 +77152,8 @@ var WallClockScheduler = /*#__PURE__*/function () {
 
   return WallClockScheduler;
 }();
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/trace/trace.ts
+var trace = __webpack_require__(61649);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/bus.ts
 
 
@@ -77141,6 +77163,7 @@ var WallClockScheduler = /*#__PURE__*/function () {
 
 
 function _wrapRegExp() { _wrapRegExp = function _wrapRegExp(re, groups) { return new BabelRegExp(re, undefined, groups); }; var _super = RegExp.prototype; var _groups = new WeakMap(); function BabelRegExp(re, flags, groups) { var _this = new RegExp(re, flags); _groups.set(_this, groups || _groups.get(re)); return (0,setPrototypeOf/* default */.Z)(_this, BabelRegExp.prototype); } _inherits(BabelRegExp, RegExp); BabelRegExp.prototype.exec = function (str) { var result = _super.exec.call(this, str); if (result) result.groups = buildGroups(result, this); return result; }; BabelRegExp.prototype[Symbol.replace] = function (str, substitution) { if (typeof substitution === "string") { var groups = _groups.get(this); return _super[Symbol.replace].call(this, str, substitution.replace(/\$<([^>]+)>/g, function (_, name) { return "$" + groups[name]; })); } else if (typeof substitution === "function") { var _this = this; return _super[Symbol.replace].call(this, str, function () { var args = arguments; if (typeof args[args.length - 1] !== "object") { args = [].slice.call(args); args.push(buildGroups(args, _this)); } return substitution.apply(this, args); }); } else { return _super[Symbol.replace].call(this, str, substitution); } }; function buildGroups(result, re) { var g = _groups.get(re); return Object.keys(g).reduce(function (groups, name) { groups[name] = result[g[name]]; return groups; }, Object.create(null)); } return _wrapRegExp.apply(this, arguments); }
+
 
 
 
@@ -77603,7 +77626,7 @@ var bus_JDBus = /*#__PURE__*/function (_JDNode) {
   function () {
     var _sendPacketAsync = (0,asyncToGenerator/* default */.Z)(function* (packet) {
       packet.timestamp = this.timestamp;
-      if (flags/* default.trace */.Z.trace) packet.meta[constants/* META_SENT_TRACE */.LPW] = new Error().stack;
+      if (flags/* default.trace */.Z.trace) packet.meta[constants/* META_TRACE */.EEP] = (0,trace/* stack */.kn)();
       this.emit(constants/* PACKET_SEND */.RaS, packet);
       yield Promise.all(this._transports.map(transport => transport.sendPacketAsync(packet)));
     });
@@ -80629,7 +80652,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.14.18"};
+var package_namespaceObject = {"i8":"1.14.19"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -87777,4 +87800,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-7bd337515191709fcb7c.js.map
+//# sourceMappingURL=app-3ed76295861fc2656011.js.map

@@ -446,8 +446,19 @@ exports.Z = _default;
 /***
  *  DTDL specification: https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md.
  */
+
+/**
+ * @internal
+ */
 var DTDL_REFERENCE_URL = "https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md";
-var DTDL_NAME = "Digital Twins Definition Language"; //   needed?
+/**
+ * @internal
+ */
+
+var DTDL_NAME = "Digital Twins Definition Language";
+/**
+ * @internal
+ */
 
 var DTDL_CONTEXT = ["dtmi:dtdl:context;2"]; // warps fields into an object
 
@@ -1391,4 +1402,4 @@ function AzureDeviceTemplateDesigner() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-azure-device-templates-tsx-911b2241ee419168c3dd.js.map
+//# sourceMappingURL=component---src-pages-tools-azure-device-templates-tsx-5cda493921dcc410845a.js.map

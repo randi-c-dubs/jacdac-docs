@@ -90,7 +90,7 @@ function parseTrace(contents) {
 
     packets.push(_packet__WEBPACK_IMPORTED_MODULE_1__/* .default.fromBinary */ .Z.fromBinary(data, timestamp));
   });
-  if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z(packets, description.join("\n").trim());else return undefined;
+  if (packets.length) return new _trace_trace__WEBPACK_IMPORTED_MODULE_3__/* .default */ .ZP(packets, description.join("\n").trim());else return undefined;
 }
 /**
  * Parses a logic analyzer log into a trace
@@ -375,4 +375,4 @@ function useGridBreakpoints(itemCount) {
 /***/ })
 
 }]);
-//# sourceMappingURL=5604-d525df368ba5f001d6b6.js.map
+//# sourceMappingURL=5604-be52c9302a5d19c379e0.js.map
