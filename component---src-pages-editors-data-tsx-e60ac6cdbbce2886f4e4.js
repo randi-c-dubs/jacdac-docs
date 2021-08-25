@@ -21,7 +21,7 @@ var NoSsr = __webpack_require__(42862);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/flags.ts
 var flags = __webpack_require__(21258);
 // EXTERNAL MODULE: ./src/components/blockly/BlockContext.tsx + 16 modules
-var BlockContext = __webpack_require__(82393);
+var BlockContext = __webpack_require__(23985);
 // EXTERNAL MODULE: ./src/components/blockly/BlockDiagnostics.tsx
 var BlockDiagnostics = __webpack_require__(9370);
 // EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 5 modules
@@ -100,4 +100,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-data-tsx-d0e963aa1bd476a65f4e.js.map
+//# sourceMappingURL=component---src-pages-editors-data-tsx-e60ac6cdbbce2886f4e4.js.map

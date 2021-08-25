@@ -2523,7 +2523,7 @@ var VMProgramRunner = /*#__PURE__*/function (_JDClient) {
 
     // adding a (role,service) binding
     var addRoleService = role => {
-      var service = this.roleManager.getService(role);
+      var service = this.roleManager.service(role);
 
       if (service) {
         this._env.serviceChanged(role, service);
@@ -2572,7 +2572,7 @@ var VMProgramRunner = /*#__PURE__*/function (_JDClient) {
         );
         this._device = this.roleManager.bus.addServiceProvider(this._provider);
         servers.forEach((s, index) => {
-          this.roleManager.addRoleService(this._serverRoles[index].role, s.serviceClass, this._device.deviceId);
+          this.roleManager.updateRole(this._serverRoles[index].role, s.serviceClass, this._device.deviceId);
         }); // make sure it gets known (HACK)
 
         for (var s of servers) {
@@ -2719,7 +2719,7 @@ function VMDiagnostics(props) {
 // EXTERNAL MODULE: ./src/jacdac/useChange.ts
 var useChange = __webpack_require__(54774);
 // EXTERNAL MODULE: ./src/components/blockly/BlockContext.tsx + 16 modules
-var BlockContext = __webpack_require__(82393);
+var BlockContext = __webpack_require__(23985);
 // EXTERNAL MODULE: ./src/jacdac/Context.tsx
 var Context = __webpack_require__(20392);
 // EXTERNAL MODULE: ./src/components/devices/DeviceAvatar.tsx + 3 modules
@@ -4611,7 +4611,7 @@ function VMEditorWithContext() {
       setProgram(undefined);
     }
   }, [dsls, workspaceJSON]);
-  (0,react.useEffect)(() => program && (roleManager === null || roleManager === void 0 ? void 0 : roleManager.setRoles([].concat((0,toConsumableArray/* default */.Z)(program.roles), (0,toConsumableArray/* default */.Z)(program.serverRoles.map(r => ({
+  (0,react.useEffect)(() => program && (roleManager === null || roleManager === void 0 ? void 0 : roleManager.updateRoles([].concat((0,toConsumableArray/* default */.Z)(program.roles), (0,toConsumableArray/* default */.Z)(program.serverRoles.map(r => ({
     role: r.role,
     serviceClass: r.serviceClass,
     preferredDeviceId: "TBD"
@@ -4677,4 +4677,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-vm-tsx-69ec5bbc53b02c086e2a.js.map
+//# sourceMappingURL=component---src-pages-editors-vm-tsx-f294038f939028bcac82.js.map

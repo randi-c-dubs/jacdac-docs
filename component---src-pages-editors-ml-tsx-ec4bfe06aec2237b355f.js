@@ -17,7 +17,7 @@ var react = __webpack_require__(67294);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/NoSsr/NoSsr.js
 var NoSsr = __webpack_require__(42862);
 // EXTERNAL MODULE: ./src/components/blockly/BlockContext.tsx + 16 modules
-var BlockContext = __webpack_require__(82393);
+var BlockContext = __webpack_require__(23985);
 // EXTERNAL MODULE: ./src/components/blockly/BlockEditor.tsx + 5 modules
 var BlockEditor = __webpack_require__(39067);
 // EXTERNAL MODULE: ./src/components/blockly/dsl/variablesdsl.ts
@@ -261,4 +261,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-ml-tsx-295af992ef1c78c07dc0.js.map
+//# sourceMappingURL=component---src-pages-editors-ml-tsx-ec4bfe06aec2237b355f.js.map

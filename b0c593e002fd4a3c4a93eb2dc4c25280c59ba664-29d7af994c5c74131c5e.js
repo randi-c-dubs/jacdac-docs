@@ -8116,7 +8116,7 @@ function CodeBlock(props) {
 
 /***/ }),
 
-/***/ 82393:
+/***/ 23985:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8156,7 +8156,7 @@ var inheritsLoose = __webpack_require__(85413);
 var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
-;// CONCATENATED MODULE: ./jacdac-ts/src/servers/rolemanager.ts
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/rolemanager.ts
 
 
 
@@ -8171,18 +8171,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 /**
- * A client for the role manager service.
- * @category Clients
+ * A role manager
+ * @category Roles
  */
 var RoleManager = /*#__PURE__*/function (_JDClient) {
   (0,inheritsLoose/* default */.Z)(RoleManager, _JDClient);
 
-  function RoleManager(_bus) {
+  function RoleManager(bus) {
     var _this;
 
     _this = _JDClient.call(this) || this;
     _this._roles = [];
-    _this._bus = _bus;
+    _this.bus = bus;
 
     _this.mount(_this.bus.subscribe(constants/* DEVICE_ANNOUNCE */.Hob, _this.addServices.bind((0,assertThisInitialized/* default */.Z)(_this))));
 
@@ -8192,19 +8192,44 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
 
     return _this;
   }
+  /**
+   * Indicates if all roles are bound.
+   */
+
 
   var _proto = RoleManager.prototype;
 
-  _proto.setRoles = function setRoles(newRoles) {
+  /**
+   * Gets the list of roles tracked by the manager
+   */
+  _proto.roles = function roles(bound) {
+    if (bound === void 0) {
+      bound = undefined;
+    }
+
+    if (bound !== undefined) return this._roles.filter(_ref => {
+      var {
+        service
+      } = _ref;
+      return !!service === bound;
+    });else return this._roles.slice(0);
+  }
+  /**
+   * Updates the list of roles
+   * @param newRoles
+   */
+  ;
+
+  _proto.updateRoles = function updateRoles(newRoles) {
     var _this2 = this;
 
-    var oldBound = this.bound;
+    var oldBound = this.isBound;
     var changed = false; // remove unknown roles
 
-    var supportedNewRoles = newRoles.filter(_ref => {
+    var supportedNewRoles = newRoles.filter(_ref2 => {
       var {
         serviceClass
-      } = _ref;
+      } = _ref2;
       return (0,spec/* serviceSpecificationFromClassIdentifier */.d5)(serviceClass);
     }); // unbind removed roles
 
@@ -8258,15 +8283,29 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
 
     this.bindServices(changed);
     this.emitBoundEvents(oldBound);
-  };
+  }
+  /**
+   * Resolves the service bound to a given role.
+   * @param role
+   * @returns
+   */
+  ;
 
-  _proto.getService = function getService(role) {
+  _proto.service = function service(role) {
     var _this$_roles$find;
 
     return (_this$_roles$find = this._roles.find(r => r.role === role)) === null || _this$_roles$find === void 0 ? void 0 : _this$_roles$find.service;
-  };
+  }
+  /**
+   * Updates or creates a new role
+   * @param role name of the role
+   * @param serviceClass desired service class
+   * @param preferredDeviceId optional preferred device id
+   * @returns
+   */
+  ;
 
-  _proto.addRoleService = function addRoleService(role, serviceClass, preferredDeviceId) {
+  _proto.updateRole = function updateRole(role, serviceClass, preferredDeviceId) {
     if (!(0,spec/* serviceSpecificationFromClassIdentifier */.d5)(serviceClass)) return; // unknown role type
 
     var binding = this._roles.find(r => r.role === role); // check if we already have this role
@@ -8280,7 +8319,7 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
       return;
     }
 
-    var oldBound = this.bound; // new role
+    var oldBound = this.isBound; // new role
 
     binding = {
       role,
@@ -8299,7 +8338,7 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
   };
 
   _proto.emitBoundEvents = function emitBoundEvents(oldBound) {
-    var bound = this.bound;
+    var bound = this.isBound;
     if (oldBound !== bound) this.emit(bound ? constants/* BOUND */.E5I : constants/* UNBOUND */.BKI);
   } // TODO: need to respect other (unbound) role's preferredDeviceId
   ;
@@ -8308,7 +8347,7 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
     var ret = this.bus.services({
       ignoreSelf: true,
       serviceClass: role.serviceClass
-    }).filter(s => !this.boundRoles.find(r => r.service === s));
+    }).filter(s => !this.roles(true).find(r => r.service === s));
 
     if (ret.length) {
       var theOne = ret[0];
@@ -8327,7 +8366,7 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
   };
 
   _proto.bindServices = function bindServices(changed) {
-    this.unboundRoles.forEach(binding => {
+    this.roles(false).forEach(binding => {
       if (this.bindRole(binding)) changed = true;
     });
     if (changed) this.emit(constants/* CHANGE */.Ver);
@@ -8354,33 +8393,23 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
     this.bindServices(changed);
   };
 
+  _proto.toString = function toString() {
+    return this._roles.map(_ref3 => {
+      var {
+        role,
+        service
+      } = _ref3;
+      return role + "->" + (service || "?");
+    }).join(",");
+  };
+
   (0,createClass/* default */.Z)(RoleManager, [{
-    key: "bus",
+    key: "isBound",
     get: function get() {
-      return this._bus;
-    }
-  }, {
-    key: "roles",
-    get: function get() {
-      return this._roles.slice(0);
-    }
-  }, {
-    key: "boundRoles",
-    get: function get() {
-      return this._roles.filter(r => !!r.service);
-    }
-  }, {
-    key: "unboundRoles",
-    get: function get() {
-      return this._roles.filter(r => !r.service);
-    }
-  }, {
-    key: "bound",
-    get: function get() {
-      return this._roles.every(_ref2 => {
+      return this._roles.every(_ref4 => {
         var {
           service
-        } = _ref2;
+        } = _ref4;
         return !!service;
       });
     }
@@ -8388,8 +8417,65 @@ var RoleManager = /*#__PURE__*/function (_JDClient) {
 
   return RoleManager;
 }(client/* JDClient */.z);
+/* harmony default export */ var rolemanager = (RoleManager);
+/**
+ * Tracks a set of roles
+ * @param bus bus hosting the devices
+ * @param bindings map of role names to device service pairs
+ * @param onUpdate callback to run whenver role assignments change
+ * @param options Additional options
+ * @returns A unsubscribe callback to cleanup handlers
+ * @category Roles
+ */
 
+function trackRoles(bus, bindings, onUpdate, options) {
+  var {
+    incomplete
+  } = options || {};
+  var roleManager = new RoleManager(bus);
+  roleManager.updateRoles(Object.keys(bindings).map(role => ({
+    role,
+    serviceClass: bindings[role].serviceClass,
+    preferredDeviceId: bindings[role].preferredDeviceId
+  })));
 
+  var roles = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    var r = {};
+
+    for (var key in bindings) {
+      var srv = roleManager.service(key);
+      if (srv) r[key] = srv;
+    }
+
+    return r;
+  };
+
+  var update = () => {
+    if (!incomplete && !roleManager.isBound) return;
+    onUpdate(roles());
+  };
+
+  var unsubscribe = roleManager.subscribe(CHANGE, update);
+  update();
+  return unsubscribe;
+}
+/*
+function test(bus: JDBus) {
+    const bindings = {
+        thermo1: { serviceClass: SRV_BUTTON },
+        thermo2: { serviceClass: SRV_BUTTON },
+    }
+    trackRoles(
+        bus,
+        bindings,
+        ({ thermo1, thermo2 }) => {
+            console.log({ thermo1, thermo2 })
+        },
+        { incomplete: true }
+    )
+}
+*/
 ;// CONCATENATED MODULE: ./src/components/hooks/useRoleManager.ts
 
 
@@ -8398,7 +8484,7 @@ function useRoleManager() {
   var {
     bus
   } = (0,react.useContext)(Context/* default */.Z);
-  var roleManager = (0,react.useMemo)(() => bus && new RoleManager(bus), [bus]);
+  var roleManager = (0,react.useMemo)(() => bus && new rolemanager(bus), [bus]);
   return roleManager;
 }
 // EXTERNAL MODULE: ./src/components/hooks/useLocalStorage.ts
@@ -9984,7 +10070,7 @@ function BlockProvider(props) {
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(80453);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _CodeBlock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50274);
-/* harmony import */ var _BlockContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(82393);
+/* harmony import */ var _BlockContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(23985);
 
 
 
@@ -10307,7 +10393,7 @@ var gatsby_browser_entry = __webpack_require__(35313);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/flags.ts
 var flags = __webpack_require__(21258);
 // EXTERNAL MODULE: ./src/components/blockly/BlockContext.tsx + 16 modules
-var BlockContext = __webpack_require__(82393);
+var BlockContext = __webpack_require__(23985);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
 var toConsumableArray = __webpack_require__(90293);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/useTheme.js
@@ -20469,4 +20555,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-3e14ad65f094e0400bda.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-29d7af994c5c74131c5e.js.map
