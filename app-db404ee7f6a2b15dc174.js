@@ -41931,7 +41931,7 @@ function parseDeviceId(id) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "kn": function() { return /* binding */ stack; }
 /* harmony export */ });
-/* unused harmony export Trace */
+/* unused harmony exports cleanStack, Trace */
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53719);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _pretty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10913);
@@ -41944,10 +41944,19 @@ var TRACE_OVERSHOOT = 1.1;
 /**
  * Collect stack trace at the current execution position
  * @returns
+ * @internal
  */
 
 function stack() {
-  return new Error().stack.replace(/^Error\n/, "").replace(/webpack-internal:\/\/\//g, "").replace(/https:\/\/microsoft\.github\.io\/jacdac-docs/g, "");
+  return new Error().stack;
+}
+/**
+ * @internal
+ */
+
+function cleanStack(text) {
+  return text === null || text === void 0 ? void 0 : text.split(/\n/g).slice(2).join("\n") // drop first 2 lines
+  .replace(/webpack-internal:\/\/\//g, "").replace(/https:\/\/microsoft\.github\.io\/jacdac-docs/g, "");
 }
 /**
  * A sequence of packets.
@@ -42005,7 +42014,7 @@ var Trace = /*#__PURE__*/function () {
     var text = this.packets.map(pkt => {
       var t = (0,_utils__WEBPACK_IMPORTED_MODULE_2__/* .roundWithPrecision */ .JI)(pkt.timestamp - start, 3) + "\t" + (0,_utils__WEBPACK_IMPORTED_MODULE_2__/* .toHex */ .NC)(pkt.toBuffer()) + "\t" + (0,_pretty__WEBPACK_IMPORTED_MODULE_1__/* .printPacket */ .$_)(pkt, {}).replace(/\r?\n/g, " ");
       var trace = pkt.meta[_constants__WEBPACK_IMPORTED_MODULE_0__/* .META_TRACE */ .EEP];
-      if (trace) t += "\n" + trace;
+      if (trace) t += "\n" + cleanStack(trace);
       return t;
     });
 
@@ -56145,7 +56154,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "6b4093da3a8c9e5cfe306ca3bd7167b94029c116";
+  var sha = "c16fbdf03daeb95ae0933f3f9369eae2c1d21077";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -87800,4 +87809,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-3ed76295861fc2656011.js.map
+//# sourceMappingURL=app-db404ee7f6a2b15dc174.js.map
