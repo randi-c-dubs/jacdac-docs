@@ -183,7 +183,10 @@ var useFetch = __webpack_require__(27588);
 var Alert = __webpack_require__(95453);
 // EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
 var gatsby_theme_material_ui = __webpack_require__(36176);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Grid/Grid.js
+var Grid = __webpack_require__(80838);
 ;// CONCATENATED MODULE: ./src/pages/tools/azure-iot-proxy.tsx
+
 
 
 
@@ -202,21 +205,30 @@ function Page() {
   var dtdl = (0,useChange/* default */.Z)(proxy, _ => _ === null || _ === void 0 ? void 0 : _.dtdl);
   var route = dtdl && (0,dtdlspec/* DTMIToRoute */.Aq)(dtdl["@id"]);
   var dtdlFetch = (0,useFetch/* default */.Z)(route);
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h1", null, "Azure IoT Proxy"), /*#__PURE__*/react.createElement("h3", null, "DTDL (generated)"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h1", null, "Azure IoT Proxy"), /*#__PURE__*/react.createElement("h2", null, "DTDL"), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+    container: true,
+    spacing: 1
+  }, /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+    item: true,
+    xs: 6
+  }, /*#__PURE__*/react.createElement("h3", null, "Generated"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
     node: dtdl,
     name: "proxy-generated"
-  }), /*#__PURE__*/react.createElement("h3", null, "DTDL (from", " ", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
+  })), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+    item: true,
+    xs: 6
+  }, /*#__PURE__*/react.createElement("h3", null, "DTDL (from", " ", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     target: "_blank",
     href: route
-  }, DTDL_DEVICE_MODELS_REPOSITORY), ")"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
+  }, "cloud"), ")"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
     node: dtdlFetch === null || dtdlFetch === void 0 ? void 0 : dtdlFetch.response,
     name: "proxy-cloud"
   }), (dtdlFetch === null || dtdlFetch === void 0 ? void 0 : dtdlFetch.error) && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
     severity: "error"
-  }, dtdlFetch.error));
+  }, dtdlFetch.error))));
 }
 
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-azure-iot-proxy-tsx-7dc822c15040c5601244.js.map
+//# sourceMappingURL=component---src-pages-tools-azure-iot-proxy-tsx-7ffca9cfada6df4a94d2.js.map
