@@ -498,9 +498,10 @@ function DTDLUnits() {
 /* harmony export */   "eT": function() { return /* binding */ serviceSpecificationToDTDL; },
 /* harmony export */   "Jb": function() { return /* binding */ serviceSpecificationsWithDTDL; },
 /* harmony export */   "tH": function() { return /* binding */ serviceSpecificationDTMI; },
+/* harmony export */   "Aq": function() { return /* binding */ DTMIToRoute; },
 /* harmony export */   "Yh": function() { return /* binding */ deviceClassToDTDL; }
 /* harmony export */ });
-/* unused harmony exports DTDL_JACDAC_PATH, DTDL_SERVICES_PATH, DTDL_DEVICES_PATH, serviceSpecificationToComponent, DTMIToRoute, routeToDTMI, serviceRouteToDTDL, encodedDeviceRouteToDTDL, routeToDTDL */
+/* unused harmony exports DTDL_JACDAC_PATH, DTDL_SERVICES_PATH, DTDL_DEVICES_PATH, serviceSpecificationToComponent, routeToDTMI, serviceRouteToDTDL, encodedDeviceRouteToDTDL, routeToDTDL */
 /* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(90293);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _jdom_spec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13173);
@@ -1475,4 +1476,4 @@ function AzureDeviceTemplateDesigner() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-azure-device-templates-tsx-26ce196d4fbfd54c1c44.js.map
+//# sourceMappingURL=component---src-pages-tools-azure-device-templates-tsx-43f5c483acff3c965a74.js.map

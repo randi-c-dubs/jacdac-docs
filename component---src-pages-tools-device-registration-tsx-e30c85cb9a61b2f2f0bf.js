@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[9231,9819],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[9231,5133],{
 
 /***/ 88880:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
@@ -322,8 +322,8 @@ var useChange = __webpack_require__(54774);
 var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
-// EXTERNAL MODULE: ./src/components/github.ts + 2 modules
-var github = __webpack_require__(99819);
+// EXTERNAL MODULE: ./src/components/github.ts + 1 modules
+var github = __webpack_require__(85133);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
 var toConsumableArray = __webpack_require__(90293);
 ;// CONCATENATED MODULE: ./src/components/hooks/useIdleCallback.ts
@@ -457,7 +457,7 @@ function useFirmwareBlob(repoSlug) {
 
 /***/ }),
 
-/***/ 99819:
+/***/ 85133:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -544,67 +544,8 @@ function semverCmp(a, b) {
   var bb = tryParse(b);
   if (!aa && !bb) return strcmp(a, b);else return cmp(aa, bb);
 }
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./src/components/useEffectAsync.ts
-var useEffectAsync = __webpack_require__(7751);
-;// CONCATENATED MODULE: ./src/components/useFetch.ts
-
-
-
-function useFetch(url, options) {
-  var {
-    0: response,
-    1: setResponse
-  } = (0,react.useState)(undefined); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  var {
-    0: error,
-    1: setError
-  } = (0,react.useState)(undefined);
-  var {
-    0: status,
-    1: setStatus
-  } = (0,react.useState)(undefined);
-  var {
-    0: loading,
-    1: setLoading
-  } = (0,react.useState)(true); // start in loading mode
-
-  (0,useEffectAsync/* default */.Z)( /*#__PURE__*/function () {
-    var _ref = (0,asyncToGenerator/* default */.Z)(function* (mounted) {
-      setLoading(true);
-
-      try {
-        var res = yield fetch(url, options);
-        if (!mounted()) return;
-        var _status = res.status;
-        setStatus(_status);
-
-        if (_status >= 200 && _status <= 204) {
-          var json = yield res.json();
-          if (!mounted()) return;
-          setResponse(json);
-        }
-      } catch (error) {
-        if (!mounted()) return;
-        setError(error);
-      } finally {
-        if (mounted()) setLoading(false);
-      }
-    });
-
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }(), [url]);
-  return {
-    response,
-    error,
-    status,
-    loading
-  };
-}
+// EXTERNAL MODULE: ./src/components/useFetch.ts
+var useFetch = __webpack_require__(27588);
 ;// CONCATENATED MODULE: ./src/components/github.ts
 
 
@@ -745,7 +686,7 @@ function _fetchText() {
 }
 
 function useFetchApi(path, options) {
-  var res = useFetch("" + ROOT + path);
+  var res = (0,useFetch/* default */.Z)("" + ROOT + path);
   if (res.status !== undefined) switch (res.status) {
     case 200:
     case 201:
@@ -779,7 +720,7 @@ function useFetchJSON(slug, tag, path, mimeType) {
     folder
   } = normalizeSlug(slug);
   var downloadUrl = "https://raw.githubusercontent.com/" + repoPath + "/" + tag + "/" + (folder ? folder + "/" : "") + path;
-  return useFetch(downloadUrl, {
+  return (0,useFetch/* default */.Z)(downloadUrl, {
     headers: {
       Accept: mimeType
     }
@@ -862,6 +803,79 @@ function PaperBox(props) {
 
 /***/ }),
 
+/***/ 27588:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ useFetch; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73108);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _useEffectAsync__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7751);
+
+
+
+function useFetch(url, options) {
+  var {
+    0: response,
+    1: setResponse
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+  var {
+    0: error,
+    1: setError
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+  var {
+    0: status,
+    1: setStatus
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+  var {
+    0: loading,
+    1: setLoading
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true); // start in loading mode
+
+  (0,_useEffectAsync__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)( /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(function* (mounted) {
+      setLoading(true);
+
+      try {
+        if (!url) {
+          setStatus(404);
+          setResponse(undefined);
+        } else {
+          var res = yield fetch(url, options);
+          if (!mounted()) return;
+          var _status = res.status;
+          setStatus(_status);
+
+          if (_status >= 200 && _status <= 204) {
+            var json = yield res.json();
+            if (!mounted()) return;
+            setResponse(json);
+          }
+        }
+      } catch (error) {
+        if (!mounted()) return;
+        setError(error);
+      } finally {
+        if (mounted()) setLoading(false);
+      }
+    });
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }(), [url]);
+  return {
+    response,
+    error,
+    status,
+    loading
+  };
+}
+
+/***/ }),
+
 /***/ 50151:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -915,8 +929,8 @@ var Add = __webpack_require__(88880);
 var Create = __webpack_require__(91814);
 // EXTERNAL MODULE: ./src/components/ui/IconButtonWithTooltip.tsx + 1 modules
 var IconButtonWithTooltip = __webpack_require__(79885);
-// EXTERNAL MODULE: ./src/components/github.ts + 2 modules
-var github = __webpack_require__(99819);
+// EXTERNAL MODULE: ./src/components/github.ts + 1 modules
+var github = __webpack_require__(85133);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
 var jdspec = __webpack_require__(13996);
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/makeStyles.js
@@ -1634,4 +1648,4 @@ function DeviceRegistration() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-device-registration-tsx-6631f350b1319fd035ee.js.map
+//# sourceMappingURL=component---src-pages-tools-device-registration-tsx-e30c85cb9a61b2f2f0bf.js.map

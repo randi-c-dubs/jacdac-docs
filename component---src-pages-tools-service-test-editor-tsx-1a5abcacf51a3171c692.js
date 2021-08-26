@@ -1,4 +1,4 @@
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[6091,9819],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[6091,5133],{
 
 /***/ 25297:
 /***/ (function(module, exports) {
@@ -889,7 +889,7 @@ function ServiceSpecificationSelect(props) {
 
 /***/ }),
 
-/***/ 99819:
+/***/ 85133:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -977,67 +977,8 @@ function semverCmp(a, b) {
   var bb = tryParse(b);
   if (!aa && !bb) return strcmp(a, b);else return cmp(aa, bb);
 }
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./src/components/useEffectAsync.ts
-var useEffectAsync = __webpack_require__(7751);
-;// CONCATENATED MODULE: ./src/components/useFetch.ts
-
-
-
-function useFetch(url, options) {
-  var {
-    0: response,
-    1: setResponse
-  } = (0,react.useState)(undefined); // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  var {
-    0: error,
-    1: setError
-  } = (0,react.useState)(undefined);
-  var {
-    0: status,
-    1: setStatus
-  } = (0,react.useState)(undefined);
-  var {
-    0: loading,
-    1: setLoading
-  } = (0,react.useState)(true); // start in loading mode
-
-  (0,useEffectAsync/* default */.Z)( /*#__PURE__*/function () {
-    var _ref = (0,asyncToGenerator/* default */.Z)(function* (mounted) {
-      setLoading(true);
-
-      try {
-        var res = yield fetch(url, options);
-        if (!mounted()) return;
-        var _status = res.status;
-        setStatus(_status);
-
-        if (_status >= 200 && _status <= 204) {
-          var json = yield res.json();
-          if (!mounted()) return;
-          setResponse(json);
-        }
-      } catch (error) {
-        if (!mounted()) return;
-        setError(error);
-      } finally {
-        if (mounted()) setLoading(false);
-      }
-    });
-
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }(), [url]);
-  return {
-    response,
-    error,
-    status,
-    loading
-  };
-}
+// EXTERNAL MODULE: ./src/components/useFetch.ts
+var useFetch = __webpack_require__(27588);
 ;// CONCATENATED MODULE: ./src/components/github.ts
 
 
@@ -1178,7 +1119,7 @@ function _fetchText() {
 }
 
 function useFetchApi(path, options) {
-  var res = useFetch("" + ROOT + path);
+  var res = (0,useFetch/* default */.Z)("" + ROOT + path);
   if (res.status !== undefined) switch (res.status) {
     case 200:
     case 201:
@@ -1212,7 +1153,7 @@ function useFetchJSON(slug, tag, path, mimeType) {
     folder
   } = normalizeSlug(slug);
   var downloadUrl = "https://raw.githubusercontent.com/" + repoPath + "/" + tag + "/" + (folder ? folder + "/" : "") + path;
-  return useFetch(downloadUrl, {
+  return (0,useFetch/* default */.Z)(downloadUrl, {
     headers: {
       Accept: mimeType
     }
@@ -1894,7 +1835,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var GithubPullRequestButton = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(9819)]).then(__webpack_require__.bind(__webpack_require__, 22632)));
+var GithubPullRequestButton = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(5133)]).then(__webpack_require__.bind(__webpack_require__, 22632)));
 var AnnotationTooltip = (0,withStyles/* default */.Z)(theme => ({
   arrow: {
     color: theme.palette.error.main
@@ -1986,6 +1927,80 @@ function HighlightTextField(props) {
       [pullRequestPath + ".md"]: code
     }
   }))));
+}
+
+/***/ }),
+
+/***/ 27588:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": function() { return /* binding */ useFetch; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73108);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _useEffectAsync__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7751);
+
+
+
+function useFetch(url, options) {
+  var {
+    0: response,
+    1: setResponse
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined); // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+  var {
+    0: error,
+    1: setError
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+  var {
+    0: status,
+    1: setStatus
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+  var {
+    0: loading,
+    1: setLoading
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true); // start in loading mode
+
+  (0,_useEffectAsync__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)( /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(function* (mounted) {
+      setLoading(true);
+
+      try {
+        if (!url) {
+          setStatus(404);
+          setResponse(undefined);
+        } else {
+          var res = yield fetch(url, options);
+          if (!mounted()) return;
+          var _status = res.status;
+          setStatus(_status);
+
+          if (_status >= 200 && _status <= 204) {
+            var json = yield res.json();
+            if (!mounted()) return;
+            setResponse(json);
+          }
+        }
+      } catch (error) {
+        if (!mounted()) return;
+        setError(error);
+      } finally {
+        if (mounted()) setLoading(false);
+      }
+    });
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }(), [url]);
+  return {
+    response,
+    error,
+    status,
+    loading
+  };
 }
 
 /***/ }),
@@ -2192,8 +2207,8 @@ var ServiceSpecificationSelect = __webpack_require__(14247);
 var constants = __webpack_require__(71815);
 // EXTERNAL MODULE: ./src/components/test/ServiceTest.tsx + 1 modules
 var ServiceTest = __webpack_require__(99202);
-// EXTERNAL MODULE: ./src/components/github.ts + 2 modules
-var github = __webpack_require__(99819);
+// EXTERNAL MODULE: ./src/components/github.ts + 1 modules
+var github = __webpack_require__(85133);
 // EXTERNAL MODULE: ./src/components/AppContext.tsx
 var AppContext = __webpack_require__(84377);
 // EXTERNAL MODULE: ./src/components/ui/Markdown.tsx + 136 modules
@@ -2319,4 +2334,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-service-test-editor-tsx-bb678b21088bd4c38f40.js.map
+//# sourceMappingURL=component---src-pages-tools-service-test-editor-tsx-1a5abcacf51a3171c692.js.map
