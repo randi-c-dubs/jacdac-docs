@@ -11,7 +11,7 @@
       "name": "angle",
       "@id": "dtmi:jacdac:x12fc9103:rw:angle;1",
       "description": {
-        "en": "Specifies the angle of the arm."
+        "en": "Specifies the angle of the arm (request)."
       },
       "schema": "float",
       "writable": true
@@ -79,6 +79,15 @@
       "@id": "dtmi:jacdac:x12fc9103:const:responsespeed;1",
       "description": {
         "en": "Time to move 60°."
+      },
+      "schema": "float"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "current_angle",
+      "@id": "dtmi:jacdac:x12fc9103:ro:currentangle;1",
+      "description": {
+        "en": "The current physical position of the arm."
       },
       "schema": "float"
     }
