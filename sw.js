@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-3913ab4a3b39b85818bf.js"
+    "url": "webpack-runtime-9fc0a5db3105f9aa026c.js"
   },
   {
     "url": "styles.007e9dceec40bb8df33d.css"
@@ -40,7 +40,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ed9e67a61badc0d400458897b167d985"
+    "revision": "389ac46538f97c1e0392f63cf65ba205"
   },
   {
     "url": "static/webfonts/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"
@@ -60,11 +60,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/2307937736.json",
-    "revision": "aeb6890ec2a162474bd7afedae419194"
+    "revision": "735b09f783fb38229c72c54e5f77cbab"
   },
   {
     "url": "page-data/sq/d/2744294623.json",
-    "revision": "f5e19b3c8ae67d459204388218b1b3d5"
+    "revision": "3cd83df2d639ff2b66d8a662fb78e792"
   },
   {
     "url": "page-data/sq/d/2898794040.json",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/413816803.json",
-    "revision": "64a426b66909b5be8b8b8602ab681591"
+    "revision": "3dda600b314afe26bcba11d855880dc6"
   },
   {
     "url": "page-data/sq/d/63159454.json",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "ad9bfc998d7c0614554bd7e2b2eff3f5"
+    "revision": "c9756d0f096be06da6a256bb00b0c82e"
   },
   {
     "url": "component---src-pages-404-tsx-98f0c77cb4c5988c8765.js"
@@ -1235,7 +1235,7 @@ self.__precacheManifest = [
     "url": "913832d59ba65bf5a995efa1c4e48fc9101c7c83-42ce2d3b0dbb429d14fe.js"
   },
   {
-    "url": "component---src-templates-device-tsx-97aaa67ccda5d1881666.js"
+    "url": "component---src-templates-device-tsx-c54741ac393dc6e77186.js"
   },
   {
     "url": "page-data/devices/microsoft/research/jmaccelerometer30v02/page-data.json",
@@ -1352,7 +1352,7 @@ self.__precacheManifest = [
     "revision": "273fcc1303b0ebbaf7610c7c8f9b5c94"
   },
   {
-    "url": "component---src-pages-tools-azure-device-templates-tsx-2070c3e9f05adfc73e10.js"
+    "url": "component---src-pages-tools-azure-device-templates-tsx-26ce196d4fbfd54c1c44.js"
   },
   {
     "url": "page-data/tools/azure-device-templates/page-data.json",
@@ -1622,7 +1622,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/jacdac-docs/app-8f2c36ed46669ee35827.js`))) {
+  if (!resources || !(await caches.match(`/jacdac-docs/app-4c335604781e49845a76.js`))) {
     return await fetch(event.request)
   }
 

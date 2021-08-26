@@ -631,9 +631,9 @@ function DTDLUnits() {
 /* harmony export */   "eT": function() { return /* binding */ serviceSpecificationToDTDL; },
 /* harmony export */   "Jb": function() { return /* binding */ serviceSpecificationsWithDTDL; },
 /* harmony export */   "tH": function() { return /* binding */ serviceSpecificationDTMI; },
-/* harmony export */   "__": function() { return /* binding */ deviceSpecificationToDTDL; }
+/* harmony export */   "Yh": function() { return /* binding */ deviceClassToDTDL; }
 /* harmony export */ });
-/* unused harmony exports DTDL_JACDAC_PATH, DTDL_SERVICES_PATH, DTDL_DEVICES_PATH, serviceSpecificationToComponent, deviceSpecificationDTMI, DTMIToRoute, routeToDTMI, serviceRouteToDTDL, encodedDeviceRouteToDTDL, routeToDTDL */
+/* unused harmony exports DTDL_JACDAC_PATH, DTDL_SERVICES_PATH, DTDL_DEVICES_PATH, serviceSpecificationToComponent, DTMIToRoute, routeToDTMI, serviceRouteToDTDL, encodedDeviceRouteToDTDL, routeToDTDL */
 /* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(90293);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _jdom_spec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13173);
@@ -945,9 +945,6 @@ function serviceSpecificationToComponent(srv, name) {
 function serviceSpecificationDTMI(srv, customPath) {
   return toDTMI([customPath || DTDL_SERVICES_PATH, srv.classIdentifier]);
 }
-function deviceSpecificationDTMI(dev) {
-  return toDTMI([DTDL_DEVICES_PATH, dev.id.replace(/-/g, ":")]);
-}
 function DTMIToRoute(dtmi) {
   var route = dtmi.toLowerCase().replace(/;/, "-").replace(/:/g, "/") + ".json";
   return route;
@@ -1023,15 +1020,15 @@ function routeToDTDL(route) {
   var handler = routes[path];
   return handler === null || handler === void 0 ? void 0 : handler(route);
 }
-function deviceSpecificationToDTDL(dev, options) {
-  var services = dev.services.map(srv => (0,_jdom_spec__WEBPACK_IMPORTED_MODULE_1__/* .serviceSpecificationFromClassIdentifier */ .d5)(srv));
-  var uniqueServices = (0,_jdom_utils__WEBPACK_IMPORTED_MODULE_2__/* .uniqueMap */ .EM)(services, srv => srv.classIdentifier.toString(), srv => srv);
-  var schemas = uniqueServices.map(srv => serviceSpecificationToDTDL(srv)); // allocate names
+function deviceClassToDTDL(dev) {
+  var services = dev.services.map(srv => (0,_jdom_spec__WEBPACK_IMPORTED_MODULE_1__/* .serviceSpecificationFromClassIdentifier */ .d5)(srv)); // allocate names and count services
 
+  var serviceGroups = {};
   var names = [];
   services.forEach(srv => {
+    serviceGroups[srv.classIdentifier] = (serviceGroups[srv.classIdentifier] || 0) + 1;
     var name = (0,_dtdl__WEBPACK_IMPORTED_MODULE_4__/* .escapeName */ .Jg)(srv.shortId || srv.shortName);
-    if (names.indexOf(name) < 0) names.push(name);else {
+    if (names.indexOf(name) < 0) names.push(name + "0");else {
       var count = 2;
 
       while (names.indexOf(name + count) > -1) {
@@ -1040,16 +1037,18 @@ function deviceSpecificationToDTDL(dev, options) {
 
       names.push(name + count);
     }
-  });
+  }); // compute id from groups
+
+  var dtmi = toDTMI([DTDL_DEVICES_PATH].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(Object.keys(serviceGroups).map(cls => "x" + parseInt(cls).toString(16) + serviceGroups[cls]))));
   var dtdl = {
     "@type": "Interface",
-    "@id": deviceSpecificationDTMI(dev),
+    "@id": dtmi,
     displayName: (0,_dtdl__WEBPACK_IMPORTED_MODULE_4__/* .escapeDisplayName */ .n)(dev.name),
     description: toLocalizedString(dev.description),
     contents: services.map((srv, i) => serviceSpecificationToComponent(srv, names[i])),
     "@context": _dtdl__WEBPACK_IMPORTED_MODULE_4__/* .DTDL_CONTEXT */ .LM
   };
-  if (options !== null && options !== void 0 && options.inlineServices) return [dtdl].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)(schemas));else return dtdl;
+  return dtdl;
 }
 
 /***/ }),
@@ -1894,12 +1893,9 @@ var dtdlspec = __webpack_require__(5443);
 
 function DeviceDTDLSnippet(props) {
   var {
-    dev,
-    inlineServices
+    dev
   } = props;
-  var dtdl = (0,react.useMemo)(() => JSON.stringify((0,dtdlspec/* deviceSpecificationToDTDL */.__)(dev, {
-    inlineServices
-  }), null, 2), [dev]);
+  var dtdl = (0,react.useMemo)(() => JSON.stringify((0,dtdlspec/* deviceClassToDTDL */.Yh)(dev), null, 2), [dev]);
   return /*#__PURE__*/react.createElement(Snippet/* default */.Z, {
     value: dtdl,
     mode: "json",
@@ -1960,7 +1956,7 @@ function DeviceSpecificationSource(props) {
     value: tab,
     onChange: handleTabChange,
     "aria-label": "View specification formats"
-  }, [showSpecification && "Specification", showJSON && "JSON", showDTDL && "Device Twin"].filter(n => !!n).map((n, i) => /*#__PURE__*/react.createElement(Tab/* default */.Z, {
+  }, [showSpecification && "Specification", showJSON && "JSON", showDTDL && "DTDL"].filter(n => !!n).map(n => /*#__PURE__*/react.createElement(Tab/* default */.Z, {
     key: n,
     label: n
   }))), showSpecification && /*#__PURE__*/react.createElement(TabPanel/* default */.Z, {
@@ -2014,9 +2010,7 @@ function DeviceSpecification(props) {
   var imageUrl = (0,useDeviceImage/* default */.Z)(device);
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", {
     key: "title"
-  }, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
-    to: device.link
-  }, device.name)), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
+  }, device.name), /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "subtitle1"
   }, "by", " ", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     to: "/devices/" + (0,spec/* identifierToUrlPath */.uM)((0,jdspec/* escapeDeviceIdentifier */.o9)(device.company))
@@ -2055,11 +2049,12 @@ function Page(props) {
   var id = props.pageContext.node.id;
   var specification = (0,spec/* deviceSpecificationFromIdentifier */.Io)(id);
   return /*#__PURE__*/react.createElement(DeviceSpecification, {
-    device: specification
+    device: specification,
+    showSource: true
   });
 }
 
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-device-tsx-97aaa67ccda5d1881666.js.map
+//# sourceMappingURL=component---src-templates-device-tsx-c54741ac393dc6e77186.js.map
