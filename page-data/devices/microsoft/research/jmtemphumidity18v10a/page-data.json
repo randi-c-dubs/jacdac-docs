@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-device-tsx",
+    "path": "/devices/microsoft/research/jmtemphumidity18v10a/",
+    "result": {"pageContext":{"node":{"id":"microsoft-research-jmtemphumidity18v10a","name":"JM TEMP HUMIDITY 18-v1.0A","company":"Microsoft Research","productIdentifiers":[899442616]}}},
+    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

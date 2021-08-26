@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-device-tsx",
-    "path": "/devices/microsoft/research/jmaccelerometer30v0.2/",
-    "result": {"pageContext":{"node":{"id":"microsoft-research-jmaccelerometer30v0.2","name":"JM Accelerometer 30-v0.2","company":"Microsoft Research","productIdentifiers":[872001670]}}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
