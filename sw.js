@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-0594762289c3eb245b63.js"
+    "url": "webpack-runtime-4e18499d7448fbce8140.js"
   },
   {
     "url": "styles.007e9dceec40bb8df33d.css"
@@ -40,7 +40,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "4966ae8f0973865acda905b6336f366c"
+    "revision": "76a3a79dd9cef857df03b8419182a19f"
   },
   {
     "url": "static/webfonts/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"
@@ -60,11 +60,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/2307937736.json",
-    "revision": "8436cfe3b8bea6519a7ebf8fd3c2fd16"
+    "revision": "1d737ba9435bbb846d13c3d713519d12"
   },
   {
     "url": "page-data/sq/d/2744294623.json",
-    "revision": "9dfc08f44ff664e4039135ed1f90398d"
+    "revision": "b3785b27fe75b9c8340915487876ede8"
   },
   {
     "url": "page-data/sq/d/2898794040.json",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/413816803.json",
-    "revision": "f95d8ddca372e779308c28061f5e29c8"
+    "revision": "a3d141b604df523d948161835f0d3945"
   },
   {
     "url": "page-data/sq/d/63159454.json",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "1522d3cf5f7bbf44f7eef86d2f8c74b5"
+    "revision": "6189a223c59980ee67c90b2871b83850"
   },
   {
     "url": "component---src-pages-404-tsx-98f0c77cb4c5988c8765.js"
@@ -1265,6 +1265,14 @@ self.__precacheManifest = [
     "revision": "f8fbe81c2029764aea4e56d2917885b2"
   },
   {
+    "url": "page-data/devices/microsoft/research/jmclickairquality4v32/page-data.json",
+    "revision": "220ada7e97a35bfb94d05908e7f25990"
+  },
+  {
+    "url": "page-data/devices/microsoft/research/jmclickcolorv32/page-data.json",
+    "revision": "ff4db5154dbd4ea9ed1bf94b47ce7f0a"
+  },
+  {
     "url": "page-data/devices/microsoft/research/jmcrankbtnv2/page-data.json",
     "revision": "0bd26cd7746903f1334ca523218d7a58"
   },
@@ -1362,7 +1370,7 @@ self.__precacheManifest = [
     "revision": "f910ea0b3b97ba4fd33041873bd1cab7"
   },
   {
-    "url": "component---src-pages-tools-azure-iot-proxy-tsx-7ffca9cfada6df4a94d2.js"
+    "url": "component---src-pages-tools-azure-iot-proxy-tsx-056c23c798e16be709eb.js"
   },
   {
     "url": "page-data/tools/azure-iot-proxy/page-data.json",
@@ -1632,7 +1640,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/jacdac-docs/app-f1f509c23a7b94db8e62.js`))) {
+  if (!resources || !(await caches.match(`/jacdac-docs/app-634ab5efbbed51e1a48a.js`))) {
     return await fetch(event.request)
   }
 

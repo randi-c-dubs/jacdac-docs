@@ -74,7 +74,7 @@ function useFetch(url, options) {
 
 /***/ }),
 
-/***/ 11277:
+/***/ 86760:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -177,14 +177,33 @@ var DTDLProxy = /*#__PURE__*/function (_JDClient) {
 var useChange = __webpack_require__(54774);
 // EXTERNAL MODULE: ./src/components/azure/DTDLSnippet.tsx
 var DTDLSnippet = __webpack_require__(16591);
+// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Grid/Grid.js
+var Grid = __webpack_require__(80838);
 // EXTERNAL MODULE: ./src/components/useFetch.ts
 var useFetch = __webpack_require__(27588);
 // EXTERNAL MODULE: ./src/components/ui/Alert.tsx
 var Alert = __webpack_require__(95453);
-// EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
-var gatsby_theme_material_ui = __webpack_require__(36176);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Grid/Grid.js
-var Grid = __webpack_require__(80838);
+;// CONCATENATED MODULE: ./src/components/azure/DTMISnippet.tsx
+
+
+
+
+
+
+function DTMISnippet(props) {
+  var {
+    dtmi,
+    name
+  } = props;
+  var route = dtmi && DTDL_DEVICE_MODELS_REPOSITORY + (0,dtdlspec/* DTMIToRoute */.Aq)(dtmi);
+  var dtdl = (0,useFetch/* default */.Z)(route);
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
+    node: dtdl.response,
+    name: name
+  }), (dtdl === null || dtdl === void 0 ? void 0 : dtdl.error) && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
+    severity: "error"
+  }, dtdl.error + ""));
+}
 ;// CONCATENATED MODULE: ./src/pages/tools/azure-iot-proxy.tsx
 
 
@@ -194,17 +213,14 @@ var Grid = __webpack_require__(80838);
 
 
 
-
-
-
 function Page() {
+  var _dtdl$contents;
+
   var {
     bus
   } = (0,react.useContext)(Context/* default */.Z);
   var proxy = useClient(() => new DTDLProxy(bus));
   var dtdl = (0,useChange/* default */.Z)(proxy, _ => _ === null || _ === void 0 ? void 0 : _.dtdl);
-  var route = dtdl && (0,dtdlspec/* DTMIToRoute */.Aq)(dtdl["@id"]);
-  var dtdlFetch = (0,useFetch/* default */.Z)(route);
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h1", null, "Azure IoT Proxy"), /*#__PURE__*/react.createElement("h2", null, "DTDL"), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     container: true,
     spacing: 1
@@ -214,21 +230,22 @@ function Page() {
   }, /*#__PURE__*/react.createElement("h3", null, "Generated"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
     node: dtdl,
     name: "proxy-generated"
-  })), /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+  })), dtdl && /*#__PURE__*/react.createElement(Grid/* default */.Z, {
     item: true,
     xs: 6
-  }, /*#__PURE__*/react.createElement("h3", null, "DTDL (from", " ", /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
-    target: "_blank",
-    href: route
-  }, "cloud"), ")"), /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
-    node: dtdlFetch === null || dtdlFetch === void 0 ? void 0 : dtdlFetch.response,
+  }, /*#__PURE__*/react.createElement("h3", null, DTDL_DEVICE_MODELS_REPOSITORY), /*#__PURE__*/react.createElement(DTMISnippet, {
+    dtmi: dtdl["@id"],
     name: "proxy-cloud"
-  }), (dtdlFetch === null || dtdlFetch === void 0 ? void 0 : dtdlFetch.error) && /*#__PURE__*/react.createElement(Alert/* default */.Z, {
-    severity: "error"
-  }, dtdlFetch.error))));
+  })), dtdl === null || dtdl === void 0 ? void 0 : (_dtdl$contents = dtdl.contents) === null || _dtdl$contents === void 0 ? void 0 : _dtdl$contents.map(content => /*#__PURE__*/react.createElement(Grid/* default */.Z, {
+    item: true,
+    xs: 6,
+    key: content["@id"]
+  }, /*#__PURE__*/react.createElement(DTDLSnippet/* DTDLSnippet */.Y, {
+    node: content
+  })))));
 }
 
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-azure-iot-proxy-tsx-7ffca9cfada6df4a94d2.js.map
+//# sourceMappingURL=component---src-pages-tools-azure-iot-proxy-tsx-056c23c798e16be709eb.js.map
