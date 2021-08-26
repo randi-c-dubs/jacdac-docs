@@ -48724,7 +48724,8 @@ function DeviceSpecificationList(props) {
     count,
     shuffle,
     requiredServiceClasses,
-    company
+    company,
+    deprecated
   } = props;
   var classes = useStyles();
   var {
@@ -48733,13 +48734,13 @@ function DeviceSpecificationList(props) {
   } = (0,useMediaQueries/* default */.Z)();
   var cols = mobile ? 1 : medium ? 3 : 4;
   var specs = (0,react.useMemo)(() => {
-    var r = (0,jdom_spec/* deviceSpecifications */.qx)();
+    var r = (0,jdom_spec/* deviceSpecifications */.qx)().filter(spec => deprecated || !spec.deprecated);
     if (company) r = r.filter(spec => spec.company === company);
     if (requiredServiceClasses) r = r.filter(spec => spec.services.length && requiredServiceClasses.every(srv => spec.services.indexOf(srv) > -1));
     if (shuffle) (0,utils/* arrayShuffle */.r)(r);
     if (count !== undefined) r = r.slice(0, count);
     return r;
-  }, [requiredServiceClasses, shuffle, count]);
+  }, [requiredServiceClasses, shuffle, count, deprecated]);
   if (!specs.length) return /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     variant: "body1"
   }, "No device registered yet.");
@@ -56169,7 +56170,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "99a76319e4c86b71048b8a17d8bcb9a501930007";
+  var sha = "cbd43802a2e5cc385201b3a91b5d0513ff8e707c";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -87824,4 +87825,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-0387be22aafd40f70bea.js.map
+//# sourceMappingURL=app-6bdd5b84abef6740da8a.js.map
