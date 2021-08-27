@@ -104,7 +104,7 @@ function FilteredDeviceSpecificationList(props) {
     label: "Filter by Service",
     serviceClass: serviceClass,
     setServiceClass: handleServiceChanged
-  })), /*#__PURE__*/react.createElement(DeviceSpecificationList/* default */.Z, Object.assign({}, others, {
+  })), /*#__PURE__*/react.createElement(DeviceSpecificationList.default, Object.assign({}, others, {
     requiredServiceClasses: requiredServiceClasses
   })));
 }
@@ -135,4 +135,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-devices-tsx-878ed1f2a386fdfc2df3.js.map
+//# sourceMappingURL=component---src-pages-devices-tsx-4b10475a90e3edb8bbfa.js.map

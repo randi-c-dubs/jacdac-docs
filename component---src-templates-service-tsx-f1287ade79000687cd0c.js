@@ -97,7 +97,7 @@ function ServiceMarkdown(props) {
   }, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Button, {
     variant: "contained",
     to: "/services/" + shortId + "/test/"
-  }, "Test"))), /*#__PURE__*/react.createElement("h2", null, "Registered Devices"), /*#__PURE__*/react.createElement(DeviceSpecificationList/* default */.Z, {
+  }, "Test"))), /*#__PURE__*/react.createElement("h2", null, "Registered Devices"), /*#__PURE__*/react.createElement(DeviceSpecificationList.default, {
     requiredServiceClasses: [classIdentifier]
   }), /*#__PURE__*/react.createElement("h2", null, " See Also"), /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("a", {
     href: "https://github.com/microsoft/jacdac/edit/main/services/" + shortId + ".md"
@@ -120,4 +120,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-service-tsx-3a4ed8c65d26c10c103f.js.map
+//# sourceMappingURL=component---src-templates-service-tsx-f1287ade79000687cd0c.js.map

@@ -128,14 +128,6 @@ module.exports = JSON.parse('{"layout":"constrained","backgroundColor":"#080808"
 
 /***/ }),
 
-/***/ 97958:
-/***/ (function(module) {
-
-"use strict";
-module.exports = JSON.parse('{"layout":"constrained","backgroundColor":"#f8f8f8","images":{"fallback":{"src":"/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/dda10/gallery.png","srcSet":"/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/49820/gallery.png 423w,\\n/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/d6081/gallery.png 847w,\\n/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/dda10/gallery.png 1693w","sizes":"(min-width: 1693px) 1693px, 100vw"},"sources":[{"srcSet":"/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/c3a4d/gallery.webp 423w,\\n/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/1f4d4/gallery.webp 847w,\\n/jacdac-docs/static/bb92ae39692d8cd70baff06de7ae84ed/4cae9/gallery.webp 1693w","type":"image/webp","sizes":"(min-width: 1693px) 1693px, 100vw"}]},"width":1693,"height":599}');
-
-/***/ }),
-
 /***/ 22081:
 /***/ (function(module) {
 
@@ -48324,10 +48316,12 @@ function DeviceActions(props) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": function() { return /* binding */ DeviceSpecificationList; }
+  "default": function() { return /* binding */ DeviceSpecificationList; }
 });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
@@ -54598,17 +54592,18 @@ function Protocol() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": function() { return /* binding */ Home; }
 /* harmony export */ });
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(80838);
-/* harmony import */ var gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2359);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(80838);
+/* harmony import */ var gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2359);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
 /* harmony import */ var _CarouselGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30043);
 /* harmony import */ var _CenterGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83580);
 /* harmony import */ var _FeatureItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19586);
 /* harmony import */ var _SplitGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(72587);
-/* harmony import */ var _material_ui_icons_DirectionsBus__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(58526);
-/* harmony import */ var _material_ui_icons_PlaylistAddCheck__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4621);
-/* harmony import */ var _material_ui_icons_FindReplace__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(46576);
-/* harmony import */ var _material_ui_icons_Subscriptions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(64056);
+/* harmony import */ var _material_ui_icons_DirectionsBus__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(58526);
+/* harmony import */ var _material_ui_icons_PlaylistAddCheck__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4621);
+/* harmony import */ var _material_ui_icons_FindReplace__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(46576);
+/* harmony import */ var _material_ui_icons_Subscriptions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(64056);
+/* harmony import */ var _hooks_useMediaQueries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20509);
 
 
 
@@ -54619,9 +54614,36 @@ function Protocol() {
 
 
 
+
+
+var DeviceSpecificationList = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 77768)));
+/**
+            <Grid item xs={12}>
+                <StaticImage
+                    src="./gallery.png"
+                    alt="A gallery of Jacdac modules"
+                />
+            </Grid>
+            <CarouselGrid>
+                <Grid item xs={12} sm={6}>
+                    <StaticImage
+                        src="./tangled.png"
+                        alt="Tangled Jacdac cable"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <StaticImage src="./hub.png" alt="A hub PCB" />
+                </Grid>
+            </CarouselGrid>
+ */
 
 function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  var {
+    mobile,
+    medium
+  } = (0,_hooks_useMediaQueries__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)();
+  var cols = mobile ? 1 : medium ? 3 : 4;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     container: true,
     spacing: 10,
     direction: "column",
@@ -54631,7 +54653,7 @@ function Home() {
     title: "Jacdac",
     subtitle: "plug-and-play for microcontrollers",
     imageColumns: 6,
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./manymodulestogether.png",
       alt: "Many Modules Together",
       __imageData: __webpack_require__(37892)
@@ -54639,34 +54661,19 @@ function Home() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CenterGrid__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
     subtitle3: "A protocol designed for easier physical connectivity. It is an entire stack that bridges the world of the low cost microcontroller to the web browser and beyond.",
     description: "Cheap, flexible and extensible."
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
-    src: "./gallery.png",
-    alt: "A gallery of Jacdac modules",
-    __imageData: __webpack_require__(97958)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CarouselGrid__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
-    item: true,
-    xs: 12,
-    sm: 6
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
-    src: "./tangled.png",
-    alt: "Tangled Jacdac cable",
-    __imageData: __webpack_require__(99206)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
-    item: true,
-    xs: 12,
-    sm: 6
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
-    src: "./hub.png",
-    alt: "A hub PCB",
-    __imageData: __webpack_require__(84484)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+    fallback: null
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(DeviceSpecificationList, {
+    count: cols,
+    shuffle: true
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SplitGrid__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z, {
     right: false,
     subtitle: "Hardware.",
     description: "Jacdac relies on a 3-wire bus for power delivery and data transfer. A purpose-built connector is used to interface with the Jacdac PCB edge connector.",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./rotarycable.png",
       alt: "A rotary encoder module with a Jacdac cable attached.",
       __imageData: __webpack_require__(47823)
@@ -54681,7 +54688,7 @@ function Home() {
     buttonText: "Learn more",
     buttonVariant: "link",
     buttonUrl: "/protocol/",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./bustopology.png",
       alt: "Four cables joining into a hub",
       __imageData: __webpack_require__(37301)
@@ -54693,7 +54700,7 @@ function Home() {
     buttonText: "Explore services",
     buttonVariant: "link",
     buttonUrl: "/services/",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./dashboard.png",
       alt: "Dashboard of devices",
       __imageData: __webpack_require__(94071)
@@ -54705,7 +54712,7 @@ function Home() {
     buttonText: "Add Jacdac to your apps",
     buttonVariant: "link",
     buttonUrl: "/software/",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./html5.png",
       alt: "HTML5 logo",
       __imageData: __webpack_require__(17983)
@@ -54717,7 +54724,7 @@ function Home() {
     buttonText: "Get productive with Jacdac",
     buttonVariant: "link",
     buttonUrl: "/tools/",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./devicetree.png",
       alt: "Device tree",
       __imageData: __webpack_require__(80088)
@@ -54728,42 +54735,42 @@ function Home() {
     buttonText: "Protocol specification",
     buttonVariant: "link",
     buttonUrl: "/protocol/"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CarouselGrid__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CarouselGrid__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_DirectionsBus__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_DirectionsBus__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z, {
       fontSize: "large"
     }),
     description: "Bus topology",
     caption: "Jacdac packets are sent serially among physical devices on the Jacdac bus and may also be sent over WebUSB/WebBLE, providing connectivity to web-based tooling and services running in the web browser."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_PlaylistAddCheck__WEBPACK_IMPORTED_MODULE_8__/* .default */ .Z, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_PlaylistAddCheck__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, {
       fontSize: "large"
     }),
     description: "Device discovery and service advertisement",
     caption: "Any device that hosts a service must also run the control service. The control service is responsible for advertising any services a device is running every 500 milliseconds."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_FindReplace__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_FindReplace__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, {
       fontSize: "large"
     }),
     description: "Standardized service abstraction",
     caption: "This abstraction brings plug-and-play dynamism to Jacdac so that devices with different hardware, but the same overall functionality, can replace one another without having to recompile user applications."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_Subscriptions__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_Subscriptions__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
       fontSize: "large"
     }),
     description: "Full stack from 8bit MCU to web development",
@@ -54771,7 +54778,7 @@ function Home() {
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CenterGrid__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, {
     subtitle: "Enabling a cheaper ecosystem.",
     description: "A PCB edge connector was chosen for Jacdac primarily because it essentially adds no cost to a product. A module is a small PCB that includes an MCU connected to an on-board sensor or actuator.",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./rhtempvertical.png",
       alt: "Humidity temperature module vertial",
       __imageData: __webpack_require__(63545)
@@ -54788,7 +54795,7 @@ function Home() {
     buttonText: "Device Development Kit",
     buttonUrl: "https://github.com/microsoft/jacdac-ddk",
     buttonVariant: "link",
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./beautifysimple.png",
       alt: "An array of Jacdac modules",
       __imageData: __webpack_require__(88789)
@@ -54798,17 +54805,17 @@ function Home() {
     subtitle: "How does it work?",
     description: "Jacdac packets are sent serially among physical devices on the Jacdac bus and may also be sent over WebUSB/WebBLE, providing connectivity to web-based tooling and services running in the web browser.",
     imageColumns: 8,
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       src: "./buttoncable.png",
       alt: "A Jacdac humidity module plugging into a Jacdac cable",
       __imageData: __webpack_require__(40111)
     })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CarouselGrid__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CarouselGrid__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       width: 64,
       src: "./hotplugicon.svg",
       alt: "Icon of two plugs connecting",
@@ -54816,12 +54823,12 @@ function Home() {
     }),
     description: "Hot plug discovery",
     caption: "The device catalog lists the registered Jacdac devices that can be automatically detected on the bus. The catalog information provides vendor information, the service."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       width: 64,
       src: "./firmwareupdateicon.svg",
       alt: "Firmware icon",
@@ -54829,12 +54836,12 @@ function Home() {
     }),
     description: "Firmware updates",
     caption: "The device catalog is automatically detect, download and flash firmware onto devices."
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
     item: true,
     xs: 12,
     sm: 4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FeatureItem__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
-    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_6__.S, {
+    startImage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_7__.S, {
       width: 64,
       src: "./html5.png",
       alt: "HTML5 icon",
@@ -54997,7 +55004,7 @@ function Protocol() {
     subtitle: "Device Catalog.",
     description: "Jacdac identifies registered devices on the bus and can automatically find and upload the latest firmware for them.",
     imageColumns: 6,
-    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z, {
+    image: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DeviceSpecificationList__WEBPACK_IMPORTED_MODULE_1__.default, {
       count: 6
     }),
     buttonText: "Explore devices",
@@ -56157,7 +56164,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "cbe0ce0384253c7d40640b885f88f8a8486554e5";
+  var sha = "e9f80ffd1152b9f2aa93416c2e1c194a755900e7";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -87819,4 +87826,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-f021d5aa55186ee046c0.js.map
+//# sourceMappingURL=app-5bb0039331dd9466aeab.js.map
