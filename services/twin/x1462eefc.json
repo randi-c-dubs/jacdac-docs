@@ -1,0 +1,36 @@
+{
+  "serviceClass": 342028028,
+  "name": "azureIoTHealth",
+  "registers": [
+    {
+      "code": 384,
+      "name": "hub",
+      "kind": "ro",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "connection_status",
+      "kind": "ro",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "statistics",
+      "kind": "ro",
+      "packFormat": "u32 u32 u32 u32",
+      "fields": [
+        "reading",
+        "event",
+        "twin_reported",
+        "twin_desired"
+      ]
+    }
+  ]
+}

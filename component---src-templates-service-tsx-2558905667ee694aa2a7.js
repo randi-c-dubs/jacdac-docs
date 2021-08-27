@@ -306,9 +306,13 @@ var ServiceSpecification = __webpack_require__(81857);
 var DTDLSnippet = __webpack_require__(16591);
 // EXTERNAL MODULE: ./jacdac-ts/src/azure-iot/dtdlspec.ts
 var dtdlspec = __webpack_require__(5443);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
+var constants = __webpack_require__(71815);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/azure-iot/devicetwin.ts
 
-function serviceSpecificationToDeviceTwinSpecification(specification) {
+
+
+function serviceSpecificationToServiceTwinSpecification(specification) {
   if (!specification) return undefined;
   var {
     classIdentifier: serviceClass,
@@ -339,8 +343,8 @@ function serviceSpecificationToDeviceTwinSpecification(specification) {
   };
   return dspec;
 }
-function serviceSpecificationsWithDeviceTwinSpecification() {
-  var specs = serviceSpecifications().filter(srv => !isInfrastructure(srv));
+function serviceSpecificationsWithServiceTwinSpecification() {
+  var specs = [serviceSpecificationFromClassIdentifier(SRV_CONTROL)].concat(_toConsumableArray(serviceSpecifications().filter(srv => !isInfrastructure(srv))));
   return specs;
 }
 // EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
@@ -400,7 +404,7 @@ function ServiceSpecificationSource(props) {
     value: tab,
     onChange: handleTabChange,
     "aria-label": "View specification formats"
-  }, [showSpecification && "Specification", "MakeCode", "TypeScript", "C", "JSON", showDTDL && "DTDL", showDeviceTwin && "Device Twin"].filter(n => !!n).map((n, i) => /*#__PURE__*/react.createElement(Tab/* default */.Z, {
+  }, [showSpecification && "Specification", "MakeCode", "TypeScript", "C", "JSON", showDTDL && "DTDL", showDeviceTwin && "Twin"].filter(n => !!n).map((n, i) => /*#__PURE__*/react.createElement(Tab/* default */.Z, {
     key: n,
     label: n
   }))), showSpecification && /*#__PURE__*/react.createElement(TabPanel/* default */.Z, {
@@ -428,8 +432,8 @@ function ServiceSpecificationSource(props) {
     index: index++
   }, /*#__PURE__*/react.createElement(Snippet/* default */.Z, {
     mode: "json",
-    url: (0,gatsby_browser_entry.withPrefix)("/services/devicetwins/x" + spec.classIdentifier.toString(16) + ".json"),
-    value: JSON.stringify(serviceSpecificationToDeviceTwinSpecification(spec), null, 2)
+    url: (0,gatsby_browser_entry.withPrefix)("/services/twin/x" + spec.classIdentifier.toString(16) + ".json"),
+    value: JSON.stringify(serviceSpecificationToServiceTwinSpecification(spec), null, 2)
   }))));
 }
 ;// CONCATENATED MODULE: ./src/components/ServiceMarkdown.tsx
@@ -494,4 +498,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-service-tsx-fd0c63f770ce0fa5fab0.js.map
+//# sourceMappingURL=component---src-templates-service-tsx-2558905667ee694aa2a7.js.map

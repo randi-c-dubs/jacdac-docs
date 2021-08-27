@@ -334,6 +334,119 @@
   },
   {
     "@type": "Interface",
+    "@id": "dtmi:jacdac:services:x1462eefc;1",
+    "displayName": "Azure IoT Health",
+    "description": {
+      "en": "Health and diagnostics information about the Azure Iot Hub connection."
+    },
+    "contents": [
+      {
+        "@type": "Telemetry",
+        "name": "hub",
+        "@id": "dtmi:jacdac:x1462eefc:ro:hub;1",
+        "description": {
+          "en": "Name of the connected hub, if any."
+        },
+        "schema": "string"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "connection_status",
+        "@id": "dtmi:jacdac:x1462eefc:ro:connectionstatus;1",
+        "description": {
+          "en": "Indicates the status of connection. A message beyond the [0..3] range represents an HTTP error code."
+        },
+        "schema": "dtmi:jacdac:x1462eefc:connectionstatus;1"
+      },
+      {
+        "@type": "Telemetry",
+        "name": "statistics",
+        "@id": "dtmi:jacdac:x1462eefc:ro:statistics;1",
+        "description": {
+          "en": "Reads internal statistics about messages sent to the hub."
+        },
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "reading",
+              "schema": "integer"
+            },
+            {
+              "name": "event",
+              "schema": "integer"
+            },
+            {
+              "name": "twin_reported",
+              "schema": "integer"
+            },
+            {
+              "name": "twin_desired",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "name": "twin_change",
+        "@id": "dtmi:jacdac:x1462eefc:event:twinchange;1",
+        "description": {
+          "en": "Raised when the twin model or reported values are modified."
+        },
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "name": "connection_status_change",
+        "@id": "dtmi:jacdac:x1462eefc:event:connectionstatuschange;1",
+        "description": {
+          "en": "Raised when the connection status changes"
+        },
+        "schema": "dtmi:jacdac:x1462eefc:connectionstatus;1"
+      }
+    ],
+    "schemas": [
+      {
+        "@type": "Enum",
+        "@id": "dtmi:jacdac:x1462eefc:connectionstatus;1",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": "connected",
+            "displayName": "Connected",
+            "enumValue": 0
+          },
+          {
+            "name": "disconnected",
+            "displayName": "Disconnected",
+            "enumValue": 1
+          },
+          {
+            "name": "connecting",
+            "displayName": "Connecting",
+            "enumValue": 2
+          },
+          {
+            "name": "disconnecting",
+            "displayName": "Disconnecting",
+            "enumValue": 3
+          }
+        ]
+      }
+    ],
+    "@context": [
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@type": "Interface",
     "@id": "dtmi:jacdac:services:x19ed364c;1",
     "displayName": "Azure IoT Hub",
     "description": {
