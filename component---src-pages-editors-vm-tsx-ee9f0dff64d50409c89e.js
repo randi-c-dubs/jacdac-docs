@@ -2827,7 +2827,7 @@ function BlockClientRoles() {
   var {
     roleManager
   } = (0,react.useContext)(BlockContext/* default */.C);
-  var roles = (0,useChange/* default */.Z)(roleManager, _ => _ === null || _ === void 0 ? void 0 : _.roles());
+  var roles = (0,useChange/* default */.Z)(roleManager, _ => _ === null || _ === void 0 ? void 0 : _.roles);
   return /*#__PURE__*/react.createElement(react.Fragment, null, roles === null || roles === void 0 ? void 0 : roles.map(_ref => {
     var {
       role,
@@ -4677,4 +4677,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-vm-tsx-2e31c2b4392919990477.js.map
+//# sourceMappingURL=component---src-pages-editors-vm-tsx-ee9f0dff64d50409c89e.js.map
