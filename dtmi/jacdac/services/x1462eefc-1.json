@@ -8,10 +8,10 @@
   "contents": [
     {
       "@type": "Telemetry",
-      "name": "hub",
-      "@id": "dtmi:jacdac:x1462eefc:ro:hub;1",
+      "name": "hub_name",
+      "@id": "dtmi:jacdac:x1462eefc:ro:hubname;1",
       "description": {
-        "en": "Name of the connected hub, if any."
+        "en": "Something like `my-iot-hub.azure-devices.net`; empty string when not properly configured"
       },
       "schema": "string"
     },

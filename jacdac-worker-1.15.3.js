@@ -543,13 +543,13 @@ var AzureIotHubHealthConnectionStatus;
 var AzureIotHubHealthReg;
 (function (AzureIotHubHealthReg) {
     /**
-     * Read-only string (bytes). Name of the connected hub, if any.
+     * Read-only string (bytes). Something like `my-iot-hub.azure-devices.net`; empty string when not properly configured
      *
      * ```
-     * const [hub] = jdunpack<[string]>(buf, "s")
+     * const [hubName] = jdunpack<[string]>(buf, "s")
      * ```
      */
-    AzureIotHubHealthReg[AzureIotHubHealthReg["Hub"] = 384] = "Hub";
+    AzureIotHubHealthReg[AzureIotHubHealthReg["HubName"] = 384] = "HubName";
     /**
      * Read-only ConnectionStatus (uint16_t). Indicates the status of connection. A message beyond the [0..3] range represents an HTTP error code.
      *

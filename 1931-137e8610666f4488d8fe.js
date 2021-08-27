@@ -150,9 +150,9 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
   }();
 
   (0,createClass/* default */.Z)(AzureIoTHubHealthClient, [{
-    key: "hub",
+    key: "hubName",
     get: function get() {
-      var reg = this.service.register(constants/* AzureIotHubHealthReg.Hub */.q7s.Hub);
+      var reg = this.service.register(constants/* AzureIotHubHealthReg.HubName */.q7s.HubName);
       reg.refresh(true);
       return reg.stringValue;
     }
@@ -199,7 +199,7 @@ function DashboardAzureIoTHubHealth(props) {
   } = props;
   var connectId = (0,react_use_id_hook_esm/* useId */.Me)();
   var client = useServiceClient(service, () => new azureiothubhealthclient(service));
-  var hub = (0,useChange/* default */.Z)(client, _ => _ === null || _ === void 0 ? void 0 : _.hub);
+  var hubName = (0,useChange/* default */.Z)(client, _ => _ === null || _ === void 0 ? void 0 : _.hubName);
   var connectionStatus = (0,useChange/* default */.Z)(client, _ => _ === null || _ === void 0 ? void 0 : _.connectionStatus);
   var color = "primary";
   var {
@@ -219,7 +219,7 @@ function DashboardAzureIoTHubHealth(props) {
   }, /*#__PURE__*/react.createElement(Typography/* default */.Z, {
     component: "span",
     variant: "subtitle1"
-  }, "hub: ", hub), /*#__PURE__*/react.createElement(Switch/* default */.Z, {
+  }, "hub: ", hubName), /*#__PURE__*/react.createElement(Switch/* default */.Z, {
     checked: connected,
     "aria-labelledby": connectId
   }), /*#__PURE__*/react.createElement("label", {
@@ -231,4 +231,4 @@ function DashboardAzureIoTHubHealth(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=1931-5e6099e3495df8a16d10.js.map
+//# sourceMappingURL=1931-137e8610666f4488d8fe.js.map

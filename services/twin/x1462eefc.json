@@ -4,7 +4,7 @@
   "registers": [
     {
       "code": 384,
-      "name": "hub",
+      "name": "hub_name",
       "kind": "ro",
       "packFormat": "s",
       "fields": [
