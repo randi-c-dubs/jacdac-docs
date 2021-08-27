@@ -357,6 +357,7 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
     var _this;
 
     _this = _JDServiceClient.call(this, service) || this;
+    (0,_jdom_utils__WEBPACK_IMPORTED_MODULE_6__/* .assert */ .hu)(service.serviceClass === _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_SENSOR_AGGREGATOR */ .x12);
     _this.service.registersUseAcks = true;
     return _this;
   }
@@ -1862,4 +1863,4 @@ function Collector() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-collector-tsx-8c83cf3080df64af7121.js.map
+//# sourceMappingURL=component---src-pages-tools-collector-tsx-bda39e85fa3249f40595.js.map

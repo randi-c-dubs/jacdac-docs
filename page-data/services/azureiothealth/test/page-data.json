@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-service-test-tsx",
-    "path": "/services/azureiothealth/test/",
-    "result": {"pageContext":{"node":{"name":"Azure IoT Health","shortName":"azureIoTHealth","shortId":"azureiothealth","classIdentifier":342028028}}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}

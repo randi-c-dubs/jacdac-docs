@@ -334,8 +334,84 @@
   },
   {
     "@type": "Interface",
+    "@id": "dtmi:jacdac:services:x19ed364c;1",
+    "displayName": "Azure IoT Hub",
+    "description": {
+      "en": "Send messages, receive commands, and work with device twins in Azure IoT Hub."
+    },
+    "contents": [
+      {
+        "@type": "Telemetry",
+        "name": "connection_status",
+        "@id": "dtmi:jacdac:x19ed364c:ro:connectionstatus;1",
+        "description": {
+          "en": "Returns `\"ok\"` when connected, empty `\"\"` when disconnected, and an error description otherwise."
+        },
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "hub_name",
+        "@id": "dtmi:jacdac:x19ed364c:const:hubname;1",
+        "description": {
+          "en": "Something like `my-iot-hub.azure-devices.net`; empty string when not properly configured"
+        },
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "device_id",
+        "@id": "dtmi:jacdac:x19ed364c:const:deviceid;1",
+        "description": {
+          "en": "Something like `my-dev-007`; empty string when `connection_string` is not set."
+        },
+        "schema": "string"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "name": "message",
+        "@id": "dtmi:jacdac:x19ed364c:event:message;1",
+        "description": {
+          "en": "This event is emitted upon reception of a cloud to device message, that is a string\n(doesn't contain NUL bytes) and fits in a single event packet."
+        },
+        "schema": "string"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "name": "connected",
+        "@id": "dtmi:jacdac:x19ed364c:event:connected;1",
+        "description": {
+          "en": "Raised when the device is connected to the hub."
+        },
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "name": "disconnected",
+        "@id": "dtmi:jacdac:x19ed364c:event:disconnected;1",
+        "description": {
+          "en": "Raised when the device is disconnected to the hub. ``connection_status`` may contain information about the error."
+        },
+        "schema": "integer"
+      }
+    ],
+    "@context": [
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@type": "Interface",
     "@id": "dtmi:jacdac:services:x1462eefc;1",
-    "displayName": "Azure IoT Health",
+    "displayName": "Azure IoT Hub Health",
     "description": {
       "en": "Health and diagnostics information about the Azure Iot Hub connection."
     },
@@ -439,82 +515,6 @@
             "enumValue": 3
           }
         ]
-      }
-    ],
-    "@context": [
-      "dtmi:dtdl:context;2"
-    ]
-  },
-  {
-    "@type": "Interface",
-    "@id": "dtmi:jacdac:services:x19ed364c;1",
-    "displayName": "Azure IoT Hub",
-    "description": {
-      "en": "Send messages, receive commands, and work with device twins in Azure IoT Hub."
-    },
-    "contents": [
-      {
-        "@type": "Telemetry",
-        "name": "connection_status",
-        "@id": "dtmi:jacdac:x19ed364c:ro:connectionstatus;1",
-        "description": {
-          "en": "Returns `\"ok\"` when connected, empty `\"\"` when disconnected, and an error description otherwise."
-        },
-        "schema": "string"
-      },
-      {
-        "@type": "Property",
-        "name": "hub_name",
-        "@id": "dtmi:jacdac:x19ed364c:const:hubname;1",
-        "description": {
-          "en": "Something like `my-iot-hub.azure-devices.net`; empty string when not properly configured"
-        },
-        "schema": "string"
-      },
-      {
-        "@type": "Property",
-        "name": "device_id",
-        "@id": "dtmi:jacdac:x19ed364c:const:deviceid;1",
-        "description": {
-          "en": "Something like `my-dev-007`; empty string when `connection_string` is not set."
-        },
-        "schema": "string"
-      },
-      {
-        "@type": [
-          "Telemetry",
-          "Event"
-        ],
-        "name": "message",
-        "@id": "dtmi:jacdac:x19ed364c:event:message;1",
-        "description": {
-          "en": "This event is emitted upon reception of a cloud to device message, that is a string\n(doesn't contain NUL bytes) and fits in a single event packet."
-        },
-        "schema": "string"
-      },
-      {
-        "@type": [
-          "Telemetry",
-          "Event"
-        ],
-        "name": "connected",
-        "@id": "dtmi:jacdac:x19ed364c:event:connected;1",
-        "description": {
-          "en": "Raised when the device is connected to the hub."
-        },
-        "schema": "integer"
-      },
-      {
-        "@type": [
-          "Telemetry",
-          "Event"
-        ],
-        "name": "disconnected",
-        "@id": "dtmi:jacdac:x19ed364c:event:disconnected;1",
-        "description": {
-          "en": "Raised when the device is disconnected to the hub. ``connection_status`` may contain information about the error."
-        },
-        "schema": "integer"
       }
     ],
     "@context": [

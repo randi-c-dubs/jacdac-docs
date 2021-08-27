@@ -133,6 +133,7 @@ var SensorAggregatorClient = /*#__PURE__*/function (_JDServiceClient) {
     var _this;
 
     _this = _JDServiceClient.call(this, service) || this;
+    (0,_jdom_utils__WEBPACK_IMPORTED_MODULE_6__/* .assert */ .hu)(service.serviceClass === _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__/* .SRV_SENSOR_AGGREGATOR */ .x12);
     _this.service.registersUseAcks = true;
     return _this;
   }
@@ -802,6 +803,7 @@ var ModelRunnerClient = /*#__PURE__*/function (_JDServiceClient) {
     var _this;
 
     _this = _JDServiceClient.call(this, service) || this;
+    (0,utils/* assert */.hu)(service.serviceClass == constants/* SRV_MODEL_RUNNER */.kVm);
     _this.service.registersUseAcks = true;
     return _this;
   } // TODO this should use some caching?
@@ -1393,4 +1395,4 @@ function ModelUploader() {
 /***/ })
 
 }]);
-//# sourceMappingURL=a77c613bd0faa103b953c0d40475a17f2d569635-0d996c0fcf9708fd33ee.js.map
+//# sourceMappingURL=a77c613bd0faa103b953c0d40475a17f2d569635-e14a16dced8b95f447a4.js.map

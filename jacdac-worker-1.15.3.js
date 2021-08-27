@@ -465,114 +465,6 @@ var ArcadeSoundReg;
      */
     ArcadeSoundReg[ArcadeSoundReg["BufferPending"] = 385] = "BufferPending";
 })(ArcadeSoundReg || (ArcadeSoundReg = {}));
-var AzureIoTHealthConnectionStatus;
-(function (AzureIoTHealthConnectionStatus) {
-    AzureIoTHealthConnectionStatus[AzureIoTHealthConnectionStatus["Connected"] = 0] = "Connected";
-    AzureIoTHealthConnectionStatus[AzureIoTHealthConnectionStatus["Disconnected"] = 1] = "Disconnected";
-    AzureIoTHealthConnectionStatus[AzureIoTHealthConnectionStatus["Connecting"] = 2] = "Connecting";
-    AzureIoTHealthConnectionStatus[AzureIoTHealthConnectionStatus["Disconnecting"] = 3] = "Disconnecting";
-})(AzureIoTHealthConnectionStatus || (AzureIoTHealthConnectionStatus = {}));
-var AzureIoTHealthReg;
-(function (AzureIoTHealthReg) {
-    /**
-     * Read-only string (bytes). Name of the connected hub, if any.
-     *
-     * ```
-     * const [hub] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIoTHealthReg[AzureIoTHealthReg["Hub"] = 384] = "Hub";
-    /**
-     * Read-only ConnectionStatus (uint16_t). Indicates the status of connection. A message beyond the [0..3] range represents an HTTP error code.
-     *
-     * ```
-     * const [connectionStatus] = jdunpack<[AzureIoTHealthConnectionStatus]>(buf, "u16")
-     * ```
-     */
-    AzureIoTHealthReg[AzureIoTHealthReg["ConnectionStatus"] = 385] = "ConnectionStatus";
-    /**
-     * Reads internal statistics about messages sent to the hub.
-     *
-     * ```
-     * const [reading, event, twinReported, twinDesired] = jdunpack<[number, number, number, number]>(buf, "u32 u32 u32 u32")
-     * ```
-     */
-    AzureIoTHealthReg[AzureIoTHealthReg["Statistics"] = 386] = "Statistics";
-})(AzureIoTHealthReg || (AzureIoTHealthReg = {}));
-var AzureIoTHealthCmd;
-(function (AzureIoTHealthCmd) {
-    /**
-     * Argument: twin_report pipe (bytes). Returns the twin json payload
-     *
-     * ```
-     * const [twinReport] = jdunpack<[Uint8Array]>(buf, "b[12]")
-     * ```
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Twin"] = 128] = "Twin";
-    /**
-     * No args. Starts a connection to the IoT hub service
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Connect"] = 129] = "Connect";
-    /**
-     * No args. Starts disconnecting from the IoT hub service
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Disconnect"] = 130] = "Disconnect";
-    /**
-     * Argument: device_id uint64_t. Route an ``identify`` commands to the selected device
-     *
-     * ```
-     * const [deviceId] = jdunpack<[number]>(buf, "u64")
-     * ```
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Identify"] = 131] = "Identify";
-    /**
-     * Argument: device_id uint64_t. Route a ``reset`` commands to the selected device
-     *
-     * ```
-     * const [deviceId] = jdunpack<[number]>(buf, "u64")
-     * ```
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Reset"] = 132] = "Reset";
-    /**
-     * Argument: payload uint32_t. Commands the device to send a ``ping`` message to the hub with the given payload.
-     *
-     * ```
-     * const [payload] = jdunpack<[number]>(buf, "u32")
-     * ```
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["Ping"] = 133] = "Ping";
-    /**
-     * No args. Restricted command to override the existing connection string to the Azure IoT Hub.
-     */
-    AzureIoTHealthCmd[AzureIoTHealthCmd["SetConnectionString"] = 134] = "SetConnectionString";
-    /**
-     * report SetConnectionString
-     * ```
-     * const [connectionStringPort] = jdunpack<[number]>(buf, "u16")
-     * ```
-     */
-})(AzureIoTHealthCmd || (AzureIoTHealthCmd = {}));
-/**
- * pipe_report TwinReport
- * ```
- * const [content] = jdunpack<[string]>(buf, "s")
- * ```
- */
-var AzureIoTHealthEvent;
-(function (AzureIoTHealthEvent) {
-    /**
-     * Raised when the twin model or reported values are modified.
-     */
-    AzureIoTHealthEvent[AzureIoTHealthEvent["TwinChange"] = 3] = "TwinChange";
-    /**
-     * Argument: connection_status ConnectionStatus (uint16_t). Raised when the connection status changes
-     *
-     * ```
-     * const [connectionStatus] = jdunpack<[AzureIoTHealthConnectionStatus]>(buf, "u16")
-     * ```
-     */
-    AzureIoTHealthEvent[AzureIoTHealthEvent["ConnectionStatusChange"] = 128] = "ConnectionStatusChange";
-})(AzureIoTHealthEvent || (AzureIoTHealthEvent = {}));
 var AzureIotHubCmd;
 (function (AzureIotHubCmd) {
     /**
@@ -641,6 +533,114 @@ var AzureIotHubEvent;
      */
     AzureIotHubEvent[AzureIotHubEvent["Disconnected"] = 129] = "Disconnected";
 })(AzureIotHubEvent || (AzureIotHubEvent = {}));
+var AzureIotHubHealthConnectionStatus;
+(function (AzureIotHubHealthConnectionStatus) {
+    AzureIotHubHealthConnectionStatus[AzureIotHubHealthConnectionStatus["Connected"] = 0] = "Connected";
+    AzureIotHubHealthConnectionStatus[AzureIotHubHealthConnectionStatus["Disconnected"] = 1] = "Disconnected";
+    AzureIotHubHealthConnectionStatus[AzureIotHubHealthConnectionStatus["Connecting"] = 2] = "Connecting";
+    AzureIotHubHealthConnectionStatus[AzureIotHubHealthConnectionStatus["Disconnecting"] = 3] = "Disconnecting";
+})(AzureIotHubHealthConnectionStatus || (AzureIotHubHealthConnectionStatus = {}));
+var AzureIotHubHealthReg;
+(function (AzureIotHubHealthReg) {
+    /**
+     * Read-only string (bytes). Name of the connected hub, if any.
+     *
+     * ```
+     * const [hub] = jdunpack<[string]>(buf, "s")
+     * ```
+     */
+    AzureIotHubHealthReg[AzureIotHubHealthReg["Hub"] = 384] = "Hub";
+    /**
+     * Read-only ConnectionStatus (uint16_t). Indicates the status of connection. A message beyond the [0..3] range represents an HTTP error code.
+     *
+     * ```
+     * const [connectionStatus] = jdunpack<[AzureIotHubHealthConnectionStatus]>(buf, "u16")
+     * ```
+     */
+    AzureIotHubHealthReg[AzureIotHubHealthReg["ConnectionStatus"] = 385] = "ConnectionStatus";
+    /**
+     * Reads internal statistics about messages sent to the hub.
+     *
+     * ```
+     * const [reading, event, twinReported, twinDesired] = jdunpack<[number, number, number, number]>(buf, "u32 u32 u32 u32")
+     * ```
+     */
+    AzureIotHubHealthReg[AzureIotHubHealthReg["Statistics"] = 386] = "Statistics";
+})(AzureIotHubHealthReg || (AzureIotHubHealthReg = {}));
+var AzureIotHubHealthCmd;
+(function (AzureIotHubHealthCmd) {
+    /**
+     * Argument: twin_report pipe (bytes). Returns the twin json payload
+     *
+     * ```
+     * const [twinReport] = jdunpack<[Uint8Array]>(buf, "b[12]")
+     * ```
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Twin"] = 128] = "Twin";
+    /**
+     * No args. Starts a connection to the IoT hub service
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Connect"] = 129] = "Connect";
+    /**
+     * No args. Starts disconnecting from the IoT hub service
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Disconnect"] = 130] = "Disconnect";
+    /**
+     * Argument: device_id uint64_t. Route an `identify` commands to the selected device
+     *
+     * ```
+     * const [deviceId] = jdunpack<[number]>(buf, "u64")
+     * ```
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Identify"] = 131] = "Identify";
+    /**
+     * Argument: device_id uint64_t. Route a `reset` commands to the selected device
+     *
+     * ```
+     * const [deviceId] = jdunpack<[number]>(buf, "u64")
+     * ```
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Reset"] = 132] = "Reset";
+    /**
+     * Argument: payload uint32_t. Commands the device to send a `ping` message to the hub with the given payload.
+     *
+     * ```
+     * const [payload] = jdunpack<[number]>(buf, "u32")
+     * ```
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Ping"] = 133] = "Ping";
+    /**
+     * No args. Restricted command to override the existing connection string to the Azure IoT Hub.
+     */
+    AzureIotHubHealthCmd[AzureIotHubHealthCmd["SetConnectionString"] = 134] = "SetConnectionString";
+    /**
+     * report SetConnectionString
+     * ```
+     * const [connectionStringPort] = jdunpack<[number]>(buf, "u16")
+     * ```
+     */
+})(AzureIotHubHealthCmd || (AzureIotHubHealthCmd = {}));
+/**
+ * pipe_report TwinReport
+ * ```
+ * const [content] = jdunpack<[string]>(buf, "s")
+ * ```
+ */
+var AzureIotHubHealthEvent;
+(function (AzureIotHubHealthEvent) {
+    /**
+     * Raised when the twin model or reported values are modified.
+     */
+    AzureIotHubHealthEvent[AzureIotHubHealthEvent["TwinChange"] = 3] = "TwinChange";
+    /**
+     * Argument: connection_status ConnectionStatus (uint16_t). Raised when the connection status changes
+     *
+     * ```
+     * const [connectionStatus] = jdunpack<[AzureIotHubHealthConnectionStatus]>(buf, "u16")
+     * ```
+     */
+    AzureIotHubHealthEvent[AzureIotHubHealthEvent["ConnectionStatusChange"] = 128] = "ConnectionStatusChange";
+})(AzureIotHubHealthEvent || (AzureIotHubHealthEvent = {}));
 var BarcodeReaderFormat;
 (function (BarcodeReaderFormat) {
     BarcodeReaderFormat[BarcodeReaderFormat["Aztec"] = 1] = "Aztec";

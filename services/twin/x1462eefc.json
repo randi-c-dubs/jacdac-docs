@@ -1,6 +1,6 @@
 {
   "serviceClass": 342028028,
-  "name": "azureIoTHealth",
+  "name": "azureIotHubHealth",
   "registers": [
     {
       "code": 384,

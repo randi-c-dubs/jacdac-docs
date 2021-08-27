@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-10ad40416a1136568934.js"
+    "url": "webpack-runtime-d55782844b8c9a122380.js"
   },
   {
     "url": "styles.007e9dceec40bb8df33d.css"
@@ -40,7 +40,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "8093aa08ed5a14c44351b0b68175e80a"
+    "revision": "6248f53f9977fa901241153ffe565b53"
   },
   {
     "url": "static/webfonts/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"
@@ -60,11 +60,11 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/2307937736.json",
-    "revision": "6e401e4489c3295369bd0318ea4d3ec8"
+    "revision": "6a1b636dca13f849fd5a7a031e10d6b8"
   },
   {
     "url": "page-data/sq/d/2744294623.json",
-    "revision": "ee0d1dbab7ca446e98fb192c1c0758a4"
+    "revision": "92942d32f456bc28e9cd8947213ae55d"
   },
   {
     "url": "page-data/sq/d/2898794040.json",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/413816803.json",
-    "revision": "2ef1afb40ee96118d4e34ab245b7f114"
+    "revision": "8d99a616e803bc5f71433233c481cb9c"
   },
   {
     "url": "page-data/sq/d/63159454.json",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "5ab8f998a429d715ee1ecf58bd71d176"
+    "revision": "77f417282439d6963b86f47631183b9e"
   },
   {
     "url": "component---src-pages-404-tsx-98f0c77cb4c5988c8765.js"
@@ -328,18 +328,6 @@ self.__precacheManifest = [
     "revision": "b94b3d045214977a7a80099e6f58fda9"
   },
   {
-    "url": "page-data/services/azureiothealth/page-data.json",
-    "revision": "63aaa789e9a0ad3c2344d325dce7404d"
-  },
-  {
-    "url": "page-data/services/azureiothealth/playground/page-data.json",
-    "revision": "37ee71731859433fc4e71f0c54c14cb4"
-  },
-  {
-    "url": "page-data/services/azureiothealth/test/page-data.json",
-    "revision": "9ad1c86d5039bed1da03f89ccaa7962b"
-  },
-  {
     "url": "page-data/services/azureiothub/page-data.json",
     "revision": "7e663a6396845d1d991545bb10219bc8"
   },
@@ -350,6 +338,18 @@ self.__precacheManifest = [
   {
     "url": "page-data/services/azureiothub/test/page-data.json",
     "revision": "28ad657faf06ebe5c9eac43062b578c7"
+  },
+  {
+    "url": "page-data/services/azureiothubhealth/page-data.json",
+    "revision": "d3d01db226c5e863da58f2bed101e02c"
+  },
+  {
+    "url": "page-data/services/azureiothubhealth/playground/page-data.json",
+    "revision": "8c1b93fa513e829eefcc0fbb838ffbe8"
+  },
+  {
+    "url": "page-data/services/azureiothubhealth/test/page-data.json",
+    "revision": "417a883eb1df3dc2dad476a2560b7f27"
   },
   {
     "url": "page-data/services/barcodereader/page-data.json",
@@ -1389,7 +1389,7 @@ self.__precacheManifest = [
     "revision": "b48ab5cbf34f9944030e03ef909520d5"
   },
   {
-    "url": "component---src-pages-tools-collector-tsx-8c83cf3080df64af7121.js"
+    "url": "component---src-pages-tools-collector-tsx-bda39e85fa3249f40595.js"
   },
   {
     "url": "page-data/tools/collector/page-data.json",
@@ -1413,7 +1413,7 @@ self.__precacheManifest = [
     "revision": "45f1d1c01bf30568a078501c209628c7"
   },
   {
-    "url": "a77c613bd0faa103b953c0d40475a17f2d569635-0d996c0fcf9708fd33ee.js"
+    "url": "a77c613bd0faa103b953c0d40475a17f2d569635-e14a16dced8b95f447a4.js"
   },
   {
     "url": "component---src-pages-tools-edge-impulse-tsx-4e29e04ce9a24740ddac.js"
@@ -1652,7 +1652,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/jacdac-docs/app-41c4298919dd6ac0a2e1.js`))) {
+  if (!resources || !(await caches.match(`/jacdac-docs/app-bee0b7b35bd646e6a7e4.js`))) {
     return await fetch(event.request)
   }
 
