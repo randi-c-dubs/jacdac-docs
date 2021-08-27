@@ -11101,7 +11101,7 @@ function WorkspaceProvider(props) {
   var roleServiceClass = (0,_jacdac_useChange__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(roleManager, _ => {
     var _$roles$find;
 
-    return _ === null || _ === void 0 ? void 0 : (_$roles$find = _.roles.find(r => r.role === role)) === null || _$roles$find === void 0 ? void 0 : _$roles$find.serviceClass;
+    return _ === null || _ === void 0 ? void 0 : (_$roles$find = _.roles().find(r => r.role === role)) === null || _$roles$find === void 0 ? void 0 : _$roles$find.serviceClass;
   });
   var {
     0: flyout,
@@ -20552,4 +20552,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-3cbb4b2a3a83885a10c2.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-fdefe27e99fc93276571.js.map
