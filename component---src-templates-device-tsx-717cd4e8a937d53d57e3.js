@@ -893,8 +893,7 @@ function DeviceSpecification(props) {
     specification: spec
   })))), showSource && /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h2", null, "Specification"), /*#__PURE__*/react.createElement(DeviceSpecificationSource, {
     deviceSpecification: device,
-    showJSON: true,
-    showDTDL: true
+    showJSON: true
   })));
 }
 ;// CONCATENATED MODULE: ./src/templates/device.tsx
@@ -913,4 +912,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-device-tsx-e2c72726f8b7e391727d.js.map
+//# sourceMappingURL=component---src-templates-device-tsx-717cd4e8a937d53d57e3.js.map
