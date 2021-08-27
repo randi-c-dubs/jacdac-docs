@@ -1,0 +1,15 @@
+{
+  "serviceClass": 416636459,
+  "name": "multitouch",
+  "registers": [
+    {
+      "code": 257,
+      "name": "capacity",
+      "kind": "ro",
+      "packFormat": "r: i32",
+      "fields": [
+        "capacitance"
+      ]
+    }
+  ]
+}

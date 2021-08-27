@@ -1,0 +1,105 @@
+{
+  "serviceClass": 336566904,
+  "name": "modelRunner",
+  "registers": [
+    {
+      "code": 128,
+      "name": "auto_invoke_every",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 257,
+      "name": "outputs",
+      "kind": "ro",
+      "packFormat": "r: f32",
+      "fields": [
+        "output"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "input_shape",
+      "kind": "ro",
+      "packFormat": "r: u16",
+      "fields": [
+        "dimension"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "output_shape",
+      "kind": "ro",
+      "packFormat": "r: u16",
+      "fields": [
+        "dimension"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "last_run_time",
+      "kind": "ro",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 387,
+      "name": "allocated_arena_size",
+      "kind": "ro",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 388,
+      "name": "model_size",
+      "kind": "ro",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 389,
+      "name": "last_error",
+      "kind": "ro",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 390,
+      "name": "format",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 391,
+      "name": "format_version",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 392,
+      "name": "parallel",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

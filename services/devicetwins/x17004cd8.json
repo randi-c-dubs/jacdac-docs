@@ -1,0 +1,42 @@
+{
+  "serviceClass": 385895640,
+  "name": "motor",
+  "registers": [
+    {
+      "code": 2,
+      "name": "duty",
+      "kind": "rw",
+      "packFormat": "i1.15",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 1,
+      "name": "enabled",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "load_torque",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "load_speed",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

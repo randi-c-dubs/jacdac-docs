@@ -1,0 +1,15 @@
+{
+  "serviceClass": 382210232,
+  "name": "humidity",
+  "registers": [
+    {
+      "code": 257,
+      "name": "humidity",
+      "kind": "ro",
+      "packFormat": "u22.10",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

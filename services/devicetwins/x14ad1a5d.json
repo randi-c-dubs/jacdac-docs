@@ -1,0 +1,60 @@
+{
+  "serviceClass": 346888797,
+  "name": "soundLevel",
+  "registers": [
+    {
+      "code": 257,
+      "name": "sound_level",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 1,
+      "name": "enabled",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "min_decibels",
+      "kind": "rw",
+      "packFormat": "i16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 130,
+      "name": "max_decibels",
+      "kind": "rw",
+      "packFormat": "i16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 6,
+      "name": "loud_threshold",
+      "kind": "rw",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 5,
+      "name": "quiet_threshold",
+      "kind": "rw",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

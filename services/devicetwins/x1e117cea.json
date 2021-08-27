@@ -1,0 +1,15 @@
+{
+  "serviceClass": 504462570,
+  "name": "barometer",
+  "registers": [
+    {
+      "code": 257,
+      "name": "pressure",
+      "kind": "ro",
+      "packFormat": "u22.10",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "serviceClass": 298814469,
+  "name": "dmx",
+  "registers": [
+    {
+      "code": 1,
+      "name": "enabled",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

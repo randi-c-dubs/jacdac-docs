@@ -1,0 +1,35 @@
+{
+  "serviceClass": 277836886,
+  "name": "joystick",
+  "registers": [
+    {
+      "code": 257,
+      "name": "direction",
+      "kind": "ro",
+      "packFormat": "u32 i1.15 i1.15",
+      "fields": [
+        "buttons",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "buttons_available",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

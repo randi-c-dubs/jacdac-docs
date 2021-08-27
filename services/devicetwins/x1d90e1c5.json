@@ -1,0 +1,59 @@
+{
+  "serviceClass": 496034245,
+  "name": "sensorAggregator",
+  "registers": [
+    {
+      "code": 128,
+      "name": "inputs",
+      "kind": "rw",
+      "packFormat": "u16 u16 u32 r: b[8] u32 u8 u8 u8 i8",
+      "fields": [
+        "sampling_interval",
+        "samples_in_window",
+        "reserved",
+        "device_id",
+        "service_class",
+        "service_num",
+        "sample_size",
+        "sample_type",
+        "sample_shift"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "num_samples",
+      "kind": "ro",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "sample_size",
+      "kind": "ro",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "streaming_samples",
+      "kind": "rw",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 257,
+      "name": "current_sample",
+      "kind": "ro",
+      "packFormat": "b",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "serviceClass": 343630573,
+  "name": "waterLevel",
+  "registers": [
+    {
+      "code": 257,
+      "name": "level",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

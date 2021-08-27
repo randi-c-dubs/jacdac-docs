@@ -1,0 +1,33 @@
+{
+  "serviceClass": 434976332,
+  "name": "azureIotHub",
+  "registers": [
+    {
+      "code": 384,
+      "name": "connection_status",
+      "kind": "ro",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "hub_name",
+      "kind": "const",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "device_id",
+      "kind": "const",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

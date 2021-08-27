@@ -1,0 +1,43 @@
+{
+  "serviceClass": 563381279,
+  "name": "verifiedTelemetry",
+  "registers": [
+    {
+      "code": 384,
+      "name": "telemetry_status",
+      "kind": "ro",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "telemetry_status_interval",
+      "kind": "rw",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "fingerprint_type",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "fingerprint_template",
+      "kind": "ro",
+      "packFormat": "u16 b",
+      "fields": [
+        "confidence",
+        "template"
+      ]
+    }
+  ]
+}

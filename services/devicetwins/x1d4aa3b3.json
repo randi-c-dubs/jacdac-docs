@@ -1,0 +1,24 @@
+{
+  "serviceClass": 491430835,
+  "name": "soilMoisture",
+  "registers": [
+    {
+      "code": 257,
+      "name": "moisture",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

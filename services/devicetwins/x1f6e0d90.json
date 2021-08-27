@@ -1,0 +1,24 @@
+{
+  "serviceClass": 527306128,
+  "name": "uvIndex",
+  "registers": [
+    {
+      "code": 257,
+      "name": "uv_index",
+      "kind": "ro",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

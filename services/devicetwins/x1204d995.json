@@ -1,0 +1,51 @@
+{
+  "serviceClass": 302307733,
+  "name": "speechSynthesis",
+  "registers": [
+    {
+      "code": 1,
+      "name": "enabled",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "lang",
+      "kind": "rw",
+      "packFormat": "s",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "volume",
+      "kind": "rw",
+      "packFormat": "u0.8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 130,
+      "name": "pitch",
+      "kind": "rw",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 131,
+      "name": "rate",
+      "kind": "rw",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

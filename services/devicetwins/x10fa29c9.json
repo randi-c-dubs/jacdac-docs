@@ -1,0 +1,24 @@
+{
+  "serviceClass": 284830153,
+  "name": "rotaryEncoder",
+  "registers": [
+    {
+      "code": 257,
+      "name": "position",
+      "kind": "ro",
+      "packFormat": "i32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "clicks_per_turn",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

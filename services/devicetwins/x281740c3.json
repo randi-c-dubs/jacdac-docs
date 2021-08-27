@@ -1,0 +1,15 @@
+{
+  "serviceClass": 672612547,
+  "name": "pressureButton",
+  "registers": [
+    {
+      "code": 6,
+      "name": "threshold",
+      "kind": "rw",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

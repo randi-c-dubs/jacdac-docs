@@ -1,0 +1,15 @@
+{
+  "serviceClass": 458824639,
+  "name": "windSpeed",
+  "registers": [
+    {
+      "code": 257,
+      "name": "wind_speed",
+      "kind": "ro",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

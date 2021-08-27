@@ -1,0 +1,24 @@
+{
+  "serviceClass": 309087410,
+  "name": "reflectedLight",
+  "registers": [
+    {
+      "code": 257,
+      "name": "brightness",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "serviceClass": 289254534,
+  "name": "microphone",
+  "registers": [
+    {
+      "code": 128,
+      "name": "sampling_period",
+      "kind": "rw",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

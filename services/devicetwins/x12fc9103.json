@@ -1,0 +1,78 @@
+{
+  "serviceClass": 318542083,
+  "name": "servo",
+  "registers": [
+    {
+      "code": 2,
+      "name": "angle",
+      "kind": "rw",
+      "packFormat": "i16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 1,
+      "name": "enabled",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "offset",
+      "kind": "rw",
+      "packFormat": "i16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 131,
+      "name": "min_pulse",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 133,
+      "name": "max_pulse",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "stall_torque",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "response_speed",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 257,
+      "name": "current_angle",
+      "kind": "ro",
+      "packFormat": "i16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

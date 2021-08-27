@@ -1,0 +1,33 @@
+{
+  "serviceClass": 450008066,
+  "name": "switch",
+  "registers": [
+    {
+      "code": 257,
+      "name": "active",
+      "kind": "ro",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "auto_off_delay",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

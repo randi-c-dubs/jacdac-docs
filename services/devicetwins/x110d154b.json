@@ -1,0 +1,42 @@
+{
+  "serviceClass": 286070091,
+  "name": "ledMatrix",
+  "registers": [
+    {
+      "code": 2,
+      "name": "leds",
+      "kind": "rw",
+      "packFormat": "b",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 1,
+      "name": "brightness",
+      "kind": "rw",
+      "packFormat": "u0.8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "rows",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "columns",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

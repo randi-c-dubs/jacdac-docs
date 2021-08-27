@@ -1,0 +1,15 @@
+{
+  "serviceClass": 280710838,
+  "name": "pulseOximeter",
+  "registers": [
+    {
+      "code": 257,
+      "name": "oxygen",
+      "kind": "ro",
+      "packFormat": "u8.8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "serviceClass": 312849815,
+  "name": "tvoc",
+  "registers": [
+    {
+      "code": 257,
+      "name": "TVOC",
+      "kind": "ro",
+      "packFormat": "u22.10",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "conditioning_period",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

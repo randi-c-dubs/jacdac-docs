@@ -1,0 +1,26 @@
+{
+  "serviceClass": 521405449,
+  "name": "accelerometer",
+  "registers": [
+    {
+      "code": 257,
+      "name": "forces",
+      "kind": "ro",
+      "packFormat": "i12.20 i12.20 i12.20",
+      "fields": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "max_force",
+      "kind": "rw",
+      "packFormat": "i12.20",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

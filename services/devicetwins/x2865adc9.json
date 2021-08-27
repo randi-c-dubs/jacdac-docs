@@ -1,0 +1,15 @@
+{
+  "serviceClass": 677752265,
+  "name": "capacitiveButton",
+  "registers": [
+    {
+      "code": 6,
+      "name": "threshold",
+      "kind": "rw",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

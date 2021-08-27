@@ -1,0 +1,15 @@
+{
+  "serviceClass": 326323349,
+  "name": "rainGauge",
+  "registers": [
+    {
+      "code": 257,
+      "name": "precipitation",
+      "kind": "ro",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

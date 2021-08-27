@@ -1,0 +1,24 @@
+{
+  "serviceClass": 400333340,
+  "name": "lightLevel",
+  "registers": [
+    {
+      "code": 257,
+      "name": "light_level",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

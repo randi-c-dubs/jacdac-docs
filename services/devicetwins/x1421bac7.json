@@ -1,0 +1,24 @@
+{
+  "serviceClass": 337754823,
+  "name": "thermometer",
+  "registers": [
+    {
+      "code": 257,
+      "name": "temperature",
+      "kind": "ro",
+      "packFormat": "i22.10",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

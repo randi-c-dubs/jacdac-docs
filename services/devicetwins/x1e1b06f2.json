@@ -1,0 +1,26 @@
+{
+  "serviceClass": 505087730,
+  "name": "gyroscope",
+  "registers": [
+    {
+      "code": 257,
+      "name": "rotation_rates",
+      "kind": "ro",
+      "packFormat": "i12.20 i12.20 i12.20",
+      "fields": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "max_rate",
+      "kind": "rw",
+      "packFormat": "i12.20",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

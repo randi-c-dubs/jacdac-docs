@@ -1,0 +1,24 @@
+{
+  "serviceClass": 394916002,
+  "name": "rng",
+  "registers": [
+    {
+      "code": 384,
+      "name": "random",
+      "kind": "ro",
+      "packFormat": "b",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

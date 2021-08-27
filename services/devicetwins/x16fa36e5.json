@@ -1,0 +1,81 @@
+{
+  "serviceClass": 385496805,
+  "name": "indexedScreen",
+  "registers": [
+    {
+      "code": 1,
+      "name": "brightness",
+      "kind": "rw",
+      "packFormat": "u0.8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "palette",
+      "kind": "rw",
+      "packFormat": "r: u8 u8 u8 u8",
+      "fields": [
+        "blue",
+        "green",
+        "red",
+        "padding"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "bits_per_pixel",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "width",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "height",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "width_major",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 130,
+      "name": "up_sampling",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 131,
+      "name": "rotation",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "serviceClass": 522667846,
+  "name": "potentiometer",
+  "registers": [
+    {
+      "code": 257,
+      "name": "position",
+      "kind": "ro",
+      "packFormat": "u0.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

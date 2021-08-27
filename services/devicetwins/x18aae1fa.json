@@ -1,0 +1,15 @@
+{
+  "serviceClass": 413852154,
+  "name": "wifi",
+  "registers": [
+    {
+      "code": 384,
+      "name": "connected",
+      "kind": "ro",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

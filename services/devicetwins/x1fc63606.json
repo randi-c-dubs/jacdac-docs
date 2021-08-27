@@ -1,0 +1,33 @@
+{
+  "serviceClass": 533083654,
+  "name": "arcadeSound",
+  "registers": [
+    {
+      "code": 128,
+      "name": "sample_rate",
+      "kind": "rw",
+      "packFormat": "u22.10",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "buffer_size",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "buffer_pending",
+      "kind": "ro",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

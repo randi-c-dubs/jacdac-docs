@@ -1,0 +1,19 @@
+{
+  "serviceClass": 435474539,
+  "name": "rover",
+  "registers": [
+    {
+      "code": 257,
+      "name": "kinematics",
+      "kind": "ro",
+      "packFormat": "i16.16 i16.16 i16.16 i16.16 i16.16",
+      "fields": [
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "heading"
+      ]
+    }
+  ]
+}

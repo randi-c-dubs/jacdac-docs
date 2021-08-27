@@ -1,0 +1,42 @@
+{
+  "serviceClass": 525160512,
+  "name": "weightScale",
+  "registers": [
+    {
+      "code": 257,
+      "name": "weight",
+      "kind": "ro",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "zero_offset",
+      "kind": "rw",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "gain",
+      "kind": "rw",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

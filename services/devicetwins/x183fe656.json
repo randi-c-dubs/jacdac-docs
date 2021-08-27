@@ -1,0 +1,33 @@
+{
+  "serviceClass": 406840918,
+  "name": "relay",
+  "registers": [
+    {
+      "code": 1,
+      "name": "closed",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "max_switching_current",
+      "kind": "const",
+      "packFormat": "u32",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

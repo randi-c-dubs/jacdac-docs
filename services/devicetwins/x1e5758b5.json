@@ -1,0 +1,24 @@
+{
+  "serviceClass": 509040821,
+  "name": "hIDAdapter",
+  "registers": [
+    {
+      "code": 128,
+      "name": "num_configurations",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "current_configuration",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

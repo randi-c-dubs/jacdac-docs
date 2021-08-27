@@ -1,0 +1,53 @@
+{
+  "serviceClass": 506480888,
+  "name": "led",
+  "registers": [
+    {
+      "code": 384,
+      "name": "color",
+      "kind": "ro",
+      "packFormat": "u8 u8 u8",
+      "fields": [
+        "red",
+        "green",
+        "blue"
+      ]
+    },
+    {
+      "code": 387,
+      "name": "led_count",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "wave_length",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 386,
+      "name": "luminous_intensity",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

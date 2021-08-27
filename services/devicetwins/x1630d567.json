@@ -1,0 +1,17 @@
+{
+  "serviceClass": 372299111,
+  "name": "color",
+  "registers": [
+    {
+      "code": 257,
+      "name": "color",
+      "kind": "ro",
+      "packFormat": "u0.16 u0.16 u0.16",
+      "fields": [
+        "red",
+        "green",
+        "blue"
+      ]
+    }
+  ]
+}

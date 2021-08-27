@@ -1,0 +1,15 @@
+{
+  "serviceClass": 409725227,
+  "name": "windDirection",
+  "registers": [
+    {
+      "code": 257,
+      "name": "wind_direction",
+      "kind": "ro",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

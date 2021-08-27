@@ -1,0 +1,48 @@
+{
+  "serviceClass": 445323816,
+  "name": "realTimeClock",
+  "registers": [
+    {
+      "code": 257,
+      "name": "local_time",
+      "kind": "ro",
+      "packFormat": "u16 u8 u8 u8 u8 u8 u8",
+      "fields": [
+        "year",
+        "month",
+        "day_of_month",
+        "day_of_week",
+        "hour",
+        "min",
+        "sec"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "error",
+      "kind": "ro",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "precision",
+      "kind": "const",
+      "packFormat": "u16.16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "serviceClass": 501915758,
+  "name": "arcadeGamepad",
+  "registers": [
+    {
+      "code": 257,
+      "name": "buttons",
+      "kind": "ro",
+      "packFormat": "r: u8 u0.8",
+      "fields": [
+        "button",
+        "pressure"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "available_buttons",
+      "kind": "const",
+      "packFormat": "r: u8",
+      "fields": [
+        "button"
+      ]
+    }
+  ]
+}

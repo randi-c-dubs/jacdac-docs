@@ -1,0 +1,33 @@
+{
+  "serviceClass": 365137307,
+  "name": "trafficLight",
+  "registers": [
+    {
+      "code": 128,
+      "name": "red",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "orange",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 130,
+      "name": "green",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

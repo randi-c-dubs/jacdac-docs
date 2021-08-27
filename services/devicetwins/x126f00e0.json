@@ -1,0 +1,78 @@
+{
+  "serviceClass": 309264608,
+  "name": "ledPixel",
+  "registers": [
+    {
+      "code": 1,
+      "name": "brightness",
+      "kind": "rw",
+      "packFormat": "u0.8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 384,
+      "name": "actual_brightness",
+      "kind": "ro",
+      "packFormat": "u0.8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 128,
+      "name": "light_type",
+      "kind": "rw",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 129,
+      "name": "num_pixels",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 131,
+      "name": "num_columns",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 385,
+      "name": "max_pixels",
+      "kind": "const",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 130,
+      "name": "num_repeats",
+      "kind": "rw",
+      "packFormat": "u16",
+      "fields": [
+        "_"
+      ]
+    },
+    {
+      "code": 263,
+      "name": "variant",
+      "kind": "const",
+      "packFormat": "u8",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

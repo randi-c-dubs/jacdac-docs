@@ -1,0 +1,15 @@
+{
+  "serviceClass": 510577394,
+  "name": "illuminance",
+  "registers": [
+    {
+      "code": 257,
+      "name": "light",
+      "kind": "ro",
+      "packFormat": "u22.10",
+      "fields": [
+        "_"
+      ]
+    }
+  ]
+}

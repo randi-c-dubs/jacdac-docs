@@ -1,0 +1,17 @@
+{
+  "serviceClass": 318935176,
+  "name": "magnetometer",
+  "registers": [
+    {
+      "code": 257,
+      "name": "forces",
+      "kind": "ro",
+      "packFormat": "i32 i32 i32",
+      "fields": [
+        "x",
+        "y",
+        "z"
+      ]
+    }
+  ]
+}
