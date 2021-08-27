@@ -11086,7 +11086,7 @@ function WorkspaceProvider(props) {
   };
 
   var resolveRoleService = () => {
-    var newRoleService = role && (roleManager === null || roleManager === void 0 ? void 0 : roleManager.getService(role));
+    var newRoleService = role && (roleManager === null || roleManager === void 0 ? void 0 : roleManager.service(role));
     return newRoleService;
   };
 
@@ -20552,4 +20552,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-fdefe27e99fc93276571.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-73d18f0ab6d330cc932c.js.map
