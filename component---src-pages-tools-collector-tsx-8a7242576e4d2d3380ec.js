@@ -1702,7 +1702,7 @@ function Collector() {
 
   (0,react.useEffect)(() => {
     console.log("set interval to " + samplingIntervalDelay);
-    recordingRegisters.forEach(reg => reg.sendSetIntAsync(samplingIntervalDelay));
+    recordingRegisters.forEach(reg => reg.sendSetPackedAsync("i32", [samplingIntervalDelay]));
   }, [samplingIntervalDelay, registerIdsChecked]); // collecting
 
   (0,react.useEffect)(() => {
@@ -1863,4 +1863,4 @@ function Collector() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-collector-tsx-bda39e85fa3249f40595.js.map
+//# sourceMappingURL=component---src-pages-tools-collector-tsx-8a7242576e4d2d3380ec.js.map

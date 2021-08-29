@@ -586,22 +586,6 @@ var AzureIotHubHealthCmd;
      */
     AzureIotHubHealthCmd[AzureIotHubHealthCmd["Disconnect"] = 130] = "Disconnect";
     /**
-     * Argument: device_id uint64_t. Route an `identify` commands to the selected device
-     *
-     * ```
-     * const [deviceId] = jdunpack<[number]>(buf, "u64")
-     * ```
-     */
-    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Identify"] = 131] = "Identify";
-    /**
-     * Argument: device_id uint64_t. Route a `reset` commands to the selected device
-     *
-     * ```
-     * const [deviceId] = jdunpack<[number]>(buf, "u64")
-     * ```
-     */
-    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Reset"] = 132] = "Reset";
-    /**
      * Argument: payload uint32_t. Commands the device to send a `ping` message to the hub with the given payload.
      *
      * ```

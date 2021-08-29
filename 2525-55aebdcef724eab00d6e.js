@@ -287,7 +287,7 @@ function BlocklyDataRecordingDialog(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (error) return;
     console.log("set interval to " + samplingIntervalDelayi);
-    recordingRegisters.forEach(reg => reg.sendSetIntAsync(samplingIntervalDelayi));
+    recordingRegisters.forEach(reg => reg.sendSetPackedAsync("i32", [samplingIntervalDelayi]));
   }, [samplingIntervalDelayi, registerIdsChecked, errorSamplingIntervalDelay]); // collecting
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -517,4 +517,4 @@ function BlocklyDataRecordingDialog(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=2525-75efcc352aee13e49b3b.js.map
+//# sourceMappingURL=2525-55aebdcef724eab00d6e.js.map

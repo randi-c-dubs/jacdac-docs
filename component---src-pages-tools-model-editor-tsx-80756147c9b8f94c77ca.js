@@ -1090,7 +1090,7 @@ function CollectData(props) {
   (0,react.useEffect)(() => {
     if (error) return;
     console.log("set interval to " + samplingIntervalDelayi);
-    recordingRegisters.forEach(reg => reg.sendSetIntAsync(samplingIntervalDelayi));
+    recordingRegisters.forEach(reg => reg.sendSetPackedAsync("i32", [samplingIntervalDelayi]));
   }, [samplingIntervalDelayi, registerIdsChecked, errorSamplingIntervalDelay]); // collecting
 
   (0,react.useEffect)(() => {
@@ -2210,4 +2210,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-model-editor-tsx-1e5f6d90ddf900de8603.js.map
+//# sourceMappingURL=component---src-pages-tools-model-editor-tsx-80756147c9b8f94c77ca.js.map

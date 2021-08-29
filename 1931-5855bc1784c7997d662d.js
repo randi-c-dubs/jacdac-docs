@@ -48,12 +48,9 @@ var constants = __webpack_require__(71815);
 var pack = __webpack_require__(91635);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceclient.ts
 var serviceclient = __webpack_require__(56763);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/spec.ts + 2 modules
-var spec = __webpack_require__(13173);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/clients/azureiothubhealthclient.ts
-
 
 
 
@@ -115,37 +112,13 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
     return disconnect;
   }();
 
-  _proto.identify = /*#__PURE__*/function () {
-    var _identify = (0,asyncToGenerator/* default */.Z)(function* (deviceId) {
-      yield this.service.sendCmdAsync(constants/* AzureIotHubHealthCmd.Identify */.FhJ.Identify, (0,spec/* parseDeviceId */.QN)(deviceId), true);
-    });
-
-    function identify(_x) {
-      return _identify.apply(this, arguments);
-    }
-
-    return identify;
-  }();
-
-  _proto.reset = /*#__PURE__*/function () {
-    var _reset = (0,asyncToGenerator/* default */.Z)(function* (deviceId) {
-      yield this.service.sendCmdAsync(constants/* AzureIotHubHealthCmd.Reset */.FhJ.Reset, (0,spec/* parseDeviceId */.QN)(deviceId), true);
-    });
-
-    function reset(_x2) {
-      return _reset.apply(this, arguments);
-    }
-
-    return reset;
-  }();
-
   _proto.ping = /*#__PURE__*/function () {
     var _ping = (0,asyncToGenerator/* default */.Z)(function* (value) {
       var data = (0,pack/* jdpack */.AV)("u32", [value]);
       yield this.service.sendCmdAsync(constants/* AzureIotHubHealthCmd.Ping */.FhJ.Ping, data, true);
     });
 
-    function ping(_x3) {
+    function ping(_x) {
       return _ping.apply(this, arguments);
     }
 
@@ -235,4 +208,4 @@ function DashboardAzureIoTHubHealth(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=1931-77f11e108e9dbb2369b3.js.map
+//# sourceMappingURL=1931-5855bc1784c7997d662d.js.map
