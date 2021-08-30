@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-playground-tsx",
     "path": "/services/soundspectrum/playground/",
     "result": {"pageContext":{"node":{"name":"Sound Spectrum","shortName":"soundSpectrum","shortId":"soundspectrum","classIdentifier":360365086}}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

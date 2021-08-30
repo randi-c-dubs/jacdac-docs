@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-playground-tsx",
     "path": "/services/rotaryencoder/playground/",
     "result": {"pageContext":{"node":{"name":"Rotary encoder","shortName":"rotaryEncoder","shortId":"rotaryencoder","classIdentifier":284830153}}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

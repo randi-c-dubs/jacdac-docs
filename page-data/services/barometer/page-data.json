@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/barometer/",
     "result": {"pageContext":{"classIdentifier":504462570,"source":"# Barometer\n\n    identifier: 0x1e117cea\n    extends: _sensor\n    group: environment\n    tags: 8bit\n\nA sensor measuring air pressure of outside environment.\n\n## Registers\n\nDefault streaming interval is 1s.\n\n    ro pressure: u22.10 hPa { absolute_min = 300, absolute_max = 1100, typical_min = 940, typical_max = 1040, preferred_interval=60000 } @ reading\n\nThe air pressure.\n\n    ro pressure_error: u22.10 hPa @ reading_error\n\nThe real pressure is between `pressure - pressure_error` and `pressure + pressure_error`.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

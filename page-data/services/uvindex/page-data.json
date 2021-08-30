@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/uvindex/",
     "result": {"pageContext":{"classIdentifier":527306128,"source":"# UV index\n\nThe UV Index is a measure of the intensity of ultraviolet (UV) rays from the Sun. \n\n    identifier: 0x1f6e0d90\n    extends: _sensor\n    camel: uvIndex\n    group: environment\n    tags: 8bit\n\n## Registers\n\n    ro uv_index: u16.16 uv { typical_max=11 } @ reading\n\nUltraviolet index, typically refreshed every second.\n\n    ro uv_index_error?: u16.16 uv @ reading_error\n\nError on the UV measure.\n\n    enum Variant: u8 {\n        UVA_UVB = 1,\n        Visible_IR = 2\n    }\n    const variant?: Variant @ variant\n\nThe type of physical sensor and capabilities.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

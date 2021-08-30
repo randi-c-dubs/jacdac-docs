@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-test-tsx",
     "path": "/services/accelerometer/test/",
     "result": {"pageContext":{"node":{"name":"Accelerometer","shortName":"accelerometer","shortId":"accelerometer","classIdentifier":521405449}}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

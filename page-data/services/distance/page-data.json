@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/distance/",
     "result": {"pageContext":{"classIdentifier":337275786,"source":"# Distance\n\nA sensor that determines the distance of an object without any physical contact involved.\n\n    identifier:  0x141a6b8a\n    extends: _sensor\n    tags: 8bit\n\n## Registers\n\n    ro distance: u16.16 m { typical_min=0.02, typical_max=4 } @ reading\n\nCurrent distance from the object\n\n    const min_range?: u16.16 m @ min_reading\n\nMinimum measurable distance \n\n    const max_range?: u16.16 m @ max_reading\n\nMaximum measurable distance\n\n    enum Variant: u8 {\n        Ultrasonic = 1,\n        Infrared = 2,\n        LiDAR = 3,\n        Laser = 4,\n    }\n    const variant?: Variant @ variant\n\nDetermines the type of sensor used.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

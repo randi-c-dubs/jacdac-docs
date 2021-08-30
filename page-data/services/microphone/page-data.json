@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/microphone/",
     "result": {"pageContext":{"classIdentifier":289254534,"source":"# Microphone\n\n    identifier: 0x113dac86\n    group: sound\n\nA single-channel microphone.\n\n## Commands\n\n    command sample @ 0x81 {\n        samples: pipe\n        num_samples: u32\n    }\n\nThe samples will be streamed back over the `samples` pipe.\nIf `num_samples` is `0`, streaming will only stop when the pipe is closed.\nOtherwise the specified number of samples is streamed.\nSamples are sent as `i16`.\n\n## Registers\n\n    rw sampling_period: u32 us @ 0x80\n\nGet or set microphone sampling period.\nSampling rate is `1_000_000 / sampling_period Hz`.\n\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

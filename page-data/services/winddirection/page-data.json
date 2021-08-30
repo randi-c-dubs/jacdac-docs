@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/winddirection/",
     "result": {"pageContext":{"classIdentifier":409725227,"source":"# Wind direction\n\nA sensor that measures wind direction.\n\n    identifier: 0x186be92b\n    extends: _sensor\n    tags: 8bit\n\n## Registers\n\n    ro wind_direction: u16 ° { absolute_min=0, absolute_max=359, preferred_interval=1000 } @ reading\n\nThe direction of the wind.\n\n    ro wind_direction_error?: u16 ° @ reading_error\n\nError on the wind direction reading\n\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

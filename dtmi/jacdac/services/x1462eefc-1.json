@@ -58,24 +58,24 @@
         "Telemetry",
         "Event"
       ],
-      "name": "twin_change",
-      "@id": "dtmi:jacdac:x1462eefc:event:twinchange;1",
-      "description": {
-        "en": "Raised when the twin model or reported values are modified."
-      },
-      "schema": "integer"
-    },
-    {
-      "@type": [
-        "Telemetry",
-        "Event"
-      ],
       "name": "connection_status_change",
       "@id": "dtmi:jacdac:x1462eefc:event:connectionstatuschange;1",
       "description": {
         "en": "Raised when the connection status changes"
       },
       "schema": "dtmi:jacdac:x1462eefc:connectionstatus;1"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "Event"
+      ],
+      "name": "twin_change",
+      "@id": "dtmi:jacdac:x1462eefc:event:twinchange;1",
+      "description": {
+        "en": "Raised when the twin model is modified."
+      },
+      "schema": "integer"
     }
   ],
   "schemas": [

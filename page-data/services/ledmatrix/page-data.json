@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/ledmatrix/",
     "result": {"pageContext":{"classIdentifier":286070091,"source":"# LED Matrix\n\n    identifier: 0x110d154b\n    camel: ledMatrix\n    group: display\n\nA rectangular monochrome LED matrix controller.\n\n## Registers\n\n    rw leds : bytes @ value\n    \nThe state of the screen where pixel on/off state is \nstored as a bit, column by column. The column should be byte aligned.\n\n    rw brightness: u0.8 / @ intensity\n    \nReads the general brightness of the LEDs. ``0`` when the screen is off.\n\n    const rows: u16 # @ 0x181\n    \nNumber of rows on the screen\n\n    const columns: u16 # @ 0x182\n    \nNumber of columns on the screen\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

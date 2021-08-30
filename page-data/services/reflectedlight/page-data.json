@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/reflectedlight/",
     "result": {"pageContext":{"classIdentifier":309087410,"source":"# Reflected light\n\n    identifier: 0x126c4cb2\n    extends: _sensor\n    group: imaging\n    tags: 8bit\n\nA sensor that detects light and dark surfaces, commonly used for line following robots.\n\n## Registers\n\n    ro brightness: u0.16 / @ reading\n\nReports the reflected brightness. It may be a digital value or, for some sensor, analog value.\n\n    enum Variant: u8 {\n        InfraredDigital = 1,\n        InfraredAnalog = 2\n    }\n    const variant?: Variant @ variant\n\nType of physical sensor used\n\n## Events\n\n    event dark @ inactive {}\n\nThe sensor detected a transition from light to dark\n\n    event light @ active {}\n\nThe sensor detected a transition from dark to light\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

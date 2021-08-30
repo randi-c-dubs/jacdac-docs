@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/color/",
     "result": {"pageContext":{"classIdentifier":372299111,"source":"# Color\n\nSenses RGB colors\n\n    identifier: 0x1630d567\n    extends: _sensor\n    group: imaging\n    tags: 8bit\n\n## Registers\n\n    ro color @ reading {\n        red: u0.16 /\n        green: u0.16 /\n        blue: u0.16 /\n    }\n\nDetected color in the RGB color space.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

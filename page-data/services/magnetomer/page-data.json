@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/magnetomer/",
     "result": {"pageContext":{"classIdentifier":318935176,"source":"# Magnetometer\n\n    identifier: 0x13029088\n    extends: _sensor\n\nA 3-axis magnetometer.\n\n## Registers\n\n    ro forces @ reading {\n        x: i32 nT\n        y: i32 nT\n        z: i32 nT\n    }\n\nIndicates the current magnetic field on magnetometer.\nFor reference: `1 mgauss` is `100 nT` (and `1 gauss` is `100 000 nT`).\n\n    ro forces_error?: i32 nT @ reading_error\n\nError on the readings.\n\n## Commands\n\n    command calibrate @ calibrate { }\n\nForces a calibration sequence where the user/device\nmight have to rotate to be calibrated.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

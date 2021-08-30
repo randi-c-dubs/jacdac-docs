@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-service-tsx",
     "path": "/services/waterlevel/",
     "result": {"pageContext":{"classIdentifier":343630573,"source":"# Water level\n\n    identifier: 0x147b62ed\n    extends: _sensor\n    tags: 8bit\n\nA sensor that measures liquid/water level.\n\n## Registers\n\n    ro level: u0.16 / @ reading\n\nThe reported water level.\n\n    enum Variant: u8 {\n        Resistive = 1\n        ContactPhotoElectric = 2\n        NonContactPhotoElectric = 3\n    }\n    const variant?: Variant @ variant\n\nThe type of physical sensor.\n"}},
-    "staticQueryHashes": ["2307937736","2744294623","2898794040","413816803","63159454"]}
+    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

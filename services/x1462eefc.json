@@ -156,7 +156,7 @@
       "kind": "command",
       "name": "twin",
       "identifier": 128,
-      "description": "Returns the twin json payload",
+      "description": "Returns the twin json payload.",
       "fields": [
         {
           "name": "twin_report",
@@ -171,7 +171,7 @@
       "kind": "pipe_report",
       "name": "twin_report",
       "identifier": 0,
-      "description": "Returns the twin json payload",
+      "description": "Returns the twin json payload.",
       "fields": [
         {
           "name": "content",
@@ -216,38 +216,20 @@
       "name": "set_connection_string",
       "identifier": 134,
       "description": "Restricted command to override the existing connection string to the Azure IoT Hub.",
-      "fields": [],
-      "restricted": true,
-      "hasReport": true
-    },
-    {
-      "kind": "report",
-      "name": "set_connection_string",
-      "identifier": 134,
-      "description": "Restricted command to override the existing connection string to the Azure IoT Hub.",
       "fields": [
         {
-          "name": "connection_string_port",
-          "type": "pipe_port",
-          "storage": 2
+          "name": "connection_string",
+          "type": "string",
+          "storage": 0
         }
       ],
-      "secondary": true,
-      "pipeType": "set_connection_string",
-      "packFormat": "u16"
-    },
-    {
-      "kind": "event",
-      "name": "twin_change",
-      "identifier": 3,
-      "description": "Raised when the twin model or reported values are modified.",
-      "fields": [],
-      "identifierName": "change"
+      "restricted": true,
+      "packFormat": "s"
     },
     {
       "kind": "event",
       "name": "connection_status_change",
-      "identifier": 128,
+      "identifier": 3,
       "description": "Raised when the connection status changes",
       "fields": [
         {
@@ -256,7 +238,15 @@
           "storage": 2
         }
       ],
+      "identifierName": "change",
       "packFormat": "u16"
+    },
+    {
+      "kind": "event",
+      "name": "twin_change",
+      "identifier": 128,
+      "description": "Raised when the twin model is modified.",
+      "fields": []
     }
   ],
   "tags": [],

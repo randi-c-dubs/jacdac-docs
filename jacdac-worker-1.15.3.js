@@ -570,7 +570,7 @@ var AzureIotHubHealthReg;
 var AzureIotHubHealthCmd;
 (function (AzureIotHubHealthCmd) {
     /**
-     * Argument: twin_report pipe (bytes). Returns the twin json payload
+     * Argument: twin_report pipe (bytes). Returns the twin json payload.
      *
      * ```
      * const [twinReport] = jdunpack<[Uint8Array]>(buf, "b[12]")
@@ -594,15 +594,13 @@ var AzureIotHubHealthCmd;
      */
     AzureIotHubHealthCmd[AzureIotHubHealthCmd["Ping"] = 133] = "Ping";
     /**
-     * No args. Restricted command to override the existing connection string to the Azure IoT Hub.
+     * Argument: connection_string string (bytes). Restricted command to override the existing connection string to the Azure IoT Hub.
+     *
+     * ```
+     * const [connectionString] = jdunpack<[string]>(buf, "s")
+     * ```
      */
     AzureIotHubHealthCmd[AzureIotHubHealthCmd["SetConnectionString"] = 134] = "SetConnectionString";
-    /**
-     * report SetConnectionString
-     * ```
-     * const [connectionStringPort] = jdunpack<[number]>(buf, "u16")
-     * ```
-     */
 })(AzureIotHubHealthCmd || (AzureIotHubHealthCmd = {}));
 /**
  * pipe_report TwinReport
@@ -613,17 +611,17 @@ var AzureIotHubHealthCmd;
 var AzureIotHubHealthEvent;
 (function (AzureIotHubHealthEvent) {
     /**
-     * Raised when the twin model or reported values are modified.
-     */
-    AzureIotHubHealthEvent[AzureIotHubHealthEvent["TwinChange"] = 3] = "TwinChange";
-    /**
      * Argument: connection_status ConnectionStatus (uint16_t). Raised when the connection status changes
      *
      * ```
      * const [connectionStatus] = jdunpack<[AzureIotHubHealthConnectionStatus]>(buf, "u16")
      * ```
      */
-    AzureIotHubHealthEvent[AzureIotHubHealthEvent["ConnectionStatusChange"] = 128] = "ConnectionStatusChange";
+    AzureIotHubHealthEvent[AzureIotHubHealthEvent["ConnectionStatusChange"] = 3] = "ConnectionStatusChange";
+    /**
+     * Raised when the twin model is modified.
+     */
+    AzureIotHubHealthEvent[AzureIotHubHealthEvent["TwinChange"] = 128] = "TwinChange";
 })(AzureIotHubHealthEvent || (AzureIotHubHealthEvent = {}));
 var BarcodeReaderFormat;
 (function (BarcodeReaderFormat) {
