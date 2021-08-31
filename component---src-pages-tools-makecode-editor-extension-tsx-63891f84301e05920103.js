@@ -833,7 +833,7 @@ function ClientRoleRow(props) {
 
 function validateClientRole(config, role) {
   var serviceError = undefined;
-  var nameError = undefined; // TODO
+  var nameError = undefined; // TODO: properly validate client role
 
   return {
     serviceError,
@@ -978,4 +978,4 @@ function MakeCodeEditorExtensionPage() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-makecode-editor-extension-tsx-2e2170a13c56f640562a.js.map
+//# sourceMappingURL=component---src-pages-tools-makecode-editor-extension-tsx-63891f84301e05920103.js.map

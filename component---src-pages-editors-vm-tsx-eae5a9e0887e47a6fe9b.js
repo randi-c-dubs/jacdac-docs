@@ -4089,7 +4089,7 @@ var logicDsl = {
               type: "UnaryExpression",
               operator: "!",
               argument,
-              prefix: false // TODO:?
+              prefix: false // TODO: handle logic_negate
 
             },
             errors: []
@@ -4288,7 +4288,7 @@ var mathDsl = {
               type: "UnaryExpression",
               operator: mathdsl_ops[op] || op,
               argument,
-              prefix: false // TODO:?
+              prefix: false // TODO: handle math-negate
 
             },
             errors: []
@@ -4454,10 +4454,10 @@ var jsonDSL = {
       template
     } = definition;
 
-    if (type === JSON_OBJECT_BLOCK) {// TODO
-    } else if (type === JSON_FIELD_SET_BLOCK) {// TODO
+    if (type === JSON_OBJECT_BLOCK) {// TODO: handle json field set block
+    } else if (type === JSON_FIELD_SET_BLOCK) {// TODO: handle json field get block
     } else if (template === JSON_FIELD_GET_TEMPLATE) {
-      // TODO: genearte JSON
+      // TODO: generate json expression
       console.log("json expr", {
         event,
         block,
@@ -4677,4 +4677,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-vm-tsx-df8ecc4cb7f638c1669c.js.map
+//# sourceMappingURL=component---src-pages-editors-vm-tsx-eae5a9e0887e47a6fe9b.js.map

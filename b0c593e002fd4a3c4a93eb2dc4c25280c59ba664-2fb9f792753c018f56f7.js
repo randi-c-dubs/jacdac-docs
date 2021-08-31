@@ -16641,8 +16641,7 @@ function VegaLiteWidget(props) {
   var group = (0,_tidy__WEBPACK_IMPORTED_MODULE_7__/* .tidyResolveHeader */ .gc)(data, sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getFieldValue("group"));
   var settings = (0,_jacdac_ts_src_jdom_utils__WEBPACK_IMPORTED_MODULE_8__/* .JSONTryParse */ .ZZ)(sourceBlock === null || sourceBlock === void 0 ? void 0 : sourceBlock.getFieldValue("settings"));
 
-  var handleNewView = view => viewRef.current = view; // TODO merge json
-
+  var handleNewView = view => viewRef.current = view;
 
   var fullSpec = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
     if (!settings) return spec;
@@ -20576,4 +20575,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-0628de5cf36b50b62022.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-2fb9f792753c018f56f7.js.map
