@@ -55809,7 +55809,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "f3797ec956da5a9c8136f16f5f1538320daa2416";
+  var sha = "1f8a618a75f053558564ab93dd016a6f0ab68f62";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -65782,7 +65782,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.16.0"};
+var package_namespaceObject = {"i8":"1.15.3"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -68255,7 +68255,8 @@ module.exports = [{
 }, {
   plugin: __webpack_require__(4365),
   options: {
-    "plugins": []
+    "plugins": [],
+    "excludePattern": "(dtmi)"
   }
 }, {
   plugin: __webpack_require__(40744),
@@ -72933,4 +72934,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-35eddf16d5d9861f64ce.js.map
+//# sourceMappingURL=app-bdc961e37b3bdb6950bb.js.map
