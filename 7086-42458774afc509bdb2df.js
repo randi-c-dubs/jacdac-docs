@@ -408,7 +408,7 @@ function ToolsDrawer() {
   }, {// separator
   }, {
     text: "MakeCode",
-    href: "https://microsoft.github.com/jacdac-docs/editors/makecode",
+    href: "https://microsoft.github.io/jacdac-docs/editors/makecode",
     icon: /*#__PURE__*/react.createElement(MakeCodeIcon/* default */.Z, null)
   },
   /*
@@ -479,4 +479,4 @@ function ToolsDrawer() {
 /***/ })
 
 }]);
-//# sourceMappingURL=7086-84449e36cd0c205d3a23.js.map
+//# sourceMappingURL=7086-42458774afc509bdb2df.js.map

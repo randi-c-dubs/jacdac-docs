@@ -55401,7 +55401,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "2dca801237d3fdacf8a51bac402e950836d8ac9d";
+  var sha = "f68c44c2a3e0f820155c71fa2b006ea2794b2383";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -72526,4 +72526,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-5f0fb3020d20d416322c.js.map
+//# sourceMappingURL=app-1378a530f539153fe4b4.js.map
