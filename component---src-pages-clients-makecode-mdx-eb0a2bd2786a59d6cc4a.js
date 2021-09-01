@@ -65,28 +65,7 @@ function MDXContent(_ref) {
     "href": "https://github.com/microsoft/pxt-jacdac",
     "target": "_blank",
     "rel": "nofollow noopener noreferrer"
-  }, "pxt-jacdac"), " contains MakeCode support many Jacdac services.\nThe following editors are currently supported:"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("ul", null, (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
-    parentName: "ul"
-  }, "micro:bit witn V2 hardware ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
-    parentName: "li",
-    "href": "https://makecode.microbit.org/",
-    "target": "_blank",
-    "rel": "nofollow noopener noreferrer"
-  }, "https://makecode.microbit.org/")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
-    parentName: "ul"
-  }, "Arcade ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
-    parentName: "li",
-    "href": "https://arcade.makecode.com/",
-    "target": "_blank",
-    "rel": "nofollow noopener noreferrer"
-  }, "https://arcade.makecode.com/")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
-    parentName: "ul"
-  }, "Maker ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
-    parentName: "li",
-    "href": "https://maker.makecode.com",
-    "target": "_blank",
-    "rel": "nofollow noopener noreferrer"
-  }, "https://maker.makecode.com"))), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
+  }, "pxt-jacdac"), " contains MakeCode support many Jacdac services.\nThe following editors are currently supported: micro:bit witn V2 hardware, Arcade and Maker."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("h2", {
     "id": "usage",
     "style": {
       "position": "relative"
@@ -112,12 +91,12 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "Open ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "li",
-    "href": "https://microsoft.github.com/jacdac-docs/editors/makecode",
+    "href": "https://microsoft.github.io/jacdac-docs/editors/makecode",
     "target": "_blank",
     "rel": "nofollow noopener noreferrer"
   }, "/editors/makecode")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
     parentName: "ul"
-  }, "Select the desired MakeCode editor"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
+  }, "Select the desired MakeCode editor in the dropdown at the top of the MakeCode editor"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
     parentName: "ul"
   }, "Open or create a new project."), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
     parentName: "ul"
@@ -240,4 +219,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-makecode-mdx-afaada739e66527c2340.js.map
+//# sourceMappingURL=component---src-pages-clients-makecode-mdx-eb0a2bd2786a59d6cc4a.js.map
