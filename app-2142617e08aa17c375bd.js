@@ -55809,7 +55809,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "b60745f083dd8cb09204cfb4aae750ae412199e6";
+  var sha = "5269759f57c3e44c653903dd58a15abe92eef756";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -68098,7 +68098,7 @@ exports.components = {
   "component---src-pages-hardware-mdx": () => __webpack_require__.e(/* import() | component---src-pages-hardware-mdx */ 3244).then(__webpack_require__.bind(__webpack_require__, 67319)),
   "component---src-pages-index-mdx": () => __webpack_require__.e(/* import() | component---src-pages-index-mdx */ 4809).then(__webpack_require__.bind(__webpack_require__, 95646)),
   "component---src-pages-protocol-mdx": () => __webpack_require__.e(/* import() | component---src-pages-protocol-mdx */ 1115).then(__webpack_require__.bind(__webpack_require__, 99708)),
-  "component---src-pages-services-tsx": () => Promise.all(/* import() | component---src-pages-services-tsx */[__webpack_require__.e(9871), __webpack_require__.e(7108), __webpack_require__.e(7858)]).then(__webpack_require__.bind(__webpack_require__, 43668)),
+  "component---src-pages-services-tsx": () => Promise.all(/* import() | component---src-pages-services-tsx */[__webpack_require__.e(9871), __webpack_require__.e(7858)]).then(__webpack_require__.bind(__webpack_require__, 43668)),
   "component---src-pages-software-mdx": () => __webpack_require__.e(/* import() | component---src-pages-software-mdx */ 8307).then(__webpack_require__.bind(__webpack_require__, 46690)),
   "component---src-pages-tools-accelerometer-theremin-tsx": () => Promise.all(/* import() | component---src-pages-tools-accelerometer-theremin-tsx */[__webpack_require__.e(7993), __webpack_require__.e(1326), __webpack_require__.e(5023)]).then(__webpack_require__.bind(__webpack_require__, 67396)),
   "component---src-pages-tools-collector-tsx": () => Promise.all(/* import() | component---src-pages-tools-collector-tsx */[__webpack_require__.e(7993), __webpack_require__.e(8814)]).then(__webpack_require__.bind(__webpack_require__, 21586)),
@@ -68110,7 +68110,7 @@ exports.components = {
   "component---src-pages-tools-jupyterlab-mdx": () => __webpack_require__.e(/* import() | component---src-pages-tools-jupyterlab-mdx */ 6394).then(__webpack_require__.bind(__webpack_require__, 95844)),
   "component---src-pages-tools-lightsensor-accessible-tsx": () => Promise.all(/* import() | component---src-pages-tools-lightsensor-accessible-tsx */[__webpack_require__.e(7993), __webpack_require__.e(1326), __webpack_require__.e(3801)]).then(__webpack_require__.bind(__webpack_require__, 55389)),
   "component---src-pages-tools-makecode-editor-extension-tsx": () => __webpack_require__.e(/* import() | component---src-pages-tools-makecode-editor-extension-tsx */ 6456).then(__webpack_require__.bind(__webpack_require__, 25900)),
-  "component---src-pages-tools-makecode-sim-tsx": () => Promise.all(/* import() | component---src-pages-tools-makecode-sim-tsx */[__webpack_require__.e(7108), __webpack_require__.e(6450)]).then(__webpack_require__.bind(__webpack_require__, 98874)),
+  "component---src-pages-tools-makecode-sim-tsx": () => __webpack_require__.e(/* import() | component---src-pages-tools-makecode-sim-tsx */ 6450).then(__webpack_require__.bind(__webpack_require__, 98874)),
   "component---src-pages-tools-mdx": () => __webpack_require__.e(/* import() | component---src-pages-tools-mdx */ 5818).then(__webpack_require__.bind(__webpack_require__, 6673)),
   "component---src-pages-tools-model-editor-tsx": () => Promise.all(/* import() | component---src-pages-tools-model-editor-tsx */[__webpack_require__.e(8887), __webpack_require__.e(8270), __webpack_require__.e(7476), __webpack_require__.e(372)]).then(__webpack_require__.bind(__webpack_require__, 70438)),
   "component---src-pages-tools-model-uploader-tsx": () => Promise.all(/* import() | component---src-pages-tools-model-uploader-tsx */[__webpack_require__.e(7993), __webpack_require__.e(5637)]).then(__webpack_require__.bind(__webpack_require__, 83625)),
@@ -72933,4 +72933,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-196840ed6176bbfaf137.js.map
+//# sourceMappingURL=app-2142617e08aa17c375bd.js.map
