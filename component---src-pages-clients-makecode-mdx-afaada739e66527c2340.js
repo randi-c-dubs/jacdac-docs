@@ -112,7 +112,9 @@ function MDXContent(_ref) {
     parentName: "ul"
   }, "Open ", (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("a", {
     parentName: "li",
-    "href": "/jacdac-docs/editors/makecode"
+    "href": "https://microsoft.github.com/jacdac-docs/editors/makecode",
+    "target": "_blank",
+    "rel": "nofollow noopener noreferrer"
   }, "/editors/makecode")), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
     parentName: "ul"
   }, "Select the desired MakeCode editor"), (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__.mdx)("li", {
@@ -238,4 +240,4 @@ var Page = _ref => {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-clients-makecode-mdx-2c65f25e44fdb5ac8188.js.map
+//# sourceMappingURL=component---src-pages-clients-makecode-mdx-afaada739e66527c2340.js.map

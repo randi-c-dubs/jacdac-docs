@@ -252,8 +252,6 @@ var constants = __webpack_require__(71815);
 var providerbus = __webpack_require__(10358);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
 var jdspec = __webpack_require__(13996);
-// EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
-var gatsby_browser_entry = __webpack_require__(35313);
 ;// CONCATENATED MODULE: ./src/components/shell/ToolsDrawer.tsx
 
 
@@ -279,7 +277,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
-
 
 
 
@@ -323,7 +320,6 @@ function ToolsListItem(props) {
   return to || href ? /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     to: to,
     href: href,
-    target: href ? "_blank" : undefined,
     onClick: to ? onClose : undefined
   }, /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
     button: true
@@ -412,7 +408,7 @@ function ToolsDrawer() {
   }, {// separator
   }, {
     text: "MakeCode",
-    href: (0,gatsby_browser_entry.withPrefix)("/editors/makecode"),
+    href: "https://microsoft.github.com/jacdac-docs/editors/makecode",
     icon: /*#__PURE__*/react.createElement(MakeCodeIcon/* default */.Z, null)
   },
   /*
@@ -483,4 +479,4 @@ function ToolsDrawer() {
 /***/ })
 
 }]);
-//# sourceMappingURL=7086-dbe8cb7a71601c04ad38.js.map
+//# sourceMappingURL=7086-84449e36cd0c205d3a23.js.map
