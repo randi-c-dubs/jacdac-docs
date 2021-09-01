@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[7086],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[4986],{
 
 /***/ 50144:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -179,87 +179,46 @@ exports.Z = _default;
 
 /***/ }),
 
-/***/ 37086:
+/***/ 74986:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ ToolsDrawer; }
-});
-
-// EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
-var toConsumableArray = __webpack_require__(90293);
-// EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/defineProperty.js
-var defineProperty = __webpack_require__(75167);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(67294);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/makeStyles.js
-var makeStyles = __webpack_require__(10920);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/styles/createStyles.js
-var createStyles = __webpack_require__(70274);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/ListItem/ListItem.js
-var ListItem = __webpack_require__(4381);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/ListItemIcon/ListItemIcon.js
-var ListItemIcon = __webpack_require__(50144);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/ListItemText/ListItemText.js
-var ListItemText = __webpack_require__(38030);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Drawer/Drawer.js
-var Drawer = __webpack_require__(71892);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/List/List.js
-var List = __webpack_require__(80791);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Divider/Divider.js
-var Divider = __webpack_require__(62846);
-// EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
-var gatsby_theme_material_ui = __webpack_require__(36176);
-// EXTERNAL MODULE: ./src/components/layout.tsx + 25 modules
-var layout = __webpack_require__(48534);
-// EXTERNAL MODULE: ./src/components/AppContext.tsx
-var AppContext = __webpack_require__(84377);
-// EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/utils/createSvgIcon.js
-var createSvgIcon = __webpack_require__(6018);
-;// CONCATENATED MODULE: ./node_modules/@material-ui/icons/esm/OpenInNew.js
-
-
-/* harmony default export */ var OpenInNew = ((0,createSvgIcon/* default */.Z)( /*#__PURE__*/react.createElement("path", {
-  d: "M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
-}), 'OpenInNew'));
-// EXTERNAL MODULE: ./src/components/ui/useUnitConverter.ts
-var useUnitConverter = __webpack_require__(44111);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/ChevronRight.js
-var ChevronRight = __webpack_require__(65735);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/SettingsBrightness.js
-var SettingsBrightness = __webpack_require__(80837);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/SystemUpdateAlt.js
-var SystemUpdateAlt = __webpack_require__(96898);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/Wifi.js
-var Wifi = __webpack_require__(14695);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/Settings.js
-var Settings = __webpack_require__(88237);
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/FiberManualRecord.js
-var FiberManualRecord = __webpack_require__(95067);
-// EXTERNAL MODULE: ./src/components/icons/MakeCodeIcon.tsx
-var MakeCodeIcon = __webpack_require__(70654);
-// EXTERNAL MODULE: ./src/components/ui/DarkModeContext.tsx
-var DarkModeContext = __webpack_require__(91350);
-// EXTERNAL MODULE: ./src/components/KindIcon.tsx
-var KindIcon = __webpack_require__(50048);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
-var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./src/jacdac/providerbus.ts + 24 modules
-var providerbus = __webpack_require__(10358);
-// EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
-var jdspec = __webpack_require__(13996);
-;// CONCATENATED MODULE: ./src/components/shell/ToolsDrawer.tsx
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ToolsDrawer; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(90293);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75167);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(10920);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(70274);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(4381);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(50144);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(38030);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(71892);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(80791);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(62846);
+/* harmony import */ var gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36176);
+/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48534);
+/* harmony import */ var _AppContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(84377);
+/* harmony import */ var _ui_useUnitConverter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(44111);
+/* harmony import */ var _material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(65735);
+/* harmony import */ var _material_ui_icons_SettingsBrightness__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(80837);
+/* harmony import */ var _material_ui_icons_SystemUpdateAlt__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(96898);
+/* harmony import */ var _material_ui_icons_Wifi__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(14695);
+/* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(88237);
+/* harmony import */ var _material_ui_icons_FiberManualRecord__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(95067);
+/* harmony import */ var _icons_MakeCodeIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(70654);
+/* harmony import */ var _ui_DarkModeContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(91350);
+/* harmony import */ var _KindIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(50048);
+/* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(71815);
+/* harmony import */ var _jacdac_providerbus__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(10358);
+/* harmony import */ var _jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(13996);
 
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,defineProperty/* default */.Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__/* .default */ .Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 
 
@@ -285,18 +244,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default */.Z)({
+var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z)(theme => (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .Z)({
   drawer: {
-    width: layout/* TOOLS_DRAWER_WIDTH */.wW + "rem",
+    width: _layout__WEBPACK_IMPORTED_MODULE_3__/* .TOOLS_DRAWER_WIDTH */ .wW + "rem",
     flexShrink: 0,
-    [theme.breakpoints.down(layout/* MOBILE_BREAKPOINT */.Gh)]: {
-      width: layout/* MOBILE_TOOLS_DRAWER_WIDTH */.Po + "rem"
+    [theme.breakpoints.down(_layout__WEBPACK_IMPORTED_MODULE_3__/* .MOBILE_BREAKPOINT */ .Gh)]: {
+      width: _layout__WEBPACK_IMPORTED_MODULE_3__/* .MOBILE_TOOLS_DRAWER_WIDTH */ .Po + "rem"
     }
   },
   drawerPaper: {
-    width: layout/* TOOLS_DRAWER_WIDTH */.wW + "rem",
-    [theme.breakpoints.down(layout/* MOBILE_BREAKPOINT */.Gh)]: {
-      width: layout/* MOBILE_TOOLS_DRAWER_WIDTH */.Po + "rem"
+    width: _layout__WEBPACK_IMPORTED_MODULE_3__/* .TOOLS_DRAWER_WIDTH */ .wW + "rem",
+    [theme.breakpoints.down(_layout__WEBPACK_IMPORTED_MODULE_3__/* .MOBILE_BREAKPOINT */ .Gh)]: {
+      width: _layout__WEBPACK_IMPORTED_MODULE_3__/* .MOBILE_TOOLS_DRAWER_WIDTH */ .Po + "rem"
     }
   },
   drawerHeader: _objectSpread(_objectSpread({
@@ -317,25 +276,23 @@ function ToolsListItem(props) {
     onClick,
     onClose
   } = props;
-  return to || href ? /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
+  return to || href ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: to,
     href: href,
+    target: href ? "_blank" : undefined,
     onClick: to ? onClose : undefined
-  }, /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     button: true
-  }, /*#__PURE__*/react.createElement(ListItemIcon/* default */.Z, null, icon), /*#__PURE__*/react.createElement(ListItemText/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null, icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, {
     primaryTypographyProps: {
       color: "textPrimary"
     },
-    primary: /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("span", null, text), /^https:\/\//.test(href) && /*#__PURE__*/react.createElement(OpenInNew, {
-      fontSize: "small",
-      color: "action"
-    }))
-  }))) : /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
+    primary: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", null, text)
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     button: true,
     onClick: onClick,
     "aria-label": text
-  }, /*#__PURE__*/react.createElement(ListItemIcon/* default */.Z, null, icon), /*#__PURE__*/react.createElement(ListItemText/* default */.Z, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null, icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, {
     primaryTypographyProps: {
       color: "textPrimary"
     },
@@ -349,24 +306,24 @@ function ToolsDrawer() {
     toolsMenu,
     setToolsMenu,
     toggleShowDeviceHostsDialog
-  } = (0,react.useContext)(AppContext/* default */.ZP);
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_AppContext__WEBPACK_IMPORTED_MODULE_4__/* .default */ .ZP);
   var {
     enqueueSnackbar
-  } = (0,react.useContext)(AppContext/* default */.ZP);
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_AppContext__WEBPACK_IMPORTED_MODULE_4__/* .default */ .ZP);
   var {
     toggleDarkMode,
     darkMode
-  } = (0,react.useContext)(DarkModeContext/* default */.Z);
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_ui_DarkModeContext__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z);
   var {
     converters,
     setConverter
-  } = (0,useUnitConverter/* useUnitConverters */.O)();
+  } = (0,_ui_useUnitConverter__WEBPACK_IMPORTED_MODULE_5__/* .useUnitConverters */ .O)();
 
   var handleUnitClick = (unit, name, names) => () => {
     var index = (names.indexOf(name) + 1) % names.length;
     var newName = names[index];
     setConverter(unit, newName);
-    enqueueSnackbar("Using " + newName + " for " + (0,jdspec/* resolveUnit */.bM)(unit).name, "success");
+    enqueueSnackbar("Using " + newName + " for " + (0,_jacdac_ts_jacdac_spec_spectool_jdspec__WEBPACK_IMPORTED_MODULE_11__/* .resolveUnit */ .bM)(unit).name, "success");
   };
 
   var handleClick = link => () => {
@@ -386,30 +343,30 @@ function ToolsDrawer() {
   var links = [{
     text: "Start simulator",
     action: toggleShowDeviceHostsDialog,
-    icon: /*#__PURE__*/react.createElement(KindIcon/* default */.ZP, {
-      kind: constants/* VIRTUAL_DEVICE_NODE_NAME */.UX7
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_KindIcon__WEBPACK_IMPORTED_MODULE_8__/* .default */ .ZP, {
+      kind: _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__/* .VIRTUAL_DEVICE_NODE_NAME */ .UX7
     })
   }, {
     text: "Data Collector",
     to: "/tools/collector/",
-    icon: /*#__PURE__*/react.createElement(FiberManualRecord/* default */.Z, null)
-  }, providerbus/* UIFlags.peers */.A.peers && {
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_FiberManualRecord__WEBPACK_IMPORTED_MODULE_17__/* .default */ .Z, null)
+  }, _jacdac_providerbus__WEBPACK_IMPORTED_MODULE_10__/* .UIFlags.peers */ .A.peers && {
     text: "Peers",
     to: "/tools/peers/",
-    icon: /*#__PURE__*/react.createElement(Wifi/* default */.Z, null)
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Wifi__WEBPACK_IMPORTED_MODULE_18__/* .default */ .Z, null)
   }, {}, {
     text: "Device Settings",
     to: "/tools/settings/",
-    icon: /*#__PURE__*/react.createElement(Settings/* default */.Z, null)
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_19__/* .default */ .Z, null)
   }, {
     text: "Firmware Update",
     to: "/tools/updater/",
-    icon: /*#__PURE__*/react.createElement(SystemUpdateAlt/* default */.Z, null)
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_SystemUpdateAlt__WEBPACK_IMPORTED_MODULE_20__/* .default */ .Z, null)
   }, {// separator
   }, {
     text: "MakeCode",
     href: "https://microsoft.github.io/jacdac-docs/editors/makecode",
-    icon: /*#__PURE__*/react.createElement(MakeCodeIcon/* default */.Z, null)
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_icons_MakeCodeIcon__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, null)
   },
   /*
   {
@@ -427,17 +384,17 @@ function ToolsDrawer() {
   }, {
     text: "Service Editor",
     to: "/tools/service-editor/",
-    icon: /*#__PURE__*/react.createElement(KindIcon/* default */.ZP, {
-      kind: constants/* SERVICE_NODE_NAME */.M_U
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_KindIcon__WEBPACK_IMPORTED_MODULE_8__/* .default */ .ZP, {
+      kind: _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__/* .SERVICE_NODE_NAME */ .M_U
     })
   }, {
     text: "Device registration",
     to: "/tools/device-registration/",
-    icon: /*#__PURE__*/react.createElement(KindIcon/* default */.ZP, {
-      kind: constants/* DEVICE_NODE_NAME */.tY6
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_KindIcon__WEBPACK_IMPORTED_MODULE_8__/* .default */ .ZP, {
+      kind: _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_9__/* .DEVICE_NODE_NAME */ .tY6
     })
   }, {// separator
-  }].concat((0,toConsumableArray/* default */.Z)(converters.map(_ref => {
+  }].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_21__/* .default */ .Z)(converters.map(_ref => {
     var {
       unit,
       name,
@@ -449,7 +406,7 @@ function ToolsDrawer() {
     };
   }))).filter(l => !!l);
   if (!toolsMenu) return null;
-  return /*#__PURE__*/react.createElement(Drawer/* default */.ZP, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_22__/* .default */ .ZP, {
     className: classes.drawer,
     variant: "persistent",
     anchor: "right",
@@ -457,26 +414,26 @@ function ToolsDrawer() {
     classes: {
       paper: classes.drawerPaper
     }
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: classes.drawerHeader
-  }, /*#__PURE__*/react.createElement(gatsby_theme_material_ui.IconButton, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(gatsby_theme_material_ui__WEBPACK_IMPORTED_MODULE_2__.IconButton, {
     "aria-label": "Collapse",
     onClick: handleDrawerClose
-  }, /*#__PURE__*/react.createElement(ChevronRight/* default */.Z, null))), /*#__PURE__*/react.createElement(List/* default */.Z, null, links.map((link, i) => link.text ? /*#__PURE__*/react.createElement(ToolsListItem, Object.assign({
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_ChevronRight__WEBPACK_IMPORTED_MODULE_23__/* .default */ .Z, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_24__/* .default */ .Z, null, links.map((link, i) => link.text ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(ToolsListItem, Object.assign({
     key: link.text
   }, link, {
     onClick: handleClick(link),
     onClose: handleDrawerClose
-  })) : /*#__PURE__*/react.createElement(Divider/* default */.Z, {
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_25__/* .default */ .Z, {
     key: "div" + i
-  })), /*#__PURE__*/react.createElement(Divider/* default */.Z, null), /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_25__/* .default */ .Z, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
     button: true,
     onClick: handleDarkMode,
     "aria-label": "Toggle Dark Mode"
-  }, /*#__PURE__*/react.createElement(ListItemIcon/* default */.Z, null, /*#__PURE__*/react.createElement(SettingsBrightness/* default */.Z, null)), /*#__PURE__*/react.createElement(ListItemText/* default */.Z, null, darkMode === "light" ? "Dark Mode" : "Light mode"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_SettingsBrightness__WEBPACK_IMPORTED_MODULE_26__/* .default */ .Z, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, null, darkMode === "light" ? "Dark Mode" : "Light mode"))));
 }
 
 /***/ })
 
 }]);
-//# sourceMappingURL=7086-42458774afc509bdb2df.js.map
+//# sourceMappingURL=4986-b32d535a317fd5efa07a.js.map

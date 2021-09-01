@@ -55399,7 +55399,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "e2d72080d4d9744df67ac3a50f4b87b631fff48a";
+  var sha = "849fa1ab8b79c64ffff5e43770c98a7f592066e8";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -56791,7 +56791,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var WebDiagnostics = /*#__PURE__*/(0,react.lazy)(() => __webpack_require__.e(/* import() */ 3828).then(__webpack_require__.bind(__webpack_require__, 3828)));
 var AppDrawer = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(973)]).then(__webpack_require__.bind(__webpack_require__, 80973)));
-var ToolsDrawer = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(7086)]).then(__webpack_require__.bind(__webpack_require__, 37086)));
+var ToolsDrawer = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(4986)]).then(__webpack_require__.bind(__webpack_require__, 74986)));
 var TOC_DRAWER_WIDTH = 18;
 var DRAWER_WIDTH = 40;
 var TOOLS_DRAWER_WIDTH = 22;
@@ -72520,4 +72520,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-b5ebac0fe1f78eec5438.js.map
+//# sourceMappingURL=app-6d7407cda4a90e1ab60e.js.map
