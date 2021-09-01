@@ -55809,7 +55809,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "5269759f57c3e44c653903dd58a15abe92eef756";
+  var sha = "08cf77526a4bf3dc1c87f7d03402548823676ed9";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -65805,7 +65805,11 @@ function sniffQueryArguments() {
     webBluetooth: isWebBluetoothSupported()
   };
   var params = new URLSearchParams(window.location.search);
-  var toolsMakecode = /\/tools\/makecode-/.test(window.location.href);
+  var toolsMakecode = /\/tools\/makecode-/.test(window.location.href) || params.get("nestededitorsim") === "1";
+  console.log({
+    toolsMakecode,
+    href: window.location.href
+  });
   return {
     diagnostics: params.get("dbg") === "1",
     webUSB: isWebUSBSupported() && params.get("webusb") !== "0" && !toolsMakecode,
@@ -72933,4 +72937,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-2142617e08aa17c375bd.js.map
+//# sourceMappingURL=app-f8f0bd1f2f8970dc23e8.js.map
