@@ -5,56 +5,38 @@
     {
       "code": 384,
       "name": "device_description",
-      "kind": "const",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "s"
     },
     {
       "code": 385,
       "name": "product_identifier",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 388,
       "name": "bootloader_product_identifier",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 389,
       "name": "firmware_version",
-      "kind": "const",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "s"
     },
     {
       "code": 386,
       "name": "mcu_temperature",
-      "kind": "ro",
-      "packFormat": "i16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "i16"
     },
     {
       "code": 390,
       "name": "uptime",
-      "kind": "ro",
-      "packFormat": "u64",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u64"
     }
   ]
 }

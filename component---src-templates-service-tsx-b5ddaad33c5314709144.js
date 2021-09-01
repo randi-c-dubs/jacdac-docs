@@ -312,6 +312,13 @@ var constants = __webpack_require__(71815);
 
 
 
+var ServiceTwinRegisterFlag;
+
+(function (ServiceTwinRegisterFlag) {
+  ServiceTwinRegisterFlag[ServiceTwinRegisterFlag["Const"] = 1] = "Const";
+  ServiceTwinRegisterFlag[ServiceTwinRegisterFlag["Volatile"] = 2] = "Volatile";
+})(ServiceTwinRegisterFlag || (ServiceTwinRegisterFlag = {}));
+
 function serviceSpecificationToServiceTwinSpecification(specification) {
   if (!specification) return undefined;
   var {
@@ -320,21 +327,18 @@ function serviceSpecificationToServiceTwinSpecification(specification) {
     packets
   } = specification;
   var registers = packets.filter(jdom_spec/* isHighLevelRegister */.vr) // TODO formalize
-  .map(_ref => {
-    var {
-      identifier,
-      name,
-      packFormat,
-      kind,
-      fields
-    } = _ref;
-    return {
-      code: identifier,
-      name,
-      kind,
-      packFormat,
-      fields: fields.map(f => f.name)
+  .map(reg => {
+    var flags = 0;
+    if (reg.kind == "const") flags |= ServiceTwinRegisterFlag.Const;
+    if (reg.volatile) flags |= ServiceTwinRegisterFlag.Volatile;
+    var r = {
+      code: reg.identifier,
+      name: reg.name,
+      flags,
+      packf: reg.packFormat,
+      fields: reg.fields.length > 1 ? reg.fields.map(f => f.name) : undefined
     };
+    return r;
   });
   var dspec = {
     serviceClass,
@@ -498,4 +502,4 @@ function Page(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-templates-service-tsx-2558905667ee694aa2a7.js.map
+//# sourceMappingURL=component---src-templates-service-tsx-b5ddaad33c5314709144.js.map

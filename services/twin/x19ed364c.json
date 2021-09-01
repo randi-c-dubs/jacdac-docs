@@ -5,29 +5,20 @@
     {
       "code": 384,
       "name": "connection_status",
-      "kind": "ro",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "s"
     },
     {
       "code": 385,
       "name": "hub_name",
-      "kind": "const",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "s"
     },
     {
       "code": 386,
       "name": "device_id",
-      "kind": "const",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "s"
     }
   ]
 }

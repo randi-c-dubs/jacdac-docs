@@ -5,38 +5,26 @@
     {
       "code": 1,
       "name": "brightness",
-      "kind": "rw",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.16"
     },
     {
       "code": 128,
       "name": "double_dots",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 384,
       "name": "digit_count",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 385,
       "name": "decimal_point",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

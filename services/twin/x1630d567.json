@@ -5,8 +5,8 @@
     {
       "code": 257,
       "name": "color",
-      "kind": "ro",
-      "packFormat": "u0.16 u0.16 u0.16",
+      "flags": 2,
+      "packf": "u0.16 u0.16 u0.16",
       "fields": [
         "red",
         "green",

@@ -5,47 +5,32 @@
     {
       "code": 257,
       "name": "pressed",
-      "kind": "ro",
-      "packFormat": "r: u8",
-      "fields": [
-        "index"
-      ]
+      "flags": 2,
+      "packf": "r: u8"
     },
     {
       "code": 384,
       "name": "rows",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 385,
       "name": "columns",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 386,
       "name": "labels",
-      "kind": "const",
-      "packFormat": "r: z",
-      "fields": [
-        "label"
-      ]
+      "flags": 1,
+      "packf": "r: z"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

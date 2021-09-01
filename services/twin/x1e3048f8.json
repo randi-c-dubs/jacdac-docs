@@ -5,8 +5,8 @@
     {
       "code": 384,
       "name": "color",
-      "kind": "ro",
-      "packFormat": "u8 u8 u8",
+      "flags": 0,
+      "packf": "u8 u8 u8",
       "fields": [
         "red",
         "green",
@@ -16,38 +16,26 @@
     {
       "code": 387,
       "name": "led_count",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 385,
       "name": "wave_length",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 386,
       "name": "luminous_intensity",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

@@ -5,74 +5,50 @@
     {
       "code": 1,
       "name": "brightness",
-      "kind": "rw",
-      "packFormat": "u0.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.8"
     },
     {
       "code": 384,
       "name": "actual_brightness",
-      "kind": "ro",
-      "packFormat": "u0.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.8"
     },
     {
       "code": 128,
       "name": "light_type",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 129,
       "name": "num_pixels",
-      "kind": "rw",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     },
     {
       "code": 131,
       "name": "num_columns",
-      "kind": "rw",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     },
     {
       "code": 385,
       "name": "max_pixels",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 130,
       "name": "num_repeats",
-      "kind": "rw",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

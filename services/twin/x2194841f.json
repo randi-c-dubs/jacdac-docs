@@ -5,35 +5,26 @@
     {
       "code": 384,
       "name": "telemetry_status",
-      "kind": "ro",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 128,
       "name": "telemetry_status_interval",
-      "kind": "rw",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     },
     {
       "code": 385,
       "name": "fingerprint_type",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 386,
       "name": "fingerprint_template",
-      "kind": "ro",
-      "packFormat": "u16 b",
+      "flags": 0,
+      "packf": "u16 b",
       "fields": [
         "confidence",
         "template"

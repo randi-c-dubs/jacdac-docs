@@ -5,20 +5,14 @@
     {
       "code": 257,
       "name": "position",
-      "kind": "ro",
-      "packFormat": "i32",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "i32"
     },
     {
       "code": 384,
       "name": "clicks_per_turn",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     }
   ]
 }

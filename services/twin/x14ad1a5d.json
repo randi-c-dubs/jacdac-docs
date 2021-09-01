@@ -5,56 +5,38 @@
     {
       "code": 257,
       "name": "sound_level",
-      "kind": "ro",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u0.16"
     },
     {
       "code": 1,
       "name": "enabled",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 129,
       "name": "min_decibels",
-      "kind": "rw",
-      "packFormat": "i16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "i16"
     },
     {
       "code": 130,
       "name": "max_decibels",
-      "kind": "rw",
-      "packFormat": "i16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "i16"
     },
     {
       "code": 6,
       "name": "loud_threshold",
-      "kind": "rw",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.16"
     },
     {
       "code": 5,
       "name": "quiet_threshold",
-      "kind": "rw",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.16"
     }
   ]
 }

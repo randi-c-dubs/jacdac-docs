@@ -5,11 +5,8 @@
     {
       "code": 257,
       "name": "precipitation",
-      "kind": "ro",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u16.16"
     }
   ]
 }

@@ -5,29 +5,20 @@
     {
       "code": 128,
       "name": "red",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 129,
       "name": "orange",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 130,
       "name": "green",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     }
   ]
 }

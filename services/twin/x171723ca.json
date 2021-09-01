@@ -5,20 +5,14 @@
     {
       "code": 1,
       "name": "pulled",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

@@ -5,29 +5,20 @@
     {
       "code": 1,
       "name": "closed",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 384,
       "name": "max_switching_current",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     }
   ]
 }

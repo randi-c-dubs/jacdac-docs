@@ -5,8 +5,8 @@
     {
       "code": 257,
       "name": "kinematics",
-      "kind": "ro",
-      "packFormat": "i16.16 i16.16 i16.16 i16.16 i16.16",
+      "flags": 2,
+      "packf": "i16.16 i16.16 i16.16 i16.16 i16.16",
       "fields": [
         "x",
         "y",

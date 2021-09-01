@@ -5,11 +5,8 @@
     {
       "code": 257,
       "name": "oxygen",
-      "kind": "ro",
-      "packFormat": "u8.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u8.8"
     }
   ]
 }

@@ -5,38 +5,26 @@
     {
       "code": 2,
       "name": "leds",
-      "kind": "rw",
-      "packFormat": "b",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "b"
     },
     {
       "code": 1,
       "name": "brightness",
-      "kind": "rw",
-      "packFormat": "u0.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.8"
     },
     {
       "code": 385,
       "name": "rows",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 386,
       "name": "columns",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     }
   ]
 }

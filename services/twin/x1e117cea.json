@@ -5,11 +5,8 @@
     {
       "code": 257,
       "name": "pressure",
-      "kind": "ro",
-      "packFormat": "u22.10",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u22.10"
     }
   ]
 }

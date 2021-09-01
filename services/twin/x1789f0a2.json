@@ -5,20 +5,14 @@
     {
       "code": 384,
       "name": "random",
-      "kind": "ro",
-      "packFormat": "b",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "b"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

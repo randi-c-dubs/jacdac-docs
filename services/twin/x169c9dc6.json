@@ -5,29 +5,20 @@
     {
       "code": 257,
       "name": "e_CO2",
-      "kind": "ro",
-      "packFormat": "u22.10",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u22.10"
     },
     {
       "code": 384,
       "name": "conditioning_period",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

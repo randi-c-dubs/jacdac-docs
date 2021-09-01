@@ -5,29 +5,20 @@
     {
       "code": 257,
       "name": "active",
-      "kind": "ro",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u8"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 384,
       "name": "auto_off_delay",
-      "kind": "const",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16.16"
     }
   ]
 }

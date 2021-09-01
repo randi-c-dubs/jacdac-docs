@@ -5,11 +5,8 @@
     {
       "code": 257,
       "name": "wind_direction",
-      "kind": "ro",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u16"
     }
   ]
 }

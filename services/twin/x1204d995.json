@@ -5,47 +5,32 @@
     {
       "code": 1,
       "name": "enabled",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 128,
       "name": "lang",
-      "kind": "rw",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "s"
     },
     {
       "code": 129,
       "name": "volume",
-      "kind": "rw",
-      "packFormat": "u0.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.8"
     },
     {
       "code": 130,
       "name": "pitch",
-      "kind": "rw",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16.16"
     },
     {
       "code": 131,
       "name": "rate",
-      "kind": "rw",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16.16"
     }
   ]
 }

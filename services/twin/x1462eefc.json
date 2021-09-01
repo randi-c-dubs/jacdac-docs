@@ -5,26 +5,20 @@
     {
       "code": 384,
       "name": "hub_name",
-      "kind": "ro",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "s"
     },
     {
       "code": 385,
       "name": "connection_status",
-      "kind": "ro",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     },
     {
       "code": 386,
       "name": "statistics",
-      "kind": "ro",
-      "packFormat": "u32 u32 u32 u32",
+      "flags": 2,
+      "packf": "u32 u32 u32 u32",
       "fields": [
         "reading",
         "event",

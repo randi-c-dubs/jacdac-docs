@@ -5,101 +5,68 @@
     {
       "code": 128,
       "name": "auto_invoke_every",
-      "kind": "rw",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     },
     {
       "code": 257,
       "name": "outputs",
-      "kind": "ro",
-      "packFormat": "r: f32",
-      "fields": [
-        "output"
-      ]
+      "flags": 2,
+      "packf": "r: f32"
     },
     {
       "code": 384,
       "name": "input_shape",
-      "kind": "ro",
-      "packFormat": "r: u16",
-      "fields": [
-        "dimension"
-      ]
+      "flags": 0,
+      "packf": "r: u16"
     },
     {
       "code": 385,
       "name": "output_shape",
-      "kind": "ro",
-      "packFormat": "r: u16",
-      "fields": [
-        "dimension"
-      ]
+      "flags": 0,
+      "packf": "r: u16"
     },
     {
       "code": 386,
       "name": "last_run_time",
-      "kind": "ro",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     },
     {
       "code": 387,
       "name": "allocated_arena_size",
-      "kind": "ro",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     },
     {
       "code": 388,
       "name": "model_size",
-      "kind": "ro",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     },
     {
       "code": 389,
       "name": "last_error",
-      "kind": "ro",
-      "packFormat": "s",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "s"
     },
     {
       "code": 390,
       "name": "format",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 391,
       "name": "format_version",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 392,
       "name": "parallel",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

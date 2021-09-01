@@ -5,20 +5,14 @@
     {
       "code": 257,
       "name": "temperature",
-      "kind": "ro",
-      "packFormat": "i22.10",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "i22.10"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

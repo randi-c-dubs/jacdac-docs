@@ -5,20 +5,14 @@
     {
       "code": 257,
       "name": "level",
-      "kind": "ro",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u0.16"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

@@ -5,8 +5,8 @@
     {
       "code": 257,
       "name": "buttons",
-      "kind": "ro",
-      "packFormat": "r: u8 u0.8",
+      "flags": 2,
+      "packf": "r: u8 u0.8",
       "fields": [
         "button",
         "pressure"
@@ -15,11 +15,8 @@
     {
       "code": 384,
       "name": "available_buttons",
-      "kind": "const",
-      "packFormat": "r: u8",
-      "fields": [
-        "button"
-      ]
+      "flags": 1,
+      "packf": "r: u8"
     }
   ]
 }

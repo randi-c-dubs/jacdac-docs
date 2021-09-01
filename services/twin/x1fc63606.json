@@ -5,29 +5,20 @@
     {
       "code": 128,
       "name": "sample_rate",
-      "kind": "rw",
-      "packFormat": "u22.10",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u22.10"
     },
     {
       "code": 384,
       "name": "buffer_size",
-      "kind": "const",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u32"
     },
     {
       "code": 385,
       "name": "buffer_pending",
-      "kind": "ro",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     }
   ]
 }

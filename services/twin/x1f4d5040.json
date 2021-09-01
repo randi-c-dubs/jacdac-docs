@@ -5,38 +5,26 @@
     {
       "code": 257,
       "name": "weight",
-      "kind": "ro",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u16.16"
     },
     {
       "code": 128,
       "name": "zero_offset",
-      "kind": "rw",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16.16"
     },
     {
       "code": 129,
       "name": "gain",
-      "kind": "rw",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16.16"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }

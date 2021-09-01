@@ -5,38 +5,26 @@
     {
       "code": 2,
       "name": "duty",
-      "kind": "rw",
-      "packFormat": "i1.15",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "i1.15"
     },
     {
       "code": 1,
       "name": "enabled",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 384,
       "name": "load_torque",
-      "kind": "const",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16.16"
     },
     {
       "code": 385,
       "name": "load_speed",
-      "kind": "const",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16.16"
     }
   ]
 }

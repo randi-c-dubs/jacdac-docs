@@ -5,17 +5,14 @@
     {
       "code": 1,
       "name": "brightness",
-      "kind": "rw",
-      "packFormat": "u0.8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.8"
     },
     {
       "code": 128,
       "name": "palette",
-      "kind": "rw",
-      "packFormat": "r: u8 u8 u8 u8",
+      "flags": 0,
+      "packf": "r: u8 u8 u8 u8",
       "fields": [
         "blue",
         "green",
@@ -26,56 +23,38 @@
     {
       "code": 384,
       "name": "bits_per_pixel",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 385,
       "name": "width",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 386,
       "name": "height",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 129,
       "name": "width_major",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 130,
       "name": "up_sampling",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     },
     {
       "code": 131,
       "name": "rotation",
-      "kind": "rw",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u16"
     }
   ]
 }

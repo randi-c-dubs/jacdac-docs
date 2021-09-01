@@ -5,20 +5,14 @@
     {
       "code": 384,
       "name": "analog",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     },
     {
       "code": 385,
       "name": "pressed",
-      "kind": "ro",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     }
   ]
 }

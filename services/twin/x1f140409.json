@@ -5,8 +5,8 @@
     {
       "code": 257,
       "name": "forces",
-      "kind": "ro",
-      "packFormat": "i12.20 i12.20 i12.20",
+      "flags": 2,
+      "packf": "i12.20 i12.20 i12.20",
       "fields": [
         "x",
         "y",
@@ -16,11 +16,8 @@
     {
       "code": 128,
       "name": "max_force",
-      "kind": "rw",
-      "packFormat": "i12.20",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "i12.20"
     }
   ]
 }

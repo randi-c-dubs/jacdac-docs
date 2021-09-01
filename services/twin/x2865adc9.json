@@ -5,11 +5,8 @@
     {
       "code": 6,
       "name": "threshold",
-      "kind": "rw",
-      "packFormat": "u0.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u0.16"
     }
   ]
 }

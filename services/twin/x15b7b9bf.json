@@ -5,20 +5,14 @@
     {
       "code": 257,
       "name": "heading",
-      "kind": "ro",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u16.16"
     },
     {
       "code": 1,
       "name": "enabled",
-      "kind": "rw",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     }
   ]
 }

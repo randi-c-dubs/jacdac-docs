@@ -5,11 +5,8 @@
     {
       "code": 128,
       "name": "sampling_period",
-      "kind": "rw",
-      "packFormat": "u32",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u32"
     }
   ]
 }

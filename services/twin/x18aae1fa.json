@@ -5,11 +5,8 @@
     {
       "code": 384,
       "name": "connected",
-      "kind": "ro",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 0,
+      "packf": "u8"
     }
   ]
 }

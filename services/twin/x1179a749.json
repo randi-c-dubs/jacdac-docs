@@ -5,38 +5,26 @@
     {
       "code": 257,
       "name": "moving",
-      "kind": "ro",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 2,
+      "packf": "u8"
     },
     {
       "code": 384,
       "name": "max_distance",
-      "kind": "const",
-      "packFormat": "u16.16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16.16"
     },
     {
       "code": 385,
       "name": "angle",
-      "kind": "const",
-      "packFormat": "u16",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u16"
     },
     {
       "code": 263,
       "name": "variant",
-      "kind": "const",
-      "packFormat": "u8",
-      "fields": [
-        "_"
-      ]
+      "flags": 1,
+      "packf": "u8"
     }
   ]
 }
