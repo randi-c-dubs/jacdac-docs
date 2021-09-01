@@ -320,17 +320,11 @@ function ToolsListItem(props) {
     onClick,
     onClose
   } = props;
-  console.log({
-    text,
-    to,
-    href,
-    icon
-  });
   return to || href ? /*#__PURE__*/react.createElement(gatsby_theme_material_ui.Link, {
     to: to,
     href: href,
-    "aria-label": "Toggle Dark Mode",
-    onClick: onClose
+    target: href ? "_blank" : undefined,
+    onClick: to ? onClose : undefined
   }, /*#__PURE__*/react.createElement(ListItem/* default */.Z, {
     button: true
   }, /*#__PURE__*/react.createElement(ListItemIcon/* default */.Z, null, icon), /*#__PURE__*/react.createElement(ListItemText/* default */.Z, {
@@ -489,4 +483,4 @@ function ToolsDrawer() {
 /***/ })
 
 }]);
-//# sourceMappingURL=7086-f228ed6e964a7db2b7b5.js.map
+//# sourceMappingURL=7086-dbe8cb7a71601c04ad38.js.map
