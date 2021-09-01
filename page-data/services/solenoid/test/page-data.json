@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-service-test-tsx",
-    "path": "/services/solenoid/test/",
-    "result": {"pageContext":{"node":{"name":"Solenoid","shortName":"solenoid","shortId":"solenoid","classIdentifier":387392458}}},
-    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-service-test-tsx",
-    "path": "/services/thermometer/test/",
-    "result": {"pageContext":{"node":{"name":"Thermometer","shortName":"thermometer","shortId":"thermometer","classIdentifier":337754823}}},
-    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}
