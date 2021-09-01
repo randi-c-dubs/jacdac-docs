@@ -19442,34 +19442,6 @@ exports.Z = _default;
 
 /***/ }),
 
-/***/ 42025:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-var __webpack_unused_export__;
-
-
-var _interopRequireDefault = __webpack_require__(8580);
-
-var _interopRequireWildcard = __webpack_require__(1022);
-
-__webpack_unused_export__ = ({
-  value: true
-});
-exports.Z = void 0;
-
-var React = _interopRequireWildcard(__webpack_require__(67294));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(58786));
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
-  d: "M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"
-}), 'Extension');
-
-exports.Z = _default;
-
-/***/ }),
-
 /***/ 46576:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -55427,7 +55399,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "2b468db99469e40f729bb31773dfb8be92bbbcad";
+  var sha = "e2d72080d4d9744df67ac3a50f4b87b631fff48a";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -56339,7 +56311,7 @@ var MoreVert = __webpack_require__(70542);
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/GitHub.js
 var GitHub = __webpack_require__(14429);
 // EXTERNAL MODULE: ./src/components/ui/IconButtonWithTooltip.tsx + 1 modules
-var IconButtonWithTooltip = __webpack_require__(79885);
+var ui_IconButtonWithTooltip = __webpack_require__(79885);
 ;// CONCATENATED MODULE: ./src/components/buttons/GitHubButton.tsx
 // tslint:disable-next-line: match-default-export-name no-submodule-imports
 
@@ -56357,7 +56329,7 @@ function GitHubButton(props) {
     url = "https://github.com/" + url;
   }
 
-  return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  return /*#__PURE__*/react.createElement(ui_IconButtonWithTooltip/* default */.Z, {
     title: "open " + url,
     className: className,
     to: url,
@@ -56393,7 +56365,7 @@ function OpenDashboardButton(props) {
   var count = useDeviceCount({
     ignoreSelf: true
   });
-  return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  return /*#__PURE__*/react.createElement(ui_IconButtonWithTooltip/* default */.Z, {
     className: className,
     title: "Device Dashboard",
     edge: "start",
@@ -56529,8 +56501,6 @@ function HideOnScroll(props) {
     in: !trigger
   }, children);
 }
-// EXTERNAL MODULE: ./node_modules/@material-ui/icons/Extension.js
-var Extension = __webpack_require__(42025);
 ;// CONCATENATED MODULE: ./src/components/buttons/OpenVMEditorButton.tsx
 
 
@@ -56539,13 +56509,13 @@ function OpenVMEditorButton(props) {
   var {
     className
   } = props;
-  return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  return /*#__PURE__*/React.createElement(IconButtonWithTooltip, {
     className: className,
     title: "Block Editor",
     edge: "start",
     color: "inherit",
     to: "/editors/vm/"
-  }, /*#__PURE__*/react.createElement(Extension/* default */.Z, null));
+  }, /*#__PURE__*/React.createElement(ExtensionIcon, null));
 }
 // EXTERNAL MODULE: ./node_modules/@material-ui/icons/DevicesOther.js
 var DevicesOther = __webpack_require__(32441);
@@ -56564,7 +56534,7 @@ function BridgeButton(props) {
 
   var handleClick = () => bridge.bus = undefined;
 
-  return /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  return /*#__PURE__*/react.createElement(ui_IconButtonWithTooltip/* default */.Z, {
     className: className,
     color: "inherit",
     title: "disconnect " + bridge.bridgeId,
@@ -56708,9 +56678,7 @@ function MainAppBar() {
     className: (0,clsx_m/* default */.Z)(classes.menuButton)
   }), /*#__PURE__*/react.createElement(OpenDashboardButton, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton)
-  }), /*#__PURE__*/react.createElement(OpenVMEditorButton, {
-    className: (0,clsx_m/* default */.Z)(classes.menuButton)
-  }), /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  }),  false && /*#__PURE__*/0, /*#__PURE__*/react.createElement(ui_IconButtonWithTooltip/* default */.Z, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton, drawerOpen && classes.hideMobile),
     "aria-label": "Discussions",
     title: "Discussions",
@@ -56720,7 +56688,7 @@ function MainAppBar() {
   }, /*#__PURE__*/react.createElement(Forum/* default */.Z, null)), /*#__PURE__*/react.createElement(GitHubButton, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton, drawerOpen && classes.hideMobile),
     repo: "/github"
-  }), /*#__PURE__*/react.createElement(IconButtonWithTooltip/* default */.Z, {
+  }), /*#__PURE__*/react.createElement(ui_IconButtonWithTooltip/* default */.Z, {
     className: (0,clsx_m/* default */.Z)(classes.menuButton, drawerOpen && classes.hideMobile),
     "aria-label": "More tools",
     title: "More",
@@ -72552,4 +72520,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-de37146bedddfa3954fa.js.map
+//# sourceMappingURL=app-b5ebac0fe1f78eec5438.js.map
