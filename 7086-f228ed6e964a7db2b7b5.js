@@ -252,6 +252,8 @@ var constants = __webpack_require__(71815);
 var providerbus = __webpack_require__(10358);
 // EXTERNAL MODULE: ./jacdac-ts/jacdac-spec/spectool/jdspec.ts
 var jdspec = __webpack_require__(13996);
+// EXTERNAL MODULE: ./.cache/gatsby-browser-entry.js
+var gatsby_browser_entry = __webpack_require__(35313);
 ;// CONCATENATED MODULE: ./src/components/shell/ToolsDrawer.tsx
 
 
@@ -277,6 +279,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
+
 
 
 
@@ -415,7 +418,7 @@ function ToolsDrawer() {
   }, {// separator
   }, {
     text: "MakeCode",
-    href: "/editors/makecode.html",
+    href: (0,gatsby_browser_entry.withPrefix)("/editors/makecode"),
     icon: /*#__PURE__*/react.createElement(MakeCodeIcon/* default */.Z, null)
   },
   /*
@@ -486,4 +489,4 @@ function ToolsDrawer() {
 /***/ })
 
 }]);
-//# sourceMappingURL=7086-71cc7d5a98217b1d55ac.js.map
+//# sourceMappingURL=7086-f228ed6e964a7db2b7b5.js.map
