@@ -18383,7 +18383,7 @@ RecordingBlockField.KEY = "recording_block_field_key";
 /* harmony export */   "Z": function() { return /* binding */ TrainedModelBlockField; }
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75167);
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(85413);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(85413);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67294);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10920);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(70274);
@@ -18394,7 +18394,8 @@ RecordingBlockField.KEY = "recording_block_field_key";
 /* harmony import */ var _ui_Suspense__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(69672);
 /* harmony import */ var _ReactInlineField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12702);
 /* harmony import */ var _PointerBoundary__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(77298);
-/* harmony import */ var _material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(52377);
+/* harmony import */ var _material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(76532);
+/* harmony import */ var _material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(52377);
 /* harmony import */ var _dsl_workers_tf_proxy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83808);
 /* harmony import */ var _WorkspaceContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(89801);
 /* harmony import */ var _jacdac_ts_src_jdom_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(71815);
@@ -18413,11 +18414,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
  // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
+ // tslint:disable-next-line: no-submodule-imports match-default-export-name
 
 
 
 
-var ModelSummary = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(3102)]).then(__webpack_require__.bind(__webpack_require__, 98629)));
+
 var ConfusionMatrixHeatMap = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 5063).then(__webpack_require__.bind(__webpack_require__, 75063)));
 var DataSetPlot = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 9866).then(__webpack_require__.bind(__webpack_require__, 49866)));
 var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_9__/* .default */ .Z)(theme => (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_10__/* .default */ .Z)({
@@ -18446,7 +18448,7 @@ function TrainedModelDisplayWidget() {
   var {
     0: chartType,
     1: setChartType
-  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("model summary");
+  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("confusion matrix");
   var {
     sourceBlock
   } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_WorkspaceContext__WEBPACK_IMPORTED_MODULE_6__/* .default */ .ZP);
@@ -18518,7 +18520,12 @@ function TrainedModelDisplayWidget() {
     setChartType(selectedChart);
   }), [services]);
 
-  var handleDownloadDataSet = () => {
+  var handleViewTrainedModel = () => {
+    // open modal to view model
+    sourceBlock.data = "click.view";
+  };
+
+  var handleDownloadModel = () => {
     // set the model name to what the user typed into the box
     var trainedModelName = sourceBlock.getField("TRAINED_MODEL_NAME").getText();
     if (model) model.name = trainedModelName;
@@ -18541,35 +18548,17 @@ function TrainedModelDisplayWidget() {
       display: "inline-flex"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
-    title: "Download trained model file"
+    title: "View this model and perform actions like testing with live data"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
-    onClick: handleDownloadDataSet,
-    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    onClick: handleViewTrainedModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
     variant: "outlined",
     size: "small"
-  }, "Download"))));else if (chartType == "model summary") return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
-    container: true,
-    spacing: 1,
-    direction: "column"
-  }, !!model && !!dataSet && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
-    item: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__/* .default */ .Z, {
-    color: "text.secondary",
-    className: classes.inlineItem
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_PointerBoundary__WEBPACK_IMPORTED_MODULE_4__/* .PointerBoundary */ .A, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_ui_Suspense__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(ModelSummary, {
-    reactStyle: classes,
-    dataset: dataSet,
-    model: model
-  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
-    item: true,
-    style: {
-      display: "inline-flex"
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
+  }, "View")), "\u2002", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
     title: "Download trained model file"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
-    onClick: handleDownloadDataSet,
-    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    onClick: handleDownloadModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, null),
     variant: "outlined",
     size: "small"
   }, "Download"))));else if (chartType == "confusion matrix") return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
@@ -18590,10 +18579,17 @@ function TrainedModelDisplayWidget() {
       display: "inline-flex"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
+    title: "View this model and perform actions like testing with live data"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
+    onClick: handleViewTrainedModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    variant: "outlined",
+    size: "small"
+  }, "View")), "\u2002", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
     title: "Download trained model file"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
-    onClick: handleDownloadDataSet,
-    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    onClick: handleDownloadModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, null),
     variant: "outlined",
     size: "small"
   }, "Download"))));else if (chartType == "dataset plot") return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__/* .default */ .Z, {
@@ -18614,17 +18610,24 @@ function TrainedModelDisplayWidget() {
       display: "inline-flex"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
+    title: "View this model and perform actions like testing with live data"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
+    onClick: handleViewTrainedModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    variant: "outlined",
+    size: "small"
+  }, "View")), "\u2002", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__/* .default */ .ZP, {
     title: "Download trained model file"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__/* .default */ .Z, {
-    onClick: handleDownloadDataSet,
-    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_15__/* .default */ .Z, null),
+    onClick: handleDownloadModel,
+    startIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_icons_GetApp__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z, null),
     variant: "outlined",
     size: "small"
   }, "Download"))));
 }
 
 var TrainedModelBlockField = /*#__PURE__*/function (_ReactInlineField) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_16__/* .default */ .Z)(TrainedModelBlockField, _ReactInlineField);
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_17__/* .default */ .Z)(TrainedModelBlockField, _ReactInlineField);
 
   function TrainedModelBlockField(value) {
     return _ReactInlineField.call(this, value) || this;
@@ -19544,7 +19547,7 @@ var ModelBlockDomainSpecificLanguage = /*#__PURE__*/function () {
       message2: "display %1",
       args2: [{
         type: "field_dropdown",
-        options: ["model summary", "confusion matrix", "dataset plot"].map(s => [s, s]),
+        options: ["confusion matrix", "dataset plot"].map(s => [s, s]),
         name: "SELECTED_CHART"
       }],
       message3: "%1",
@@ -19986,4 +19989,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-ae91bae0b7c66885bc00.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-7c44a0db69a53cc16f3f.js.map

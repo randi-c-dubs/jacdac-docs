@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LossAccChart = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/* import() */ 3139).then(__webpack_require__.bind(__webpack_require__, 33139)));
-var ModelSummaryDropdown = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(7521)]).then(__webpack_require__.bind(__webpack_require__, 67521)));
+var ModelSummaryDropdown = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/* import() */ 6080).then(__webpack_require__.bind(__webpack_require__, 96080)));
 var ModelOutput = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(7476), __webpack_require__.e(7746)]).then(__webpack_require__.bind(__webpack_require__, 64797)));
 function TrainModelDialog(props) {
   var {
@@ -197,19 +197,15 @@ function TrainModelDialog(props) {
     // Create new trained model block
     var trainedModelName = model.name + "." + trainedModelCount;
     var dataSetName = dataset.name;
-    var newBlock = blockly__WEBPACK_IMPORTED_MODULE_5___default().Xml.domToBlock(blockly__WEBPACK_IMPORTED_MODULE_5___default().Xml.textToDom("<block type=\"model_block_trained_nn\"><field name=\"TRAINED_MODEL_NAME\">" + trainedModelName + "</field><field name=\"MODEL_TEST_SET\" variabletype=\"ModelBlockDataSet\">" + dataSetName + "</field><field name=\"SELECTED_CHART\">model summary</field></block>"), workspace);
+    var newBlock = blockly__WEBPACK_IMPORTED_MODULE_5___default().Xml.domToBlock(blockly__WEBPACK_IMPORTED_MODULE_5___default().Xml.textToDom("<block type=\"model_block_trained_nn\"><field name=\"TRAINED_MODEL_NAME\">" + trainedModelName + "</field><field name=\"MODEL_TEST_SET\" variabletype=\"ModelBlockDataSet\">" + dataSetName + "</field><field name=\"SELECTED_CHART\">confusion matrix</field></block>"), workspace);
     onModelUpdate(model, newBlock.id);
   };
   /* For interface controls */
 
 
-  var resetInputs = () => {};
-
   var handleCancel = () => {
-    // reset the user inputs
-    resetInputs(); // close the modal
-
-    onDone("model");
+    // close the modal
+    onDone();
   };
 
   var handleBack = () => {
@@ -309,4 +305,4 @@ function TrainModelDialog(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=3753-6d47af7580e3951284b2.js.map
+//# sourceMappingURL=3753-82773f4783b3f38494ba.js.map

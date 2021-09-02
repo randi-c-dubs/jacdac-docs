@@ -189,6 +189,7 @@ var useChartPalette = __webpack_require__(74039);
 var ViewDataDialog = /*#__PURE__*/(0,react.lazy)(() => __webpack_require__.e(/* import() */ 206).then(__webpack_require__.bind(__webpack_require__, 206)));
 var RecordDataDialog = /*#__PURE__*/(0,react.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(8270), __webpack_require__.e(5201)]).then(__webpack_require__.bind(__webpack_require__, 85201)));
 var TrainModelDialog = /*#__PURE__*/(0,react.lazy)(() => __webpack_require__.e(/* import() */ 3753).then(__webpack_require__.bind(__webpack_require__, 93753)));
+var TestModelDialog = /*#__PURE__*/(0,react.lazy)(() => __webpack_require__.e(/* import() */ 5441).then(__webpack_require__.bind(__webpack_require__, 75441)));
 var NewClassifierDialog = /*#__PURE__*/(0,react.lazy)(() => __webpack_require__.e(/* import() */ 7364).then(__webpack_require__.bind(__webpack_require__, 77364)));
 var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default */.Z)({
   root: {
@@ -263,10 +264,7 @@ function addNewClassifier(workspace) {
 }
 function ModelBlockDialogs(props) {
   var {
-    viewDataSetDialogVisible,
-    recordDataDialogVisible,
-    trainModelDialogVisible,
-    newClassifierDialogVisible,
+    visibleDialog,
     onRecordingDone,
     onModelUpdate,
     closeModal,
@@ -279,28 +277,28 @@ function ModelBlockDialogs(props) {
   var classes = useStyles();
   var chartPalette = (0,useChartPalette/* default */.Z)();
 
-  if (viewDataSetDialogVisible) {
+  if (visibleDialog == "dataset") {
     return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(ViewDataDialog, {
       classes: classes,
       chartPalette: chartPalette,
-      open: viewDataSetDialogVisible,
+      open: visibleDialog == "dataset",
       onDone: closeModal,
       dataset: dataset
     }));
-  } else if (recordDataDialogVisible) {
+  } else if (visibleDialog == "recording") {
     return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(RecordDataDialog, {
       classes: classes,
       chartPalette: chartPalette,
-      open: recordDataDialogVisible,
+      open: visibleDialog == "recording",
       onDone: onRecordingDone,
       recordingCount: recordingCount,
       workspace: workspace
     }));
-  } else if (trainModelDialogVisible) {
+  } else if (visibleDialog == "model") {
     return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(TrainModelDialog, {
       classes: classes,
       chartPalette: chartPalette,
-      open: trainModelDialogVisible,
+      open: visibleDialog == "model",
       onModelUpdate: onModelUpdate,
       onDone: closeModal,
       dataset: dataset,
@@ -308,10 +306,18 @@ function ModelBlockDialogs(props) {
       trainedModelCount: trainedModelCount,
       workspace: workspace
     }));
-  } else if (newClassifierDialogVisible) {
+  } else if (visibleDialog == "trained_model") {
+    return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(TestModelDialog, {
+      classes: classes,
+      chartPalette: chartPalette,
+      open: visibleDialog == "trained_model",
+      onDone: closeModal,
+      model: model
+    }));
+  } else if (visibleDialog == "classifier") {
     return /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(NewClassifierDialog, {
       classes: classes,
-      open: newClassifierDialogVisible,
+      open: visibleDialog == "classifier",
       onDone: closeModal,
       workspace: workspace
     }));
@@ -584,7 +590,7 @@ function ModelBlockEditorWithContext(props) {
           });
         }
       });
-    } else console.error("Could not locate block " + {
+    } else console.error("Could not locate block ", {
       modelName: modelName,
       id: modelBlocks[modelName].id
     });
@@ -661,21 +667,9 @@ function ModelBlockEditorWithContext(props) {
 
 
   var {
-    0: recordDataDialogVisible,
-    1: setRecordDataDialogVisible
-  } = (0,react.useState)(false);
-  var {
-    0: trainModelDialogVisible,
-    1: setTrainModelDialogVisible
-  } = (0,react.useState)(false);
-  var {
-    0: viewDataSetDialogVisible,
-    1: setViewDataSetDialogVisible
-  } = (0,react.useState)(false);
-  var {
-    0: newClassifierDialogVisible,
-    1: setNewClassifierDialogVisible
-  } = (0,react.useState)(false);
+    0: visibleDialog,
+    1: setVisibleDialog
+  } = (0,react.useState)("none");
 
   var toggleViewDataSetDialog = () => toggleDialog("dataset");
 
@@ -683,43 +677,20 @@ function ModelBlockEditorWithContext(props) {
 
   var toggleTrainModelDialog = () => toggleDialog("model");
 
+  var toggleTestModelDialog = () => toggleDialog("trained_model");
+
   var toggleNewClassifierDialog = () => toggleDialog("classifier");
 
   var toggleDialog = dialog => {
-    if (dialog == "dataset") {
-      var b = !viewDataSetDialogVisible;
-      setViewDataSetDialogVisible(b);
-    } else if (dialog == "recording") {
-      var _b = !recordDataDialogVisible;
-
-      setRecordDataDialogVisible(_b);
-    } else if (dialog == "model") {
-      var _b2 = !trainModelDialogVisible;
-
-      setTrainModelDialogVisible(_b2);
-    } else if (dialog == "classifier") {
-      var _b3 = !newClassifierDialogVisible;
-
-      setNewClassifierDialogVisible(_b3);
-    }
+    if (dialog != "none") setVisibleDialog(dialog);else setVisibleDialog("none");
   };
 
-  var closeModal = modal => {
-    if (modal == "dataset") {
-      // reset dataset that gets passed to dialogs
-      setCurrentDataSet(undefined); // close dialog
+  var closeModals = () => {
+    // reset dataset and model that gets passed to dialogs
+    setCurrentDataSet(undefined);
+    setCurrentModel(undefined); // close dialog
 
-      toggleViewDataSetDialog();
-    } else if (modal == "model") {
-      // reset dataset and model that gets passed to dialogs
-      setCurrentDataSet(undefined);
-      setCurrentModel(undefined); // close dialog
-
-      toggleTrainModelDialog();
-    } else if (modal == "classifier") {
-      // close diaglog
-      toggleNewClassifierDialog();
-    }
+    toggleDialog("none");
   };
 
   var buttonsWithDialogs = {
@@ -757,7 +728,7 @@ function ModelBlockEditorWithContext(props) {
     } // close dialog
 
 
-    toggleRecordDataDialog();
+    closeModals();
   };
 
   var openTrainingModal = clickedBlock => {
@@ -803,6 +774,18 @@ function ModelBlockEditorWithContext(props) {
         originalBlock: blockId
       });
       updateLocalStorage(null, trainedModels);
+    }
+  };
+
+  var openTestingModal = clickedBlock => {
+    // setup model for training
+    var selectedModel = trainedModels[clickedBlock.id];
+
+    if (selectedModel) {
+      // update the model and dataset to pass to the modal
+      setCurrentModel(selectedModel); // open the training modal
+
+      toggleTestModelDialog();
     }
   };
   /* For button callbacks */
@@ -921,6 +904,8 @@ function ModelBlockEditorWithContext(props) {
           openDataSetModal(clickedBlock);
         } else if (command == "train") {
           openTrainingModal(clickedBlock);
+        } else if (command == "view") {
+          openTestingModal(clickedBlock);
         } // clear the command
 
 
@@ -982,13 +967,10 @@ function ModelBlockEditorWithContext(props) {
   }, /*#__PURE__*/react.createElement(BlockEditor/* default */.Z, {
     editorId: MB_EDITOR_ID
   }), flags/* default.diagnostics */.Z.diagnostics && /*#__PURE__*/react.createElement(BlockDiagnostics/* default */.Z, null), /*#__PURE__*/react.createElement(Suspense/* default */.Z, null, /*#__PURE__*/react.createElement(ModelBlockDialogs, {
-    viewDataSetDialogVisible: viewDataSetDialogVisible,
-    recordDataDialogVisible: recordDataDialogVisible,
-    trainModelDialogVisible: trainModelDialogVisible,
-    newClassifierDialogVisible: newClassifierDialogVisible,
+    visibleDialog: visibleDialog,
     onRecordingDone: closeRecordingModal,
     onModelUpdate: updateModel,
-    closeModal: closeModal,
+    closeModal: closeModals,
     workspace: workspace,
     dataset: currentDataSet,
     model: currentModel,
@@ -1021,4 +1003,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-ml-tsx-2a067d68305c5e32ba28.js.map
+//# sourceMappingURL=component---src-pages-editors-ml-tsx-f20f3a67373bd103b14d.js.map

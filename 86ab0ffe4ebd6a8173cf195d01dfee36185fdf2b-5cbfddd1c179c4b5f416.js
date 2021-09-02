@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[6602,3102],{
+(self["webpackChunkjacdac_docs"] = self["webpackChunkjacdac_docs"] || []).push([[6602],{
 
 /***/ 65957:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -572,7 +572,7 @@ var MBModel = /*#__PURE__*/function (_JDEventSource) {
 var ConfusionMatrixHeatMap = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 5063).then(__webpack_require__.bind(__webpack_require__, 75063)));
 var DataSetPlot = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 9866).then(__webpack_require__.bind(__webpack_require__, 49866)));
 var LossAccChart = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 3139).then(__webpack_require__.bind(__webpack_require__, 33139)));
-var ModelSummaryDropdown = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => Promise.all(/* import() */[__webpack_require__.e(317), __webpack_require__.e(7521)]).then(__webpack_require__.bind(__webpack_require__, 67521)));
+var ModelSummaryDropdown = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.lazy)(() => __webpack_require__.e(/* import() */ 6080).then(__webpack_require__.bind(__webpack_require__, 96080)));
 function prepareDataSet(set) {
   // Assumptions: the sampling rate, sampling duration, and sensors used are constant
   var sampleLength = -1;
@@ -894,4 +894,4 @@ function TrainModel(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=86ab0ffe4ebd6a8173cf195d01dfee36185fdf2b-d4f1c9871f1363c469d2.js.map
+//# sourceMappingURL=86ab0ffe4ebd6a8173cf195d01dfee36185fdf2b-5cbfddd1c179c4b5f416.js.map

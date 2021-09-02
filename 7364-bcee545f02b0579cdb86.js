@@ -88,14 +88,14 @@ function NewClassifierDialog(props) {
 
   var handleCancel = () => {
     // call the done function
-    onDone("classifier");
+    onDone();
   };
 
   var handleDone = () => {
     // create and add the new block
     addNewClassifierBlock(); // call the done function
 
-    onDone("classifier");
+    onDone();
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z, {
@@ -148,4 +148,4 @@ function NewClassifierDialog(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=7364-e06291e2075bc930f41a.js.map
+//# sourceMappingURL=7364-bcee545f02b0579cdb86.js.map

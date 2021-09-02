@@ -142,7 +142,7 @@ function BlocklyViewDataDialog(props) {
 
   var handleDone = () => {
     // close the modal
-    onDone("dataset");
+    onDone();
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z, {
@@ -183,4 +183,4 @@ function BlocklyViewDataDialog(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=206-317a5d923df9f231110e.js.map
+//# sourceMappingURL=206-66cbd6123a0271c35184.js.map
