@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-service-playground-tsx",
-    "path": "/services/azureiothub/playground/",
-    "result": {"pageContext":{"node":{"name":"Azure IoT Hub","shortName":"azureIotHub","shortId":"azureiothub","classIdentifier":434976332}}},
-    "staticQueryHashes": ["249313281","2744294623","2898794040","413816803","63159454"]}

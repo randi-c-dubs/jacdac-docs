@@ -10,12 +10,18 @@
     },
     {
       "code": 385,
+      "name": "hub_device_id",
+      "flags": 0,
+      "packf": "s"
+    },
+    {
+      "code": 386,
       "name": "connection_status",
       "flags": 0,
       "packf": "u16"
     },
     {
-      "code": 386,
+      "code": 387,
       "name": "statistics",
       "flags": 2,
       "packf": "u32 u32 u32 u32",

@@ -465,74 +465,6 @@ var ArcadeSoundReg;
      */
     ArcadeSoundReg[ArcadeSoundReg["BufferPending"] = 385] = "BufferPending";
 })(ArcadeSoundReg || (ArcadeSoundReg = {}));
-var AzureIotHubCmd;
-(function (AzureIotHubCmd) {
-    /**
-     * Argument: body string (bytes). Sends a short message in string format (it's typically JSON-encoded).
-     *
-     * ```
-     * const [body] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIotHubCmd[AzureIotHubCmd["SendMessage"] = 130] = "SendMessage";
-    /**
-     * No args. Try connecting using currently set `connection_string`.
-     * The service normally periodically tries to connect automatically.
-     */
-    AzureIotHubCmd[AzureIotHubCmd["Connect"] = 128] = "Connect";
-    /**
-     * No args. Disconnect from current Hub if any.
-     * This disables auto-connect behavior, until a `connect` command is issued.
-     */
-    AzureIotHubCmd[AzureIotHubCmd["Disconnect"] = 129] = "Disconnect";
-})(AzureIotHubCmd || (AzureIotHubCmd = {}));
-var AzureIotHubReg;
-(function (AzureIotHubReg) {
-    /**
-     * Read-only string (bytes). Returns `"ok"` when connected, empty `""` when disconnected, and an error description otherwise.
-     *
-     * ```
-     * const [connectionStatus] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIotHubReg[AzureIotHubReg["ConnectionStatus"] = 384] = "ConnectionStatus";
-    /**
-     * Constant string (bytes). Something like `my-iot-hub.azure-devices.net`; empty string when not properly configured
-     *
-     * ```
-     * const [hubName] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIotHubReg[AzureIotHubReg["HubName"] = 385] = "HubName";
-    /**
-     * Constant string (bytes). Something like `my-dev-007`; empty string when `connection_string` is not set.
-     *
-     * ```
-     * const [deviceId] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIotHubReg[AzureIotHubReg["DeviceId"] = 386] = "DeviceId";
-})(AzureIotHubReg || (AzureIotHubReg = {}));
-var AzureIotHubEvent;
-(function (AzureIotHubEvent) {
-    /**
-     * Argument: body string (bytes). This event is emitted upon reception of a cloud to device message, that is a string
-     * (doesn't contain NUL bytes) and fits in a single event packet.
-     *
-     * ```
-     * const [body] = jdunpack<[string]>(buf, "s")
-     * ```
-     */
-    AzureIotHubEvent[AzureIotHubEvent["Message"] = 130] = "Message";
-    /**
-     * Raised when the device is connected to the hub.
-     */
-    AzureIotHubEvent[AzureIotHubEvent["Connected"] = 128] = "Connected";
-    /**
-     * Raised when the device is disconnected to the hub. ``connection_status`` may contain information about the error.
-     */
-    AzureIotHubEvent[AzureIotHubEvent["Disconnected"] = 129] = "Disconnected";
-})(AzureIotHubEvent || (AzureIotHubEvent = {}));
 var AzureIotHubHealthConnectionStatus;
 (function (AzureIotHubHealthConnectionStatus) {
     AzureIotHubHealthConnectionStatus[AzureIotHubHealthConnectionStatus["Connected"] = 0] = "Connected";
@@ -551,13 +483,21 @@ var AzureIotHubHealthReg;
      */
     AzureIotHubHealthReg[AzureIotHubHealthReg["HubName"] = 384] = "HubName";
     /**
+     * Read-only string (bytes). Device identifier in Azure Iot Hub
+     *
+     * ```
+     * const [hubDeviceId] = jdunpack<[string]>(buf, "s")
+     * ```
+     */
+    AzureIotHubHealthReg[AzureIotHubHealthReg["HubDeviceId"] = 385] = "HubDeviceId";
+    /**
      * Read-only ConnectionStatus (uint16_t). Indicates the status of connection. A message beyond the [0..3] range represents an HTTP error code.
      *
      * ```
      * const [connectionStatus] = jdunpack<[AzureIotHubHealthConnectionStatus]>(buf, "u16")
      * ```
      */
-    AzureIotHubHealthReg[AzureIotHubHealthReg["ConnectionStatus"] = 385] = "ConnectionStatus";
+    AzureIotHubHealthReg[AzureIotHubHealthReg["ConnectionStatus"] = 386] = "ConnectionStatus";
     /**
      * Reads internal statistics about messages sent to the hub.
      *
@@ -565,18 +505,10 @@ var AzureIotHubHealthReg;
      * const [reading, event, twinReported, twinDesired] = jdunpack<[number, number, number, number]>(buf, "u32 u32 u32 u32")
      * ```
      */
-    AzureIotHubHealthReg[AzureIotHubHealthReg["Statistics"] = 386] = "Statistics";
+    AzureIotHubHealthReg[AzureIotHubHealthReg["Statistics"] = 387] = "Statistics";
 })(AzureIotHubHealthReg || (AzureIotHubHealthReg = {}));
 var AzureIotHubHealthCmd;
 (function (AzureIotHubHealthCmd) {
-    /**
-     * Argument: twin_report pipe (bytes). Returns the twin json payload.
-     *
-     * ```
-     * const [twinReport] = jdunpack<[Uint8Array]>(buf, "b[12]")
-     * ```
-     */
-    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Twin"] = 128] = "Twin";
     /**
      * No args. Starts a connection to the IoT hub service
      */
@@ -586,14 +518,6 @@ var AzureIotHubHealthCmd;
      */
     AzureIotHubHealthCmd[AzureIotHubHealthCmd["Disconnect"] = 130] = "Disconnect";
     /**
-     * Argument: payload uint32_t. Commands the device to send a `ping` message to the hub with the given payload.
-     *
-     * ```
-     * const [payload] = jdunpack<[number]>(buf, "u32")
-     * ```
-     */
-    AzureIotHubHealthCmd[AzureIotHubHealthCmd["Ping"] = 133] = "Ping";
-    /**
      * Argument: connection_string string (bytes). Restricted command to override the existing connection string to the Azure IoT Hub.
      *
      * ```
@@ -602,12 +526,6 @@ var AzureIotHubHealthCmd;
      */
     AzureIotHubHealthCmd[AzureIotHubHealthCmd["SetConnectionString"] = 134] = "SetConnectionString";
 })(AzureIotHubHealthCmd || (AzureIotHubHealthCmd = {}));
-/**
- * pipe_report TwinReport
- * ```
- * const [content] = jdunpack<[string]>(buf, "s")
- * ```
- */
 var AzureIotHubHealthEvent;
 (function (AzureIotHubHealthEvent) {
     /**
@@ -618,10 +536,6 @@ var AzureIotHubHealthEvent;
      * ```
      */
     AzureIotHubHealthEvent[AzureIotHubHealthEvent["ConnectionStatusChange"] = 3] = "ConnectionStatusChange";
-    /**
-     * Raised when the twin model is modified.
-     */
-    AzureIotHubHealthEvent[AzureIotHubHealthEvent["TwinChange"] = 128] = "TwinChange";
 })(AzureIotHubHealthEvent || (AzureIotHubHealthEvent = {}));
 var BarcodeReaderFormat;
 (function (BarcodeReaderFormat) {
