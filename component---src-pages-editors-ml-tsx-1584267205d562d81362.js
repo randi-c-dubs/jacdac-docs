@@ -791,11 +791,12 @@ function ModelBlockEditorWithContext(props) {
     if (model) allModels[model.name] = model; // Model was trained, add model to list of trained models
 
     if (blockId) {
-      trainedModels[blockId] = model; // add dataset and model to new block
+      var trainedModel = MBModel/* default.createFromFile */.ZP.createFromFile(model.toJSON());
+      trainedModels[blockId] = trainedModel; // add dataset and model to new block
 
       var newBlock = workspace.getBlockById(blockId);
       var services = (0,WorkspaceContext/* resolveBlockServices */.Ys)(newBlock);
-      services.data = [currentDataSet, model]; // keep this info so this block can be duplicated
+      services.data = [currentDataSet, trainedModel]; // keep this info so this block can be duplicated
 
       var expandField = newBlock.getField("TRAINED_MODEL_DISPLAY");
       expandField.updateFieldValue({
@@ -1020,4 +1021,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-ml-tsx-7c7d21125f296d9e64d8.js.map
+//# sourceMappingURL=component---src-pages-editors-ml-tsx-1584267205d562d81362.js.map

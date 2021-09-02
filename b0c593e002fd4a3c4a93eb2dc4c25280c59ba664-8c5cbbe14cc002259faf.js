@@ -18484,9 +18484,9 @@ function TrainedModelDisplayWidget() {
 
     var updatedDataSet = services.data[0];
     var updatedModel = services.data[1];
-    if (!updatedModel || !updatedDataSet) return; // make sure dataset and model are compatible (same input and output data)
+    if (!updatedModel || !updatedDataSet) return; // make sure dataset and model are compatible (same input data)
 
-    if (!(0,_model_editor_MBDataSet__WEBPACK_IMPORTED_MODULE_8__/* .arraysEqual */ .cO)(updatedDataSet.inputTypes, updatedModel.inputTypes) || updatedDataSet.length != updatedModel.inputShape[0] || updatedDataSet.width != updatedModel.inputShape[1] || !(0,_model_editor_MBDataSet__WEBPACK_IMPORTED_MODULE_8__/* .arraysEqual */ .cO)(updatedDataSet.labels, updatedModel.labels)) {
+    if (!(0,_model_editor_MBDataSet__WEBPACK_IMPORTED_MODULE_8__/* .arraysEqual */ .cO)(updatedDataSet.inputTypes, updatedModel.inputTypes) || updatedDataSet.length != updatedModel.inputShape[0] || updatedDataSet.width != updatedModel.inputShape[1]) {
       setErrorMsg("The selected dataset does not have the same input/output type as the trained model");
       return;
     }
@@ -19986,4 +19986,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-f4179afc872230e730cd.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-8c5cbbe14cc002259faf.js.map

@@ -31,6 +31,7 @@ function DataSetPlot(props) {
 
   var calculateRecordingFeatures = (recording, label, predictedLabel) => {
     var features = {
+      name: recording.name,
       class: label,
       "predicted class": predictedLabel,
       correct: label == predictedLabel || predictedLabel == ""
@@ -121,6 +122,9 @@ function DataSetPlot(props) {
 
   var configTooltip = () => {
     var spec = [{
+      field: "name",
+      type: "nominal"
+    }, {
       field: "class",
       type: "nominal"
     }, {
@@ -225,4 +229,4 @@ function DataSetPlot(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=9866-78cff0e489bfce01bb57.js.map
+//# sourceMappingURL=9866-96d77b03e7903138f490.js.map
