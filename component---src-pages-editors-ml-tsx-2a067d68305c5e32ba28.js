@@ -157,8 +157,8 @@ var shadowdsl = __webpack_require__(96958);
 var fieldsdsl = __webpack_require__(76658);
 // EXTERNAL MODULE: ./src/components/blockly/BlockDiagnostics.tsx
 var BlockDiagnostics = __webpack_require__(9370);
-// EXTERNAL MODULE: ./jacdac-ts/src/dsl/workspacevisitor.ts
-var workspacevisitor = __webpack_require__(78870);
+// EXTERNAL MODULE: ./src/components/blockly/dsl/workspacevisitor.ts
+var workspacevisitor = __webpack_require__(52429);
 // EXTERNAL MODULE: ./src/components/blockly/toolbox.ts
 var toolbox = __webpack_require__(16582);
 // EXTERNAL MODULE: ./src/components/FileSystemContext.tsx + 2 modules
@@ -1021,4 +1021,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-ml-tsx-1584267205d562d81362.js.map
+//# sourceMappingURL=component---src-pages-editors-ml-tsx-2a067d68305c5e32ba28.js.map

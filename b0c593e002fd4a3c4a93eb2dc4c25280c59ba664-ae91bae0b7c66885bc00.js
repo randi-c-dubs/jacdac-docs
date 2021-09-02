@@ -7307,52 +7307,6 @@ $({ target: 'Object', stat: true }, {
 
 /***/ }),
 
-/***/ 78870:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "R1": function() { return /* binding */ visitWorkspace; }
-/* harmony export */ });
-/* unused harmony exports visitBlock, visitInput, visitField */
-function visitBlock(block, visitor) {
-  var _visitor$visitBlock;
-
-  if (!block) return;
-  (_visitor$visitBlock = visitor.visitBlock) === null || _visitor$visitBlock === void 0 ? void 0 : _visitor$visitBlock.call(visitor, block);
-  var {
-    inputs,
-    children
-  } = block;
-  inputs === null || inputs === void 0 ? void 0 : inputs.forEach(input => visitInput(input, visitor));
-  children === null || children === void 0 ? void 0 : children.forEach(child => visitBlock(child, visitor));
-}
-function visitInput(input, visitor) {
-  var _visitor$visitInput;
-
-  if (!input) return;
-  (_visitor$visitInput = visitor.visitInput) === null || _visitor$visitInput === void 0 ? void 0 : _visitor$visitInput.call(visitor, input);
-  var {
-    fields,
-    child
-  } = input;
-  if (fields) Object.keys(fields).map(k => visitField(k, fields[k], visitor));
-  visitBlock(child, visitor);
-}
-function visitField(name, field, visitor) {
-  var _visitor$visitField;
-
-  if (!field) return;
-  (_visitor$visitField = visitor.visitField) === null || _visitor$visitField === void 0 ? void 0 : _visitor$visitField.call(visitor, name, field);
-}
-function visitWorkspace(workspace, visitor) {
-  var _workspace$blocks;
-
-  workspace === null || workspace === void 0 ? void 0 : (_workspace$blocks = workspace.blocks) === null || _workspace$blocks === void 0 ? void 0 : _workspace$blocks.forEach(block => visitBlock(block, visitor));
-}
-
-/***/ }),
-
 /***/ 59448:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -8281,8 +8235,8 @@ function useRoleManager() {
 }
 // EXTERNAL MODULE: ./src/components/hooks/useLocalStorage.ts
 var useLocalStorage = __webpack_require__(34093);
-// EXTERNAL MODULE: ./jacdac-ts/src/dsl/workspacevisitor.ts
-var workspacevisitor = __webpack_require__(78870);
+// EXTERNAL MODULE: ./src/components/blockly/dsl/workspacevisitor.ts
+var workspacevisitor = __webpack_require__(52429);
 ;// CONCATENATED MODULE: ./src/components/blockly/blockwarning.ts
 
 function collectWarnings(workspace) {
@@ -11634,6 +11588,52 @@ function _postTransformData() {
     return res === null || res === void 0 ? void 0 : res.data;
   });
   return _postTransformData.apply(this, arguments);
+}
+
+/***/ }),
+
+/***/ 52429:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "R1": function() { return /* binding */ visitWorkspace; }
+/* harmony export */ });
+/* unused harmony exports visitBlock, visitInput, visitField */
+function visitBlock(block, visitor) {
+  var _visitor$visitBlock;
+
+  if (!block) return;
+  (_visitor$visitBlock = visitor.visitBlock) === null || _visitor$visitBlock === void 0 ? void 0 : _visitor$visitBlock.call(visitor, block);
+  var {
+    inputs,
+    children
+  } = block;
+  inputs === null || inputs === void 0 ? void 0 : inputs.forEach(input => visitInput(input, visitor));
+  children === null || children === void 0 ? void 0 : children.forEach(child => visitBlock(child, visitor));
+}
+function visitInput(input, visitor) {
+  var _visitor$visitInput;
+
+  if (!input) return;
+  (_visitor$visitInput = visitor.visitInput) === null || _visitor$visitInput === void 0 ? void 0 : _visitor$visitInput.call(visitor, input);
+  var {
+    fields,
+    child
+  } = input;
+  if (fields) Object.keys(fields).map(k => visitField(k, fields[k], visitor));
+  visitBlock(child, visitor);
+}
+function visitField(name, field, visitor) {
+  var _visitor$visitField;
+
+  if (!field) return;
+  (_visitor$visitField = visitor.visitField) === null || _visitor$visitField === void 0 ? void 0 : _visitor$visitField.call(visitor, name, field);
+}
+function visitWorkspace(workspace, visitor) {
+  var _workspace$blocks;
+
+  workspace === null || workspace === void 0 ? void 0 : (_workspace$blocks = workspace.blocks) === null || _workspace$blocks === void 0 ? void 0 : _workspace$blocks.forEach(block => visitBlock(block, visitor));
 }
 
 /***/ }),
@@ -19986,4 +19986,4 @@ function child(parent, name, props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-8c5cbbe14cc002259faf.js.map
+//# sourceMappingURL=b0c593e002fd4a3c4a93eb2dc4c25280c59ba664-ae91bae0b7c66885bc00.js.map

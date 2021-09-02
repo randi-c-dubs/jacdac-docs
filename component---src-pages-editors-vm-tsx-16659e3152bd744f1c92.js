@@ -274,8 +274,8 @@ var jdom_spec = __webpack_require__(13173);
 var pack = __webpack_require__(91635);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
 var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/registerserver.ts
-var registerserver = __webpack_require__(1591);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/registerserver.ts
+var registerserver = __webpack_require__(88538);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/sensorserver.ts
 var sensorserver = __webpack_require__(85863);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/vm/server.ts
@@ -1668,6 +1668,7 @@ var VMChecker = /*#__PURE__*/function () {
         }
       } else if (argType === "events") {
         if (arg.type != "ArrayExpression") this.error("events function expects a list of service events");else {
+          ;
           arg.elements.forEach(e => this.resolver.lookupEvent(e));
         }
       } else if (argType === "number" || argType === "boolean") {
@@ -2019,8 +2020,8 @@ var Mutex = /*#__PURE__*/function () {
 }();
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
-var serviceprovider = __webpack_require__(73138);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serverserviceprovider.ts + 1 modules
+var serverserviceprovider = __webpack_require__(36211);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/vm/runner.ts
 
 
@@ -2748,7 +2749,7 @@ var VMProgramRunner = /*#__PURE__*/function (_JDClient) {
     _this6._breaksMutex = new Mutex();
     _this6._sleepMutex = new Mutex(); // TODO: only try to wake handlers that are waiting on change to reg or event
 
-    _this6.mount(_this6._env.subscribe(REGISTER_CHANGE, reg => {
+    _this6.mount(_this6._env.subscribe(REGISTER_CHANGE, () => {
       _this6.waitingToRunning();
     }));
 
@@ -3408,7 +3409,7 @@ var VMProgramRunner = /*#__PURE__*/function (_JDClient) {
       var servers = this._env.servers();
 
       if (servers.length) {
-        this._provider = new serviceprovider/* default */.Z(servers.map(s => s.server) // if we create a deviceId, then trouble ensues
+        this._provider = new serverserviceprovider/* default */.Z(servers.map(s => s.server) // if we create a deviceId, then trouble ensues
         // as a second device gets spun up later
         //{
         //    deviceId: "VMServiceProvider",
@@ -6879,4 +6880,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-vm-tsx-bd53cea3cfe9824afce0.js.map
+//# sourceMappingURL=component---src-pages-editors-vm-tsx-16659e3152bd744f1c92.js.map

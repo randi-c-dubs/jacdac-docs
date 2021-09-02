@@ -903,10 +903,10 @@ var packet = __webpack_require__(57683);
 var AlertTitle = __webpack_require__(99330);
 // EXTERNAL MODULE: ./src/components/ui/Alert.tsx
 var Alert = __webpack_require__(95453);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
-var serviceprovider = __webpack_require__(73138);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/protocoltestserver.ts
-var protocoltestserver = __webpack_require__(80375);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serviceprovider.ts
+var serviceprovider = __webpack_require__(92952);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/protocoltestserver.ts
+var protocoltestserver = __webpack_require__(8695);
 // EXTERNAL MODULE: ./node_modules/gatsby-theme-material-ui/index.js
 var gatsby_theme_material_ui = __webpack_require__(36176);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/random.ts
@@ -1259,4 +1259,4 @@ function ProtocolTest() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-tools-prototest-tsx-61193676c451134d735f.js.map
+//# sourceMappingURL=component---src-pages-tools-prototest-tsx-30bac547996c5a20c829.js.map

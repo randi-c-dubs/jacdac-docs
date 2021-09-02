@@ -39296,7 +39296,55 @@ function printPacket(pkt, opts) {
 
 /***/ }),
 
-/***/ 80375:
+/***/ 80303:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dG": function() { return /* binding */ cryptoRandomUint32; },
+/* harmony export */   "RO": function() { return /* binding */ anyRandomUint32; },
+/* harmony export */   "sG": function() { return /* binding */ randomUInt; },
+/* harmony export */   "b_": function() { return /* binding */ randomDeviceId; }
+/* harmony export */ });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81794);
+
+function cryptoRandomUint32(length) {
+  if (typeof window === "undefined") return undefined; // not supported
+
+  var vals = new Uint32Array(length);
+  window.crypto.getRandomValues(vals);
+  return vals;
+}
+function anyRandomUint32(length) {
+  var r = cryptoRandomUint32(length);
+
+  if (!r) {
+    r = new Uint32Array(length);
+
+    for (var i = 0; i < r.length; ++i) {
+      r[i] = Math.random() * 0x100000000 >>> 0;
+    }
+  }
+
+  return r;
+}
+function randomUInt(max) {
+  var arr = anyRandomUint32(1);
+  return arr[0] % max;
+}
+function randomDeviceId() {
+  var devId = anyRandomUint32(8);
+
+  for (var i = 0; i < 8; ++i) {
+    devId[i] &= 0xff;
+  }
+
+  return (0,_utils__WEBPACK_IMPORTED_MODULE_0__/* .toHex */ .NC)(devId);
+}
+
+/***/ }),
+
+/***/ 8695:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39307,7 +39355,7 @@ function printPacket(pkt, opts) {
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _pack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(91635);
 /* harmony import */ var _pipes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93642);
-/* harmony import */ var _serviceserver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50457);
+/* harmony import */ var _serviceserver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5800);
 
 
 
@@ -39382,55 +39430,7 @@ var ProtocolTestServer = /*#__PURE__*/function (_JDServiceServer) {
 
 /***/ }),
 
-/***/ 80303:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "dG": function() { return /* binding */ cryptoRandomUint32; },
-/* harmony export */   "RO": function() { return /* binding */ anyRandomUint32; },
-/* harmony export */   "sG": function() { return /* binding */ randomUInt; },
-/* harmony export */   "b_": function() { return /* binding */ randomDeviceId; }
-/* harmony export */ });
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81794);
-
-function cryptoRandomUint32(length) {
-  if (typeof window === "undefined") return undefined; // not supported
-
-  var vals = new Uint32Array(length);
-  window.crypto.getRandomValues(vals);
-  return vals;
-}
-function anyRandomUint32(length) {
-  var r = cryptoRandomUint32(length);
-
-  if (!r) {
-    r = new Uint32Array(length);
-
-    for (var i = 0; i < r.length; ++i) {
-      r[i] = Math.random() * 0x100000000 >>> 0;
-    }
-  }
-
-  return r;
-}
-function randomUInt(max) {
-  var arr = anyRandomUint32(1);
-  return arr[0] % max;
-}
-function randomDeviceId() {
-  var devId = anyRandomUint32(8);
-
-  for (var i = 0; i < 8; ++i) {
-    devId[i] &= 0xff;
-  }
-
-  return (0,_utils__WEBPACK_IMPORTED_MODULE_0__/* .toHex */ .NC)(devId);
-}
-
-/***/ }),
-
-/***/ 1591:
+/***/ 88538:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39664,69 +39664,17 @@ var JDRegisterServer = /*#__PURE__*/function (_JDEventSource) {
 
 /***/ }),
 
-/***/ 56763:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "P": function() { return /* binding */ JDServiceClient; }
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
-/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47235);
-
-
-
-/**
- * Base class for service clients
- * @category Clients
- */
-
-var JDServiceClient = /*#__PURE__*/function (_JDClient) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(JDServiceClient, _JDClient);
-
-  function JDServiceClient(service) {
-    var _this;
-
-    _this = _JDClient.call(this) || this;
-    _this.service = service;
-    return _this;
-  }
-
-  var _proto = JDServiceClient.prototype;
-
-  _proto.toString = function toString() {
-    return "client of " + this.service;
-  };
-
-  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(JDServiceClient, [{
-    key: "device",
-    get: function get() {
-      return this.service.device;
-    }
-  }, {
-    key: "bus",
-    get: function get() {
-      return this.device.bus;
-    }
-  }]);
-
-  return JDServiceClient;
-}(_client__WEBPACK_IMPORTED_MODULE_0__/* .JDClient */ .z);
-
-/***/ }),
-
-/***/ 73138:
+/***/ 36211:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": function() { return /* binding */ serviceprovider; }
+  "Z": function() { return /* binding */ serverserviceprovider; }
 });
 
-// UNUSED EXPORTS: JDServiceProvider
+// UNUSED EXPORTS: JDServerServiceProvider
 
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(73108);
@@ -39740,17 +39688,15 @@ var assertThisInitialized = __webpack_require__(25342);
 var inheritsLoose = __webpack_require__(85413);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/packet.ts
 var packet = __webpack_require__(57683);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/pretty.ts
-var pretty = __webpack_require__(10913);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/utils.ts
 var utils = __webpack_require__(81794);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
 var constants = __webpack_require__(71815);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/pack.ts
 var pack = __webpack_require__(91635);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceserver.ts
-var serviceserver = __webpack_require__(50457);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/controlserver.ts
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serviceserver.ts
+var serviceserver = __webpack_require__(5800);
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/servers/controlserver.ts
 
 
 
@@ -39855,13 +39801,9 @@ var ControlServer = /*#__PURE__*/function (_JDServiceServer) {
   return ControlServer;
 }(serviceserver/* default */.Z);
 /* harmony default export */ var controlserver = (ControlServer);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/eventsource.ts
-var eventsource = __webpack_require__(45484);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/random.ts
-var random = __webpack_require__(80303);
-;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts
-
-
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serviceprovider.ts
+var serviceprovider = __webpack_require__(92952);
+;// CONCATENATED MODULE: ./jacdac-ts/src/jdom/servers/serverserviceprovider.ts
 
 
 
@@ -39877,43 +39819,27 @@ var random = __webpack_require__(80303);
  * @category Servers
  */
 
-var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
-  (0,inheritsLoose/* default */.Z)(JDServiceProvider, _JDEventSource);
+var JDServerServiceProvider = /*#__PURE__*/function (_JDServiceProvider) {
+  (0,inheritsLoose/* default */.Z)(JDServerServiceProvider, _JDServiceProvider);
 
-  function JDServiceProvider(services, options) {
+  function JDServerServiceProvider(services, options) {
     var _this;
 
-    _this = _JDEventSource.call(this) || this;
+    _this = _JDServiceProvider.call(this, options === null || options === void 0 ? void 0 : options.deviceId) || this;
     _this._restartCounter = 0;
     _this._packetCount = 0;
     _this._eventCounter = undefined;
     _this.controlService = new controlserver(options);
     _this._services = [];
-    _this.deviceId = options === null || options === void 0 ? void 0 : options.deviceId;
-
-    if (!_this.deviceId) {
-      var devId = (0,random/* anyRandomUint32 */.RO)(8);
-
-      for (var i = 0; i < 8; ++i) {
-        devId[i] &= 0xff;
-      }
-
-      _this.deviceId = (0,utils/* toHex */.NC)(devId);
-    }
-
-    _this.shortId = (0,pretty/* shortDeviceId */.xV)(_this.deviceId);
 
     _this.updateServices(services);
-
-    _this.handleSelfAnnounce = _this.handleSelfAnnounce.bind((0,assertThisInitialized/* default */.Z)(_this));
-    _this.handlePacket = _this.handlePacket.bind((0,assertThisInitialized/* default */.Z)(_this));
 
     _this.on(constants/* REFRESH */.RGM, _this.refreshRegisters.bind((0,assertThisInitialized/* default */.Z)(_this)));
 
     return _this;
   }
 
-  var _proto = JDServiceProvider.prototype;
+  var _proto = JDServerServiceProvider.prototype;
 
   _proto.updateServices = function updateServices(services) {
     var _this$_services;
@@ -39951,29 +39877,20 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
   };
 
   _proto.start = function start() {
-    if (!this._bus) return;
+    _JDServiceProvider.prototype.start.call(this);
+
     this._packetCount = 0;
-
-    this._bus.on(constants/* SELF_ANNOUNCE */.Pbc, this.handleSelfAnnounce);
-
-    this._bus.on([constants/* PACKET_PROCESS */.wY8, constants/* PACKET_SEND */.RaS], this.handlePacket);
-
-    console.debug("start host");
   };
 
   _proto.stop = function stop() {
     this._delayedPackets = undefined;
-    if (!this._bus) return;
 
-    this._bus.off(constants/* SELF_ANNOUNCE */.Pbc, this.handleSelfAnnounce);
-
-    this._bus.off([constants/* PACKET_PROCESS */.wY8, constants/* PACKET_SEND */.RaS], this.handlePacket);
-
-    console.debug("stop host");
-    this._bus = undefined;
+    _JDServiceProvider.prototype.stop.call(this);
   };
 
   _proto.handleSelfAnnounce = function handleSelfAnnounce() {
+    _JDServiceProvider.prototype.handleSelfAnnounce.call(this);
+
     if (this._restartCounter < 0xf) this._restartCounter++; // async
 
     this.controlService.announce(); // also send status codes, for non-zero codes
@@ -40005,7 +39922,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 
   _proto.sendPacketAsync = /*#__PURE__*/function () {
     var _sendPacketAsync = (0,asyncToGenerator/* default */.Z)(function* (pkt) {
-      if (!this._bus) return Promise.resolve(); // qos counter
+      if (!this.bus) return Promise.resolve(); // qos counter
 
       this._packetCount++;
       pkt.deviceIdentifier = this.deviceId; // compute crc and send
@@ -40124,19 +40041,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
     this.emit(constants/* RESET */.tdh);
   };
 
-  (0,createClass/* default */.Z)(JDServiceProvider, [{
-    key: "bus",
-    get: function get() {
-      return this._bus;
-    },
-    set: function set(value) {
-      if (value !== this._bus) {
-        this.stop();
-        this._bus = value;
-        if (this._bus) this.start();
-      }
-    }
-  }, {
+  (0,createClass/* default */.Z)(JDServerServiceProvider, [{
     key: "restartCounter",
     get: function get() {
       return this._restartCounter;
@@ -40153,13 +40058,106 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
     }
   }]);
 
-  return JDServiceProvider;
-}(eventsource/* default */.ZP);
-/* harmony default export */ var serviceprovider = (JDServiceProvider);
+  return JDServerServiceProvider;
+}(serviceprovider/* default */.Z);
+/* harmony default export */ var serverserviceprovider = (JDServerServiceProvider);
 
 /***/ }),
 
-/***/ 50457:
+/***/ 92952:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export JDServiceProvider */
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(53719);
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(25342);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85413);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
+/* harmony import */ var _eventsource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(45484);
+/* harmony import */ var _pretty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10913);
+/* harmony import */ var _random__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80303);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81794);
+
+
+
+
+
+
+
+
+/**
+ * Implements a device with service servers.
+ * @category Servers
+ */
+
+var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(JDServiceProvider, _JDEventSource);
+
+  function JDServiceProvider(deviceId) {
+    var _this;
+
+    _this = _JDEventSource.call(this) || this;
+    _this.deviceId = deviceId;
+
+    if (!_this.deviceId) {
+      var devId = (0,_random__WEBPACK_IMPORTED_MODULE_3__/* .anyRandomUint32 */ .RO)(8);
+
+      for (var i = 0; i < 8; ++i) {
+        devId[i] &= 0xff;
+      }
+
+      _this.deviceId = (0,_utils__WEBPACK_IMPORTED_MODULE_4__/* .toHex */ .NC)(devId);
+    }
+
+    _this.shortId = (0,_pretty__WEBPACK_IMPORTED_MODULE_2__/* .shortDeviceId */ .xV)(_this.deviceId);
+    _this.handleSelfAnnounce = _this.handleSelfAnnounce.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this));
+    _this.handlePacket = _this.handlePacket.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(_this));
+    return _this;
+  }
+
+  var _proto = JDServiceProvider.prototype;
+
+  _proto.start = function start() {
+    if (this._bus) {
+      this._bus.on(_constants__WEBPACK_IMPORTED_MODULE_0__/* .SELF_ANNOUNCE */ .Pbc, this.handleSelfAnnounce);
+
+      this._bus.on([_constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_PROCESS */ .wY8, _constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_SEND */ .RaS], this.handlePacket);
+    }
+  };
+
+  _proto.stop = function stop() {
+    if (this._bus) {
+      this._bus.off(_constants__WEBPACK_IMPORTED_MODULE_0__/* .SELF_ANNOUNCE */ .Pbc, this.handleSelfAnnounce);
+
+      this._bus.off([_constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_PROCESS */ .wY8, _constants__WEBPACK_IMPORTED_MODULE_0__/* .PACKET_SEND */ .RaS], this.handlePacket);
+
+      this._bus = undefined;
+    }
+  };
+
+  _proto.handleSelfAnnounce = function handleSelfAnnounce() {};
+
+  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(JDServiceProvider, [{
+    key: "bus",
+    get: function get() {
+      return this._bus;
+    },
+    set: function set(value) {
+      if (value !== this._bus) {
+        this.stop();
+        this._bus = value;
+        if (this._bus) this.start();
+      }
+    }
+  }]);
+
+  return JDServiceProvider;
+}(_eventsource__WEBPACK_IMPORTED_MODULE_1__/* .default */ .ZP);
+/* harmony default export */ __webpack_exports__["Z"] = (JDServiceProvider);
+
+/***/ }),
+
+/***/ 5800:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40172,7 +40170,7 @@ var JDServiceProvider = /*#__PURE__*/function (_JDEventSource) {
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71815);
 /* harmony import */ var _eventsource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(45484);
 /* harmony import */ var _packet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57683);
-/* harmony import */ var _registerserver__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1591);
+/* harmony import */ var _registerserver__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(88538);
 /* harmony import */ var _spec__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13173);
 
 
@@ -40449,6 +40447,58 @@ var JDServiceServer = /*#__PURE__*/function (_JDEventSource) {
   return JDServiceServer;
 }(_eventsource__WEBPACK_IMPORTED_MODULE_2__/* .default */ .ZP);
 /* harmony default export */ __webpack_exports__["Z"] = (JDServiceServer);
+
+/***/ }),
+
+/***/ 56763:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "P": function() { return /* binding */ JDServiceClient; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53719);
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85413);
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47235);
+
+
+
+/**
+ * Base class for service clients
+ * @category Clients
+ */
+
+var JDServiceClient = /*#__PURE__*/function (_JDClient) {
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(JDServiceClient, _JDClient);
+
+  function JDServiceClient(service) {
+    var _this;
+
+    _this = _JDClient.call(this) || this;
+    _this.service = service;
+    return _this;
+  }
+
+  var _proto = JDServiceClient.prototype;
+
+  _proto.toString = function toString() {
+    return "client of " + this.service;
+  };
+
+  (0,_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)(JDServiceClient, [{
+    key: "device",
+    get: function get() {
+      return this.service.device;
+    }
+  }, {
+    key: "bus",
+    get: function get() {
+      return this.device.bus;
+    }
+  }]);
+
+  return JDServiceClient;
+}(_client__WEBPACK_IMPORTED_MODULE_0__/* .JDClient */ .z);
 
 /***/ }),
 
@@ -42368,7 +42418,7 @@ function toggleBit(data, bitindex) {
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85413);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _jdom_pack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(91635);
-/* harmony import */ var _jdom_serviceserver__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50457);
+/* harmony import */ var _jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5800);
 
 
 
@@ -42424,7 +42474,7 @@ var BuzzerServer = /*#__PURE__*/function (_JDServiceServer) {
   };
 
   return BuzzerServer;
-}(_jdom_serviceserver__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+}(_jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
 
 BuzzerServer.PLAY_TONE = "playTone";
 
@@ -42446,7 +42496,7 @@ BuzzerServer.PLAY_TONE = "playTone";
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25342);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85413);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
-/* harmony import */ var _jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50457);
+/* harmony import */ var _jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5800);
 
 
 
@@ -42491,7 +42541,7 @@ var HIDKeyboardServer = /*#__PURE__*/function (_JDServiceServer) {
   }]);
 
   return HIDKeyboardServer;
-}(_jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
+}(_jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
 /**
  * @internal
  */
@@ -42700,7 +42750,7 @@ function renderKeyboardKey(selector, modifiers, pretty) {
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25342);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85413);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
-/* harmony import */ var _jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50457);
+/* harmony import */ var _jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5800);
 
 
 
@@ -42765,7 +42815,7 @@ var HIDMouseServer = /*#__PURE__*/function (_JDServiceServer) {
   }]);
 
   return HIDMouseServer;
-}(_jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
+}(_jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
 
 
 
@@ -42942,7 +42992,7 @@ var JoystickServer = /*#__PURE__*/function (_SensorServer) {
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85413);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71815);
 /* harmony import */ var _jdom_lightconstants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(23795);
-/* harmony import */ var _jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50457);
+/* harmony import */ var _jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5800);
 /* harmony import */ var _jdom_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(81794);
 
 
@@ -43543,7 +43593,7 @@ var LedPixelServer = /*#__PURE__*/function (_JDServiceServer) {
   }]);
 
   return LedPixelServer;
-}(_jdom_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
+}(_jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
 
 
 
@@ -43660,7 +43710,7 @@ var RealTimeClockServer = /*#__PURE__*/function (_SensorServer) {
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(85413);
 /* harmony import */ var _jacdac_spec_dist_specconstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73512);
 /* harmony import */ var _jdom_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71815);
-/* harmony import */ var _jdom_serviceserver__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50457);
+/* harmony import */ var _jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5800);
 
 
 
@@ -43732,7 +43782,7 @@ var SensorServer = /*#__PURE__*/function (_JDServiceServer) {
   };
 
   return SensorServer;
-}(_jdom_serviceserver__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
+}(_jdom_servers_serviceserver__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z);
 
 
 
@@ -43756,12 +43806,12 @@ __webpack_require__.d(__webpack_exports__, {
 var defineProperty = __webpack_require__(75167);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/constants.ts
 var constants = __webpack_require__(71815);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
-var serviceprovider = __webpack_require__(73138);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/protocoltestserver.ts
-var protocoltestserver = __webpack_require__(80375);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceserver.ts
-var serviceserver = __webpack_require__(50457);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serverserviceprovider.ts + 1 modules
+var serverserviceprovider = __webpack_require__(36211);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/protocoltestserver.ts
+var protocoltestserver = __webpack_require__(8695);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serviceserver.ts
+var serviceserver = __webpack_require__(5800);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(73108);
 // EXTERNAL MODULE: ./node_modules/gatsby/node_modules/@babel/runtime/helpers/esm/createClass.js
@@ -46539,7 +46589,7 @@ var _providerDefinitions = [{
   serviceClasses: [constants/* SRV_POWER */.mQG, constants/* SRV_HUMIDITY */.JbI],
   services: () => [new PowerServer(), new HumidityServer()],
   factory: services => {
-    var dev = new serviceprovider/* default */.Z([services[0]]);
+    var dev = new serverserviceprovider/* default */.Z([services[0]]);
     var pwr = dev.service(1);
     pwr.enabled.on(constants/* CHANGE */.Ver, () => {
       var enabled = !!pwr.enabled.values()[0];
@@ -46587,7 +46637,7 @@ function addServiceProvider(bus, definition) {
   var options = {
     resetIn: definition.resetIn
   };
-  var d = ((_definition$factory = definition.factory) === null || _definition$factory === void 0 ? void 0 : _definition$factory.call(definition, services)) || new serviceprovider/* default */.Z(services, options);
+  var d = ((_definition$factory = definition.factory) === null || _definition$factory === void 0 ? void 0 : _definition$factory.call(definition, services)) || new serverserviceprovider/* default */.Z(services, options);
   bus.addServiceProvider(d);
   return d;
 }
@@ -55399,7 +55449,7 @@ var useStyles = (0,makeStyles/* default */.Z)(theme => (0,createStyles/* default
 function Footer() {
   var classes = useStyles();
   var repo = "microsoft/jacdac-docs";
-  var sha = "cd1eda86ddf2686cf903811a615ec385ac1295c4";
+  var sha = "813f7fc265722b62408fda2f04d8b5c8fb1cc1ba";
   return /*#__PURE__*/react.createElement("footer", {
     role: "contentinfo",
     className: classes.footer
@@ -65240,8 +65290,8 @@ function createAnyUSBBus() {
 var iframebridgeclient = __webpack_require__(43380);
 // EXTERNAL MODULE: ./jacdac-ts/src/jdom/client.ts
 var client = __webpack_require__(47235);
-// EXTERNAL MODULE: ./jacdac-ts/src/jdom/serviceprovider.ts + 1 modules
-var serviceprovider = __webpack_require__(73138);
+// EXTERNAL MODULE: ./jacdac-ts/src/jdom/servers/serverserviceprovider.ts + 1 modules
+var serverserviceprovider = __webpack_require__(36211);
 // EXTERNAL MODULE: ./jacdac-ts/src/servers/joystickserver.ts
 var joystickserver = __webpack_require__(26708);
 ;// CONCATENATED MODULE: ./jacdac-ts/src/servers/gamepadservermanager.ts
@@ -65342,7 +65392,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
           variant: constants/* JoystickVariant.Gamepad */.BUi.Gamepad,
           buttonsAvailable: joystickserver/* JOYSTICK_ARCADE_BUTTONS */.f8
         });
-        var deviceHost = new serviceprovider/* default */.Z([service]);
+        var deviceHost = new serverserviceprovider/* default */.Z([service]);
         this.bus.addServiceProvider(deviceHost);
         this.providers[i] = host = {
           service,
@@ -65368,7 +65418,7 @@ var GamepadHostManager = /*#__PURE__*/function (_JDClient) {
 
 
 ;// CONCATENATED MODULE: ./jacdac-ts/package.json
-var package_namespaceObject = {"i8":"1.16.0"};
+var package_namespaceObject = {"i8":"1.16.1"};
 ;// CONCATENATED MODULE: ./src/jacdac/providerbus.ts
 
 
@@ -72520,4 +72570,4 @@ module.exports = invariant;
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=app-b0b0f3e8c720852e87cd.js.map
+//# sourceMappingURL=app-dc07f0a4c377f7899d74.js.map
