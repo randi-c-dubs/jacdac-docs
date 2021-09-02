@@ -682,7 +682,10 @@ function ModelBlockEditorWithContext(props) {
   var toggleNewClassifierDialog = () => toggleDialog("classifier");
 
   var toggleDialog = dialog => {
-    if (dialog != "none") setVisibleDialog(dialog);else setVisibleDialog("none");
+    if (dialog != "none") {
+      setVisibleDialog(dialog);
+      console.log("Randi toggle dialog ", dialog);
+    } else setVisibleDialog("none");
   };
 
   var closeModals = () => {
@@ -1003,4 +1006,4 @@ function Page() {
 /***/ })
 
 }]);
-//# sourceMappingURL=component---src-pages-editors-ml-tsx-f20f3a67373bd103b14d.js.map
+//# sourceMappingURL=component---src-pages-editors-ml-tsx-8c7cbf1d86727c4064d1.js.map
