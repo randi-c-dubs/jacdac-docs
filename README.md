@@ -4,7 +4,7 @@
 
 **Partner Preview: Jacdac is currently in preview. If you would like to join as a pre-release test partner, please email jacdac-tap@microsoft.com.**
 
-This repository contains sources of [Jacdac](https://aka.ms/jacdac).
+This repository is a fork of the main Jacdac repo that was created to preserve the ML Blocks project from Summer 2021.
 
 * [User Documentation](https://aka.ms/jacdac/)
 * Discussions at https://github.com/microsoft/jacdac/discussions
