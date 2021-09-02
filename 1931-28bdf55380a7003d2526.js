@@ -647,6 +647,7 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
     (0,utils/* assert */.hu)(service.serviceClass === constants/* SRV_AZURE_IOT_HUB_HEALTH */.tOR); // tell the bus to refresh these register
 
     _this.hubNameRegister = _this.service.register(constants/* AzureIotHubHealthReg.HubName */.q7s.HubName);
+    _this.hubDeviceIdRegister = _this.service.register(constants/* AzureIotHubHealthReg.HubDeviceId */.q7s.HubDeviceId);
     _this.connectionStatusRegister = _this.service.register(constants/* AzureIotHubHealthReg.ConnectionStatus */.q7s.ConnectionStatus);
     _this.statisticsRegister = _this.service.register(constants/* AzureIotHubHealthReg.Statistics */.q7s.Statistics);
 
@@ -655,8 +656,6 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
     _this.mount(() => _this.connectionStatusRegister.subscribe(constants/* REPORT_UPDATE */.rGZ, () => _this.emit(constants/* CHANGE */.Ver)));
 
     _this.mount(() => _this.statisticsRegister.subscribe(constants/* REPORT_UPDATE */.rGZ, () => _this.emit(constants/* CHANGE */.Ver)));
-
-    _this.mount(() => _this.service.event(constants/* AzureIotHubHealthEvent.TwinChange */.qqS.TwinChange).on(constants/* EVENT */.Ks0, () => _this.emit(constants/* CHANGE */.Ver)));
 
     _this.mount(() => _this.service.event(constants/* AzureIotHubHealthEvent.ConnectionStatusChange */.qqS.ConnectionStatusChange).on(constants/* EVENT */.Ks0, () => _this.connectionStatusRegister.refresh()));
 
@@ -700,46 +699,6 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
     return disconnect;
   }()
   /**
-   * Sends a ping command with a given value. The Azure IoT Hub will send ping message to the hub with that value in the payload.
-   * @param value
-   */
-  ;
-
-  _proto.ping =
-  /*#__PURE__*/
-  function () {
-    var _ping = (0,asyncToGenerator/* default */.Z)(function* (value) {
-      var data = (0,pack/* jdpack */.AV)("u32", [value]);
-      yield this.service.sendCmdAsync(constants/* AzureIotHubHealthCmd.Ping */.FhJ.Ping, data, true);
-    });
-
-    function ping(_x) {
-      return _ping.apply(this, arguments);
-    }
-
-    return ping;
-  }()
-  /**
-   * Queries the service for the current twin content
-   * @returns
-   */
-  ;
-
-  _proto.twin =
-  /*#__PURE__*/
-  function () {
-    var _twin = (0,asyncToGenerator/* default */.Z)(function* () {
-      var [content] = yield this.service.receiveWithInPipe(constants/* AzureIotHubHealthCmd.Twin */.FhJ.Twin, "s");
-      return content === null || content === void 0 ? void 0 : content.join();
-    });
-
-    function twin() {
-      return _twin.apply(this, arguments);
-    }
-
-    return twin;
-  }()
-  /**
    * Sends a new connection string to the iot debice
    * @param connectionString
    */
@@ -753,7 +712,7 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
       yield this.service.sendCmdAsync(constants/* AzureIotHubHealthCmd.SetConnectionString */.FhJ.SetConnectionString, data, true);
     });
 
-    function setConnectionString(_x2) {
+    function setConnectionString(_x) {
       return _setConnectionString.apply(this, arguments);
     }
 
@@ -764,6 +723,11 @@ var AzureIoTHubHealthClient = /*#__PURE__*/function (_JDServiceClient) {
     key: "hubName",
     get: function get() {
       return this.hubNameRegister.stringValue;
+    }
+  }, {
+    key: "hubDeviceId",
+    get: function get() {
+      return this.hubDeviceIdRegister.stringValue;
     }
   }, {
     key: "connectionStatus",
@@ -927,4 +891,4 @@ function Snippet(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=1931-a8094a012a8190fc92f7.js.map
+//# sourceMappingURL=1931-28bdf55380a7003d2526.js.map
