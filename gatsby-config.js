@@ -1,5 +1,5 @@
 const maxImageWidth = 800
-const siteUrl = "https://microsoft.github.io"
+const siteUrl = "https://randi-c-dubs.github.io/"
 const pathPrefix = "/jacdac-docs"
 
 const SITE_TITLE = `Jacdac - plug-n-play for microcontrollers`
